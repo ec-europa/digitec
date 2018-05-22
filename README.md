@@ -9,9 +9,13 @@ yarn
 yarn develop
 ```
 
-To test the CMS locally, you'll need run a production build of the site:
+To test Netlify CMS locally, you'll need run a production build of the site:
 
 ```
 yarn build
 yarn serve
 ```
+
+Check the local website at: http://localhost:8000/
+
+Or the admin panel at: http://localhost:8000/admin/
