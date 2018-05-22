@@ -7,7 +7,7 @@ import './all.sass';
 
 const TemplateWrapper = ({ children }) => (
   <div>
-    <Helmet title="Home | Gatsby + Netlify CMS" />
+    <Helmet title="DIGITEC 2018" />
     <Navbar />
     <div>{children()}</div>
   </div>
@@ -15,6 +15,10 @@ const TemplateWrapper = ({ children }) => (
 
 TemplateWrapper.propTypes = {
   children: PropTypes.func,
+};
+
+TemplateWrapper.defaultProps = {
+  children: () => {},
 };
 
 export default TemplateWrapper;

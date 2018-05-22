@@ -31,12 +31,12 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     const posts = result.data.allMarkdownRemark.edges;
 
     posts.forEach(edge => {
-      const id = edge.node.id;
+      const { id } = edge.node;
       createPage({
         path: edge.node.fields.slug,
         tags: edge.node.frontmatter.tags,
         component: path.resolve(
-          `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
+          `src/templates/${String(edge.node.frontmatter.templateKey)}.jsx`
         ),
         // additional data can be passed via context
         context: {
@@ -62,7 +62,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 
       createPage({
         path: tagPath,
-        component: path.resolve(`src/templates/tags.js`),
+        component: path.resolve(`src/templates/tags.jsx`),
         context: {
           tag,
         },
