@@ -23,6 +23,15 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
+      - file: "src/pages/index.md"
+        label: "Home Page"
+        name: "homepage"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "homepage"}
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Heading, name: heading, widget: string}
+          - {label: Description, name: description, widget: string}
       - file: "src/pages/about/index.md"
         label: "About"
         name: "about"
