@@ -1,15 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import 'normalize.css/normalize.css';
+import './global.scss';
 
-import Navbar from '../components/Navbar';
-import './all.sass';
+import Footer from '../components/Footer/Footer';
+import Navbar from '../components/Navbar/Navbar';
+import styles from './layout.module.css';
 
 const TemplateWrapper = ({ children }) => (
-  <div>
+  <div className={styles.container}>
     <Helmet title="DIGITEC 2018" />
     <Navbar />
-    <div>{children()}</div>
+    <main className={styles.main}>{children()}</main>
+    <Footer />
   </div>
 );
 

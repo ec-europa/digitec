@@ -1,0 +1,76 @@
+@import '../../utils/variables';
+@import '../../utils/breakpoints';
+
+.coverContainer {
+  position: relative;
+  width: auto;
+  background: #f3f3f3 none center 65% no-repeat;
+  background-size: cover;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.coverSpacer {
+  height: $header-height;
+}
+
+.coverTitleContainer {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  color: #f2f2f2;
+
+  @include mappy-bp(medium) {
+    margin: 3em 0 4em;
+  }
+
+  h1 {
+    font-weight: 500;
+  }
+
+  h2 {
+    font-weight: 500;
+    margin: 0.4em 0;
+  }
+}
+
+.coverTitleContainerRow {
+  flex-grow: 1;
+  padding: 3em;
+}
+
+.coverRegister {
+  // background: url('./images/register-bg.svg') no-repeat center center;
+  background-size: contain;
+  color: darken($ict-grey-text, 9%);
+  border: none;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 2em;
+  padding: 2.5em 1em;
+  margin: 0;
+}
+
+.coverTwitter {
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid transparent;
+  padding: 0.5em;
+  margin: 0;
+  transition: border-color 0.2s ease-in-out;
+
+  &:hover,
+  &:focus {
+    border: 1px solid #fff;
+  }
+}
