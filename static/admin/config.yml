@@ -18,7 +18,21 @@ collections:
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Tags", name: "tags", widget: "list"}
+
+  - name: "speakers"
+    label: "Speakers"
+    folder: "data/speakers"
+    extension: md
+    create: true
+    slug: "{{firstname}}-{{lastname}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "speaker"}
+      - {label: "Firstname", name: "firstname", widget: "string"}
+      - {label: "Lastname", name: "lastname", widget: "string"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Twitter handle", name: "twitter", widget: "string"}
+      - {label: "Picture", name: "picture", widget: image}
+      - {label: "Body", name: "body", widget: "markdown"}
 
   - name: "pages"
     label: "Pages"

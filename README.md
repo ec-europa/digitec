@@ -10,8 +10,9 @@ yarn develop
 ```
 
 Check the local website at: http://localhost:8000/
+Or GraphiQL: http://localhost:8000/___graphql
 
-[Unstable] To test Netlify CMS locally, you'll need run a production build of the site:
+To test Netlify CMS locally, you'll need run a production build of the site:
 
 ```
 yarn build

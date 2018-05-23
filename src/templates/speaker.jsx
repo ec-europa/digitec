@@ -3,10 +3,12 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import Content, { HTMLContent } from '../components/Content';
 
-export const BlogPostTemplate = ({
+export const SpeakerTemplate = ({
   content,
   contentComponent,
-  description,
+  firstname,
+  lastname,
+  picture,
   title,
   helmet,
 }) => {
@@ -19,9 +21,12 @@ export const BlogPostTemplate = ({
         <div className="columns">
           <div className="column is-10 is-offset-1">
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-              {title}
+              {firstname} {lastname}
             </h1>
-            <p>{description}</p>
+            <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
+              {title}
+            </h2>
+            <img alt="" src={picture} />
             <PostContent content={content} />
           </div>
         </div>
@@ -30,52 +35,65 @@ export const BlogPostTemplate = ({
   );
 };
 
-BlogPostTemplate.propTypes = {
+SpeakerTemplate.propTypes = {
   content: PropTypes.string.isRequired,
   contentComponent: PropTypes.func,
-  description: PropTypes.string,
+  firstname: PropTypes.string,
+  lastname: PropTypes.string,
   title: PropTypes.string,
+  picture: PropTypes.string,
   helmet: PropTypes.instanceOf(Helmet),
 };
 
-BlogPostTemplate.defaultProps = {
+SpeakerTemplate.defaultProps = {
   contentComponent: null,
-  description: '',
+  firstname: '',
+  lastname: '',
   title: '',
+  picture: '',
   helmet: '',
 };
 
-const BlogPost = ({ data }) => {
+const Speaker = ({ data }) => {
   const { markdownRemark: post } = data;
 
   return (
-    <BlogPostTemplate
+    <SpeakerTemplate
       content={post.html}
       contentComponent={HTMLContent}
-      description={post.frontmatter.description}
-      helmet={<Helmet title={`${post.frontmatter.title} | Blog`} />}
+      firstname={post.frontmatter.firstname}
+      lastname={post.frontmatter.lastname}
+      picture={post.frontmatter.picture}
+      helmet={
+        <Helmet
+          title={`${post.frontmatter.firstname} ${
+            post.frontmatter.lastname
+          } | Speakers`}
+        />
+      }
       title={post.frontmatter.title}
     />
   );
 };
 
-BlogPost.propTypes = {
+Speaker.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.object,
   }).isRequired,
 };
 
-export default BlogPost;
+export default Speaker;
 
 export const pageQuery = graphql`
-  query BlogPostByID($id: String!) {
+  query SpeakerByID($id: String!) {
     markdownRemark(id: { eq: $id }) {
       id
       html
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
+        firstname
+        lastname
         title
-        description
+        picture
       }
     }
   }
