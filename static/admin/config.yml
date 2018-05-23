@@ -1,6 +1,7 @@
 backend:
   name: git-gateway
   branch: master
+  squash_merges: true
 
 publish_mode: editorial_workflow
 media_folder: static/img
@@ -21,6 +22,7 @@ collections:
 
   - name: "speakers"
     label: "Speakers"
+    label_singular: "Speaker"
     folder: "data/speakers"
     extension: md
     create: true
@@ -32,6 +34,28 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Twitter handle", name: "twitter", widget: "string"}
       - {label: "Picture", name: "picture", widget: image}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "events"
+    label: "Events"
+    label_singular: "Event"
+    folder: "data/events"
+    extension: md
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "event"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Start", name: "starts", widget: "string"}
+      - {label: "Ends", name: "ends", widget: "string"}
+      - {label: "Venue", name: "venue", widget: "string"}
+      - {label: "Color", name: "color", widget: "string", default: "grey"}
+      - {label: "Register", name: "register", widget: "boolean", default: false}
+      - label: "Speakers"
+        name: "speakers"
+        widget: "list"
+        fields:
+          - {label: "Speaker", name: "speaker", widget: "relation", collection: "speakers", searchFields: ["firstname", "lastname"], displayFields: ["firstname", "lastname"],valueField: "lastname"}
       - {label: "Body", name: "body", widget: "markdown"}
 
   - name: "pages"
