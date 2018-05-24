@@ -16,6 +16,12 @@ class Item extends React.Component {
   render() {
     const { to, children, mobileOnly, primary, ...rest } = this.props;
 
+    // Remove router's properties from "rest"
+    delete rest.match;
+    delete rest.location;
+    delete rest.history;
+    delete rest.staticContext;
+
     return (
       <li
         className={classnames(styles.item, { [styles.mobileOnly]: mobileOnly })}

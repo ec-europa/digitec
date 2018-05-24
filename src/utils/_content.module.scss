@@ -12,3 +12,16 @@
     margin-top: 1rem;
   }
 }
+
+.contentBig {
+  p {
+    font-size: $type-scale-5;
+    line-height: $line-height-prolonged-5;
+    margin: 0;
+    max-width: 38em;
+  }
+
+  p + * {
+    margin-top: 1rem;
+  }
+}

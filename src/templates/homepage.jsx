@@ -14,8 +14,8 @@ export const HomePageTemplate = ({
   <section className="section section--gradient">
     <Cover image={image} title={title} heading={heading} hashtag={hashtag} />
     <div
-      className={contentStyles.content}
-      style={{ maxWidth: '54rem', margin: '2rem auto' }}
+      className={contentStyles.contentBig}
+      style={{ maxWidth: '54rem', margin: '2rem auto', padding: '0 1rem' }}
     >
       <p>{description}</p>
     </div>

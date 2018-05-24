@@ -30,6 +30,10 @@ class Navbar extends React.PureComponent {
     this.header = null;
     this.navigation = null;
     this.headroom = null;
+
+    this.state = {
+      drawerOpen: false,
+    };
   }
 
   componentDidMount() {
@@ -62,39 +66,40 @@ class Navbar extends React.PureComponent {
 
       // Toggle the drawer if it's closed
       if (
-        !this.props.drawerOpen &&
+        !this.state.drawerOpen &&
         this.navigation.contains(document.activeElement)
       ) {
-        this.props.onToggleDrawer();
+        this.setState({ drawerOpen: !this.state.drawerOpen });
         event.preventDefault();
       }
-    } else if (this.props.drawerOpen) {
-      this.props.onToggleDrawer();
+    } else if (this.state.drawerOpen) {
+      this.setState({ drawerOpen: !this.state.drawerOpen });
       event.preventDefault();
     }
   }
 
   handleKeyDown(event) {
     // Close drawer on ESC
-    if (this.props.drawerOpen && event.keyCode === 27) {
+    if (this.state.drawerOpen && event.keyCode === 27) {
       event.preventDefault();
-      this.props.onToggleDrawer();
+      this.setState({ drawerOpen: !this.state.drawerOpen });
     }
   }
 
   handleRequestToggleDrawer(event) {
     event.preventDefault();
-    this.props.onToggleDrawer();
+    this.setState({ drawerOpen: !this.state.drawerOpen });
   }
 
   closeDrawer() {
-    if (this.props.drawerOpen) {
-      this.props.onToggleDrawer();
+    if (this.state.drawerOpen) {
+      this.setState({ drawerOpen: !this.state.drawerOpen });
     }
   }
 
   render() {
-    const { title, drawerOpen } = this.props;
+    const { title } = this.props;
+    const { drawerOpen } = this.state;
 
     return (
       <nav
@@ -173,9 +178,6 @@ class Navbar extends React.PureComponent {
               <NavbarItem to="/practical" onClick={this.closeDrawer}>
                 Practical
               </NavbarItem>
-              <NavbarItem to="/newsletter" onClick={this.closeDrawer}>
-                Newsletter
-              </NavbarItem>
               <NavbarSeparator />
               <NavbarItem
                 to="https://twitter.com/hashtag/digitec16"
@@ -194,17 +196,10 @@ class Navbar extends React.PureComponent {
 }
 
 Navbar.propTypes = {
-  drawerOpen: PropTypes.bool,
-  // eslint-disable-next-line react/no-unused-prop-types
-  isModal: PropTypes.bool,
-  onToggleDrawer: PropTypes.func,
   title: PropTypes.string,
 };
 
 Navbar.defaultProps = {
-  drawerOpen: false,
-  isModal: false,
-  onToggleDrawer: () => {},
   title: '',
 };
 
