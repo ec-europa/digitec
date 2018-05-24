@@ -3,12 +3,10 @@
  * Navbar
  *
  */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
 
 import React from 'react';
 import Link from 'gatsby-link';
 import PropTypes from 'prop-types';
-import Headroom from 'headroom.js';
 import styles from './Navbar.module.scss';
 
 import NavbarItem from './Item';
@@ -37,6 +35,9 @@ class Navbar extends React.PureComponent {
   }
 
   componentDidMount() {
+    // eslint-disable-next-line global-require
+    const Headroom = require('headroom.js');
+
     this.headroom = new Headroom(this.header, {
       offset: 6 * 16,
       tolerance: 5,
