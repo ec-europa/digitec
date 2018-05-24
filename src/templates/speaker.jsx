@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import Content, { HTMLContent } from '../components/Content';
 
+import containerStyles from '../utils/_container.module.scss';
+import contentStyles from '../utils/_content.module.scss';
+
 export const SpeakerTemplate = ({
   content,
   contentComponent,
@@ -15,22 +18,14 @@ export const SpeakerTemplate = ({
   const PostContent = contentComponent || Content;
 
   return (
-    <section className="section">
+    <section className={containerStyles.container}>
       {helmet || ''}
-      <div className="container content">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-              {firstname} {lastname}
-            </h1>
-            <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
-              {title}
-            </h2>
-            <img alt="" src={picture} />
-            <PostContent content={content} />
-          </div>
-        </div>
-      </div>
+      <h1 className={contentStyles.fs9}>
+        {firstname} {lastname}
+      </h1>
+      <h2 className={contentStyles.fs7}>{title}</h2>
+      <img alt="" src={picture} />
+      <PostContent className={contentStyles.content} content={content} />
     </section>
   );
 };
@@ -51,7 +46,7 @@ SpeakerTemplate.defaultProps = {
   lastname: '',
   title: '',
   picture: '',
-  helmet: '',
+  helmet: null,
 };
 
 const Speaker = ({ data }) => {
