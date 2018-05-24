@@ -1,0 +1,72 @@
+@import '../../utils/breakpoints';
+@import '../../utils/variables';
+
+.container {
+  align-self: flex-end;
+  width: 100%;
+  background-color: #fff;
+  border-top: 1px solid #f4f4f4;
+  padding: 3em 0 4em;
+}
+
+.innerContainer {
+  width: 100%;
+  max-width: $max-width;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @include mappy-bp(medium) {
+    justify-content: space-between;
+  }
+}
+
+.section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  flex-grow: 1;
+  padding: 0 14px;
+}
+
+.left {
+  justify-content: center;
+  margin-bottom: 1em;
+
+  @include mappy-bp(medium) {
+    justify-content: flex-start;
+  }
+}
+
+.right {
+  justify-content: center;
+
+  @include mappy-bp(medium) {
+    justify-content: flex-end;
+  }
+}
+
+.section a {
+  padding: 0.5em;
+  color: rgb(88, 88, 88);
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+.logoContainer {
+  padding: 10px;
+}
+
+.logo {
+  max-height: 80px;
+}
+
+.councilLogo {
+  max-height: 88px;
+}

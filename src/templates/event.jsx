@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import Content, { HTMLContent } from '../components/Content';
 
+import containerStyles from '../utils/_container.module.scss';
+import contentStyles from '../utils/_content.module.scss';
+
 export const EventTemplate = ({
   content,
   contentComponent,
@@ -15,21 +18,13 @@ export const EventTemplate = ({
   const PostContent = contentComponent || Content;
 
   return (
-    <section className="section">
+    <section className={containerStyles.container}>
       {helmet || ''}
-      <div className="container content">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-              {title}
-            </h1>
-            <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
-              {starts} - {ends} | {venue}
-            </h2>
-            <PostContent content={content} />
-          </div>
-        </div>
-      </div>
+      <h1 className={contentStyles.fs9}>{title}</h1>
+      <h2 className={contentStyles.fs7}>
+        {starts} - {ends} | {venue}
+      </h2>
+      <PostContent className={contentStyles.content} content={content} />
     </section>
   );
 };
@@ -50,7 +45,7 @@ EventTemplate.defaultProps = {
   ends: '',
   title: '',
   venue: '',
-  helmet: '',
+  helmet: null,
 };
 
 const Event = ({ data }) => {

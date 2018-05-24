@@ -2,33 +2,32 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 
+import containerStyles from '../utils/_container.module.scss';
+import contentStyles from '../utils/_content.module.scss';
+
 const ProgrammePAge = props => {
   const { data } = props;
   const { edges: events } = data.allMarkdownRemark;
 
   return (
-    <section className="section">
-      <div className="container">
-        <div className="content">
-          <h1 className="has-text-weight-bold is-size-2">Programme</h1>
+    <section className={containerStyles.container}>
+      <h1 className={contentStyles.fs9}>Programme</h1>
+      {events.map(({ node: event }) => (
+        <div
+          className={contentStyles.content}
+          style={{ border: '1px solid #eaecee', padding: '2em 4em' }}
+          key={event.id}
+        >
+          <p>
+            <Link className="has-text-primary" to={event.fields.slug}>
+              {event.frontmatter.title}
+              from {event.frontmatter.starts}
+              to {event.frontmatter.ends}
+              where {event.frontmatter.venue}
+            </Link>
+          </p>
         </div>
-        {events.map(({ node: event }) => (
-          <div
-            className="content"
-            style={{ border: '1px solid #eaecee', padding: '2em 4em' }}
-            key={event.id}
-          >
-            <p>
-              <Link className="has-text-primary" to={event.fields.slug}>
-                {event.frontmatter.title}
-                from {event.frontmatter.starts}
-                to {event.frontmatter.ends}
-                where {event.frontmatter.venue}
-              </Link>
-            </p>
-          </div>
-        ))}
-      </div>
+      ))}
     </section>
   );
 };

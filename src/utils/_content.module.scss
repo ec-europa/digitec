@@ -1,0 +1,64 @@
+@import 'variables';
+
+.content {
+  p {
+    font-size: $type-scale-4;
+    line-height: $line-height-prolonged-4;
+    margin: 0;
+    max-width: 38em;
+  }
+
+  p + * {
+    margin-top: 1rem;
+  }
+}
+
+.contentBig {
+  p {
+    font-size: $type-scale-5;
+    line-height: $line-height-prolonged-5;
+    margin: 0;
+    max-width: 38em;
+  }
+
+  p + * {
+    margin-top: 1rem;
+  }
+}
+
+.fs1 {
+  font-size: $type-scale-1;
+  line-height: $line-height-1;
+}
+.fs2 {
+  font-size: $type-scale-2;
+  line-height: $line-height-2;
+}
+.fs3 {
+  font-size: $type-scale-3;
+  line-height: $line-height-3;
+}
+.fs4 {
+  font-size: $type-scale-4;
+  line-height: $line-height-4;
+}
+.fs5 {
+  font-size: $type-scale-5;
+  line-height: $line-height-5;
+}
+.fs6 {
+  font-size: $type-scale-6;
+  line-height: $line-height-6;
+}
+.fs7 {
+  font-size: $type-scale-7;
+  line-height: $line-height-7;
+}
+.fs8 {
+  font-size: $type-scale-8;
+  line-height: $line-height-8;
+}
+.fs9 {
+  font-size: $type-scale-9;
+  line-height: $line-height-9;
+}
