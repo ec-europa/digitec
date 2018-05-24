@@ -14,7 +14,7 @@ import styles from './Navbar.module.scss';
 import NavbarItem from './Item';
 import NavbarSeparator from './Separator';
 
-import logo from './DIGITEC-2018_3-institutions.png';
+import logo from './logo.png';
 
 class Navbar extends React.PureComponent {
   constructor(props) {
@@ -34,7 +34,7 @@ class Navbar extends React.PureComponent {
 
   componentDidMount() {
     this.headroom = new Headroom(this.header, {
-      offset: 0,
+      offset: 6 * 16,
       tolerance: 5,
       classes: {
         initial: styles.headroom,
@@ -140,11 +140,7 @@ class Navbar extends React.PureComponent {
             <div className={styles.navigationHeader}>
               <div className={styles.logos}>
                 <Link to="/" className={styles.link}>
-                  <img
-                    src={logo}
-                    className={styles.ictLogo}
-                    alt="DIGITEC 2016"
-                  />
+                  <img src={logo} className={styles.logo} alt="DIGITEC 2016" />
                 </Link>
               </div>
               <div className={styles.navigationHeaderTitle}>

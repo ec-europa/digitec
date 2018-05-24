@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Cover from '../components/Cover/Cover';
+import contentStyles from '../utils/_content.module.scss';
 
 export const HomePageTemplate = ({
   image,
@@ -12,14 +13,11 @@ export const HomePageTemplate = ({
 }) => (
   <section className="section section--gradient">
     <Cover image={image} title={title} heading={heading} hashtag={hashtag} />
-    <div className="container">
-      <div className="section">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <p>{description}</p>
-          </div>
-        </div>
-      </div>
+    <div
+      className={contentStyles.content}
+      style={{ maxWidth: '54rem', margin: '2rem auto' }}
+    >
+      <p>{description}</p>
     </div>
   </section>
 );

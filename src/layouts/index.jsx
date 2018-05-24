@@ -6,7 +6,7 @@ import './global.scss';
 
 import Footer from '../components/Footer/Footer';
 import Navbar from '../components/Navbar/Navbar';
-import styles from './layout.module.css';
+import styles from './layout.module.scss';
 
 const TemplateWrapper = ({ children }) => (
   <div className={styles.container}>

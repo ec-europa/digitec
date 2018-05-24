@@ -14,7 +14,6 @@ const Cover = ({ image, title, heading, hashtag }) => (
     className={styles.coverContainer}
     style={{ backgroundImage: `url(${image})` }}
   >
-    <div className={styles.coverSpacer} />
     <div className={styles.coverTitleContainer}>
       <div className={styles.coverTitleContainerRow}>
         <h1>{title}</h1>

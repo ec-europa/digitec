@@ -13,10 +13,6 @@
   align-items: center;
 }
 
-.coverSpacer {
-  height: $header-height;
-}
-
 .coverTitleContainer {
   flex-grow: 1;
   display: flex;
@@ -31,11 +27,15 @@
   }
 
   h1 {
+    font-size: $type-scale-9;
     font-weight: 500;
+    line-height: $line-height-9;
   }
 
   h2 {
+    font-size: $type-scale-8;
     font-weight: 500;
+    line-height: $line-height-8;
     margin: 0.4em 0;
   }
 }
