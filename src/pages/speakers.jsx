@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
+
+import SpeakerCard from '../components/Speaker/Card';
 
 import containerStyles from '../utils/_container.module.scss';
 import contentStyles from '../utils/_content.module.scss';
@@ -12,22 +13,19 @@ const SpeakersPage = props => {
   return (
     <section className={containerStyles.container}>
       <h1 className={contentStyles.fs9}>Speakers</h1>
-      {speakers.map(({ node: speaker }) => (
-        <div
-          className="content"
-          style={{ border: '1px solid #eaecee', padding: '2em 4em' }}
-          key={speaker.id}
-        >
-          <p>
-            <Link className="has-text-primary" to={speaker.fields.slug}>
-              {speaker.frontmatter.firstname}
-              {speaker.frontmatter.lastname}
-              {speaker.frontmatter.title}
-              <img alt="" src={speaker.frontmatter.picture} />
-            </Link>
-          </p>
-        </div>
-      ))}
+      <div
+        style={{ display: 'flex' }}
+      >
+        {speakers.map(({ node: speaker }) => (
+          <SpeakerCard speaker={{
+            slug: speaker.fields.slug,
+            firstname: speaker.frontmatter.firstname,
+            lastname: speaker.frontmatter.lastname,
+            picture: speaker.frontmatter.picture,
+            title: speaker.frontmatter.title
+          }} />
+        ))}
+      </div>
     </section>
   );
 };

@@ -5,7 +5,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-grow: 1;
 }
 
 .link {
@@ -24,7 +23,7 @@
     // flex-grow: 1;
     font-size: $type-scale-4;
     line-height: $line-height-4;
-    padding: 0.5rem;
+    padding: 0 1rem;
     position: relative;
     text-decoration: none;
 
