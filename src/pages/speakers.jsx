@@ -13,9 +13,7 @@ const SpeakersPage = props => {
   return (
     <section className={containerStyles.container}>
       <h1 className={contentStyles.fs9}>Speakers</h1>
-      <div
-        style={{ display: 'flex' }}
-      >
+      <div style={{ display: 'flex' }}>
         {speakers.map(({ node: speaker }) => (
           <SpeakerCard speaker={{
             slug: speaker.fields.slug,

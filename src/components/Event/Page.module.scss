@@ -1,0 +1,22 @@
+@import '../../utils/variables';
+@import '../../utils/breakpoints';
+
+.pageContainer {
+  max-width: $max-width;
+  margin: auto;
+  padding: 1rem;
+
+  h1 {
+    font-size: 2em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+}
+
+.visual {
+  margin: auto;
+  display: block;
+  max-width: 100%;
+}
