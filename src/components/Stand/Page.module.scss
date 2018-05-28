@@ -1,0 +1,49 @@
+@import '../../utils/variables';
+@import '../../utils/breakpoints';
+
+.container {
+  max-width: $max-width;
+  margin: auto;
+  padding: 1rem;
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+}
+
+.headerPicture {
+  width: 100%;
+  max-width: 260px;
+  flex-basis: 260px;
+
+  @include mappy-bp(medium) {
+    margin: 0 3em;
+  }
+}
+
+.headerTitles {
+  flex-grow: 1;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.title {
+  color: $ict-blue;
+}
+
+.number {
+  display: inline-block;
+  text-align: center;
+  font-size: 0.7em;
+  height: 3em;
+  width: 3em;
+  background-color: #3a3a3a;
+  border-radius: 50%;
+  line-height: 3em;
+  color: #fff;
+  margin-right: 1em;
+}
