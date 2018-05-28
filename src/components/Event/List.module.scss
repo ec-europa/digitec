@@ -1,0 +1,34 @@
+@import '../../utils/breakpoints';
+@import '../../utils/variables';
+
+.block {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+
+  @include mappy-bp(medium) {
+    flex-direction: row;
+    align-items: flex-start;
+    margin: 3em 0;
+  }
+}
+
+.timeslot {
+  padding: 1em 1em 0.5em;
+  color: $ict-grey-text;
+  font-size: 1.5em;
+  font-weight: 300;
+  flex-shrink: 0;
+
+  @include mappy-bp(medium) {
+    text-align: center;
+    min-width: 9em;
+    flex-basis: 9em;
+  }
+}
+
+.events {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}

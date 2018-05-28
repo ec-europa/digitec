@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import Content, { HTMLContent } from '../components/Content';
 
-import containerStyles from '../utils/_container.module.scss';
+import EventPage from '../components/Event/Page';
 import contentStyles from '../utils/_content.module.scss';
 
 export const EventTemplate = ({
@@ -18,14 +18,16 @@ export const EventTemplate = ({
   const PostContent = contentComponent || Content;
 
   return (
-    <section className={containerStyles.container}>
-      {helmet || ''}
-      <h1 className={contentStyles.fs9}>{title}</h1>
-      <h2 className={contentStyles.fs7}>
-        {starts} - {ends} | {venue}
-      </h2>
+    <EventPage
+      event={{
+        title,
+        starts,
+        ends,
+        venue
+      }}
+    >
       <PostContent className={contentStyles.content} content={content} />
-    </section>
+    </EventPage>
   );
 };
 

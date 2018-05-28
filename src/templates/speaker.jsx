@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import Content, { HTMLContent } from '../components/Content';
 
-import containerStyles from '../utils/_container.module.scss';
+import SpeakerPage from '../components/Speaker/Page';
 import contentStyles from '../utils/_content.module.scss';
 
 export const SpeakerTemplate = ({
@@ -13,20 +13,23 @@ export const SpeakerTemplate = ({
   lastname,
   picture,
   title,
+  twitter,
   helmet,
 }) => {
   const PostContent = contentComponent || Content;
 
   return (
-    <section className={containerStyles.container}>
-      {helmet || ''}
-      <h1 className={contentStyles.fs9}>
-        {firstname} {lastname}
-      </h1>
-      <h2 className={contentStyles.fs7}>{title}</h2>
-      <img alt="" src={picture} />
+    <SpeakerPage
+      speaker={{
+        firstname,
+        lastname,
+        title,
+        picture,
+        twitter
+      }}
+    >
       <PostContent className={contentStyles.content} content={content} />
-    </section>
+    </SpeakerPage>
   );
 };
 
@@ -59,6 +62,7 @@ const Speaker = ({ data }) => {
       firstname={post.frontmatter.firstname}
       lastname={post.frontmatter.lastname}
       picture={post.frontmatter.picture}
+      twitter={post.frontmatter.twitter}
       helmet={
         <Helmet
           title={`${post.frontmatter.firstname} ${
@@ -88,6 +92,7 @@ export const pageQuery = graphql`
         firstname
         lastname
         title
+        twitter
         picture
       }
     }

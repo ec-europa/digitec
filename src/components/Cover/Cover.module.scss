@@ -22,43 +22,42 @@
   justify-content: center;
   color: #f2f2f2;
 
-  @include mappy-bp(medium) {
-    margin: 3em 0 4em;
-  }
-
   h1 {
-    font-size: $type-scale-9;
-    font-weight: 500;
-    line-height: $line-height-9;
+    font-size: $type-scale-8;
+    font-weight: 700;
+    line-height: 1.5;
+    margin: 0 0 2rem;
   }
 
   h2 {
-    font-size: $type-scale-8;
+    font-size: $type-scale-6;
     font-weight: 500;
-    line-height: $line-height-8;
-    margin: 0.4em 0;
+    line-height: 1.3;
+    margin: 1rem;
+  }
+
+  @include mappy-bp(medium) {
+    margin: 4rem 0;
+
+    h1 {
+      font-size: 6vw;
+      sfont-weight: 700;
+      line-height: 1.15;
+      margin: 0 0 3rem;
+    }
+
+    h2 {
+      font-size: 3vw;
+      font-weight: 500;
+      line-height: 1.15;
+      margin: 1rem;
+    }
   }
 }
 
 .coverTitleContainerRow {
   flex-grow: 1;
   padding: 3em;
-}
-
-.coverRegister {
-  // background: url('./images/register-bg.svg') no-repeat center center;
-  background-size: contain;
-  color: darken($ict-grey-text, 9%);
-  border: none;
-  position: relative;
-  display: inline-block;
-  outline: none;
-  text-decoration: none;
-  text-align: center;
-  vertical-align: middle;
-  font-size: 2em;
-  padding: 2.5em 1em;
-  margin: 0;
 }
 
 .coverTwitter {

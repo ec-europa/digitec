@@ -20,10 +20,10 @@
   @include mappy-bp(medium) {
     color: lighten($ict-grey-text, 5%);
     display: inline-block;
-    flex-grow: 1;
+    // flex-grow: 1;
     font-size: $type-scale-4;
     line-height: $line-height-4;
-    padding: 0.5rem;
+    padding: 0 1rem;
     position: relative;
     text-decoration: none;
 
@@ -34,7 +34,9 @@
       height: 2px;
       width: 0;
       background: transparent;
-      transition: width 0.3s ease, background-color 0.3s ease;
+      position: relative;
+      top: 10px;
+      transition: all 0.3s ease;
     }
 
     &:hover,
@@ -46,6 +48,7 @@
       &::after {
         width: 100%;
         background-color: $ict-blue;
+        top: 4px;
       }
     }
   }
@@ -69,6 +72,7 @@
     &::after {
       width: 100%;
       background-color: $ict-blue;
+      top: 4px;
     }
   }
 }
