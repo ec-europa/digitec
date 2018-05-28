@@ -26,15 +26,25 @@ class Item extends React.Component {
       <li
         className={classnames(styles.item, { [styles.mobileOnly]: mobileOnly })}
       >
-        <Link
-          className={classnames(styles.link, { [styles.primary]: primary })}
-          exact
-          activeClassName={styles.active}
-          to={to}
-          {...rest}
-        >
-          {children}
-        </Link>
+        {(to.startsWith('http') || to.startsWith('https')) ? (
+          <a
+            className={classnames(styles.link, { [styles.primary]: primary })}
+            href={to}
+            {...rest}
+          >
+            {children}
+          </a>
+        ) : (
+          <Link
+            className={classnames(styles.link, { [styles.primary]: primary })}
+            exact
+            activeClassName={styles.active}
+            to={to}
+            {...rest}
+          >
+            {children}
+          </Link>
+        )}
       </li>
     );
   }
