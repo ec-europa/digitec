@@ -5,12 +5,7 @@ import Content, { HTMLContent } from '../components/Content';
 import containerStyles from '../utils/_container.module.scss';
 import contentStyles from '../utils/_content.module.scss';
 
-export const PracticalTemplate = ({
-  title,
-  content,
-  contentComponent,
-}) => {
-
+export const PracticalPageTemplate = ({ title, content, contentComponent }) => {
   const PostContent = contentComponent || Content;
 
   return (
@@ -19,9 +14,9 @@ export const PracticalTemplate = ({
       <PostContent className={contentStyles.content} content={content} />
     </section>
   );
-}
+};
 
-PracticalTemplate.propTypes = {
+PracticalPageTemplate.propTypes = {
   content: PropTypes.string.isRequired,
   contentComponent: PropTypes.func,
   title: PropTypes.string,
@@ -32,7 +27,7 @@ const Practical = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
 
   return (
-    <PracticalTemplate
+    <PracticalPageTemplate
       content={post.html}
       contentComponent={HTMLContent}
       title={frontmatter.title}
