@@ -2,7 +2,7 @@
 templateKey: event
 title: Test event
 starts: '9:15'
-ends: '10:30'
+ends: '10:36'
 venue: Main hall
 color: grey
 register: true
