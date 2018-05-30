@@ -5,7 +5,7 @@ starts: '9:30'
 ends: '10:00'
 venue: Main hall
 color: grey
-register: false
+register: true
 speakers:
   - speaker: Ingestad
 ---
