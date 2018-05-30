@@ -5,12 +5,21 @@
  */
 
 import React from 'react';
-import styles from './Footer.module.scss';
-import commissionLogo from './commission.png';
-import parliamentLogo from './parliament.png';
-import councilLogo from './council.png';
+import Img from 'gatsby-image';
 
-const Footer = () => (
+import styles from './Footer.module.scss';
+
+const getSrc = (images, originalImg) => {
+  const img = images.allImageSharp.edges.find(
+    edge => edge.node.sizes.originalName === originalImg
+  );
+  if (img) {
+    return img.node.sizes;
+  }
+  return null;
+};
+
+const Footer = ({ images }) => (
   <footer className={styles.container}>
     <div className={styles.innerContainer}>
       <div className={`${styles.section} ${styles.left}`}>
@@ -44,8 +53,8 @@ const Footer = () => (
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img
-            src={commissionLogo}
+          <Img
+            sizes={getSrc(images, 'commission.png')}
             alt="European Commission"
             className={styles.logo}
           />
@@ -56,8 +65,8 @@ const Footer = () => (
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img
-            src={parliamentLogo}
+          <Img
+            sizes={getSrc(images, 'parliament.png')}
             alt="European Parliament"
             className={styles.logo}
           />
@@ -68,8 +77,8 @@ const Footer = () => (
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img
-            src={councilLogo}
+          <Img
+            sizes={getSrc(images, 'council.png')}
             alt="European Council"
             className={styles.councilLogo}
           />
