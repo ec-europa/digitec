@@ -11,7 +11,7 @@ import PropTypes from 'prop-types';
 import styles from './Page.module.scss';
 
 // Components
-// import EventRow from '../../components/Events/Row';
+import EventRow from '../Event/Row';
 
 // Images
 import twitterLogo from './twitter.png';
@@ -23,22 +23,32 @@ class Page extends React.Component {
 
   render() {
     // const { speaker, speakerEvents, schedule, onToggleEvent } = this.props;
-    const { speaker, children } = this.props;
-    const sessions = '';
+    const { speaker, events, children } = this.props;
 
-    /* speakerEvents.length
-      ? <div>
-          <h3>Session{speakerEvents.length > 1 ? 's' : ''}</h3>
-          {speakerEvents.map(event => (
+    const sessions =
+      events && events.length ? (
+        <div>
+          <h3>Session{events.length > 1 ? 's' : ''}</h3>
+          {events.map(event => (
             <EventRow
               key={event.id}
-              event={event}
-              checked={schedule[event.id]}
-              onToggle={onToggleEvent}
+              event={{
+                id: event.id,
+                slug: event.fields.slug,
+                title: event.frontmatter.title,
+                starts: event.frontmatter.starts,
+                ends: event.frontmatter.ends,
+                venue: event.frontmatter.venue,
+                color: event.frontmatter.color,
+              }}
+              // checked={schedule[event.id]}
+              // onToggle={onToggleEvent}
             />
           ))}
         </div>
-      : ''; */
+      ) : (
+        ''
+      );
 
     return (
       <div className={styles.container}>
@@ -50,26 +60,23 @@ class Page extends React.Component {
           />
           <div className={styles.headerTitles}>
             <h3>
-              {speaker.firstname}
-              {' '}
+              {speaker.firstname}{' '}
               <span className={styles.lastname}>{speaker.lastname}</span>
             </h3>
             <h4 className={styles.title}>{speaker.title}</h4>
           </div>
         </div>
-        <div className={styles.bio}>
-          {children}
-        </div>
-        {speaker.twitter
-          ? <a
-              className={styles.twitter}
-              href={`https://twitter.com/${speaker.twitter.substr(1)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src={twitterLogo} alt="Twitter Feed" /> {speaker.twitter}
-            </a>
-          : null}
+        <div className={styles.bio}>{children}</div>
+        {speaker.twitter ? (
+          <a
+            className={styles.twitter}
+            href={`https://twitter.com/${speaker.twitter.substr(1)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={twitterLogo} alt="Twitter Feed" /> {speaker.twitter}
+          </a>
+        ) : null}
         {sessions}
       </div>
     );

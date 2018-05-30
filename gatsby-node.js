@@ -57,6 +57,8 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
   }
 };
 
+// Map Speakers <-> Events
+// As discussed here: https://github.com/gatsbyjs/gatsby/issues/3129#issuecomment-365308599
 exports.sourceNodes = ({ boundActionCreators, getNodes, getNode }) => {
   const { createNodeField } = boundActionCreators;
 
@@ -102,19 +104,19 @@ exports.sourceNodes = ({ boundActionCreators, getNodes, getNode }) => {
       }
     });
 
-  Object.entries(eventSpeakers).forEach(([speakerNodeId, bookIds]) => {
+  Object.entries(eventSpeakers).forEach(([speakerNodeId, events]) => {
     createNodeField({
       node: getNode(speakerNodeId),
       name: `events`,
-      value: bookIds,
+      value: events,
     });
   });
 
-  Object.entries(speakerEvents).forEach(([bookNodeId, authorIds]) => {
+  Object.entries(speakerEvents).forEach(([eventNodeId, speakers]) => {
     createNodeField({
-      node: getNode(bookNodeId),
+      node: getNode(eventNodeId),
       name: `speakers`,
-      value: authorIds,
+      value: speakers,
     });
   });
 };

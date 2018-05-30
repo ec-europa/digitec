@@ -14,6 +14,7 @@ export const SpeakerTemplate = ({
   picture,
   title,
   twitter,
+  events,
   helmet,
 }) => {
   const PostContent = contentComponent || Content;
@@ -25,8 +26,9 @@ export const SpeakerTemplate = ({
         lastname,
         title,
         picture,
-        twitter
+        twitter,
       }}
+      events={events}
     >
       <PostContent className={contentStyles.content} content={content} />
     </SpeakerPage>
@@ -40,6 +42,8 @@ SpeakerTemplate.propTypes = {
   lastname: PropTypes.string,
   title: PropTypes.string,
   picture: PropTypes.string,
+  twitter: PropTypes.string,
+  events: PropTypes.array,
   helmet: PropTypes.instanceOf(Helmet),
 };
 
@@ -49,6 +53,8 @@ SpeakerTemplate.defaultProps = {
   lastname: '',
   title: '',
   picture: '',
+  twitter: '',
+  events: [],
   helmet: null,
 };
 
@@ -63,6 +69,7 @@ const Speaker = ({ data }) => {
       lastname={post.frontmatter.lastname}
       picture={post.frontmatter.picture}
       twitter={post.frontmatter.twitter}
+      events={post.fields.events}
       helmet={
         <Helmet
           title={`${post.frontmatter.firstname} ${
@@ -84,10 +91,25 @@ Speaker.propTypes = {
 export default Speaker;
 
 export const pageQuery = graphql`
-  query SpeakerByID($id: String!) {
+  query SpeakerWithEventsByID($id: String!) {
     markdownRemark(id: { eq: $id }) {
       id
       html
+      fields {
+        events {
+          id
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            starts
+            ends
+            venue
+            color
+          }
+        }
+      }
       frontmatter {
         firstname
         lastname

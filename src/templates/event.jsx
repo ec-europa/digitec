@@ -13,6 +13,7 @@ export const EventTemplate = ({
   starts,
   ends,
   venue,
+  speakers,
   helmet,
 }) => {
   const PostContent = contentComponent || Content;
@@ -23,8 +24,9 @@ export const EventTemplate = ({
         title,
         starts,
         ends,
-        venue
+        venue,
       }}
+      speakers={speakers}
     >
       <PostContent className={contentStyles.content} content={content} />
     </EventPage>
@@ -38,6 +40,7 @@ EventTemplate.propTypes = {
   ends: PropTypes.string,
   title: PropTypes.string,
   venue: PropTypes.string,
+  speakers: PropTypes.array,
   helmet: PropTypes.instanceOf(Helmet),
 };
 
@@ -47,6 +50,7 @@ EventTemplate.defaultProps = {
   ends: '',
   title: '',
   venue: '',
+  speakers: [],
   helmet: null,
 };
 
@@ -60,6 +64,7 @@ const Event = ({ data }) => {
       starts={post.frontmatter.starts}
       ends={post.frontmatter.ends}
       venue={post.frontmatter.venue}
+      speakers={post.fields.speakers}
       helmet={
         <Helmet
           title={`${post.frontmatter.firstname} ${
@@ -85,6 +90,20 @@ export const pageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       id
       html
+      fields {
+        speakers {
+          id
+          fields {
+            slug
+          }
+          frontmatter {
+            firstname
+            lastname
+            picture
+            title
+          }
+        }
+      }
       frontmatter {
         id
         title
