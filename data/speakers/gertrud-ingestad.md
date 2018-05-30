@@ -3,7 +3,7 @@ templateKey: speaker
 firstname: Gertrud
 lastname: Ingestad
 title: Director-General of the DG for Informatics
-twitter: test
+twitter: ''
 picture: /img/gertrud-ingestad.jpg
 ---
 Gertrud Ingestad was born in Sweden in 1958. She did her studies in languages and history and worked as a language teacher in Stockholm before joining the European Commission in 1995.
