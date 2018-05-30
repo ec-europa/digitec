@@ -56,7 +56,10 @@ export default ProgrammePage;
 
 export const pageQuery = graphql`
   query ProgrammeQuery {
-    allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/events/" } }) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___starts], order: ASC }
+      filter: { fileAbsolutePath: { regex: "/events/" } }
+    ) {
       edges {
         node {
           html

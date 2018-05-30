@@ -45,7 +45,10 @@ export default SpeakersPage;
 
 export const pageQuery = graphql`
   query SpeakersQuery {
-    allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/speakers/" } }) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___lastname], order: ASC }
+      filter: { fileAbsolutePath: { regex: "/speakers/" } }
+    ) {
       edges {
         node {
           html

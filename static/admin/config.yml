@@ -40,8 +40,8 @@ collections:
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "event"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Start", name: "starts", widget: "datetime", format: "H:mm"}
-      - {label: "Ends", name: "ends", widget: "datetime", format: "H:mm"}
+      - {label: "Start", name: "starts", widget: "datetime", format: "HH:mm"}
+      - {label: "Ends", name: "ends", widget: "datetime", format: "HH:mm"}
       - {label: "Venue", name: "venue", widget: "string", required: false}
       - {label: "Color", name: "color", widget: "select", default: "grey", options: ["none", "grey", "blue", "purple", "yellow"]}
       - {label: "Register", name: "register", widget: "boolean", default: false}
