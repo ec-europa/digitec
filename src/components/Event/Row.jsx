@@ -56,33 +56,38 @@ class Row extends React.Component {
     return (
       <li className={rowClasses}>
         <div className={styles.primary}>
-          {learnMore
-            ? <div>
-                <Link
-                  className={styles.title}
-                  to={{
-                    pathname: event.slug,
-                    state: { modal: true },
-                  }}
-                >
-                  {event.title}
-                </Link>
-              </div>
-            : <span className={styles.title}>{event.title}</span>}
+          {learnMore ? (
+            <div>
+              <Link
+                className={styles.title}
+                to={{
+                  pathname: event.slug,
+                  state: { modal: true },
+                }}
+              >
+                {event.title}
+              </Link>
+            </div>
+          ) : (
+            <span className={styles.title}>{event.title}</span>
+          )}
           <span className={styles.subtitle}>
-            {displayTime || (event.venue && event.venue.length > 0)
-              ? <span className={styles.timeAndVenue}>
-                  {startsAt}{displayTime && event.ends ? ' - ' : ''}{endsAt}
-                  {venue}
-                </span>
-              : null}
+            {displayTime || (event.venue && event.venue.length > 0) ? (
+              <span className={styles.timeAndVenue}>
+                {startsAt}
+                {displayTime && event.ends ? ' - ' : ''}
+                {endsAt}
+                {venue}
+              </span>
+            ) : null}
           </span>
         </div>
-        {event.register &&
-          <span className={styles.secondary}>checkbox here</span>}
+        {event.register && (
+          <span className={styles.secondary}>checkbox here</span>
+        )}
       </li>
     );
-    /*eslint-enable */
+    /* eslint-enable */
   }
 }
 

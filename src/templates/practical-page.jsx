@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Content, { HTMLContent } from '../components/Content';
+import Helmet from 'react-helmet';
 
 import containerStyles from '../utils/_container.module.scss';
 import contentStyles from '../utils/_content.module.scss';
@@ -10,6 +11,7 @@ export const PracticalPageTemplate = ({ title, content, contentComponent }) => {
 
   return (
     <section className={containerStyles.container}>
+      <Helmet title={title} />
       <h1 className={contentStyles.fs9}>{title}</h1>
       <PostContent className={contentStyles.content} content={content} />
     </section>

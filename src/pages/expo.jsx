@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
 
 import StandCard from '../components/Stand/Card';
 
@@ -12,16 +13,20 @@ const StandsPage = props => {
 
   return (
     <section className={containerStyles.container}>
+      <Helmet title="Expo" />
       <h1 className={contentStyles.fs9}>Expo</h1>
       <div style={{ display: 'flex' }}>
         {stands.map(({ node: stand }) => (
-          <StandCard stand={{
-            slug: stand.fields.slug,
-            title: stand.frontmatter.title,
-            subtitle: stand.frontmatter.subtitle,
-            visual: stand.frontmatter.visual,
-            number: stand.frontmatter.number
-          }} />
+          <StandCard
+            key={stand.fields.slug}
+            stand={{
+              slug: stand.fields.slug,
+              title: stand.frontmatter.title,
+              subtitle: stand.frontmatter.subtitle,
+              visual: stand.frontmatter.visual,
+              number: stand.frontmatter.number,
+            }}
+          />
         ))}
       </div>
     </section>
@@ -44,12 +49,10 @@ export const pageQuery = graphql`
       edges {
         node {
           html
-          id
           fields {
             slug
           }
           frontmatter {
-            id
             title
             subtitle
             visual

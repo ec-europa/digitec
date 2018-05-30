@@ -50,7 +50,7 @@ const Page = ({
         <h2>Speaker{speakers.length > 1 ? 's' : ''}</h2>
         {speakers.map(speaker => (
           <SpeakerRow
-            key={speaker.id}
+            key={speaker.fields.slug}
             speaker={{
               slug: speaker.fields.slug,
               picture: speaker.frontmatter.picture,

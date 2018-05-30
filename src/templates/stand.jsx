@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import Content, { HTMLContent } from '../components/Content';
@@ -18,16 +18,19 @@ export const StandTemplate = ({
   const PostContent = contentComponent || Content;
 
   return (
-    <StandPage
-      stand={{
-        title,
-        subtitle,
-        visual,
-        number,
-      }}
-    >
-      <PostContent className={contentStyles.content} content={content} />
-    </StandPage>
+    <Fragment>
+      {helmet || ''}
+      <StandPage
+        stand={{
+          title,
+          subtitle,
+          visual,
+          number,
+        }}
+      >
+        <PostContent className={contentStyles.content} content={content} />
+      </StandPage>
+    </Fragment>
   );
 };
 
@@ -38,7 +41,7 @@ StandTemplate.propTypes = {
   subtitle: PropTypes.string,
   visual: PropTypes.string,
   number: PropTypes.string,
-  helmet: PropTypes.instanceOf(Helmet),
+  helmet: PropTypes.object,
 };
 
 StandTemplate.defaultProps = {
@@ -60,9 +63,7 @@ const Stand = ({ data }) => {
       subtitle={post.frontmatter.subtitle}
       visual={post.frontmatter.visual}
       number={post.frontmatter.number}
-      helmet={
-        <Helmet title={`${post.frontmatter.title} | Stands`} />
-      }
+      helmet={<Helmet title={post.frontmatter.title} />}
     />
   );
 };
@@ -78,7 +79,6 @@ export default Stand;
 export const pageQuery = graphql`
   query StandByID($id: String!) {
     markdownRemark(id: { eq: $id }) {
-      id
       html
       frontmatter {
         title

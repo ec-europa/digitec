@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
 import Link from 'gatsby-link';
 
 import EventsList from '../components/Event/List';
@@ -17,18 +18,18 @@ const ProgrammePage = props => {
     starts: event.frontmatter.starts,
     ends: event.frontmatter.ends,
     venue: event.frontmatter.venue,
-    color: event.frontmatter.color
+    color: event.frontmatter.color,
   }));
 
   return (
     <div className={containerStyles.container}>
+      <Helmet title="Programme" />
       <div className={containerStyles.header}>
         <h1 className={contentStyles.fs9}>Programme</h1>
       </div>
       <div className={containerStyles.intro}>
         <p>
-          Choose and save your favourite sessions to
-          {' '}
+          Choose and save your favourite sessions to{' '}
           <Link to={'/my-digitec'}>My DIGITEC</Link>
           .
         </p>
@@ -59,12 +60,10 @@ export const pageQuery = graphql`
       edges {
         node {
           html
-          id
           fields {
             slug
           }
           frontmatter {
-            id
             title
             starts
             ends

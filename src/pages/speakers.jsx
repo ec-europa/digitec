@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
 
 import SpeakerCard from '../components/Speaker/Card';
 
@@ -12,10 +13,12 @@ const SpeakersPage = props => {
 
   return (
     <section className={containerStyles.container}>
+      <Helmet title="Speakers" />
       <h1 className={contentStyles.fs9}>Speakers</h1>
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
         {speakers.map(({ node: speaker }) => (
           <SpeakerCard
+            key={speaker.fields.slug}
             speaker={{
               slug: speaker.fields.slug,
               firstname: speaker.frontmatter.firstname,
@@ -46,12 +49,10 @@ export const pageQuery = graphql`
       edges {
         node {
           html
-          id
           fields {
             slug
           }
           frontmatter {
-            id
             firstname
             lastname
             picture

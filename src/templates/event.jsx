@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import Content, { HTMLContent } from '../components/Content';
@@ -19,17 +19,20 @@ export const EventTemplate = ({
   const PostContent = contentComponent || Content;
 
   return (
-    <EventPage
-      event={{
-        title,
-        starts,
-        ends,
-        venue,
-      }}
-      speakers={speakers}
-    >
-      <PostContent className={contentStyles.content} content={content} />
-    </EventPage>
+    <Fragment>
+      {helmet || ''}
+      <EventPage
+        event={{
+          title,
+          starts,
+          ends,
+          venue,
+        }}
+        speakers={speakers}
+      >
+        <PostContent className={contentStyles.content} content={content} />
+      </EventPage>
+    </Fragment>
   );
 };
 
@@ -41,7 +44,7 @@ EventTemplate.propTypes = {
   title: PropTypes.string,
   venue: PropTypes.string,
   speakers: PropTypes.array,
-  helmet: PropTypes.instanceOf(Helmet),
+  helmet: PropTypes.object,
 };
 
 EventTemplate.defaultProps = {
@@ -65,13 +68,7 @@ const Event = ({ data }) => {
       ends={post.frontmatter.ends}
       venue={post.frontmatter.venue}
       speakers={post.fields.speakers}
-      helmet={
-        <Helmet
-          title={`${post.frontmatter.firstname} ${
-            post.frontmatter.lastname
-          } | Events`}
-        />
-      }
+      helmet={<Helmet title={post.frontmatter.title} />}
       title={post.frontmatter.title}
     />
   );
@@ -88,11 +85,9 @@ export default Event;
 export const pageQuery = graphql`
   query EventByID($id: String!) {
     markdownRemark(id: { eq: $id }) {
-      id
       html
       fields {
         speakers {
-          id
           fields {
             slug
           }
@@ -105,7 +100,6 @@ export const pageQuery = graphql`
         }
       }
       frontmatter {
-        id
         title
         starts
         ends

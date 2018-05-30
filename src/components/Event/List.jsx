@@ -30,7 +30,7 @@ const List = ({
 
     const eventsRows = eventsList.map(event => (
       <Row
-        key={event.id}
+        key={event.slug}
         event={event}
         // checked={schedule[event.id]}
         // onToggle={onToggle}
@@ -39,9 +39,9 @@ const List = ({
       />
     ));
 
-    const eventsEnds = eventsList[0].ends
-      ? <time>{eventsList[0].ends}</time>
-      : null;
+    const eventsEnds = eventsList[0].ends ? (
+      <time>{eventsList[0].ends}</time>
+    ) : null;
 
     eventsDisplay.push(
       <div className={styles.block} key={eventsList[0].starts}>
@@ -56,7 +56,7 @@ const List = ({
   });
 
   return eventsDisplay;
-}
+};
 
 List.propTypes = {
   events: PropTypes.array,
