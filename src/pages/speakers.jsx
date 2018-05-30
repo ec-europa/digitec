@@ -13,15 +13,17 @@ const SpeakersPage = props => {
   return (
     <section className={containerStyles.container}>
       <h1 className={contentStyles.fs9}>Speakers</h1>
-      <div style={{ display: 'flex' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap' }}>
         {speakers.map(({ node: speaker }) => (
-          <SpeakerCard speaker={{
-            slug: speaker.fields.slug,
-            firstname: speaker.frontmatter.firstname,
-            lastname: speaker.frontmatter.lastname,
-            picture: speaker.frontmatter.picture,
-            title: speaker.frontmatter.title
-          }} />
+          <SpeakerCard
+            speaker={{
+              slug: speaker.fields.slug,
+              firstname: speaker.frontmatter.firstname,
+              lastname: speaker.frontmatter.lastname,
+              picture: speaker.frontmatter.picture,
+              title: speaker.frontmatter.title,
+            }}
+          />
         ))}
       </div>
     </section>
