@@ -1,12 +1,11 @@
 ---
 templateKey: event
-title: Test event
-starts: '9:15'
-ends: '10:30'
+title: Registration and Welcome coffee / VIP breakfast
+starts: '8:30'
+ends: '9:00'
 venue: Main hall
-color: grey
-register: true
-speakers:
-  - speaker: Baker
+color: none
+register: false
+speakers: []
 ---
-Test _content_ for dummy event
+
