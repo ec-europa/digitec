@@ -23,7 +23,7 @@ const StandsPage = props => {
               slug: stand.fields.slug,
               title: stand.frontmatter.title,
               subtitle: stand.frontmatter.subtitle,
-              visual: stand.frontmatter.visual,
+              picture: stand.frontmatter.picture.childImageSharp,
               number: stand.frontmatter.number,
             }}
           />
@@ -55,7 +55,13 @@ export const pageQuery = graphql`
           frontmatter {
             title
             subtitle
-            visual
+            picture {
+              childImageSharp {
+                sizes(maxWidth: 200) {
+                  ...GatsbyImageSharpSizes
+                }
+              }
+            }
             number
           }
         }

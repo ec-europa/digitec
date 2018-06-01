@@ -48,6 +48,15 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
   const { createNodeField } = boundActionCreators;
 
   if (node.internal.type === `MarkdownRemark`) {
+    // Make paths relative
+    ['picture', 'image'].forEach(prop => {
+      if (node.frontmatter[prop]) {
+        // eslint-disable-next-line no-param-reassign
+        node.frontmatter[prop] = `../../static${node.frontmatter[prop]}`;
+      }
+    });
+
+    // Add slug field
     const value = createFilePath({ node, getNode });
     createNodeField({
       name: `slug`,
@@ -75,13 +84,6 @@ exports.sourceNodes = ({ boundActionCreators, getNodes, getNode }) => {
         node2.frontmatter.lastname === speaker.speaker
     );
 
-  const images = getNodes().filter(node => node.internal.type === 'ImageSharp');
-  const findImages = imgPath =>
-    images.find(image => image.id.indexOf(imgPath) >= 0);
-
-  // console.log(findImages('/img/gertrud-ingestad.jpg'));
-  // process.exit();
-
   getNodes()
     .filter(node => node.internal.type === `MarkdownRemark`)
     .forEach(node => {
@@ -107,14 +109,6 @@ exports.sourceNodes = ({ boundActionCreators, getNodes, getNode }) => {
 
           // add author to this book
           return speakerEvents[node.id].push(speakerNode.id);
-        });
-      }
-
-      if (node.frontmatter.picture) {
-        createNodeField({
-          node,
-          name: 'picture',
-          value: findImages(node.frontmatter.picture.slice(1)).id,
         });
       }
     });

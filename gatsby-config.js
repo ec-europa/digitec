@@ -26,6 +26,7 @@ module.exports = {
         name: 'images',
       },
     },
+    // Resolve static images in order to apply sharp transformations
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -52,6 +53,5 @@ module.exports = {
   mapping: {
     'MarkdownRemark.fields.speakers': `MarkdownRemark`,
     'MarkdownRemark.fields.events': `MarkdownRemark`,
-    'MarkdownRemark.fields.picture': `ImageSharp`,
   },
 };

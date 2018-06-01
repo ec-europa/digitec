@@ -6,6 +6,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import Img from 'gatsby-image';
 
 // Styles
 import styles from './Page.module.scss';
@@ -43,11 +44,15 @@ const Page = ({ speaker, events, children }) => {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <img
-          src={speaker.picture}
-          alt={`${speaker.firstname} ${speaker.lastname}`}
-          className={styles.headerPicture}
-        />
+        {speaker.picture.type === Img
+          ? React.cloneElement(speaker.picture, {
+              alt: `${speaker.firstname} ${speaker.lastname}`,
+              outerWrapperClassName: styles.headerPicture,
+            })
+          : React.cloneElement(speaker.picture, {
+              alt: `${speaker.firstname} ${speaker.lastname}`,
+              className: styles.headerPicture,
+            })}
         <div className={styles.headerTitles}>
           <h3>
             {speaker.firstname}{' '}

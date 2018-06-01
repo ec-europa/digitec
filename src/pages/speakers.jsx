@@ -24,7 +24,7 @@ const SpeakersPage = props => {
               slug: speaker.fields.slug,
               firstname: speaker.frontmatter.firstname,
               lastname: speaker.frontmatter.lastname,
-              picture: speaker.fields.picture,
+              picture: speaker.frontmatter.picture.childImageSharp,
               title: speaker.frontmatter.title,
             }}
           />
@@ -55,16 +55,17 @@ export const pageQuery = graphql`
           html
           fields {
             slug
-            picture {
-              sizes(maxWidth: 200) {
-                ...GatsbyImageSharpSizes
-              }
-            }
           }
           frontmatter {
             firstname
             lastname
-            picture
+            picture {
+              childImageSharp {
+                sizes(maxWidth: 200) {
+                  ...GatsbyImageSharpSizes
+                }
+              }
+            }
             title
           }
         }

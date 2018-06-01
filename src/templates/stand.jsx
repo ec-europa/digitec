@@ -1,6 +1,8 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import Img from 'gatsby-image';
+
 import Content, { HTMLContent } from '../components/Content';
 
 import StandPage from '../components/Stand/Page';
@@ -11,7 +13,7 @@ export const StandTemplate = ({
   contentComponent,
   title,
   subtitle,
-  visual,
+  picture,
   number,
   helmet,
 }) => {
@@ -24,7 +26,7 @@ export const StandTemplate = ({
         stand={{
           title,
           subtitle,
-          visual,
+          picture,
           number,
         }}
       >
@@ -39,16 +41,17 @@ StandTemplate.propTypes = {
   contentComponent: PropTypes.func,
   title: PropTypes.string,
   subtitle: PropTypes.string,
-  visual: PropTypes.string,
+  picture: PropTypes.element,
   number: PropTypes.string,
-  helmet: PropTypes.object,
+  helmet: PropTypes.element,
 };
 
 StandTemplate.defaultProps = {
   contentComponent: null,
   title: '',
   subtitle: '',
-  visual: '',
+  picture: null,
+  number: '0',
   helmet: null,
 };
 
@@ -61,7 +64,7 @@ const Stand = ({ data }) => {
       contentComponent={HTMLContent}
       title={post.frontmatter.title}
       subtitle={post.frontmatter.subtitle}
-      visual={post.frontmatter.visual}
+      picture={<Img sizes={post.frontmatter.picture.childImageSharp.sizes} />}
       number={post.frontmatter.number}
       helmet={<Helmet title={post.frontmatter.title} />}
     />
@@ -83,7 +86,13 @@ export const pageQuery = graphql`
       frontmatter {
         title
         subtitle
-        visual
+        picture {
+          childImageSharp {
+            sizes(maxWidth: 260) {
+              ...GatsbyImageSharpSizes
+            }
+          }
+        }
         number
       }
     }

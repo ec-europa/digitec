@@ -94,7 +94,13 @@ export const pageQuery = graphql`
           frontmatter {
             firstname
             lastname
-            picture
+            picture {
+              childImageSharp {
+                sizes(maxWidth: 200) {
+                  ...GatsbyImageSharpSizes
+                }
+              }
+            }
             title
           }
         }
