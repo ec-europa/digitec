@@ -23,11 +23,19 @@ export const HomePageTemplate = ({
 );
 
 HomePageTemplate.propTypes = {
-  image: PropTypes.object,
+  image: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   title: PropTypes.string,
   heading: PropTypes.string,
   hashtag: PropTypes.string,
   description: PropTypes.string,
+};
+
+HomePageTemplate.defaultProps = {
+  image: '',
+  title: '',
+  heading: '',
+  hashtag: '',
+  description: '',
 };
 
 const HomePage = ({ data }) => {
@@ -35,7 +43,7 @@ const HomePage = ({ data }) => {
 
   return (
     <HomePageTemplate
-      image={frontmatter.image.childImageSharp}
+      image={frontmatter.image}
       title={frontmatter.title}
       heading={frontmatter.heading}
       hashtag={frontmatter.hashtag}
@@ -63,7 +71,7 @@ export const productPageQuery = graphql`
         image {
           childImageSharp {
             sizes(maxWidth: 1500, rotate: 180) {
-              ...GatsbyImageSharpSizes
+              ...GatsbyImageSharpSizes_withWebp
             }
           }
         }

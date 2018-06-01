@@ -42,7 +42,7 @@ StandTemplate.propTypes = {
   title: PropTypes.string,
   subtitle: PropTypes.string,
   picture: PropTypes.element,
-  number: PropTypes.string,
+  number: PropTypes.number,
   helmet: PropTypes.element,
 };
 
@@ -89,7 +89,7 @@ export const pageQuery = graphql`
         picture {
           childImageSharp {
             sizes(maxWidth: 260) {
-              ...GatsbyImageSharpSizes
+              ...GatsbyImageSharpSizes_withWebp
             }
           }
         }

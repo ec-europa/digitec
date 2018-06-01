@@ -12,20 +12,36 @@ import styles from './Cover.module.scss';
 
 const Cover = ({ image, title, heading, hashtag }) => (
   <div className={styles.coverContainer}>
-    <Img
-      sizes={image.sizes}
-      alt="DIGITEC 2018"
-      // outerWrapperClassName={styles.coverImageContainer}
-      // style={{ height: '100%' }}
-      role="presentation"
-      style={{
-        position: 'absolute',
-        left: 0,
-        top: 0,
-        width: '100%',
-        height: '100%',
-      }}
-    />
+    {image.childImageSharp && image.childImageSharp.sizes ? (
+      <Img
+        sizes={image.childImageSharp.sizes}
+        alt="DIGITEC 2018"
+        role="presentation"
+        style={{
+          position: 'absolute',
+          left: 0,
+          top: 0,
+          width: '100%',
+          height: '100%',
+        }}
+      />
+    ) : (
+      <img
+        src={image}
+        alt="DIGITEC 2018"
+        role="presentation"
+        style={{
+          position: 'absolute',
+          left: 0,
+          top: 0,
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          objectPosition: 'center center',
+        }}
+      />
+    )}
+
     <div className={styles.coverTitleContainer}>
       <div className={styles.coverTitleContainerRow}>
         <h1>{title}</h1>
@@ -46,10 +62,17 @@ const Cover = ({ image, title, heading, hashtag }) => (
 );
 
 Cover.propTypes = {
-  image: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  heading: PropTypes.string.isRequired,
-  hashtag: PropTypes.string.isRequired,
+  image: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  title: PropTypes.string,
+  heading: PropTypes.string,
+  hashtag: PropTypes.string,
+};
+
+Cover.defaultProps = {
+  image: '',
+  title: '',
+  heading: '',
+  hashtag: '',
 };
 
 export default Cover;
