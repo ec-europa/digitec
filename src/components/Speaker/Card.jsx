@@ -1,12 +1,13 @@
 /**
-*
-  * Speakers/Speaker
-  *
-  */
+ *
+ * Speakers/Speaker
+ *
+ */
 
 import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
+import Img from 'gatsby-image';
 
 import styles from './Card.module.scss';
 
@@ -19,24 +20,22 @@ const Speaker = ({ speaker }) => {
         state: { modal: true },
       }}
     >
-      <div className={styles.pictureFrame}>
-        <img
-          className={styles.picture}
-          src={speaker.picture}
-          alt={`${speaker.firstname} ${speaker.lastname}`}
-        />
-      </div>
+      <Img
+        sizes={speaker.picture.sizes}
+        className={styles.picture}
+        outerWrapperClassName={styles.pictureFrame}
+        alt={`${speaker.firstname} ${speaker.lastname}`}
+      />
       <div className={styles.info}>
         <div className={styles.name}>
-          {speaker.firstname}
-          {' '}
+          {speaker.firstname}{' '}
           <span className={styles.lastname}>{speaker.lastname}</span>
         </div>
         <div className={styles.title}>{speaker.title}</div>
       </div>
     </Link>
   );
-}
+};
 
 Speaker.propTypes = {
   speaker: PropTypes.object,

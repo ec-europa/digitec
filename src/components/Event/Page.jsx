@@ -87,8 +87,8 @@ const Page = ({
         {venue}
       </h2>
       <div className={styles.name}>
-        {event.visual && (
-          <img className={styles.visual} src={event.visual} alt={event.title} />
+        {event.picture && (
+          <img className={styles.picture} src={event.picture} alt={event.title} />
         )}
         {children}
       </div>

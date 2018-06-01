@@ -7,7 +7,7 @@ const SpeakerPreview = ({ entry, widgetFor }) => (
     content={widgetFor('body')}
     firstname={entry.getIn(['data', 'firstname'])}
     lastname={entry.getIn(['data', 'lastname'])}
-    picture={entry.getIn(['data', 'picture'])}
+    picture={<img src={entry.getIn(['data', 'picture'])} />}
     title={entry.getIn(['data', 'title'])}
   />
 );

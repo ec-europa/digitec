@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import Content, { HTMLContent } from '../components/Content';
+import Img from 'gatsby-image';
 
 import SpeakerPage from '../components/Speaker/Page';
 import contentStyles from '../utils/_content.module.scss';
@@ -44,7 +45,7 @@ SpeakerTemplate.propTypes = {
   firstname: PropTypes.string,
   lastname: PropTypes.string,
   title: PropTypes.string,
-  picture: PropTypes.string,
+  picture: PropTypes.element,
   twitter: PropTypes.string,
   events: PropTypes.array,
   helmet: PropTypes.object,
@@ -55,7 +56,7 @@ SpeakerTemplate.defaultProps = {
   firstname: '',
   lastname: '',
   title: '',
-  picture: '',
+  picture: null,
   twitter: '',
   events: [],
   helmet: null,
@@ -70,7 +71,7 @@ const Speaker = ({ data }) => {
       contentComponent={HTMLContent}
       firstname={post.frontmatter.firstname}
       lastname={post.frontmatter.lastname}
-      picture={post.frontmatter.picture}
+      picture={<Img sizes={post.frontmatter.picture.childImageSharp.sizes} />}
       twitter={post.frontmatter.twitter}
       events={post.fields.events}
       helmet={
@@ -114,7 +115,13 @@ export const pageQuery = graphql`
         lastname
         title
         twitter
-        picture
+        picture {
+          childImageSharp {
+            sizes(maxWidth: 260) {
+              ...GatsbyImageSharpSizes_withWebp
+            }
+          }
+        }
       }
     }
   }

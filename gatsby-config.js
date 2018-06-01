@@ -19,13 +19,21 @@ module.exports = {
         name: 'pages',
       },
     },
-    /* {
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/img`,
         name: 'images',
       },
-    }, */
+    },
+    // Resolve static images in order to apply sharp transformations
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/static/img`,
+        name: 'static-images',
+      },
+    },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {

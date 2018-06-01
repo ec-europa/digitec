@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 import Cover from '../components/Cover/Cover';
@@ -11,7 +11,7 @@ export const HomePageTemplate = ({
   hashtag,
   description,
 }) => (
-  <section className="section section--gradient">
+  <Fragment>
     <Cover image={image} title={title} heading={heading} hashtag={hashtag} />
     <div
       className={contentStyles.contentBig}
@@ -19,15 +19,23 @@ export const HomePageTemplate = ({
     >
       <p>{description}</p>
     </div>
-  </section>
+  </Fragment>
 );
 
 HomePageTemplate.propTypes = {
-  image: PropTypes.string,
+  image: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   title: PropTypes.string,
   heading: PropTypes.string,
   hashtag: PropTypes.string,
   description: PropTypes.string,
+};
+
+HomePageTemplate.defaultProps = {
+  image: '',
+  title: '',
+  heading: '',
+  hashtag: '',
+  description: '',
 };
 
 const HomePage = ({ data }) => {
@@ -60,7 +68,13 @@ export const productPageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
-        image
+        image {
+          childImageSharp {
+            sizes(maxWidth: 1500, rotate: 180) {
+              ...GatsbyImageSharpSizes_withWebp
+            }
+          }
+        }
         heading
         hashtag
         description

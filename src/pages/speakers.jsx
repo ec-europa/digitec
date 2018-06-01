@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import Img from 'gatsby-image';
 
 import SpeakerCard from '../components/Speaker/Card';
 
@@ -23,7 +24,7 @@ const SpeakersPage = props => {
               slug: speaker.fields.slug,
               firstname: speaker.frontmatter.firstname,
               lastname: speaker.frontmatter.lastname,
-              picture: speaker.frontmatter.picture,
+              picture: speaker.frontmatter.picture.childImageSharp,
               title: speaker.frontmatter.title,
             }}
           />
@@ -58,7 +59,13 @@ export const pageQuery = graphql`
           frontmatter {
             firstname
             lastname
-            picture
+            picture {
+              childImageSharp {
+                sizes(maxWidth: 200) {
+                  ...GatsbyImageSharpSizes_withWebp
+                }
+              }
+            }
             title
           }
         }

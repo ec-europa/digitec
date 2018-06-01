@@ -48,6 +48,15 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
   const { createNodeField } = boundActionCreators;
 
   if (node.internal.type === `MarkdownRemark`) {
+    // Make paths relative
+    ['picture', 'image'].forEach(prop => {
+      if (node.frontmatter[prop]) {
+        // eslint-disable-next-line no-param-reassign
+        node.frontmatter[prop] = `../../static${node.frontmatter[prop]}`;
+      }
+    });
+
+    // Add slug field
     const value = createFilePath({ node, getNode });
     createNodeField({
       name: `slug`,
