@@ -26,6 +26,13 @@ module.exports = {
         name: 'images',
       },
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/static/img`,
+        name: 'static-images',
+      },
+    },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
@@ -45,5 +52,6 @@ module.exports = {
   mapping: {
     'MarkdownRemark.fields.speakers': `MarkdownRemark`,
     'MarkdownRemark.fields.events': `MarkdownRemark`,
+    'MarkdownRemark.fields.picture': `ImageSharp`,
   },
 };
