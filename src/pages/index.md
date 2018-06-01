@@ -1,10 +1,10 @@
 ---
 templateKey: 'homepage'
 path: /
-title: 'DIGITEC: Digital Future'
+title: 'DIGITEC: Innovation Space'
 image: '/img/home-header.png'
-heading: '29 November 2016 - Square, Brussels'
-hashtag: '#digitec16'
+heading: '20 November, 2018 - Square, Brussels'
+hashtag: '#digitec18'
 description: >-
-  The IT departments of the European Commission (DIGIT) and the European Parliament (ITEC) have joined forces to organise DIGITEC 2016: Digital Future. The forum brought together the IT communities of the European institutions to share best practices to transform public administration through IT and to discuss how the digital future will shape the way of working in large organisations. See the Twitter highlights storified here and sketchnotes here.
+  The IT departments of the European Commission (DIGIT), the Council of the EU (CIS) and the European Parliament (ITEC) have joined forces to organise the largest to date DIGITEC forum. The forum will bring together the IT communities of the European institutions to share best practices around new technologies in public administration and to discuss how the digital future will shape the way of working in large organisations.
 ---
