@@ -1,8 +1,14 @@
+const config = require('./config.json');
+
 module.exports = {
   siteMetadata: {
-    title: 'DIGITEC',
+    title: config.siteTitle,
+    description: config.siteDescription,
+    siteUrl: config.siteUrl,
+    pathPrefix: config.pathPrefix,
   },
   plugins: [
+    `gatsby-plugin-react-next`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -54,6 +60,9 @@ module.exports = {
       options: {
         plugins: [],
       },
+    },
+    {
+      resolve: `gatsby-plugin-sitemap`,
     },
     {
       resolve: 'gatsby-plugin-netlify-cms',
