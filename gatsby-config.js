@@ -3,6 +3,19 @@ module.exports = {
     title: 'DIGITEC',
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: 'DIGITEC 2018',
+        short_name: 'DIGITEC',
+        start_url: '/',
+        background_color: '#fcfdfd',
+        theme_color: '#009ee2',
+        display: 'minimal-ui',
+        icon: 'src/img/logo-small.png', // This path is relative to the root of the site.
+      },
+    },
+    'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     {
