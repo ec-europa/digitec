@@ -10,11 +10,12 @@ import Img from 'gatsby-image';
 import styles from './Footer.module.scss';
 
 const getSizes = (images, originalImg) => {
-  const img = images.allImageSharp.edges.find(
+  const img = images.allImageSharp.edges.filter(
     edge => edge.node.sizes.originalName === originalImg
   );
+
   if (img) {
-    return img.node.sizes;
+    return img[0].node.sizes;
   }
   return null;
 };
