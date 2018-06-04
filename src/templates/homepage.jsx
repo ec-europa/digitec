@@ -91,7 +91,7 @@ export const productPageQuery = graphql`
         title
         image {
           childImageSharp {
-            sizes(maxWidth: 1500, rotate: 180) {
+            sizes(maxWidth: 1920) {
               ...GatsbyImageSharpSizes_withWebp
             }
           }
