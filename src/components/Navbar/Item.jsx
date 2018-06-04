@@ -26,7 +26,7 @@ class Item extends React.Component {
       <li
         className={classnames(styles.item, { [styles.mobileOnly]: mobileOnly })}
       >
-        {(to.startsWith('http') || to.startsWith('https')) ? (
+        {to.indexOf('http') === 0 || to.indexOf('https') === 0 ? (
           <a
             className={classnames(styles.link, { [styles.primary]: primary })}
             href={to}
