@@ -102,7 +102,7 @@ export const productPageQuery = graphql`
     }
     bigLogo: imageSharp(id: { regex: "/DIGITEC-2018_3-institutions.png/" }) {
       sizes(maxWidth: 600) {
-        ...GatsbyImageSharpSizes
+        ...GatsbyImageSharpSizes_withWebp_noBase64
       }
     }
   }

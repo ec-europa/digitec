@@ -38,8 +38,6 @@ export const query = graphql`
         node {
           id
           sizes {
-            base64
-            tracedSVG
             aspectRatio
             src
             srcSet
