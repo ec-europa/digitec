@@ -146,14 +146,14 @@ class Navbar extends React.PureComponent {
             <div className={styles.navigationHeader}>
               <div className={styles.logos}>
                 <Link to="/" className={styles.link}>
-                  <img src={logo} className={styles.logo} alt="DIGITEC 2016" />
+                  <img src={logo} className={styles.logo} alt="DIGITEC 2018" />
                 </Link>
               </div>
               <div className={styles.navigationHeaderTitle}>
-                <h1>29 November, 2016</h1>
+                <h1>20 November, 2018</h1>
               </div>
               <div className={styles.navigationHeaderTitle}>
-                <h1>Square Brussels</h1>
+                <h1>Square, Brussels</h1>
               </div>
             </div>
             <ul className={styles.navLinks}>
@@ -184,12 +184,12 @@ class Navbar extends React.PureComponent {
               </NavbarItem>
               <NavbarSeparator />
               <NavbarItem
-                to="https://twitter.com/hashtag/digitec16"
+                to="https://twitter.com/hashtag/digitec18"
                 target="_blank"
                 rel="noopener noreferrer"
                 mobileOnly
               >
-                #digitec16
+                #digitec18
               </NavbarItem>
             </ul>
           </div>

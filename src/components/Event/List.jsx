@@ -50,7 +50,7 @@ const List = ({
           {eventsEnds ? ' - ' : ''}
           {eventsEnds}
         </div>
-        {eventsRows}
+        <ul style={{ flexGrow: 1, margin: 0, padding: 0 }}>{eventsRows}</ul>
       </div>
     );
   });
