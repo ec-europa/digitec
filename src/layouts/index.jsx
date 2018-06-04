@@ -33,21 +33,19 @@ export default TemplateWrapper;
 
 export const query = graphql`
   query GatsbyImageSampleQuery {
-    allImageSharp {
-      edges {
-        node {
-          id
-          sizes {
-            aspectRatio
-            src
-            srcSet
-            srcWebp
-            srcSetWebp
-            sizes
-            originalImg
-            originalName
-          }
-        }
+    logoEC: imageSharp(id: { regex: "/commission.png/" }) {
+      sizes(maxWidth: 150, quality: 80) {
+        ...GatsbyImageSharpSizes_withWebp_noBase64
+      }
+    }
+    logoEU: imageSharp(id: { regex: "/parliament.png/" }) {
+      sizes(maxWidth: 150, quality: 80) {
+        ...GatsbyImageSharpSizes_withWebp_noBase64
+      }
+    }
+    logoCouncil: imageSharp(id: { regex: "/council.png/" }) {
+      sizes(maxWidth: 120, quality: 80) {
+        ...GatsbyImageSharpSizes_withWebp_noBase64
       }
     }
   }

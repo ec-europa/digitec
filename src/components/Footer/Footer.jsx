@@ -9,17 +9,6 @@ import Img from 'gatsby-image';
 
 import styles from './Footer.module.scss';
 
-const getSizes = (images, originalImg) => {
-  const img = images.allImageSharp.edges.filter(
-    edge => edge.node.sizes.originalName === originalImg
-  );
-
-  if (img) {
-    return img[0].node.sizes;
-  }
-  return null;
-};
-
 const Footer = ({ images }) => (
   <footer className={styles.container}>
     <div className={styles.innerContainer}>
@@ -55,7 +44,7 @@ const Footer = ({ images }) => (
           rel="noopener noreferrer"
         >
           <Img
-            sizes={getSizes(images, 'commission.png')}
+            sizes={images.logoEC.sizes}
             alt="European Commission"
             className={styles.logo}
           />
@@ -67,7 +56,7 @@ const Footer = ({ images }) => (
           rel="noopener noreferrer"
         >
           <Img
-            sizes={getSizes(images, 'parliament.png')}
+            sizes={images.logoEU.sizes}
             alt="European Parliament"
             className={styles.logo}
           />
@@ -79,7 +68,7 @@ const Footer = ({ images }) => (
           rel="noopener noreferrer"
         >
           <Img
-            sizes={getSizes(images, 'council.png')}
+            sizes={images.logoCouncil.sizes}
             alt="European Council"
             className={styles.councilLogo}
           />
