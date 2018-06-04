@@ -57,7 +57,7 @@ export const pageQuery = graphql`
             subtitle
             picture {
               childImageSharp {
-                sizes(maxWidth: 200) {
+                sizes(maxWidth: 260) {
                   ...GatsbyImageSharpSizes_withWebp
                 }
               }
