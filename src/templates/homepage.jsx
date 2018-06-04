@@ -1,5 +1,7 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
+import Img from 'gatsby-image';
+import Content, { HTMLContent } from '../components/Content';
 
 import Cover from '../components/Cover/Cover';
 import contentStyles from '../utils/_content.module.scss';
@@ -9,25 +11,41 @@ export const HomePageTemplate = ({
   title,
   heading,
   hashtag,
-  description,
-}) => (
-  <Fragment>
-    <Cover image={image} title={title} heading={heading} hashtag={hashtag} />
-    <div
-      className={contentStyles.contentBig}
-      style={{ maxWidth: '54rem', margin: '2rem auto', padding: '0 1rem' }}
-    >
-      <p>{description}</p>
-    </div>
-  </Fragment>
-);
+  content,
+  contentComponent,
+  bigLogo,
+}) => {
+  const PostContent = contentComponent || Content;
+
+  return (
+    <Fragment>
+      <Cover image={image} title={title} heading={heading} hashtag={hashtag} />
+      <div
+        style={{ maxWidth: '54rem', margin: '4rem auto', padding: '0 1rem' }}
+      >
+        <PostContent className={contentStyles.contentBig} content={content} />
+        {bigLogo && (
+          <Img
+            sizes={bigLogo.sizes}
+            style={{
+              margin: '4rem auto',
+              width: '100%',
+              maxWidth: '600px',
+            }}
+          />
+        )}
+      </div>
+    </Fragment>
+  );
+};
 
 HomePageTemplate.propTypes = {
+  content: PropTypes.string.isRequired,
+  contentComponent: PropTypes.func,
   image: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   title: PropTypes.string,
   heading: PropTypes.string,
   hashtag: PropTypes.string,
-  description: PropTypes.string,
 };
 
 HomePageTemplate.defaultProps = {
@@ -35,19 +53,21 @@ HomePageTemplate.defaultProps = {
   title: '',
   heading: '',
   hashtag: '',
-  description: '',
 };
 
 const HomePage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
+  const { bigLogo } = data;
 
   return (
     <HomePageTemplate
+      content={data.markdownRemark.html}
+      contentComponent={HTMLContent}
       image={frontmatter.image}
+      bigLogo={bigLogo}
       title={frontmatter.title}
       heading={frontmatter.heading}
       hashtag={frontmatter.hashtag}
-      description={frontmatter.description}
       intro={frontmatter.intro}
     />
   );
@@ -66,6 +86,7 @@ export default HomePage;
 export const productPageQuery = graphql`
   query HomePage($id: String!) {
     markdownRemark(id: { eq: $id }) {
+      html
       frontmatter {
         title
         image {
@@ -77,7 +98,11 @@ export const productPageQuery = graphql`
         }
         heading
         hashtag
-        description
+      }
+    }
+    bigLogo: imageSharp(id: { regex: "/DIGITEC-2018_3-institutions.png/" }) {
+      sizes(maxWidth: 600) {
+        ...GatsbyImageSharpSizes
       }
     }
   }
