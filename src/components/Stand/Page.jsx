@@ -12,7 +12,7 @@ import Img from 'gatsby-image';
 import styles from './Page.module.scss';
 
 const Page = ({ stand, children }) => (
-  <div className={styles.container}>
+  <section className={styles.container}>
     <div className={styles.header}>
       {stand.picture.type === Img
         ? React.cloneElement(stand.picture, {
@@ -31,7 +31,7 @@ const Page = ({ stand, children }) => (
       </div>
     </div>
     <div className={styles.description}>{children}</div>
-  </div>
+  </section>
 );
 
 Page.propTypes = {

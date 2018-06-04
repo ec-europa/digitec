@@ -22,25 +22,13 @@ const ProgrammePage = props => {
   }));
 
   return (
-    <div className={containerStyles.container}>
+    <section className={containerStyles.container}>
       <Helmet title="Programme" />
       <div className={containerStyles.header}>
         <h1 className={contentStyles.fs9}>Programme</h1>
       </div>
-      <div className={containerStyles.intro}>
-        <p>
-          Choose and save your favourite sessions to{' '}
-          <Link to={'/my-digitec'}>My DIGITEC</Link>
-          .
-        </p>
-      </div>
-      <EventsList
-        events={mappedEvents}
-        // schedule={schedule}
-        // onToggle={onToggleEvent}
-        // location={location}
-      />
-    </div>
+      <EventsList events={mappedEvents} />
+    </section>
   );
 };
 

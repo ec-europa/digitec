@@ -78,7 +78,7 @@ const Page = ({
   */
 
   return (
-    <div className={styles.pageContainer}>
+    <section className={styles.pageContainer}>
       <h1>{event.title}</h1>
       <h2>
         {startsAt}
@@ -88,12 +88,16 @@ const Page = ({
       </h2>
       <div className={styles.name}>
         {event.picture && (
-          <img className={styles.picture} src={event.picture} alt={event.title} />
+          <img
+            className={styles.picture}
+            src={event.picture}
+            alt={event.title}
+          />
         )}
         {children}
       </div>
       {speakersBlock}
-    </div>
+    </section>
   );
 };
 

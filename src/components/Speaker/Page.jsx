@@ -42,7 +42,7 @@ const Page = ({ speaker, events, children }) => {
     );
 
   return (
-    <div className={styles.container}>
+    <section className={styles.container}>
       <div className={styles.header}>
         {speaker.picture.type === Img
           ? React.cloneElement(speaker.picture, {
@@ -73,7 +73,7 @@ const Page = ({ speaker, events, children }) => {
         </a>
       ) : null}
       {sessions}
-    </div>
+    </section>
   );
 };
 
