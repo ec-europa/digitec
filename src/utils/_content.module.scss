@@ -26,6 +26,13 @@
   }
 }
 
+.content,
+.contentBig {
+  a {
+    color: $ict-blue;
+  }
+}
+
 .fs1 {
   font-size: $type-scale-1;
   line-height: $line-height-1;

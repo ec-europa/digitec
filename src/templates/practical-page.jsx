@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Content, { HTMLContent } from '../components/Content';
 import Helmet from 'react-helmet';
+import Content, { HTMLContent } from '../components/Content';
 
 import containerStyles from '../utils/_container.module.scss';
 import contentStyles from '../utils/_content.module.scss';
