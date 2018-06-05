@@ -19,7 +19,7 @@ import twitterLogo from './twitter.png';
 
 const Page = ({ speaker, events, children }) => {
   const sessions =
-    events && events.length ? (
+    events && events.length && events.filter(e => e).length ? (
       <div>
         <h3>Session{events.length > 1 ? 's' : ''}</h3>
         {events.map(event => (

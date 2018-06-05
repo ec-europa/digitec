@@ -1,6 +1,6 @@
 ---
 templateKey: event
-title: Registration and Welcome coffee / VIP breakfast
+title: Registration and coffee
 starts: '08:30'
 ends: '09:00'
 venue: ''
