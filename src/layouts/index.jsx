@@ -10,7 +10,14 @@ import styles from './layout.module.scss';
 
 const TemplateWrapper = ({ location, children, data }) => (
   <div className={styles.container}>
-    <Helmet defaultTitle="DIGITEC 2018" titleTemplate="%s | DIGITEC 2018">
+    <Helmet
+      defaultTitle="DIGITEC 2018"
+      titleTemplate="%s | DIGITEC 2018"
+      meta={[
+        { name: 'description', content: 'DIGITEC: Innovation Space' },
+        { name: 'keywords', content: 'digitec, conference, innovation' },
+      ]}
+    >
       <html lang="en" />
     </Helmet>
     <Navbar location={location} />
