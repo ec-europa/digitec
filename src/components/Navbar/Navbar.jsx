@@ -170,13 +170,6 @@ class Navbar extends React.PureComponent {
               <NavbarItem to="/programme" onClick={this.closeDrawer}>
                 Programme
               </NavbarItem>
-              <NavbarItem
-                to="/my-digitec"
-                mobileOnly
-                onClick={this.closeDrawer}
-              >
-                My DIGITEC
-              </NavbarItem>
               <NavbarItem to="/expo" onClick={this.closeDrawer}>
                 Expo
               </NavbarItem>
