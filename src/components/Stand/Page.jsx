@@ -7,6 +7,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
+import Overdrive from 'react-overdrive';
 
 // Styles
 import styles from './Page.module.scss';
@@ -14,15 +15,15 @@ import styles from './Page.module.scss';
 const Page = ({ stand, children }) => (
   <section className={styles.container}>
     <div className={styles.header}>
-      {stand.picture.type === Img
-        ? React.cloneElement(stand.picture, {
-            alt: stand.title,
-            outerWrapperClassName: styles.headerPicture,
-          })
-        : React.cloneElement(stand.picture, {
-            alt: stand.title,
-            className: styles.headerPicture,
-          })}
+      <Overdrive id={`${stand.title}-pic`} className={styles.headerPicture}>
+        {stand.picture.type === Img
+          ? React.cloneElement(stand.picture, {
+              alt: stand.title,
+            })
+          : React.cloneElement(stand.picture, {
+              alt: stand.title,
+            })}
+      </Overdrive>
       <div className={styles.headerTitles}>
         <h3>
           <span className={styles.number}>{stand.number}</span> {stand.title}
