@@ -15,7 +15,7 @@ const StandsPage = props => {
     <section className={containerStyles.container}>
       <Helmet title="Expo" />
       <h1 className={contentStyles.fs9}>Expo</h1>
-      <div style={{ display: 'flex' }}>
+      <div className={containerStyles.cardsContainer}>
         {stands.map(({ node: stand }) => (
           <StandCard
             key={stand.fields.slug}

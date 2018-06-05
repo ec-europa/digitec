@@ -7,6 +7,16 @@
   padding: 0 1rem;
 }
 
+.cardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @include mappy-bp(small) {
+    justify-content: normal;
+  }
+}
+
 .header {
   @include mappy-bp(max medium) {
     display: none;

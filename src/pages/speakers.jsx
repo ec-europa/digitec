@@ -15,7 +15,7 @@ const SpeakersPage = props => {
     <section className={containerStyles.container}>
       <Helmet title="Speakers" />
       <h1 className={contentStyles.fs9}>Speakers</h1>
-      <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+      <div className={containerStyles.cardsContainer}>
         {speakers.map(({ node: speaker }) => (
           <SpeakerCard
             key={speaker.fields.slug}
