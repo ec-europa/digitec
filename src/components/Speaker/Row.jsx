@@ -8,6 +8,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import Img from 'gatsby-image';
+import Overdrive from 'react-overdrive';
 
 import styles from './Row.module.scss';
 
@@ -19,11 +20,15 @@ const Row = ({ speaker }) => (
       state: { modal: true },
     }}
   >
-    <Img
-      sizes={speaker.picture.childImageSharp.sizes}
-      alt={`${speaker.firstname} ${speaker.lastname}`}
-      outerWrapperClassName={styles.speakerPicture}
-    />
+    <Overdrive
+      id={`${speaker.firstname}-${speaker.lastname}-pic`}
+      className={styles.speakerPicture}
+    >
+      <Img
+        sizes={speaker.picture.childImageSharp.sizes}
+        alt={`${speaker.firstname} ${speaker.lastname}`}
+      />
+    </Overdrive>
     <div className={styles.speakerInfo}>
       <h3>
         {speaker.firstname}{' '}

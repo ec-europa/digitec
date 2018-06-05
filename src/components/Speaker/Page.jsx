@@ -7,6 +7,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
+import Overdrive from 'react-overdrive';
 
 // Styles
 import styles from './Page.module.scss';
@@ -45,15 +46,18 @@ const Page = ({ speaker, events, children }) => {
   return (
     <section className={styles.container}>
       <div className={styles.header}>
-        {speaker.picture.type === Img
-          ? React.cloneElement(speaker.picture, {
-              alt: `${speaker.firstname} ${speaker.lastname}`,
-              outerWrapperClassName: styles.headerPicture,
-            })
-          : React.cloneElement(speaker.picture, {
-              alt: `${speaker.firstname} ${speaker.lastname}`,
-              className: styles.headerPicture,
-            })}
+        <Overdrive
+          id={`${speaker.firstname}-${speaker.lastname}-pic`}
+          className={styles.headerPicture}
+        >
+          {speaker.picture.type === Img
+            ? React.cloneElement(speaker.picture, {
+                alt: `${speaker.firstname} ${speaker.lastname}`,
+              })
+            : React.cloneElement(speaker.picture, {
+                alt: `${speaker.firstname} ${speaker.lastname}`,
+              })}
+        </Overdrive>
         <div className={styles.headerTitles}>
           <h3>
             {speaker.firstname}{' '}

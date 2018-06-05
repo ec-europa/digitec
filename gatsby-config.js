@@ -22,6 +22,13 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        color: '#009ee2',
+        showSpinner: true,
+      },
+    },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     {

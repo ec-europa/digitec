@@ -4362,6 +4362,13 @@ gatsby-plugin-netlify@1.0.21:
     lodash "^4.17.4"
     webpack-assets-manifest "^1.0.0"
 
+gatsby-plugin-nprogress@1.0.14:
+  version "1.0.14"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-nprogress/-/gatsby-plugin-nprogress-1.0.14.tgz#576f92e0658f1dc66e511b99ff4efe7389bfcc57"
+  dependencies:
+    babel-runtime "^6.26.0"
+    nprogress "^0.2.0"
+
 gatsby-plugin-offline@1.0.18:
   version "1.0.18"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-offline/-/gatsby-plugin-offline-1.0.18.tgz#2ee2a24d2f69fcc43a015132f07141b69295318d"
@@ -7796,6 +7803,10 @@ npmlog@2.0.3:
     are-we-there-yet "~1.1.2"
     gauge "~1.2.5"
 
+nprogress@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/nprogress/-/nprogress-0.2.0.tgz#cb8f34c53213d895723fcbab907e9422adbcafb1"
+
 nth-check@^1.0.1, nth-check@~1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/nth-check/-/nth-check-1.0.1.tgz#9929acdf628fc2c41098deab82ac580cf149aae4"
@@ -9354,6 +9365,10 @@ react-modal@^3.1.5:
 react-onclickoutside@^6.5.0:
   version "6.7.1"
   resolved "https://registry.yarnpkg.com/react-onclickoutside/-/react-onclickoutside-6.7.1.tgz#6a5b5b8b4eae6b776259712c89c8a2b36b17be93"
+
+react-overdrive@0.0.10:
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/react-overdrive/-/react-overdrive-0.0.10.tgz#7cbe060906a2a98977a86a763bd417b736dfd17d"
 
 react-portal@^3.1.0:
   version "3.2.0"
