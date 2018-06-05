@@ -43,20 +43,10 @@ class Row extends React.Component {
       { [styles.purpleItem]: event.color === 'purple' },
       { [styles.greyItem]: event.color === 'grey' }
     );
-
-    const learnMore = true;
-    /*
-      (event.description && event.description.length > 0) ||
-      (event.speakers && event.speakers.length > 0) ||
-      (event.guests && event.guests.length > 0) ||
-      (event.moderator && event.moderator.length > 0);
-    */
-
-    /*eslint-disable */
     return (
       <li className={rowClasses}>
         <div className={styles.primary}>
-          {learnMore ? (
+          {event.readMore ? (
             <div>
               <Link
                 className={styles.title}
@@ -87,7 +77,6 @@ class Row extends React.Component {
         )}
       </li>
     );
-    /* eslint-enable */
   }
 }
 

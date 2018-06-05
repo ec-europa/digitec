@@ -19,6 +19,7 @@ const ProgrammePage = props => {
     ends: event.frontmatter.ends,
     venue: event.frontmatter.venue,
     color: event.frontmatter.color,
+    readMore: event.frontmatter.readMore,
   }));
 
   return (
@@ -60,6 +61,7 @@ export const pageQuery = graphql`
             ends
             venue
             color
+            readMore
           }
         }
       }

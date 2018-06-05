@@ -6,6 +6,7 @@ ends: '12:15'
 venue: Main hall
 color: purple
 register: true
+readMore: true
 speakers: []
 ---
 

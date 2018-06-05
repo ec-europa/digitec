@@ -107,6 +107,7 @@ export const pageQuery = graphql`
             ends
             venue
             color
+            readMore
           }
         }
       }

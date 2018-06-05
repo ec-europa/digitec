@@ -45,6 +45,7 @@ collections:
       - {label: "Venue", name: "venue", widget: "string", required: false}
       - {label: "Color", name: "color", widget: "select", default: "grey", options: ["none", "grey", "blue", "purple", "yellow"]}
       - {label: "Register", name: "register", widget: "boolean", default: false}
+      - {label: "Read more", name: "readMore", widget: "boolean", default: false}
       - label: "Speakers"
         name: "speakers"
         widget: "list"

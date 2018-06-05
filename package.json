@@ -6,10 +6,10 @@
   "license": "EUPL-1.1",
   "dependencies": {
     "classnames": "2.2.5",
-    "gatsby": "1.9.269",
+    "gatsby": "1.9.270",
     "gatsby-image": "1.0.51",
     "gatsby-link": "1.6.44",
-    "gatsby-plugin-manifest": "1.0.24",
+    "gatsby-plugin-manifest": "1.0.25",
     "gatsby-plugin-netlify": "1.0.21",
     "gatsby-plugin-netlify-cms": "2.0.1",
     "gatsby-plugin-offline": "1.0.18",

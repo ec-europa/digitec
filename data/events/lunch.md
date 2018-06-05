@@ -6,5 +6,6 @@ ends: '14:00'
 venue: ''
 color: none
 register: false
+readMore: false
 speakers: []
 ---

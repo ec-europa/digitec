@@ -13,7 +13,7 @@ const List = ({
   events,
   // schedule,
   // onToggle,
-  location,
+  // location,
 }) => {
   const eventsDisplay = [];
 
@@ -35,7 +35,7 @@ const List = ({
         // checked={schedule[event.id]}
         // onToggle={onToggle}
         displayTime={false}
-        location={location}
+        // location={location}
       />
     ));
 
@@ -62,7 +62,7 @@ List.propTypes = {
   events: PropTypes.array,
   // schedule: PropTypes.object,
   // onToggle: PropTypes.func,
-  location: PropTypes.object,
+  // location: PropTypes.object,
 };
 
 List.defaultProps = {

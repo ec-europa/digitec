@@ -33,6 +33,7 @@ const Page = ({ speaker, events, children }) => {
               ends: event.frontmatter.ends,
               venue: event.frontmatter.venue,
               color: event.frontmatter.color,
+              readMore: event.frontmatter.readMore,
             }}
           />
         ))}

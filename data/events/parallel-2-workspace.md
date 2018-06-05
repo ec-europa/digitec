@@ -6,5 +6,6 @@ ends: '15:15'
 venue: Gold Hall
 color: yellow
 register: true
+readMore: true
 speakers: []
 ---
