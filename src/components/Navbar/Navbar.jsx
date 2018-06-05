@@ -114,13 +114,16 @@ class Navbar extends React.PureComponent {
           id="toggleDrawer"
           className={styles.toggleDrawer}
           checked={drawerOpen}
+          aria-label="Toggle the drawer"
         />
         <div className={styles.mobileBar}>
           <label
             htmlFor="toggleDrawer"
             className={styles.navToggle}
             onClick={this.handleRequestToggleDrawer}
+            id="toggle-drawer"
             role="button"
+            aria-label="Toggle the drawer"
           >
             <span />
             <span />
@@ -135,6 +138,7 @@ class Navbar extends React.PureComponent {
           className={styles.overlay}
           onClick={this.handleRequestToggleDrawer}
           role="button"
+          aria-label="Toggle the drawer"
         />
         <div
           className={styles.navigation}

@@ -21,13 +21,13 @@
   color: $ict-grey-text;
 
   a {
-    color: $ict-blue;
+    color: $ict-blue-text;
     text-decoration: none;
 
     &:hover,
     &:active,
     &:focus {
-      color: $ict-blue;
+      color: $ict-blue-text;
       text-decoration: underline;
     }
   }

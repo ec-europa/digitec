@@ -10,7 +10,9 @@ import styles from './layout.module.scss';
 
 const TemplateWrapper = ({ location, children, data }) => (
   <div className={styles.container}>
-    <Helmet defaultTitle="DIGITEC 2018" titleTemplate="%s | DIGITEC 2018" />
+    <Helmet defaultTitle="DIGITEC 2018" titleTemplate="%s | DIGITEC 2018">
+      <html lang="en" />
+    </Helmet>
     <Navbar location={location} />
     <main className={styles.main}>
       <div>{children()}</div>
