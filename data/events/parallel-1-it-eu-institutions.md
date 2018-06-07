@@ -1,9 +1,9 @@
 ---
 templateKey: event
-title: 'Parallel: IT in the EU institutions'
+title: 'IT in the EU institutions'
 starts: '11:00'
 ends: '12:15'
-venue: Main hall
+venue: Gold Hall
 color: purple
 register: true
 readMore: true

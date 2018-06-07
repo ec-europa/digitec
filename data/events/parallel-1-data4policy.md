@@ -1,9 +1,9 @@
 ---
 templateKey: event
-title: 'Parallel: Data4Policy'
+title: 'Data4Policy'
 starts: '11:00'
 ends: '12:15'
-venue: Main hall
+venue: Gold Hall
 color: blue
 register: true
 readMore: true
