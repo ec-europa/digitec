@@ -1,6 +1,6 @@
 ---
 templateKey: event
-title: Hello from the Space
+title: Hello from Space
 starts: '09:00'
 ends: '09:30'
 venue: Gold Hall
@@ -9,4 +9,6 @@ register: true
 readMore: true
 speakers:
   - speaker: Ingestad
+  - speaker: Vilella
 ---
+
