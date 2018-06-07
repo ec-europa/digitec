@@ -208,7 +208,7 @@
     padding-left: 1rem;
     padding-right: 1rem;
     line-height: 2;
-    font-size: 0.92em;
+    // font-size: 0.92em;
   }
 }
 
@@ -221,13 +221,13 @@
 
   @include mappy-bp(medium) {
     justify-content: flex-start;
-    margin-left: 2rem;
+    margin-left: à; // 2rem;
     margin-right: 2rem;
   }
 }
 
 .link {
-  margin: 0 0.25rem;
+  margin: 0 1rem;
 }
 
 .logo {

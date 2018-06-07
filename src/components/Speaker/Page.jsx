@@ -4,7 +4,7 @@
  *
  */
 
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import Overdrive from 'react-overdrive';
@@ -21,8 +21,10 @@ import twitterLogo from './twitter.png';
 const Page = ({ speaker, events, children }) => {
   const sessions =
     events && events.length && events.filter(e => e).length ? (
-      <div>
-        <h3>Session{events.length > 1 ? 's' : ''}</h3>
+      <Fragment>
+        <h3 className={styles.sessionsTitle}>
+          Session{events.length > 1 ? 's' : ''}
+        </h3>
         {events.map(event => (
           <EventRow
             key={event.fields.slug}
@@ -38,7 +40,7 @@ const Page = ({ speaker, events, children }) => {
             }}
           />
         ))}
-      </div>
+      </Fragment>
     ) : (
       ''
     );
@@ -64,19 +66,19 @@ const Page = ({ speaker, events, children }) => {
             <span className={styles.lastname}>{speaker.lastname}</span>
           </h3>
           <h4 className={styles.title}>{speaker.title}</h4>
+          {speaker.twitter ? (
+            <a
+              className={styles.twitter}
+              href={`https://twitter.com/${speaker.twitter.substr(1)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={twitterLogo} alt="Twitter Feed" /> {speaker.twitter}
+            </a>
+          ) : null}
         </div>
       </div>
       <div className={styles.bio}>{children}</div>
-      {speaker.twitter ? (
-        <a
-          className={styles.twitter}
-          href={`https://twitter.com/${speaker.twitter.substr(1)}`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src={twitterLogo} alt="Twitter Feed" /> {speaker.twitter}
-        </a>
-      ) : null}
       {sessions}
     </section>
   );
