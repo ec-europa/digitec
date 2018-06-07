@@ -1,5 +1,7 @@
 # DIGITEC
 
+Deploys for digitec: https://app.netlify.com/sites/digitec/deploys
+
 ## Getting Started (Recommended)
 
 ### Access Locally
