@@ -53,7 +53,7 @@ const Cover = ({ image, title, heading, hashtag }) => (
             target="_blank"
             rel="noopener noreferrer"
           >
-            {hashtag}
+            #{hashtag}
           </a>
         </h2>
       </div>
