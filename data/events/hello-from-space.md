@@ -9,5 +9,6 @@ register: true
 readMore: true
 speakers:
   - speaker: Ingestad
+  - speaker: Vilella
 ---
 
