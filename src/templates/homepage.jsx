@@ -21,7 +21,7 @@ export const HomePageTemplate = ({
     <Fragment>
       <Cover image={image} title={title} heading={heading} hashtag={hashtag} />
       <div
-        style={{ maxWidth: '54rem', margin: '4rem auto', padding: '0 1rem' }}
+        style={{ maxWidth: '56rem', margin: '4rem auto', padding: '0 1rem' }}
       >
         <PostContent className={contentStyles.contentBig} content={content} />
         {bigLogo && (
@@ -91,7 +91,7 @@ export const productPageQuery = graphql`
         title
         image {
           childImageSharp {
-            sizes(maxWidth: 1920) {
+            sizes(maxWidth: 1920, quality: 80) {
               ...GatsbyImageSharpSizes_withWebp
             }
           }
