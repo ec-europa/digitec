@@ -20,7 +20,7 @@ const TemplateWrapper = ({ location, children, data }) => (
     >
       <html lang="en" />
     </Helmet>
-    <Navbar location={location} />
+    <Navbar location={location} images={data} />
     <main className={styles.main}>
       <div>{children()}</div>
     </main>
@@ -42,18 +42,28 @@ export default TemplateWrapper;
 
 export const query = graphql`
   query GatsbyImageSampleQuery {
-    logoEC: imageSharp(id: { regex: "/commission.png/" }) {
-      sizes(maxWidth: 150, quality: 80) {
+    logoEuropa: imageSharp(id: { regex: "/eu-logo.jpg/" }) {
+      sizes(maxWidth: 60, quality: 80) {
         ...GatsbyImageSharpSizes_withWebp_noBase64
       }
     }
-    logoEU: imageSharp(id: { regex: "/parliament.png/" }) {
-      sizes(maxWidth: 150, quality: 80) {
+    logoDigitec: imageSharp(id: { regex: "/DIGITEC-2018-small.png/" }) {
+      sizes(maxWidth: 144, quality: 80) {
         ...GatsbyImageSharpSizes_withWebp_noBase64
       }
     }
-    logoCouncil: imageSharp(id: { regex: "/council.png/" }) {
-      sizes(maxWidth: 120, quality: 80) {
+    logoEC: imageSharp(id: { regex: "/commission.jpg/" }) {
+      sizes(maxWidth: 140, quality: 80) {
+        ...GatsbyImageSharpSizes_withWebp_noBase64
+      }
+    }
+    logoEU: imageSharp(id: { regex: "/parliament.jpg/" }) {
+      sizes(maxWidth: 140, quality: 80) {
+        ...GatsbyImageSharpSizes_withWebp_noBase64
+      }
+    }
+    logoCouncil: imageSharp(id: { regex: "/council.jpg/" }) {
+      sizes(maxWidth: 140, quality: 80) {
         ...GatsbyImageSharpSizes_withWebp_noBase64
       }
     }

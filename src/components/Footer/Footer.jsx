@@ -15,6 +15,7 @@ const Footer = ({ images }) => (
       <div className={`${styles.section} ${styles.left}`}>
         <a
           href="http://europa.eu/cookies/index_en.htm"
+          className={styles.link}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -22,14 +23,21 @@ const Footer = ({ images }) => (
         </a>
         <a
           href="http://europa.eu/geninfo/legal_notices_en.htm"
+          className={styles.link}
           target="_blank"
           rel="noopener noreferrer"
         >
           Legal notice
         </a>
-        <a href="mailto:DIGITEC-CONFERENCE@ec.europa.eu">Contact</a>
+        <a
+          href="mailto:DIGITEC-CONFERENCE@ec.europa.eu"
+          className={styles.link}
+        >
+          Contact
+        </a>
         <a
           href="http://europa.eu/geninfo/query/index.do"
+          className={styles.link}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -37,18 +45,6 @@ const Footer = ({ images }) => (
         </a>
       </div>
       <div className={`${styles.section} ${styles.right}`}>
-        <a
-          href="https://ec.europa.eu"
-          className={styles.logoContainer}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Img
-            sizes={images.logoEC.sizes}
-            alt="European Commission"
-            className={styles.logo}
-          />
-        </a>
         <a
           href="http://www.europarl.europa.eu"
           className={styles.logoContainer}
@@ -70,7 +66,19 @@ const Footer = ({ images }) => (
           <Img
             sizes={images.logoCouncil.sizes}
             alt="European Council"
-            className={styles.councilLogo}
+            className={styles.logo}
+          />
+        </a>
+        <a
+          href="https://ec.europa.eu"
+          className={styles.logoContainer}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Img
+            sizes={images.logoEC.sizes}
+            alt="European Commission"
+            className={styles.logo}
           />
         </a>
       </div>
