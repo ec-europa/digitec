@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 
 import styles from './Navbar.module.scss';
-
+import digitecLogo from '../../img/DIGITEC.svg';
 import NavbarItem from './Item';
 import NavbarSeparator from './Separator';
 
@@ -160,8 +160,8 @@ class Navbar extends React.PureComponent {
                   />
                 </a>
                 <Link to="/" className={styles.logoLink}>
-                  <Img
-                    sizes={images.logoDigitec.sizes}
+                  <img
+                    src={digitecLogo}
                     alt="DIGITEC 2018"
                     className={styles.logo}
                   />

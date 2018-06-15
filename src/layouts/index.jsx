@@ -47,11 +47,6 @@ export const query = graphql`
         ...GatsbyImageSharpSizes_withWebp_noBase64
       }
     }
-    logoDigitec: imageSharp(id: { regex: "/DIGITEC-2018-small.png/" }) {
-      sizes(maxWidth: 144, quality: 80) {
-        ...GatsbyImageSharpSizes_withWebp_noBase64
-      }
-    }
     logoEC: imageSharp(id: { regex: "/commission.jpg/" }) {
       sizes(maxWidth: 140, quality: 80) {
         ...GatsbyImageSharpSizes_withWebp_noBase64

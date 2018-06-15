@@ -48,7 +48,7 @@
   }
 
   @include mappy-bp(medium) {
-    margin: 4rem 0;
+    margin: 3rem 0 1rem;
 
     h1 {
       font-size: 4rem;
@@ -81,4 +81,16 @@
   &:focus {
     border: 1px solid #fff;
   }
+}
+
+.registerBlock {
+  margin: 4rem auto 0;
+}
+
+.registerLink {
+  // margin: 4rem auto 0;
+}
+
+.registerLogo {
+  max-width: 200px;
 }
