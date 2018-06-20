@@ -48,7 +48,7 @@ const Footer = () => (
       </div>
       <div className={`${styles.section} ${styles.right}`}>
         <a
-          href="http://www.europarl.europa.eu"
+          href="http://www.europarl.europa.eu/portal/en"
           className={styles.logoContainer}
           target="_blank"
           rel="noopener noreferrer"
@@ -56,7 +56,7 @@ const Footer = () => (
           <img src={epLogo} alt="European Parliament" className={styles.logo} />
         </a>
         <a
-          href="https://www.coe.int"
+          href="http://www.consilium.europa.eu/en/"
           className={styles.logoContainer}
           target="_blank"
           rel="noopener noreferrer"
@@ -68,7 +68,7 @@ const Footer = () => (
           />
         </a>
         <a
-          href="https://ec.europa.eu"
+          href="https://ec.europa.eu/commission/index_en"
           className={styles.logoContainer}
           target="_blank"
           rel="noopener noreferrer"
