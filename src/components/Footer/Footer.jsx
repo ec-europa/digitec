@@ -5,11 +5,13 @@
  */
 
 import React from 'react';
-import Img from 'gatsby-image';
+import epLogo from '../../img/1_EP.svg';
+import councilLogo from '../../img/2_Council.svg';
+import ecLogo from '../../img/3_EC.svg';
 
 import styles from './Footer.module.scss';
 
-const Footer = ({ images }) => (
+const Footer = () => (
   <footer className={styles.container}>
     <div className={styles.innerContainer}>
       <div className={`${styles.section} ${styles.left}`}>
@@ -51,11 +53,7 @@ const Footer = ({ images }) => (
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Img
-            sizes={images.logoEU.sizes}
-            alt="European Parliament"
-            className={styles.logo}
-          />
+          <img src={epLogo} alt="European Parliament" className={styles.logo} />
         </a>
         <a
           href="https://www.coe.int"
@@ -63,8 +61,8 @@ const Footer = ({ images }) => (
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Img
-            sizes={images.logoCouncil.sizes}
+          <img
+            src={councilLogo}
             alt="European Council"
             className={styles.logo}
           />
@@ -75,11 +73,7 @@ const Footer = ({ images }) => (
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Img
-            sizes={images.logoEC.sizes}
-            alt="European Commission"
-            className={styles.logo}
-          />
+          <img src={ecLogo} alt="European Commission" className={styles.logo} />
         </a>
       </div>
     </div>

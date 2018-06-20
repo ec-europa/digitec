@@ -8,7 +8,7 @@ import Footer from '../components/Footer/Footer';
 import Navbar from '../components/Navbar/Navbar';
 import styles from './layout.module.scss';
 
-const TemplateWrapper = ({ location, children, data }) => (
+const TemplateWrapper = ({ location, children }) => (
   <div className={styles.container}>
     <Helmet
       defaultTitle="DIGITEC 2018"
@@ -20,11 +20,11 @@ const TemplateWrapper = ({ location, children, data }) => (
     >
       <html lang="en" />
     </Helmet>
-    <Navbar location={location} images={data} />
+    <Navbar location={location} />
     <main className={styles.main}>
       <div>{children()}</div>
     </main>
-    <Footer images={data} />
+    <Footer />
   </div>
 );
 
@@ -39,28 +39,3 @@ TemplateWrapper.defaultProps = {
 };
 
 export default TemplateWrapper;
-
-export const query = graphql`
-  query GatsbyImageSampleQuery {
-    logoEuropa: imageSharp(id: { regex: "/eu-logo.jpg/" }) {
-      sizes(maxWidth: 60, quality: 80) {
-        ...GatsbyImageSharpSizes_withWebp_noBase64
-      }
-    }
-    logoEC: imageSharp(id: { regex: "/commission.jpg/" }) {
-      sizes(maxWidth: 140, quality: 80) {
-        ...GatsbyImageSharpSizes_withWebp_noBase64
-      }
-    }
-    logoEU: imageSharp(id: { regex: "/parliament.jpg/" }) {
-      sizes(maxWidth: 140, quality: 80) {
-        ...GatsbyImageSharpSizes_withWebp_noBase64
-      }
-    }
-    logoCouncil: imageSharp(id: { regex: "/council.jpg/" }) {
-      sizes(maxWidth: 140, quality: 80) {
-        ...GatsbyImageSharpSizes_withWebp_noBase64
-      }
-    }
-  }
-`;

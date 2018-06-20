@@ -7,10 +7,10 @@
 import React from 'react';
 import Link from 'gatsby-link';
 import PropTypes from 'prop-types';
-import Img from 'gatsby-image';
 
 import styles from './Navbar.module.scss';
 import digitecLogo from '../../img/DIGITEC.svg';
+import euLogo from '../../img/europe.svg';
 import NavbarItem from './Item';
 import NavbarSeparator from './Separator';
 
@@ -99,7 +99,7 @@ class Navbar extends React.PureComponent {
   }
 
   render() {
-    const { title, images } = this.props;
+    const { title } = this.props;
     const { drawerOpen } = this.state;
 
     return (
@@ -153,8 +153,8 @@ class Navbar extends React.PureComponent {
                   href="http://europa.eu/index_en.htm"
                   className={styles.logoEuropa}
                 >
-                  <Img
-                    sizes={images.logoEuropa.sizes}
+                  <img
+                    src={euLogo}
                     alt="DIGITEC 2018"
                     className={styles.logo}
                   />
