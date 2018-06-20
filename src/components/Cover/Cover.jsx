@@ -9,6 +9,7 @@ import PropTypes from 'prop-types';
 import { Img } from '../Image';
 
 import styles from './Cover.module.scss';
+import registerLogo from '../../img/register.svg';
 
 const Cover = ({ image, title, heading, hashtag }) => (
   <div className={styles.coverContainer}>
@@ -56,6 +57,15 @@ const Cover = ({ image, title, heading, hashtag }) => (
             #{hashtag}
           </a>
         </h2>
+        <div className={styles.registerBlock}>
+          <a href="#" className={styles.registerLink}>
+            <img
+              src={registerLogo}
+              alt="Register"
+              className={styles.registerLogo}
+            />
+          </a>
+        </div>
       </div>
     </div>
   </div>

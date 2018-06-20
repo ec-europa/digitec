@@ -164,7 +164,7 @@
     display: flex;
     flex: 1;
     justify-content: flex-end;
-    padding-right: 1em;
+    padding: 0 1rem;
     // text-transform: uppercase;
     max-width: $max-width;
     flex-basis: $max-width;
@@ -221,13 +221,18 @@
 
   @include mappy-bp(medium) {
     justify-content: flex-start;
-    margin-left: à; // 2rem;
+    margin-left: 0; // 2rem;
     margin-right: 2rem;
   }
 }
 
-.link {
+.logoLink {
   margin: 0 1rem;
+  width: 144px;
+}
+
+.logoEuropa {
+  width: 60px;
 }
 
 .logo {

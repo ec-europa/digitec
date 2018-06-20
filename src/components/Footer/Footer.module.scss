@@ -33,7 +33,7 @@
 
 .left {
   justify-content: center;
-  margin-bottom: 1em;
+  margin: 1em 0;
 
   @include mappy-bp(medium) {
     justify-content: flex-start;
@@ -48,7 +48,7 @@
   }
 }
 
-.section a {
+.link {
   padding: 0.5em;
   color: rgb(88, 88, 88);
   text-decoration: none;
@@ -60,13 +60,11 @@
 }
 
 .logoContainer {
-  padding: 10px;
+  &:focus {
+    z-index: 1; // make outline overlaps the sibling elements
+  }
 }
 
 .logo {
-  width: 150px;
-}
-
-.councilLogo {
-  width: 120px;
+  width: 140px;
 }

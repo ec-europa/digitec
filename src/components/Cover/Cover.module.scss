@@ -48,16 +48,16 @@
   }
 
   @include mappy-bp(medium) {
-    margin: 4rem 0;
+    margin: 3rem 0 1rem;
 
     h1 {
-      font-size: 5.5vw;
+      font-size: 4rem;
       line-height: 1.15;
       margin: 0 0 3rem;
     }
 
     h2 {
-      font-size: 2.5vw;
+      font-size: 2rem;
       line-height: 1.15;
     }
   }
@@ -65,7 +65,8 @@
 
 .coverTitleContainerRow {
   flex-grow: 1;
-  padding: 3em;
+  padding: 3rem 1rem;
+  max-width: 56rem;
 }
 
 .coverTwitter {
@@ -80,4 +81,16 @@
   &:focus {
     border: 1px solid #fff;
   }
+}
+
+.registerBlock {
+  margin: 4rem auto 0;
+}
+
+.registerLink {
+  // margin: 4rem auto 0;
+}
+
+.registerLogo {
+  max-width: 200px;
 }
