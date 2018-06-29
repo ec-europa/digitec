@@ -1,7 +1,7 @@
 ---
 templateKey: speaker
 firstname: 'David '
-lastname: 'Gallow '
+lastname: Galloway
 title: Deputy Director-General for Digital Services
 picture: /img/galloway.jpg
 ---
