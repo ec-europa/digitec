@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import { graphql } from 'gatsby';
+
+import Layout from '../components/layout';
 import Content, { HTMLContent } from '../components/Content';
 
 import containerStyles from '../utils/_container.module.scss';
@@ -24,16 +27,18 @@ PracticalPageTemplate.propTypes = {
   title: PropTypes.string,
 };
 
-const Practical = ({ data }) => {
+const Practical = ({ data, location }) => {
   const { markdownRemark: post } = data;
   const { frontmatter } = data.markdownRemark;
 
   return (
-    <PracticalPageTemplate
-      content={post.html}
-      contentComponent={HTMLContent}
-      title={frontmatter.title}
-    />
+    <Layout location={location}>
+      <PracticalPageTemplate
+        content={post.html}
+        contentComponent={HTMLContent}
+        title={frontmatter.title}
+      />
+    </Layout>
   );
 };
 

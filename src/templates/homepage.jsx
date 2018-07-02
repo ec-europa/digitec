@@ -1,6 +1,9 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
+
+import Layout from '../components/layout';
 import Content, { HTMLContent } from '../components/Content';
 
 import Cover from '../components/Cover/Cover';
@@ -26,7 +29,7 @@ export const HomePageTemplate = ({
         <PostContent className={contentStyles.contentBig} content={content} />
         {bigLogo && (
           <Img
-            sizes={bigLogo.sizes}
+            fluid={bigLogo.fluid}
             style={{
               margin: '4rem auto',
               width: '100%',
@@ -55,21 +58,24 @@ HomePageTemplate.defaultProps = {
   hashtag: '',
 };
 
-const HomePage = ({ data }) => {
+const HomePage = ({ data, location }) => {
   const { frontmatter } = data.markdownRemark;
   const { bigLogo } = data;
 
   return (
-    <HomePageTemplate
-      content={data.markdownRemark.html}
-      contentComponent={HTMLContent}
-      image={frontmatter.image}
-      bigLogo={bigLogo}
-      title={frontmatter.title}
-      heading={frontmatter.heading}
-      hashtag={frontmatter.hashtag}
-      intro={frontmatter.intro}
-    />
+    <Layout location={location}>
+      <HomePageTemplate
+        content={data.markdownRemark.html}
+        contentComponent={HTMLContent}
+        image={frontmatter.image}
+        bigLogo={bigLogo}
+        title={frontmatter.title}
+        heading={frontmatter.heading}
+        hashtag={frontmatter.hashtag}
+        intro={frontmatter.intro}
+        location={location}
+      />
+    </Layout>
   );
 };
 
@@ -91,8 +97,8 @@ export const productPageQuery = graphql`
         title
         image {
           childImageSharp {
-            sizes(maxWidth: 1920, quality: 80) {
-              ...GatsbyImageSharpSizes_withWebp
+            fluid(maxWidth: 1920, quality: 80) {
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
@@ -101,8 +107,8 @@ export const productPageQuery = graphql`
       }
     }
     bigLogo: imageSharp(id: { regex: "/DIGITEC-2018_3-institutions.png/" }) {
-      sizes(maxWidth: 600, quality: 80) {
-        ...GatsbyImageSharpSizes_withWebp_noBase64
+      fluid(maxWidth: 600, quality: 80) {
+        ...GatsbyImageSharpFluid_withWebp_noBase64
       }
     }
   }

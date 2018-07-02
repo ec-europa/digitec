@@ -13,9 +13,9 @@ import registerLogo from '../../img/register.svg';
 
 const Cover = ({ image, title, heading, hashtag }) => (
   <div className={styles.coverContainer}>
-    {image.childImageSharp && image.childImageSharp.sizes ? (
+    {image.childImageSharp && image.childImageSharp.fluid ? (
       <Img
-        sizes={image.childImageSharp.sizes}
+        fluid={image.childImageSharp.fluid}
         alt="DIGITEC 2018"
         role="presentation"
         style={{

@@ -1,8 +1,10 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
+import Layout from '../components/layout';
 import Content, { HTMLContent } from '../components/Content';
 
 import StandPage from '../components/Stand/Page';
@@ -55,19 +57,21 @@ StandTemplate.defaultProps = {
   helmet: null,
 };
 
-const Stand = ({ data }) => {
+const Stand = ({ data, location }) => {
   const { markdownRemark: post } = data;
 
   return (
-    <StandTemplate
-      content={post.html}
-      contentComponent={HTMLContent}
-      title={post.frontmatter.title}
-      subtitle={post.frontmatter.subtitle}
-      picture={<Img sizes={post.frontmatter.picture.childImageSharp.sizes} />}
-      number={post.frontmatter.number}
-      helmet={<Helmet title={post.frontmatter.title} />}
-    />
+    <Layout location={location}>
+      <StandTemplate
+        content={post.html}
+        contentComponent={HTMLContent}
+        title={post.frontmatter.title}
+        subtitle={post.frontmatter.subtitle}
+        picture={<Img fluid={post.frontmatter.picture.childImageSharp.fluid} />}
+        number={post.frontmatter.number}
+        helmet={<Helmet title={post.frontmatter.title} />}
+      />
+    </Layout>
   );
 };
 
@@ -88,8 +92,8 @@ export const pageQuery = graphql`
         subtitle
         picture {
           childImageSharp {
-            sizes(maxWidth: 260) {
-              ...GatsbyImageSharpSizes_withWebp
+            fluid(maxWidth: 260) {
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }

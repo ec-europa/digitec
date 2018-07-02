@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import { graphql } from 'gatsby';
 
+import Layout from '../components/layout';
 import StandCard from '../components/Stand/Card';
 
 import containerStyles from '../utils/_container.module.scss';
@@ -12,24 +14,26 @@ const StandsPage = props => {
   const { edges: stands } = data.allMarkdownRemark;
 
   return (
-    <section className={containerStyles.container}>
-      <Helmet title="Expo" />
-      <h1 className={contentStyles.fs9}>Expo</h1>
-      <div className={containerStyles.cardsContainer}>
-        {stands.map(({ node: stand }) => (
-          <StandCard
-            key={stand.fields.slug}
-            stand={{
-              slug: stand.fields.slug,
-              title: stand.frontmatter.title,
-              subtitle: stand.frontmatter.subtitle,
-              picture: stand.frontmatter.picture.childImageSharp,
-              number: stand.frontmatter.number,
-            }}
-          />
-        ))}
-      </div>
-    </section>
+    <Layout location={props.location}>
+      <section className={containerStyles.container}>
+        <Helmet title="Expo" />
+        <h1 className={contentStyles.fs9}>Expo</h1>
+        <div className={containerStyles.cardsContainer}>
+          {stands.map(({ node: stand }) => (
+            <StandCard
+              key={stand.fields.slug}
+              stand={{
+                slug: stand.fields.slug,
+                title: stand.frontmatter.title,
+                subtitle: stand.frontmatter.subtitle,
+                picture: stand.frontmatter.picture.childImageSharp,
+                number: stand.frontmatter.number,
+              }}
+            />
+          ))}
+        </div>
+      </section>
+    </Layout>
   );
 };
 
@@ -57,8 +61,8 @@ export const pageQuery = graphql`
             subtitle
             picture {
               childImageSharp {
-                sizes(maxWidth: 260) {
-                  ...GatsbyImageSharpSizes_withWebp
+                fluid(maxWidth: 260) {
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }

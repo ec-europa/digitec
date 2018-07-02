@@ -1,8 +1,8 @@
 const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');
 
-exports.createPages = ({ boundActionCreators, graphql }) => {
-  const { createPage } = boundActionCreators;
+exports.createPages = ({ actions, graphql }) => {
+  const { createPage } = actions;
 
   return graphql(`
     {
@@ -44,8 +44,8 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
   });
 };
 
-exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
-  const { createNodeField } = boundActionCreators;
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions;
 
   if (node.internal.type === `MarkdownRemark`) {
     // Make paths relative
@@ -68,8 +68,8 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
 
 // Map Speakers <-> Events
 // As discussed here: https://github.com/gatsbyjs/gatsby/issues/3129#issuecomment-365308599
-exports.sourceNodes = ({ boundActionCreators, getNodes, getNode }) => {
-  const { createNodeField } = boundActionCreators;
+exports.sourceNodes = ({ actions, getNodes, getNode }) => {
+  const { createNodeField } = actions;
 
   const eventSpeakers = {};
   const speakerEvents = {}; // reverse index

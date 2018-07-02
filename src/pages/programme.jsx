@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import Link from 'gatsby-link';
+import { graphql } from 'gatsby';
 
+import Layout from '../components/layout';
 import EventsList from '../components/Event/List';
 import containerStyles from '../utils/_container.module.scss';
 import contentStyles from '../utils/_content.module.scss';
@@ -23,13 +24,15 @@ const ProgrammePage = props => {
   }));
 
   return (
-    <section className={containerStyles.container}>
-      <Helmet title="Programme" />
-      <div className={containerStyles.header}>
-        <h1 className={contentStyles.fs9}>Programme</h1>
-      </div>
-      <EventsList events={mappedEvents} />
-    </section>
+    <Layout location={props.location}>
+      <section className={containerStyles.container}>
+        <Helmet title="Programme" />
+        <div className={containerStyles.header}>
+          <h1 className={contentStyles.fs9}>Programme</h1>
+        </div>
+        <EventsList events={mappedEvents} />
+      </section>
+    </Layout>
   );
 };
 

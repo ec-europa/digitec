@@ -8,7 +8,6 @@ module.exports = {
     pathPrefix: config.pathPrefix,
   },
   plugins: [
-    `gatsby-plugin-react-next`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

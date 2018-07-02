@@ -1,8 +1,11 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import Content, { HTMLContent } from '../components/Content';
+import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
+
+import Layout from '../components/layout';
+import Content, { HTMLContent } from '../components/Content';
 
 import SpeakerPage from '../components/Speaker/Page';
 import contentStyles from '../utils/_content.module.scss';
@@ -62,25 +65,28 @@ SpeakerTemplate.defaultProps = {
   helmet: null,
 };
 
-const Speaker = ({ data }) => {
+const Speaker = ({ data, location }) => {
   const { markdownRemark: post } = data;
 
   return (
-    <SpeakerTemplate
-      content={post.html}
-      contentComponent={HTMLContent}
-      firstname={post.frontmatter.firstname}
-      lastname={post.frontmatter.lastname}
-      picture={<Img sizes={post.frontmatter.picture.childImageSharp.sizes} />}
-      twitter={post.frontmatter.twitter}
-      events={post.fields.events}
-      helmet={
-        <Helmet
-          title={`${post.frontmatter.firstname} ${post.frontmatter.lastname}`}
-        />
-      }
-      title={post.frontmatter.title}
-    />
+    <Layout location={location}>
+      <SpeakerTemplate
+        content={post.html}
+        contentComponent={HTMLContent}
+        firstname={post.frontmatter.firstname}
+        lastname={post.frontmatter.lastname}
+        picture={<Img fluid={post.frontmatter.picture.childImageSharp.fluid} />}
+        twitter={post.frontmatter.twitter}
+        events={post.fields.events}
+        helmet={
+          <Helmet
+            title={`${post.frontmatter.firstname} ${post.frontmatter.lastname}`}
+          />
+        }
+        title={post.frontmatter.title}
+        location={location}
+      />
+    </Layout>
   );
 };
 
@@ -118,8 +124,8 @@ export const pageQuery = graphql`
         twitter
         picture {
           childImageSharp {
-            sizes(maxWidth: 260) {
-              ...GatsbyImageSharpSizes_withWebp
+            fluid(maxWidth: 260) {
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }

@@ -22,7 +22,7 @@ const TemplateWrapper = ({ location, children }) => (
     </Helmet>
     <Navbar location={location} />
     <main className={styles.main}>
-      <div>{children()}</div>
+      <div>{children}</div>
     </main>
     <Footer />
   </div>

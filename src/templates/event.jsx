@@ -1,6 +1,9 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import { graphql } from 'gatsby';
+
+import Layout from '../components/layout';
 import Content, { HTMLContent } from '../components/Content';
 
 import EventPage from '../components/Event/Page';
@@ -57,20 +60,22 @@ EventTemplate.defaultProps = {
   helmet: null,
 };
 
-const Event = ({ data }) => {
+const Event = ({ data, location }) => {
   const { markdownRemark: post } = data;
 
   return (
-    <EventTemplate
-      content={post.html}
-      contentComponent={HTMLContent}
-      starts={post.frontmatter.starts}
-      ends={post.frontmatter.ends}
-      venue={post.frontmatter.venue}
-      speakers={post.fields.speakers}
-      helmet={<Helmet title={post.frontmatter.title} />}
-      title={post.frontmatter.title}
-    />
+    <Layout location={location}>
+      <EventTemplate
+        content={post.html}
+        contentComponent={HTMLContent}
+        starts={post.frontmatter.starts}
+        ends={post.frontmatter.ends}
+        venue={post.frontmatter.venue}
+        speakers={post.fields.speakers}
+        helmet={<Helmet title={post.frontmatter.title} />}
+        title={post.frontmatter.title}
+      />
+    </Layout>
   );
 };
 
@@ -96,8 +101,8 @@ export const pageQuery = graphql`
             lastname
             picture {
               childImageSharp {
-                sizes(maxWidth: 260) {
-                  ...GatsbyImageSharpSizes_withWebp
+                fluid(maxWidth: 260) {
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }

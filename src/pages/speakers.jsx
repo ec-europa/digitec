@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import { graphql } from 'gatsby';
 
+import Layout from '../components/layout';
 import SpeakerCard from '../components/Speaker/Card';
 
 import containerStyles from '../utils/_container.module.scss';
@@ -12,24 +14,26 @@ const SpeakersPage = props => {
   const { edges: speakers } = data.allMarkdownRemark;
 
   return (
-    <section className={containerStyles.container}>
-      <Helmet title="Speakers" />
-      <h1 className={contentStyles.fs9}>Speakers</h1>
-      <div className={containerStyles.cardsContainer}>
-        {speakers.map(({ node: speaker }) => (
-          <SpeakerCard
-            key={speaker.fields.slug}
-            speaker={{
-              slug: speaker.fields.slug,
-              firstname: speaker.frontmatter.firstname,
-              lastname: speaker.frontmatter.lastname,
-              picture: speaker.frontmatter.picture.childImageSharp,
-              title: speaker.frontmatter.title,
-            }}
-          />
-        ))}
-      </div>
-    </section>
+    <Layout location={props.location}>
+      <section className={containerStyles.container}>
+        <Helmet title="Speakers" />
+        <h1 className={contentStyles.fs9}>Speakers</h1>
+        <div className={containerStyles.cardsContainer}>
+          {speakers.map(({ node: speaker }) => (
+            <SpeakerCard
+              key={speaker.fields.slug}
+              speaker={{
+                slug: speaker.fields.slug,
+                firstname: speaker.frontmatter.firstname,
+                lastname: speaker.frontmatter.lastname,
+                picture: speaker.frontmatter.picture.childImageSharp,
+                title: speaker.frontmatter.title,
+              }}
+            />
+          ))}
+        </div>
+      </section>
+    </Layout>
   );
 };
 
@@ -60,8 +64,8 @@ export const pageQuery = graphql`
             lastname
             picture {
               childImageSharp {
-                sizes(maxWidth: 260) {
-                  ...GatsbyImageSharpSizes_withWebp
+                fluid(maxWidth: 260) {
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }
