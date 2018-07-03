@@ -8,7 +8,8 @@ color: grey
 register: true
 readMore: true
 speakers:
-  - speaker: Ingestad
+  - speaker: Gebhardt
+  - speaker: Gabriel
 ---
 
 Mariya Gabriel, Commissioner for Digital Economy
