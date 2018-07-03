@@ -11,4 +11,3 @@ speakers:
   - speaker: Hinssen
 ---
 
-Peter Hinssen, 'The Day after Tomorrow'
