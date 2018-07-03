@@ -9,6 +9,7 @@ register: true
 readMore: true
 speakers:
   - speaker: Bauer
+  - speaker: Fischer
 ---
 Kristel Van den Bergh - Corporate Innovation Manager, ''Materialise''
 
