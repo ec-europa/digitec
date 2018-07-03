@@ -7,6 +7,9 @@ venue: Gold Hall
 color: grey
 register: true
 readMore: true
-order: '0'
-speakers: []
+speakers:
+  - speaker: Ingestad
+  - speaker: Vilella
+  - speaker: Galloway
 ---
+
