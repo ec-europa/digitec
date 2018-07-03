@@ -4,10 +4,11 @@ title: 'Panel 3: Public space - how to provide better digital services?'
 starts: '15:45'
 ends: '17:00'
 venue: Gold Hall
-color: purple
+color: blue
 register: true
 readMore: true
-speakers: []
+speakers:
+  - speaker: 'Sagar '
 ---
 
 Pastora Valero, Vice-President, Public Policy and Government Affairs for Europe, CISCO
