@@ -4,7 +4,7 @@ title: 'Panel 2: Workspace - how to work differently?'
 starts: '14:00'
 ends: '15:15'
 venue: Gold Hall
-color: purple
+color: blue
 register: true
 readMore: true
 speakers:
