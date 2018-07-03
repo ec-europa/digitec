@@ -1,11 +1,12 @@
 ---
 templateKey: event
-title: 'Data4Policy'
+title: Artificial Intelligence
 starts: '11:00'
 ends: '12:15'
 venue: Gold Hall
-color: blue
+color: grey
 register: true
 readMore: true
 speakers: []
 ---
+
