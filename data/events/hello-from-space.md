@@ -5,7 +5,7 @@ starts: '09:00'
 ends: '09:30'
 venue: Gold Hall
 color: grey
-register: true
+register: false
 readMore: false
 speakers: []
 ---
