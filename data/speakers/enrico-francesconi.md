@@ -4,7 +4,7 @@ firstname: Enrico
 lastname: Francesconi
 title: >-
   Researcher at the Legal Information Institute of the National Research Council
-  of Italy and Publications Office specialist on eParticipation and Open Data
+  of Italy
 twitter: '@francesconi_e'
 picture: /img/enrico-francesconi.jpg
 ---
