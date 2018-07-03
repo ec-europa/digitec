@@ -29,13 +29,13 @@ const TemplateWrapper = ({ location, children }) => (
 );
 
 TemplateWrapper.propTypes = {
-  children: PropTypes.func,
+  children: PropTypes.node,
   // eslint-disable-next-line
   location: PropTypes.object.isRequired,
 };
 
 TemplateWrapper.defaultProps = {
-  children: () => {},
+  children: null,
 };
 
 export default TemplateWrapper;
