@@ -12,8 +12,3 @@ speakers:
   - speaker: Gabriel
 ---
 
-Mariya Gabriel, Commissioner for Digital Economy
-
-Evelyne Gebhart, Vice-President in charge of ICT, European Parliament
-
-Austrian Presidency
