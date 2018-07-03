@@ -4,7 +4,7 @@ title: 'Keynote: Peter Hinssen, ''''The Day After Tomorrow'''''
 starts: '10:00'
 ends: '10:30'
 venue: Gold Hall
-color: purple
+color: grey
 register: true
 readMore: true
 speakers:
