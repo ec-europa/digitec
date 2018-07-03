@@ -1,11 +1,12 @@
 ---
 templateKey: event
-title: 'IT in the EU institutions'
+title: 'Space for Innovation: IT in the EU institutions'
 starts: '11:00'
 ends: '12:15'
 venue: Gold Hall
-color: purple
-register: true
-readMore: true
+color: grey
+register: false
+readMore: false
 speakers: []
 ---
+
