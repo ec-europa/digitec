@@ -8,6 +8,7 @@ color: grey
 register: true
 readMore: true
 speakers:
+  - speaker: Gebhardt
   - speaker: Gabriel
 ---
 
