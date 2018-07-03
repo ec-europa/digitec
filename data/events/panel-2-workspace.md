@@ -7,11 +7,9 @@ venue: Gold Hall
 color: purple
 register: true
 readMore: true
-speakers: []
+speakers:
+  - speaker: Bauer
 ---
-
-Nell Watson (tbc)
-
 Kristel Van den Bergh - Corporate Innovation Manager, ''Materialise''
 
 Prof Wilhem Bauer, Executive Director of Fraunhofer Institute for Industrial Engineering IAO, Stuttgart
