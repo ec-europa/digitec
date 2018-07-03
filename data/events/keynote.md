@@ -7,7 +7,8 @@ venue: Gold Hall
 color: purple
 register: true
 readMore: true
-speakers: []
+speakers:
+  - speaker: Hinssen
 ---
 
 Peter Hinssen, 'The Day after Tomorrow'
