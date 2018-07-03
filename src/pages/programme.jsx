@@ -26,7 +26,7 @@ const ProgrammePage = props => {
     <section className={containerStyles.container}>
       <Helmet title="Programme" />
       <div className={containerStyles.header}>
-        <h1 className={contentStyles.fs9}>Programme</h1>
+        <h1 className={contentStyles.fs10}>Programme</h1>
       </div>
       <EventsList events={mappedEvents} />
     </section>

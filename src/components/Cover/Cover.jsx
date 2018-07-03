@@ -58,7 +58,12 @@ const Cover = ({ image, title, heading, hashtag }) => (
           </a>
         </h2>
         <div className={styles.registerBlock}>
-          <a href="#" className={styles.registerLink}>
+          <a
+            href="https://scic.ec.europa.eu/ew/register/dgscic/DIGITEC_2018_11_20/e/lk/k/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.registerLink}
+          >
             <img
               src={registerLogo}
               alt="Register"

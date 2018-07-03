@@ -12,7 +12,7 @@ export const PracticalPageTemplate = ({ title, content, contentComponent }) => {
   return (
     <section className={containerStyles.container}>
       <Helmet title={title} />
-      <h1 className={contentStyles.fs9}>{title}</h1>
+      <h1 className={contentStyles.fs10}>{title}</h1>
       <PostContent className={contentStyles.content} content={content} />
     </section>
   );

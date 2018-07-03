@@ -14,7 +14,7 @@ const SpeakersPage = props => {
   return (
     <section className={containerStyles.container}>
       <Helmet title="Speakers" />
-      <h1 className={contentStyles.fs9}>Speakers</h1>
+      <h1 className={contentStyles.fs10}>Speakers</h1>
       <div className={containerStyles.cardsContainer}>
         {speakers.map(({ node: speaker }) => (
           <SpeakerCard
