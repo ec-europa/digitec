@@ -8,6 +8,8 @@ import Footer from '../components/Footer/Footer';
 import Navbar from '../components/Navbar/Navbar';
 import styles from './layout.module.scss';
 
+import favicon from '../img/favicon.png';
+
 const TemplateWrapper = ({ location, children }) => (
   <div className={styles.container}>
     <Helmet
@@ -17,6 +19,7 @@ const TemplateWrapper = ({ location, children }) => (
         { name: 'description', content: 'DIGITEC: Innovation Space' },
         { name: 'keywords', content: 'digitec, conference, innovation' },
       ]}
+      link={[{ rel: 'icon', href: favicon, sizes: '48x48', type: 'image/png' }]}
     >
       <html lang="en" />
     </Helmet>
