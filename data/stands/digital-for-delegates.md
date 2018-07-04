@@ -7,8 +7,6 @@ picture: /img/digit-strategic-priorities.jpg
 ---
 To help them in their day-to-day work in the context of Council Decision Making, delegates across the EU Member States can rely on several solutions developed by the GSC's IT department:
 
-
-
 * Delegates Portal - the Delegates Portal offers delegates across the EU a single, web-based, user-friendly interface to access all documents, working papers, notes and dossiers for preparatory work and Council meetings.
 
 
@@ -17,4 +15,4 @@ To help them in their day-to-day work in the context of Council Decision Making,
 
 
 
-*  e-Agenda - the Council's e-Agenda platform, an important step towards paperless meetings, allows collaboration between the Council & the Presidency to structure and release electronic agendas for official meetings, and the publication of intermediate and final versions of the agenda, including links to referenced documents.
+* e-Agenda - the Council's e-Agenda platform, an important step towards paperless meetings, allows collaboration between the Council & the Presidency to structure and release electronic agendas for official meetings, and the publication of intermediate and final versions of the agenda, including links to referenced documents.
