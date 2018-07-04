@@ -5,8 +5,8 @@ starts: '15:45'
 ends: '17:00'
 venue: ''
 color: grey
-register: true
-readMore: true
+register: false
+readMore: false
 speakers: []
 ---
 
