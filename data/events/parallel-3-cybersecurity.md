@@ -1,6 +1,6 @@
 ---
 templateKey: event
-title: 'Cybersecurity'
+title: Mobile Security
 starts: '15:45'
 ends: '17:00'
 venue: Gold Hall
@@ -9,3 +9,4 @@ register: true
 readMore: true
 speakers: []
 ---
+
