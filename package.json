@@ -27,7 +27,7 @@
     "lodash": "4.17.10",
     "lodash-webpack-plugin": "0.11.5",
     "mappy-breakpoints": "0.2.3",
-    "netlify-cms": "1.9.2",
+    "netlify-cms": "1.9.3",
     "normalize.css": "8.0.0",
     "object-fit-images": "3.2.3",
     "prop-types": "15.6.2",
