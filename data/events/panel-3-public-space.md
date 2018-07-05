@@ -9,6 +9,7 @@ register: true
 readMore: true
 speakers:
   - speaker: 'Sagar '
+order: '0'
 ---
 
 Pastora Valero, Vice-President, Public Policy and Government Affairs for Europe, CISCO

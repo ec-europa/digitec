@@ -10,7 +10,9 @@ readMore: true
 speakers:
   - speaker: Bauer
   - speaker: Fischer
+order: '0'
 ---
+
 Kristel Van den Bergh - Corporate Innovation Manager, ''Materialise''
 
 Prof Wilhem Bauer, Executive Director of Fraunhofer Institute for Industrial Engineering IAO, Stuttgart

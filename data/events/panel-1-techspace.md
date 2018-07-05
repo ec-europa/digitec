@@ -9,7 +9,9 @@ register: true
 readMore: true
 speakers:
   - speaker: Al-Saleh
+order: '0'
 ---
+
 Mounir Mahjoubi, Secretary of State for Digital, France
 
 Eva Kaili, Member of the European Parliament
