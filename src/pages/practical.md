@@ -1,20 +1,10 @@
 ---
-templateKey: 'practical-page'
-path: /practical
-title: 'Practical'
+templateKey: practical-page
+title: Practical
 ---
-
-## How to get to SQUARE Brussels?
-
-SQUARE - Brussels Meeting Centre<br/>
-Rue Mont des Arts<br/>
-B-1000 Brussels, Belgium
-
-[Directions (PDF)](http://www.squarebrussels.com/sfSympalBossSiteModel1Plugin/pdf/SQUARE_how_to_get_there.pdf)
-
 ## DIGITEC live
 
-Follow DIGITEC on Twitter ([#digitec18](https://twitter.com/hashtag/digitec16)) or via the webstream on 20th of November.
+Follow DIGITEC on Twitter ([\#digitec18](https://twitter.com/hashtag/digitec16)) or via the webstream on 20th of November.
 
 ## DIGITEC on your mobile
 
