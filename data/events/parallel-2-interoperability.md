@@ -1,6 +1,6 @@
 ---
 templateKey: event
-title: Interoperability
+title: Digital Public Sector
 starts: '14:00'
 ends: '15:15'
 venue: ''
