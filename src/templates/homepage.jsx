@@ -28,7 +28,7 @@ export const HomePageTemplate = ({
           <Img
             sizes={bigLogo.sizes}
             style={{
-              margin: '4rem auto',
+              margin: '4rem auto 1rem',
               width: '100%',
               maxWidth: '600px',
             }}
