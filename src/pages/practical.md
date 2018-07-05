@@ -2,9 +2,10 @@
 templateKey: practical-page
 title: Practical
 ---
+
 ## CONTACT
 
-For general questions about DIGITEC:  <mailto:DIGITEC-CONFERENCE@ec.europa.eu>
+For general questions about DIGITEC: <mailto:DIGITEC-CONFERENCE@ec.europa.eu>
 
 For registration questions: <mailto:SCIC-CONF-REGISTRATION@ec.europa.eu>
 
@@ -18,7 +19,11 @@ On iOS or with Chrome for Android, you can add DIGITEC to your home screen.
 
 ### Android
 
-With Chrome for Android, go to the website, open Chrome's menu and click on the "Add to home screen" link. You will be asked to give a name to the app and then, a new icon will be created on your home screen.
+With Chrome for Android, go to the website and open Chrome's menu.
+
+![Chrome's menu](./android1.jpg)
+
+Then, click on the "Add to home screen" link. You will be asked to give a name to the app and then, a new icon will be created on your home screen.
 
 ### iOS
 
