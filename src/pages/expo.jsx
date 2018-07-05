@@ -14,7 +14,8 @@ const StandsPage = props => {
   return (
     <section className={containerStyles.container}>
       <Helmet title="Expo" />
-      <h1 className={contentStyles.fs10}>Expo – more stands coming soon!</h1>
+      <h1 className={contentStyles.fs10}>Expo</h1>
+      <h2>More stands coming soon!</h2>
       <div className={containerStyles.cardsContainer}>
         {stands
           .sort(
