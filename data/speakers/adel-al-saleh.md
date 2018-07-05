@@ -2,7 +2,7 @@
 templateKey: speaker
 firstname: 'Adel '
 lastname: Al-Saleh
-title: Board Member of Deutsche Telekom and CEO TSystems International
+title: Board Member of Deutsche Telekom and CEO T-Systems International
 twitter: '@adel_al_saleh'
 picture: /img/adel-al-saleh2.jpg
 ---
