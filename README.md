@@ -22,3 +22,9 @@ yarn serve
 ```
 
 Open the admin panel: http://localhost:9000/admin/
+
+### Build a release
+
+```
+gatsby build --prefix-paths
+```

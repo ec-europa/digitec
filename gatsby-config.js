@@ -1,6 +1,7 @@
 const config = require('./config.json');
 
 module.exports = {
+  pathPrefix: '/digitec',
   siteMetadata: {
     title: config.siteTitle,
     description: config.siteDescription,
@@ -14,7 +15,7 @@ module.exports = {
       options: {
         name: 'DIGITEC 2018',
         short_name: 'DIGITEC',
-        start_url: '/',
+        start_url: '/digitec',
         background_color: '#fcfdfd',
         theme_color: '#009ee2',
         display: 'minimal-ui',
