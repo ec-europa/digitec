@@ -2,9 +2,7 @@
 templateKey: speaker
 firstname: Léonie
 lastname: Watson
-title: >-
-  Director of Developer Communications at The Paciello Group (TPG) and member of
-  the W3C Advisory Board.
+title: Director of Developer Communications at The Paciello Group
 twitter: '@LeonieWatson'
 picture: /img/leonie-watson.jpg
 ---
