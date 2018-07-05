@@ -2,11 +2,11 @@
 templateKey: speaker
 firstname: 'Adel '
 lastname: Al-Saleh
-title: Board Member of Deutsche Telekom and CEO TSystems International
+title: Board Member of Deutsche Telekom and CEO T-Systems International
 twitter: '@adel_al_saleh'
 picture: /img/adel-al-saleh2.jpg
 ---
-Adel Al-Saleh, born in 1963, started his role as Member of the Board of Management at Deutsche Telekom AG and CEO of T-Systems on 1 January 2018.
+Adel Al-Saleh started his role as Member of the Board of Management at Deutsche Telekom AG and CEO of T-Systems on 1 January 2018.
 
 The first 19 years of his professional life Mr Al-Saleh held a variety of senior leadership roles at IBM. He served as Vice President and General Manager of Sales and Industries, IBM Northeast Europe, responsible for sales across all industries and products.
 
