@@ -16,18 +16,23 @@ const StandsPage = props => {
       <Helmet title="Expo" />
       <h1 className={contentStyles.fs10}>Expo</h1>
       <div className={containerStyles.cardsContainer}>
-        {stands.map(({ node: stand }) => (
-          <StandCard
-            key={stand.fields.slug}
-            stand={{
-              slug: stand.fields.slug,
-              title: stand.frontmatter.title,
-              subtitle: stand.frontmatter.subtitle,
-              picture: stand.frontmatter.picture.childImageSharp,
-              number: stand.frontmatter.number,
-            }}
-          />
-        ))}
+        {stands
+          .sort(
+            (standA, standB) =>
+              standA.node.frontmatter.number - standB.node.frontmatter.number
+          )
+          .map(({ node: stand }) => (
+            <StandCard
+              key={stand.fields.slug}
+              stand={{
+                slug: stand.fields.slug,
+                title: stand.frontmatter.title,
+                subtitle: stand.frontmatter.subtitle,
+                picture: stand.frontmatter.picture.childImageSharp,
+                number: stand.frontmatter.number,
+              }}
+            />
+          ))}
       </div>
     </section>
   );
