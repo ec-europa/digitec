@@ -19,6 +19,7 @@ const ProgrammePage = props => {
     ends: event.frontmatter.ends,
     venue: event.frontmatter.venue,
     color: event.frontmatter.color,
+    order: event.frontmatter.order,
     readMore: event.frontmatter.readMore,
   }));
 

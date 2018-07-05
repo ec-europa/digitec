@@ -9,5 +9,5 @@ register: true
 readMore: true
 speakers:
   - speaker: Watson
+order: '2'
 ---
-

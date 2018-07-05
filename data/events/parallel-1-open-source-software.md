@@ -9,5 +9,5 @@ register: true
 readMore: true
 speakers:
   - speaker: Reda
+order: '1'
 ---
-

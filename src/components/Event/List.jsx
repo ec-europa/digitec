@@ -28,16 +28,18 @@ const List = ({
   Object.keys(eventsByTimeslot).forEach(start => {
     const eventsList = eventsByTimeslot[start];
 
-    const eventsRows = eventsList.map(event => (
-      <Row
-        key={event.slug}
-        event={event}
-        // checked={schedule[event.id]}
-        // onToggle={onToggle}
-        displayTime={false}
-        // location={location}
-      />
-    ));
+    const eventsRows = eventsList
+      .sort((standA, standB) => standA.order - standB.order)
+      .map(event => (
+        <Row
+          key={event.slug}
+          event={event}
+          // checked={schedule[event.id]}
+          // onToggle={onToggle}
+          displayTime={false}
+          // location={location}
+        />
+      ));
 
     const eventsEnds = eventsList[0].ends ? (
       <time>{eventsList[0].ends}</time>

@@ -1,12 +1,12 @@
 ---
 templateKey: event
-title: Artificial Intelligence
+title: Digital Public Sector
 starts: '11:00'
 ends: '12:15'
-venue: Gold Hall
+venue: ''
 color: grey
 register: false
 readMore: false
 speakers: []
+order: '2'
 ---
-
