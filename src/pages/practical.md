@@ -23,7 +23,13 @@ With Chrome for Android, go to the website and open Chrome's menu.
 
 ![Chrome's menu](./android1.jpg)
 
-Then, click on the "Add to home screen" link. You will be asked to give a name to the app and then, a new icon will be created on your home screen.
+Then, click on the "Add to Home screen" link.
+
+![Add to home screen](./android2.jpg)
+
+You will be asked to give a name to the app and then, a new icon will be created on your home screen.
+
+![Home screen](./android3.jpg)
 
 ### iOS
 
