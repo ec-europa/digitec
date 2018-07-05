@@ -6,7 +6,8 @@ title: Practical
 
 For general questions about DIGITEC:  [DIGITEC-CONFERENCE@ec.europa.eu](<mailto: DIGITEC-CONFERENCE@ec.europa.eu>)
 
-For registration questions: [SCIC-CONF-REGISTRATION@ec.europa.eu](<mailto: SCIC-CONF-REGISTRATION@ec.europa.eu>)
+For registration questions:
+ [SCIC-CONF-REGISTRATION@ec.europa.eu](<mailto: SCIC-CONF-REGISTRATION@ec.europa.eu>)
 
 ## DIGITEC live
 
