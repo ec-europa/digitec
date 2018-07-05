@@ -3,7 +3,7 @@ templateKey: stand
 title: EP IT Application Strategy Framework
 subtitle: Shaping the IT landscape of the European Parliament
 number: '2'
-picture: /img/digit-strategic-priorities.jpg
+picture: /img/2-ep-strategy-framework.jpg
 ---
 Make an informed decision today on how the IT Landscape will be shaped in 2023: this is the purpose of the 9th strategic programme of DG ITEC at the European Parliament (SEF ITEC 9: Strategic Execution Framework for DG ITEC).
 
