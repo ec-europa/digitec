@@ -3,7 +3,7 @@ templateKey: stand
 title: Digital for delegates
 subtitle: Apps to support decision making at the Council of Europe
 number: '3'
-picture: /img/digit-strategic-priorities.jpg
+picture: /img/3-digital-for-delegates-2.jpg
 ---
 Delegates across the EU Member States can rely on several solutions developed by the GSC's IT department:
 
