@@ -2,6 +2,12 @@
 templateKey: practical-page
 title: Practical
 ---
+## CONTACT
+
+For general questions about DIGITEC:  [DIGITEC-CONFERENCE@ec.europa.eu](<mailto: DIGITEC-CONFERENCE@ec.europa.eu>)
+
+For registration questions: [SCIC-CONF-REGISTRATION@ec.europa.eu](<mailto: SCIC-CONF-REGISTRATION@ec.europa.eu>)
+
 ## DIGITEC live
 
 Follow DIGITEC on Twitter ([\#digitec18](https://twitter.com/hashtag/digitec16)) or via the webstream on 20th of November.
