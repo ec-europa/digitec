@@ -3,7 +3,7 @@ templateKey: stand
 title: "ISA² Programme \t"
 subtitle: IT solutions for less bureaucracy
 number: '5'
-picture: /img/digit-strategic-priorities.jpg
+picture: /img/5-ec_isa.jpg
 ---
 The ISA² Programme of the European Commission supports the development of digital solutions that enable public administrations, businesses and citizens in Europe to benefit from cross-border and cross-sector digital public services, having a strong focus on helping public administrations to become digital.
 
