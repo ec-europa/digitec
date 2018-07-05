@@ -28,10 +28,12 @@ With Chrome for Android, go to the website, open Chrome's menu and click on the 
 
 With Safari for iOS, go to the website and tap on the "Share" icon at the bottom (the square with an arrow pointing upwards).
 
-![Image of Yaktocat](./ios1.png)
+![Share icon](./ios1.jpg)
 
 Select the "Add to Home Screen" icon.
 
-![Image of Yaktocat](./ios2.png)
+![Add to Home Screen](./ios2.jpg)
 
 Give your link button a name and click "Add" - your new icon will appear on your home screen.
+
+![Icon on home screen](./ios3.jpg)
