@@ -7,7 +7,7 @@ picture: /img/3-digital-for-delegates-2.jpg
 ---
 Delegates across the EU Member States can rely on several solutions developed by the GSC's IT department:
 
-* **Delegates Portal** - it offers delegates across the EU a single, web-based, user-friendly interface to access all documents, working papers, notes and dossiers for preparatory work and Council meetings.
+* **Delegates Portal** - it offers to delegates across the EU a single, web-based, user-friendly interface to access all documents, working papers, notes and dossiers for preparatory work and Council meetings.
 
 
 
