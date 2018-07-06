@@ -10,4 +10,6 @@ readMore: true
 order: '1'
 speakers:
   - speaker: Reda
+  - speaker: 'Kempf '
 ---
+
