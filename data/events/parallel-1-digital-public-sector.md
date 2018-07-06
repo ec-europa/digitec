@@ -8,6 +8,7 @@ color: grey
 register: false
 readMore: false
 order: '2'
-speakers: []
+speakers:
+  - speaker: Makaay
 ---
 
