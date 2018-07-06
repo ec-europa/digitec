@@ -5,8 +5,8 @@ starts: '11:00'
 ends: '12:15'
 venue: 'Parallel session, room to be announced'
 color: grey
-register: false
-readMore: false
+register: true
+readMore: true
 order: '2'
 speakers:
   - speaker: Makaay
