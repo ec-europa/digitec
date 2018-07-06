@@ -1,9 +1,9 @@
 ---
 templateKey: event
-title: Cloud - Innovative technologies in Public Sector
+title: Cloud - Innovative Technologies in Public Sector
 starts: '14:00'
 ends: '15:15'
-venue: ''
+venue: 'Parallel session, room to be announced'
 color: grey
 register: true
 readMore: true
