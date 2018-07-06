@@ -46,7 +46,7 @@ collections:
       - {label: "Color", name: "color", widget: "select", default: "grey", options: ["none", "grey", "blue", "purple", "yellow"]}
       - {label: "Register", name: "register", widget: "boolean", default: false}
       - {label: "Read more", name: "readMore", widget: "boolean", default: false}
-      - {label: "Order (for a given time slot)", name: "order", widget: "string"}
+      - {label: "Order (for a given time slot)", name: "order", widget: "string", default: "0"}
       - label: "Speakers"
         name: "speakers"
         widget: "list"

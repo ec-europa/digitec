@@ -7,7 +7,7 @@ venue: Gold Hall
 color: blue
 register: true
 readMore: true
+order: '0'
 speakers:
   - speaker: Hinssen
 ---
-

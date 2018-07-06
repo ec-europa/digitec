@@ -7,9 +7,9 @@ venue: Gold Hall
 color: blue
 register: true
 readMore: true
+order: '0'
 speakers:
   - speaker: 'Sagar '
-order: '0'
 ---
 
 Pastora Valero, Vice-President, Public Policy and Government Affairs for Europe, CISCO

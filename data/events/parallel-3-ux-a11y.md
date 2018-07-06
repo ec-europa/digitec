@@ -7,7 +7,7 @@ venue: ''
 color: grey
 register: true
 readMore: true
+order: '2'
 speakers:
   - speaker: Watson
-order: '2'
 ---

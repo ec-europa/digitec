@@ -7,10 +7,10 @@ venue: Gold Hall
 color: blue
 register: true
 readMore: true
+order: '0'
 speakers:
   - speaker: Bauer
   - speaker: Fischer
-order: '0'
 ---
 
 Kristel Van den Bergh - Corporate Innovation Manager, ''Materialise''

@@ -7,7 +7,7 @@ venue: ''
 color: grey
 register: true
 readMore: true
+order: '1'
 speakers:
   - speaker: Reda
-order: '1'
 ---

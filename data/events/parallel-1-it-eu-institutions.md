@@ -7,6 +7,6 @@ venue: Gold Hall
 color: grey
 register: false
 readMore: false
-speakers: []
 order: '3'
+speakers: []
 ---

@@ -7,9 +7,9 @@ venue: Gold Hall
 color: blue
 register: true
 readMore: true
+order: '0'
 speakers:
   - speaker: Al-Saleh
-order: '0'
 ---
 
 Mounir Mahjoubi, Secretary of State for Digital, France
