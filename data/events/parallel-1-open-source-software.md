@@ -12,7 +12,7 @@ speakers:
   - speaker: Reda
   - speaker: 'Kempf '
 ---
-Join the discussion, followed by Q&A, to learn about:
+Join the discussion to learn about:
 
 * Challenges when running a major open source software community: VLC 
 * European Commission's approach to open source software 
