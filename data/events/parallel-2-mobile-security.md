@@ -10,4 +10,4 @@ readMore: true
 order: '2'
 speakers: []
 ---
-Mobile security is a great concern for cyber security professionals all around Europe. In this panel Ken Ducatel, Director of the Security Directorate at the European Commission and acting Head of CERT-EU will moderate a panel of cyber security specialists to discuss the state of play and best practices in terms of technology, behavior and training.
+Mobile security is a great concern for cyber security professionals all around Europe. In this panel Ken Ducatel, Director of the Security Directorate at the European Commission and acting Head of CERT-EU will invite renowned cyber security experts to discuss the state of play and best practices in terms of technology, behavior and training.
