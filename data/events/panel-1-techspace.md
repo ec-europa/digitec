@@ -10,10 +10,6 @@ readMore: true
 order: '0'
 speakers:
   - speaker: Al-Saleh
+  - speaker: Valero
 ---
 
-Mounir Mahjoubi, Secretary of State for Digital, France
-
-Eva Kaili, Member of the European Parliament
-
-Pastora Valero, Vice President Government Affairs for Europe, Middle East, Africa and Russia, Cisco
