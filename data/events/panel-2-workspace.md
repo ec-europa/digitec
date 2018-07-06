@@ -11,8 +11,6 @@ order: '0'
 speakers:
   - speaker: Bauer
   - speaker: Fischer
+  - speaker: Van den Bergh
 ---
 
-Kristel Van den Bergh - Corporate Innovation Manager, ''Materialise''
-
-Prof Wilhem Bauer, Executive Director of Fraunhofer Institute for Industrial Engineering IAO, Stuttgart
