@@ -4,7 +4,7 @@ title: Practical
 ---
 ## CONTACT
 
-For general questions about DIGITEC: [DIGITEC CONFERENCE  TEAM](mailto:DIGITEC-CONFERENCE@ec.europa.eu)
+For general questions about DIGITEC: [DIGITEC CONFERENCE TEAM](mailto:DIGITEC-CONFERENCE@ec.europa.eu)
 
 For registration questions: [SCIC CONFERENCE REGISTRATION](mailto:SCIC-CONF-REGISTRATION@ec.europa.eu)
 
