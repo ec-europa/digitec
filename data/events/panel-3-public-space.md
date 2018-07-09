@@ -7,9 +7,8 @@ venue: Gold Hall
 color: blue
 register: true
 readMore: true
+order: '1'
 speakers:
   - speaker: 'Sagar '
 ---
-Pastora Valero, Vice-President, Public Policy and Government Affairs for Europe, CISCO
-
 Christian Ehler, Member of the European Parliament
