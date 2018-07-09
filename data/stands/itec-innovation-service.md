@@ -5,7 +5,7 @@ subtitle: Effective technological innovation inside the EP
 number: '6'
 picture: /img/innovation..png
 ---
-How to stimulate ICT innovation inside the European Parliament? The ICT Innovation Service is the answer.
+How to stimulate ICT innovation inside the European Parliament? The ITEC Innovation Service is the answer.
 
 Performing permanent technology scouting, the service aims at fostering, engaging and introducing effective technological innovation with potential relevance to EP activities.
 
