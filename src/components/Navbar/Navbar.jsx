@@ -181,9 +181,6 @@ class Navbar extends React.PureComponent {
               <NavbarItem to="/speakers" onClick={this.closeDrawer}>
                 Speakers
               </NavbarItem>
-              <NavbarItem to="/teams" onClick={this.closeDrawer}>
-                Teams
-              </NavbarItem>
               <NavbarItem to="/programme" onClick={this.closeDrawer}>
                 Programme
               </NavbarItem>

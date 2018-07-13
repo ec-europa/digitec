@@ -29,6 +29,7 @@ const SpeakersPage = props => {
           />
         ))}
       </div>
+      <h2>Presenting teams</h2>
     </section>
   );
 };

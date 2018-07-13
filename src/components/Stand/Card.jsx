@@ -20,14 +20,18 @@ const Stand = ({ stand }) => (
       state: { modal: true },
     }}
   >
-    <Overdrive id={`${stand.title}-pic`}>
-      <Img
-        sizes={stand.picture.sizes}
-        className={styles.picture}
-        outerWrapperClassName={styles.pictureFrame}
-        alt={stand.title}
-      />
-    </Overdrive>
+    {stand.picture ? (
+      <Overdrive id={`${stand.title}-pic`}>
+        <Img
+          sizes={stand.picture.sizes}
+          className={styles.picture}
+          outerWrapperClassName={styles.pictureFrame}
+          alt={stand.title}
+        />
+      </Overdrive>
+    ) : (
+      ''
+    )}
     <div className={styles.info}>
       <div className={styles.number}>{stand.number}</div>
       <div className={styles.name}>{stand.title}</div>

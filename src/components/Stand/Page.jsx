@@ -15,15 +15,19 @@ import styles from './Page.module.scss';
 const Page = ({ stand, children }) => (
   <section className={styles.container}>
     <div className={styles.header}>
-      <Overdrive id={`${stand.title}-pic`} className={styles.headerPicture}>
-        {stand.picture.type === Img
-          ? React.cloneElement(stand.picture, {
-              alt: stand.title,
-            })
-          : React.cloneElement(stand.picture, {
-              alt: stand.title,
-            })}
-      </Overdrive>
+      {stand.picture ? (
+        <Overdrive id={`${stand.title}-pic`} className={styles.headerPicture}>
+          {stand.picture.type === Img
+            ? React.cloneElement(stand.picture, {
+                alt: stand.title,
+              })
+            : React.cloneElement(stand.picture, {
+                alt: stand.title,
+              })}
+        </Overdrive>
+      ) : (
+        ''
+      )}
       <div className={styles.headerTitles}>
         <h3>
           <span className={styles.number}>{stand.number}</span> {stand.title}

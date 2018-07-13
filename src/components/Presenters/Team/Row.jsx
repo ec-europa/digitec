@@ -1,6 +1,6 @@
 /**
  *
- * Speaker/Row
+ * Team/Row
  *
  */
 
@@ -12,16 +12,15 @@ import Overdrive from 'react-overdrive';
 
 import styles from '../Row.module.scss';
 
-const Row = ({ team }) => {
-  console.log(team);
-  return (
-    <Link
-      className={styles.presenterContainer}
-      to={{
-        pathname: team.slug,
-        state: { modal: true },
-      }}
-    >
+const Row = ({ team }) => (
+  <Link
+    className={styles.presenterContainer}
+    to={{
+      pathname: team.slug,
+      state: { modal: true },
+    }}
+  >
+    {team.picture ? (
       <Overdrive
         id={`${team.teamName}-pic`}
         className={styles.presenterPicture}
@@ -31,13 +30,15 @@ const Row = ({ team }) => {
           alt={`${team.teamName}`}
         />
       </Overdrive>
-      <div className={styles.presenterInfo}>
-        <h3>{team.teamName}</h3>
-        <h4 className={styles.title}>{team.intro}</h4>
-      </div>
-    </Link>
-  );
-};
+    ) : (
+      ''
+    )}
+    <div className={styles.presenterInfo}>
+      <h3>{team.teamName}</h3>
+      <h4 className={styles.title}>{team.intro}</h4>
+    </div>
+  </Link>
+);
 
 Row.propTypes = {
   team: PropTypes.shape({

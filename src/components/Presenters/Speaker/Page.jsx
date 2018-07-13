@@ -48,18 +48,22 @@ const Page = ({ speaker, events, children }) => {
   return (
     <section className={styles.container}>
       <div className={styles.header}>
-        <Overdrive
-          id={`${speaker.firstname}-${speaker.lastname}-pic`}
-          className={styles.headerPicture}
-        >
-          {speaker.picture.type === Img
-            ? React.cloneElement(speaker.picture, {
-                alt: `${speaker.firstname} ${speaker.lastname}`,
-              })
-            : React.cloneElement(speaker.picture, {
-                alt: `${speaker.firstname} ${speaker.lastname}`,
-              })}
-        </Overdrive>
+        {speaker.picture ? (
+          <Overdrive
+            id={`${speaker.firstname}-${speaker.lastname}-pic`}
+            className={styles.headerPicture}
+          >
+            {speaker.picture.type === Img
+              ? React.cloneElement(speaker.picture, {
+                  alt: `${speaker.firstname} ${speaker.lastname}`,
+                })
+              : React.cloneElement(speaker.picture, {
+                  alt: `${speaker.firstname} ${speaker.lastname}`,
+                })}
+          </Overdrive>
+        ) : (
+          ''
+        )}
         <div className={styles.headerTitles}>
           <h3>
             {speaker.firstname}{' '}

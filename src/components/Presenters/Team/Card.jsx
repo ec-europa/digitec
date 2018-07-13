@@ -1,6 +1,6 @@
 /**
  *
- * Teams/Team
+ * Team/Card
  *
  */
 
@@ -20,14 +20,18 @@ const Team = ({ team }) => (
       state: { modal: true },
     }}
   >
-    <Overdrive id={`${team.teamName}-pic`}>
-      <Img
-        sizes={team.picture.sizes}
-        className={styles.picture}
-        outerWrapperClassName={styles.pictureFrame}
-        alt={`${team.teamName}`}
-      />
-    </Overdrive>
+    {team.picture ? (
+      <Overdrive id={`${team.teamName}-pic`}>
+        <Img
+          sizes={team.picture.sizes}
+          className={styles.picture}
+          outerWrapperClassName={styles.pictureFrame}
+          alt={`${team.teamName}`}
+        />
+      </Overdrive>
+    ) : (
+      ''
+    )}
     <div className={styles.info}>
       <div className={styles.name}>{team.teamName}</div>
       <div className={styles.title}>{team.intro}</div>

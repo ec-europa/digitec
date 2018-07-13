@@ -1,6 +1,6 @@
 /**
  *
- * Speakers/Page
+ * Team/Page
  *
  */
 
@@ -48,15 +48,22 @@ const Page = ({ team, events, children }) => {
   return (
     <section className={styles.container}>
       <div className={styles.header}>
-        <Overdrive id={`${team.teamName}-pic`} className={styles.headerPicture}>
-          {team.picture.type === Img
-            ? React.cloneElement(team.picture, {
-                alt: `${team.teamName}`,
-              })
-            : React.cloneElement(team.picture, {
-                alt: `${team.teamName}`,
-              })}
-        </Overdrive>
+        {team.picture ? (
+          <Overdrive
+            id={`${team.teamName}-pic`}
+            className={styles.headerPicture}
+          >
+            {team.picture.type === Img
+              ? React.cloneElement(team.picture, {
+                  alt: `${team.teamName}`,
+                })
+              : React.cloneElement(team.picture, {
+                  alt: `${team.teamName}`,
+                })}
+          </Overdrive>
+        ) : (
+          ''
+        )}
         <div className={styles.headerTitles}>
           <h3>{team.teamName}</h3>
           <h4 className={styles.title}>{team.intro}</h4>
