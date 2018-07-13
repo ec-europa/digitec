@@ -92,6 +92,7 @@ module.exports = {
   ],
   mapping: {
     'MarkdownRemark.fields.speakers': `MarkdownRemark`,
+    'MarkdownRemark.fields.teams': `MarkdownRemark`,
     'MarkdownRemark.fields.events': `MarkdownRemark`,
   },
 };
