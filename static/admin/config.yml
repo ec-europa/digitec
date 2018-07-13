@@ -69,6 +69,13 @@ collections:
         required: false
         fields:
           - {label: "Speaker", name: "speaker", widget: "relation", collection: "speakers", searchFields: ["firstname", "lastname"], displayFields: ["firstname", "lastname"],valueField: "lastname"}
+      - label: "Teams"
+        name: "teams"
+        widget: "list"
+        default: []
+        required: false
+        fields:
+          - {label: "Teams", name: "teams", widget: "relation", collection: "teams", searchFields: ["teamName"], displayFields: ["teamName"],valueField: "teamName"}
       - {label: "Body", name: "body", widget: "markdown", required: false}
 
   - name: "stands"
