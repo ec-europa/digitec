@@ -1,10 +1,10 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import Content, { HTMLContent } from '../components/Content';
 import Img from 'gatsby-image';
+import Content, { HTMLContent } from '../components/Content';
 
-import SpeakerPage from '../components/Speaker/Page';
+import SpeakerPage from '../components/Presenters/Speaker/Page';
 import contentStyles from '../utils/_content.module.scss';
 
 export const SpeakerTemplate = ({

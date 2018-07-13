@@ -10,15 +10,15 @@ import Img from 'gatsby-image';
 import Overdrive from 'react-overdrive';
 
 // Styles
-import styles from './Page.module.scss';
+import styles from '../Page.module.scss';
 
 // Components
-import EventRow from '../Event/Row';
+import EventRow from '../../Event/Row';
 
 // Images
-import twitterLogo from './twitter.png';
+import twitterLogo from '../twitter.png';
 
-const Page = ({ speaker, events, children }) => {
+const Page = ({ team, events, children }) => {
   const sessions =
     events && events.length && events.filter(e => e).length ? (
       <Fragment>
@@ -48,32 +48,26 @@ const Page = ({ speaker, events, children }) => {
   return (
     <section className={styles.container}>
       <div className={styles.header}>
-        <Overdrive
-          id={`${speaker.firstname}-${speaker.lastname}-pic`}
-          className={styles.headerPicture}
-        >
-          {speaker.picture.type === Img
-            ? React.cloneElement(speaker.picture, {
-                alt: `${speaker.firstname} ${speaker.lastname}`,
+        <Overdrive id={`${team.teamName}-pic`} className={styles.headerPicture}>
+          {team.picture.type === Img
+            ? React.cloneElement(team.picture, {
+                alt: `${team.teamName}`,
               })
-            : React.cloneElement(speaker.picture, {
-                alt: `${speaker.firstname} ${speaker.lastname}`,
+            : React.cloneElement(team.picture, {
+                alt: `${team.teamName}`,
               })}
         </Overdrive>
         <div className={styles.headerTitles}>
-          <h3>
-            {speaker.firstname}{' '}
-            <span className={styles.lastname}>{speaker.lastname}</span>
-          </h3>
-          <h4 className={styles.title}>{speaker.title}</h4>
-          {speaker.twitter ? (
+          <h3>{team.teamName}</h3>
+          <h4 className={styles.title}>{team.intro}</h4>
+          {team.twitter ? (
             <a
               className={styles.twitter}
-              href={`https://twitter.com/${speaker.twitter.substr(1)}`}
+              href={`https://twitter.com/${team.twitter.substr(1)}`}
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src={twitterLogo} alt="Twitter Feed" /> {speaker.twitter}
+              <img src={twitterLogo} alt="Twitter Feed" /> {team.twitter}
             </a>
           ) : null}
         </div>
@@ -85,13 +79,13 @@ const Page = ({ speaker, events, children }) => {
 };
 
 Page.propTypes = {
-  speaker: PropTypes.object,
+  team: PropTypes.object,
   events: PropTypes.array,
   children: PropTypes.node,
 };
 
 Page.defaultProps = {
-  speaker: {},
+  team: {},
   events: [],
 };
 

@@ -10,7 +10,7 @@ import Link from 'gatsby-link';
 import Img from 'gatsby-image';
 import Overdrive from 'react-overdrive';
 
-import styles from './Card.module.scss';
+import styles from '../Card.module.scss';
 
 const Team = ({ team }) => (
   <Link
@@ -25,7 +25,7 @@ const Team = ({ team }) => (
         sizes={team.picture.sizes}
         className={styles.picture}
         outerWrapperClassName={styles.pictureFrame}
-        alt={`${team.teamName} ${team.lastname}`}
+        alt={`${team.teamName}`}
       />
     </Overdrive>
     <div className={styles.info}>

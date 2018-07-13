@@ -8,7 +8,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 // Components
-import SpeakerRow from '../Speaker/Row';
+import SpeakerRow from '../Presenters/Speaker/Row';
+import TeamRow from '../Presenters/Team/Row';
 
 // Styles
 import styles from './Page.module.scss';
@@ -69,13 +70,13 @@ const Page = ({
       <div>
         <h2>Team{teams.length > 1 ? 's' : ''}</h2>
         {teams.map(team => (
-          <SpeakerRow
+          <TeamRow
             key={team.fields.slug}
-            speaker={{
+            team={{
               slug: team.fields.slug,
               picture: team.frontmatter.picture,
               teamName: team.frontmatter.teamName,
-              title: team.frontmatter.title,
+              intro: team.frontmatter.intro,
             }}
           />
         ))}

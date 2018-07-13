@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 import Img from 'gatsby-image';
 import Content, { HTMLContent } from '../components/Content';
 
-import TeamPage from '../components/Team/Page';
+import TeamPage from '../components/Presenters/Team/Page';
 import contentStyles from '../utils/_content.module.scss';
 
 export const TeamTemplate = ({

@@ -10,7 +10,7 @@ import Link from 'gatsby-link';
 import Img from 'gatsby-image';
 import Overdrive from 'react-overdrive';
 
-import styles from './Card.module.scss';
+import styles from '../Card.module.scss';
 
 const Speaker = ({ speaker }) => (
   <Link

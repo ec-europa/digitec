@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
-import TeamCard from '../components/Team/Card';
+import TeamCard from '../components/Presenters/Team/Card';
 
 import containerStyles from '../utils/_container.module.scss';
 import contentStyles from '../utils/_content.module.scss';
@@ -45,7 +45,7 @@ export default TeamsPage;
 export const pageQuery = graphql`
   query TeamsQuery {
     allMarkdownRemark(
-      sort: { fields: [frontmatter___lastname], order: ASC }
+      sort: { fields: [frontmatter___teamName], order: ASC }
       filter: { fileAbsolutePath: { regex: "/teams/" } }
     ) {
       edges {

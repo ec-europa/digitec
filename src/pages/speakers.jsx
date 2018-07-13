@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
-import SpeakerCard from '../components/Speaker/Card';
+import SpeakerCard from '../components/Presenters/Speaker/Card';
 
 import containerStyles from '../utils/_container.module.scss';
 import contentStyles from '../utils/_content.module.scss';
