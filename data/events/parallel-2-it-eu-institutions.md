@@ -9,5 +9,7 @@ register: false
 readMore: false
 order: '3'
 speakers: []
+teams:
+  - teams: INNO
 ---
 
