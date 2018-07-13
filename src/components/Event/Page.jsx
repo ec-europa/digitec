@@ -16,6 +16,7 @@ import styles from './Page.module.scss';
 const Page = ({
   event,
   speakers,
+  teams,
   // eventModerators,
   // speakers,
   // eventGuests,
@@ -62,6 +63,24 @@ const Page = ({
         ))}
       </div>
     ) : null;
+
+  const teamsBlock =
+    teams && teams.length ? (
+      <div>
+        <h2>Team{teams.length > 1 ? 's' : ''}</h2>
+        {teams.map(team => (
+          <SpeakerRow
+            key={team.fields.slug}
+            speaker={{
+              slug: team.fields.slug,
+              picture: team.frontmatter.picture,
+              teamName: team.frontmatter.teamName,
+              title: team.frontmatter.title,
+            }}
+          />
+        ))}
+      </div>
+    ) : null;
   /*
   const guestsBlock = eventGuests.length
     ? <div>
@@ -96,6 +115,7 @@ const Page = ({
         )}
         {children}
       </div>
+      {teamsBlock}
       {speakersBlock}
     </section>
   );
