@@ -20,15 +20,19 @@ const Row = ({ speaker }) => (
       state: { modal: true },
     }}
   >
-    <Overdrive
-      id={`${speaker.firstname}-${speaker.lastname}-pic`}
-      className={styles.speakerPicture}
-    >
-      <Img
-        sizes={speaker.picture.childImageSharp.sizes}
-        alt={`${speaker.firstname} ${speaker.lastname}`}
-      />
-    </Overdrive>
+    {speaker.picture ? (
+      <Overdrive
+        id={`${speaker.firstname}-${speaker.lastname}-pic`}
+        className={styles.speakerPicture}
+      >
+        <Img
+          sizes={speaker.picture.childImageSharp.sizes}
+          alt={`${speaker.firstname} ${speaker.lastname}`}
+        />
+      </Overdrive>
+    ) : (
+      ''
+    )}
     <div className={styles.speakerInfo}>
       <h3>
         {speaker.firstname}{' '}
