@@ -1,6 +1,7 @@
 const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');
 const createSpeakersEvents = require('./createNodes/speakersEvents');
+const createTeamsEvents = require('./createNodes/teamsEvents');
 
 exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators;
@@ -67,10 +68,11 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
   }
 };
 
-// Map Speakers <-> Events
+// Map Speakers and Teams to Events
 // As discussed here: https://github.com/gatsbyjs/gatsby/issues/3129#issuecomment-365308599
 exports.sourceNodes = ({ boundActionCreators, getNodes, getNode }) => {
   const { createNodeField } = boundActionCreators;
 
   createSpeakersEvents({ getNode, getNodes, createNodeField });
+  createTeamsEvents({ getNode, getNodes, createNodeField });
 };

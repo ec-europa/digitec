@@ -87,6 +87,15 @@ export const pageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       html
       fields {
+        teams {
+          fields {
+            slug
+          }
+          frontmatter {
+            teamName
+            intro
+          }
+        }
         speakers {
           fields {
             slug
