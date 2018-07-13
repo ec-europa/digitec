@@ -75,7 +75,7 @@ collections:
         default: []
         required: false
         fields:
-          - {label: "Teams", name: "teams", widget: "relation", collection: "teams", searchFields: ["teamName"], displayFields: ["teamName"],valueField: "teamName"}
+          - {label: "Team", name: "team", widget: "relation", collection: "teams", searchFields: ["teamName"], displayFields: ["teamName"],valueField: "teamName"}
       - {label: "Body", name: "body", widget: "markdown", required: false}
 
   - name: "stands"
