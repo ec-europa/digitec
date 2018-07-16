@@ -1,8 +1,8 @@
 ---
 templateKey: team
-teamName: 'INNO'
+teamName: 'ZYX'
 teamMembers: 'One, Two, Three'
-intro: Innovations team @DIGIT
+intro: Team with Z letter
 picture: /img/4-council.jpg
 ---
 

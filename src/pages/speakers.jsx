@@ -12,13 +12,17 @@ const SpeakersPage = props => {
   const { data } = props;
   const { edges: presenters } = data.allMarkdownRemark;
 
-  const speakers = presenters.filter(node =>
-    node.node.fields.slug.includes('/speakers/')
-  );
+  const speakers = presenters
+    .filter(node => node.node.fields.slug.includes('/speakers/'))
+    .sort((a, b) =>
+      a.node.frontmatter.lastname.localeCompare(b.node.frontmatter.lastname)
+    );
 
-  const teams = presenters.filter(node =>
-    node.node.fields.slug.includes('/teams/')
-  );
+  const teams = presenters
+    .filter(node => node.node.fields.slug.includes('/teams/'))
+    .sort((a, b) =>
+      a.node.frontmatter.teamName.localeCompare(b.node.frontmatter.teamName)
+    );
 
   return (
     <section className={containerStyles.container}>
