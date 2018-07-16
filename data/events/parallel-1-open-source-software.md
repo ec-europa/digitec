@@ -11,6 +11,8 @@ order: '1'
 speakers:
   - speaker: Reda
   - speaker: 'Kempf '
+  - speaker: Przybyszewski
+  - speaker: ''
 ---
 Join the discussion to learn about:
 
