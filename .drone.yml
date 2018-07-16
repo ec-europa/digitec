@@ -1,0 +1,11 @@
+pipeline:
+  install:
+    image: node:carbon
+    commands:
+      - yarn install --frozen-lockfile
+
+  test-lint:
+    image: node:carbon
+    group: test
+    commands:
+      - yarn test:lint

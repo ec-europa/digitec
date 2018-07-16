@@ -10,8 +10,8 @@ const Content = ({ content, className }) => (
 );
 
 Content.propTypes = {
-  content: PropTypes.string,
-  className: PropTypes.string,
+  content: PropTypes.string.isRequired,
+  className: PropTypes.string.isRequired,
 };
 
 HTMLContent.propTypes = Content.propTypes;
