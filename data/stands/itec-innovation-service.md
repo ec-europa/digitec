@@ -3,7 +3,7 @@ templateKey: stand
 title: 'ITEC Innovation Service '
 subtitle: Effective technological innovation inside the EP
 number: '6'
-picture: /img/innovation..png
+picture: /img/6-ep_inno.jpg
 ---
 How to stimulate ICT innovation inside the European Parliament? The ITEC Innovation Service is the answer.
 
