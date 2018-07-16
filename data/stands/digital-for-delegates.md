@@ -1,7 +1,7 @@
 ---
 templateKey: stand
 title: Digital for delegates
-subtitle: Apps to support decision making at the Council of Europe
+subtitle: 'Apps to support decision making at the (EU) Council '
 number: '3'
 picture: /img/3-digital-for-delegates-2.jpg
 ---
