@@ -10,26 +10,30 @@ import Link from 'gatsby-link';
 import Img from 'gatsby-image';
 import Overdrive from 'react-overdrive';
 
-import styles from './Row.module.scss';
+import styles from '../Row.module.scss';
 
 const Row = ({ speaker }) => (
   <Link
-    className={styles.speakerContainer}
+    className={styles.presenterContainer}
     to={{
       pathname: speaker.slug,
       state: { modal: true },
     }}
   >
-    <Overdrive
-      id={`${speaker.firstname}-${speaker.lastname}-pic`}
-      className={styles.speakerPicture}
-    >
-      <Img
-        sizes={speaker.picture.childImageSharp.sizes}
-        alt={`${speaker.firstname} ${speaker.lastname}`}
-      />
-    </Overdrive>
-    <div className={styles.speakerInfo}>
+    {speaker.picture ? (
+      <Overdrive
+        id={`${speaker.firstname}-${speaker.lastname}-pic`}
+        className={styles.presenterPicture}
+      >
+        <Img
+          sizes={speaker.picture.childImageSharp.sizes}
+          alt={`${speaker.firstname} ${speaker.lastname}`}
+        />
+      </Overdrive>
+    ) : (
+      ''
+    )}
+    <div className={styles.presenterInfo}>
       <h3>
         {speaker.firstname}{' '}
         <span className={styles.lastname}>{speaker.lastname}</span>

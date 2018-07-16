@@ -4,16 +4,16 @@ import Helmet from 'react-helmet';
 import Img from 'gatsby-image';
 import Content, { HTMLContent } from '../components/Content';
 
-import SpeakerPage from '../components/Presenters/Speaker/Page';
+import TeamPage from '../components/Presenters/Team/Page';
 import contentStyles from '../utils/_content.module.scss';
 
-export const SpeakerTemplate = ({
+export const TeamTemplate = ({
   content,
   contentComponent,
-  firstname,
-  lastname,
+  teamName,
+  teamMembers,
   picture,
-  title,
+  intro,
   twitter,
   events,
   helmet,
@@ -23,77 +23,73 @@ export const SpeakerTemplate = ({
   return (
     <Fragment>
       {helmet || ''}
-      <SpeakerPage
-        speaker={{
-          firstname,
-          lastname,
-          title,
+      <TeamPage
+        team={{
+          teamName,
+          teamMembers,
+          intro,
           picture,
           twitter,
         }}
         events={events}
       >
         <PostContent className={contentStyles.content} content={content} />
-      </SpeakerPage>
+      </TeamPage>
     </Fragment>
   );
 };
 
-SpeakerTemplate.propTypes = {
+TeamTemplate.propTypes = {
   content: PropTypes.string.isRequired,
   contentComponent: PropTypes.func,
-  firstname: PropTypes.string,
-  lastname: PropTypes.string,
-  title: PropTypes.string,
+  teamName: PropTypes.string,
+  teamMembers: PropTypes.string,
+  intro: PropTypes.string,
   picture: PropTypes.element,
   twitter: PropTypes.string,
   events: PropTypes.array,
   helmet: PropTypes.object,
 };
 
-SpeakerTemplate.defaultProps = {
+TeamTemplate.defaultProps = {
   contentComponent: null,
-  firstname: '',
-  lastname: '',
-  title: '',
+  teamName: '',
+  teamMembers: '',
+  intro: '',
   picture: null,
   twitter: '',
   events: [],
   helmet: null,
 };
 
-const Speaker = ({ data }) => {
-  const { markdownRemark: post } = data;
+const Team = ({ data }) => {
+  const { markdownRemark: node } = data;
 
   return (
-    <SpeakerTemplate
-      content={post.html}
+    <TeamTemplate
+      content={node.html}
       contentComponent={HTMLContent}
-      firstname={post.frontmatter.firstname}
-      lastname={post.frontmatter.lastname}
-      picture={<Img sizes={post.frontmatter.picture.childImageSharp.sizes} />}
-      twitter={post.frontmatter.twitter}
-      events={post.fields.events}
-      helmet={
-        <Helmet
-          title={`${post.frontmatter.firstname} ${post.frontmatter.lastname}`}
-        />
-      }
-      title={post.frontmatter.title}
+      teamName={node.frontmatter.teamName}
+      teamMembers={node.frontmatter.teamMembers}
+      intro={node.frontmatter.intro}
+      picture={<Img sizes={node.frontmatter.picture.childImageSharp.sizes} />}
+      twitter={node.frontmatter.twitter}
+      events={node.fields.events}
+      helmet={<Helmet title={`${node.frontmatter.teamName}`} />}
     />
   );
 };
 
-Speaker.propTypes = {
+Team.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.object,
   }).isRequired,
 };
 
-export default Speaker;
+export default Team;
 
 export const pageQuery = graphql`
-  query SpeakerWithEventsByID($id: String!) {
+  query TeamWithEventsByID($id: String!) {
     markdownRemark(id: { eq: $id }) {
       html
       fields {
@@ -112,9 +108,9 @@ export const pageQuery = graphql`
         }
       }
       frontmatter {
-        firstname
-        lastname
-        title
+        teamName
+        teamMembers
+        intro
         twitter
         picture {
           childImageSharp {

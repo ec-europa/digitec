@@ -8,7 +8,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 // Components
-import SpeakerRow from '../Speaker/Row';
+import SpeakerRow from '../Presenters/Speaker/Row';
+import TeamRow from '../Presenters/Team/Row';
 
 // Styles
 import styles from './Page.module.scss';
@@ -16,6 +17,7 @@ import styles from './Page.module.scss';
 const Page = ({
   event,
   speakers,
+  teams,
   // eventModerators,
   // speakers,
   // eventGuests,
@@ -62,6 +64,25 @@ const Page = ({
         ))}
       </div>
     ) : null;
+
+  const teamsBlock =
+    teams && teams.length ? (
+      <div>
+        <h2>Team{teams.length > 1 ? 's' : ''}</h2>
+        {teams.map(team => (
+          <TeamRow
+            key={team.fields.slug}
+            team={{
+              slug: team.fields.slug,
+              picture: team.frontmatter.picture,
+              teamName: team.frontmatter.teamName,
+              teamMembers: team.frontmatter.teamMembers,
+              intro: team.frontmatter.intro,
+            }}
+          />
+        ))}
+      </div>
+    ) : null;
   /*
   const guestsBlock = eventGuests.length
     ? <div>
@@ -96,6 +117,7 @@ const Page = ({
         )}
         {children}
       </div>
+      {teamsBlock}
       {speakersBlock}
     </section>
   );
