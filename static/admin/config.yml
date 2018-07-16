@@ -40,6 +40,7 @@ collections:
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "team"}
       - {label: "Team name", name: "teamName", widget: "string"}
+      - {label: "Team members names", name: "teamMembers", widget: "string"}
       - {label: "Intro", name: "intro", widget: "string"}
       - {label: "Twitter handle", name: "twitter", widget: "string", required: false}
       - {label: "Picture", name: "picture", widget: image}

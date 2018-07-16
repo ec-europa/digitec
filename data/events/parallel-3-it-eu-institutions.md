@@ -10,7 +10,6 @@ readMore: false
 order: '3'
 speakers: []
 teams:
-  - teams: A-TEAM
-  - teams: INNO
+  - team: A-TEAM
+  - team: INNO
 ---
-

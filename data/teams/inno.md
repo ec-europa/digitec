@@ -1,6 +1,7 @@
 ---
 templateKey: team
 teamName: 'INNO'
+teamMembers: 'One, Two, Three'
 intro: Innovations team @DIGIT
 picture: /img/inno_team.png
 ---

@@ -34,6 +34,7 @@ const Team = ({ team }) => (
     )}
     <div className={styles.info}>
       <div className={styles.name}>{team.teamName}</div>
+      <div className={styles.name}>{team.teamMembers}</div>
       <div className={styles.title}>{team.intro}</div>
     </div>
   </Link>

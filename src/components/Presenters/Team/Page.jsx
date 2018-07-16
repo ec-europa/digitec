@@ -67,6 +67,7 @@ const Page = ({ team, events, children }) => {
         <div className={styles.headerTitles}>
           <h3>{team.teamName}</h3>
           <h4 className={styles.title}>{team.intro}</h4>
+          <p>{team.teamMembers}</p>
           {team.twitter ? (
             <a
               className={styles.twitter}

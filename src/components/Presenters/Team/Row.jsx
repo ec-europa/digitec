@@ -36,6 +36,7 @@ const Row = ({ team }) => (
     <div className={styles.presenterInfo}>
       <h3>{team.teamName}</h3>
       <h4 className={styles.title}>{team.intro}</h4>
+      <p>{team.teamMembers}</p>
     </div>
   </Link>
 );
@@ -44,6 +45,7 @@ Row.propTypes = {
   team: PropTypes.shape({
     id: PropTypes.string,
     teamName: PropTypes.string,
+    teamMembers: PropTypes.string,
     intro: PropTypes.string,
     picture: PropTypes.string,
   }),

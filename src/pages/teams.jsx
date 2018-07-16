@@ -22,6 +22,7 @@ const TeamsPage = props => {
             team={{
               slug: team.fields.slug,
               teamName: team.frontmatter.teamName,
+              teamMembers: team.frontmatter.teamMembers,
               intro: team.frontmatter.intro,
               picture: team.frontmatter.picture.childImageSharp,
             }}
@@ -56,6 +57,7 @@ export const pageQuery = graphql`
           }
           frontmatter {
             teamName
+            teamMembers
             intro
             picture {
               childImageSharp {

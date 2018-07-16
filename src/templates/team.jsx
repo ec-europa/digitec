@@ -11,6 +11,7 @@ export const TeamTemplate = ({
   content,
   contentComponent,
   teamName,
+  teamMembers,
   picture,
   intro,
   twitter,
@@ -25,6 +26,7 @@ export const TeamTemplate = ({
       <TeamPage
         team={{
           teamName,
+          teamMembers,
           intro,
           picture,
           twitter,
@@ -41,6 +43,7 @@ TeamTemplate.propTypes = {
   content: PropTypes.string.isRequired,
   contentComponent: PropTypes.func,
   teamName: PropTypes.string,
+  teamMembers: PropTypes.string,
   intro: PropTypes.string,
   picture: PropTypes.element,
   twitter: PropTypes.string,
@@ -51,6 +54,7 @@ TeamTemplate.propTypes = {
 TeamTemplate.defaultProps = {
   contentComponent: null,
   teamName: '',
+  teamMembers: '',
   intro: '',
   picture: null,
   twitter: '',
@@ -66,6 +70,7 @@ const Team = ({ data }) => {
       content={node.html}
       contentComponent={HTMLContent}
       teamName={node.frontmatter.teamName}
+      teamMembers={node.frontmatter.teamMembers}
       intro={node.frontmatter.intro}
       picture={<Img sizes={node.frontmatter.picture.childImageSharp.sizes} />}
       twitter={node.frontmatter.twitter}
@@ -104,6 +109,7 @@ export const pageQuery = graphql`
       }
       frontmatter {
         teamName
+        teamMembers
         intro
         twitter
         picture {

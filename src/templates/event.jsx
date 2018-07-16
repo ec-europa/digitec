@@ -98,6 +98,7 @@ export const pageQuery = graphql`
           }
           frontmatter {
             teamName
+            teamMembers
             intro
             picture {
               childImageSharp {
