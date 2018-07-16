@@ -36,7 +36,7 @@ const Row = ({ team }) => (
     <div className={styles.presenterInfo}>
       <h3>{team.teamName}</h3>
       <h4 className={styles.title}>{team.intro}</h4>
-      <p>{team.teamMembers}</p>
+      <p className={styles.presenterParagraph}>{team.teamMembers}</p>
     </div>
   </Link>
 );
