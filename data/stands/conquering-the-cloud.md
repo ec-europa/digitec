@@ -1,6 +1,6 @@
 ---
 templateKey: stand
-title: Conquering the cloud
+title: Conquering the Cloud
 subtitle: The (EU) Council's multi-media platform
 number: '4'
 picture: /img/4-council.jpg
