@@ -13,7 +13,6 @@ export const TeamTemplate = ({
   teamName,
   teamMembers,
   picture,
-  intro,
   twitter,
   events,
   helmet,
@@ -27,7 +26,6 @@ export const TeamTemplate = ({
         team={{
           teamName,
           teamMembers,
-          intro,
           picture,
           twitter,
         }}
@@ -44,7 +42,6 @@ TeamTemplate.propTypes = {
   contentComponent: PropTypes.func,
   teamName: PropTypes.string,
   teamMembers: PropTypes.string,
-  intro: PropTypes.string,
   picture: PropTypes.element,
   twitter: PropTypes.string,
   events: PropTypes.array,
@@ -55,7 +52,6 @@ TeamTemplate.defaultProps = {
   contentComponent: null,
   teamName: '',
   teamMembers: '',
-  intro: '',
   picture: null,
   twitter: '',
   events: [],
@@ -71,7 +67,6 @@ const Team = ({ data }) => {
       contentComponent={HTMLContent}
       teamName={node.frontmatter.teamName}
       teamMembers={node.frontmatter.teamMembers}
-      intro={node.frontmatter.intro}
       picture={<Img sizes={node.frontmatter.picture.childImageSharp.sizes} />}
       twitter={node.frontmatter.twitter}
       events={node.fields.events}
@@ -110,7 +105,6 @@ export const pageQuery = graphql`
       frontmatter {
         teamName
         teamMembers
-        intro
         twitter
         picture {
           childImageSharp {

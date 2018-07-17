@@ -6,7 +6,7 @@ ends: '15:15'
 venue: 'Parallel session, room to be announced'
 color: grey
 register: false
-readMore: true
+readMore: false
 order: '3'
 speakers: []
 teams:

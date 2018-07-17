@@ -68,7 +68,6 @@ const HomePage = ({ data }) => {
       title={frontmatter.title}
       heading={frontmatter.heading}
       hashtag={frontmatter.hashtag}
-      intro={frontmatter.intro}
     />
   );
 };

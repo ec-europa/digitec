@@ -99,7 +99,6 @@ export const pageQuery = graphql`
           frontmatter {
             teamName
             teamMembers
-            intro
             picture {
               childImageSharp {
                 sizes(maxWidth: 260) {

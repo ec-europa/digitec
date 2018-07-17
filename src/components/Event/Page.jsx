@@ -77,7 +77,6 @@ const Page = ({
               picture: team.frontmatter.picture,
               teamName: team.frontmatter.teamName,
               teamMembers: team.frontmatter.teamMembers,
-              intro: team.frontmatter.intro,
             }}
           />
         ))}
