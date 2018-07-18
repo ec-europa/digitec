@@ -18,11 +18,14 @@ const SpeakersPage = props => {
       a.node.frontmatter.lastname.localeCompare(b.node.frontmatter.lastname)
     );
 
-  const teams = presenters
-    .filter(node => node.node.fields.slug.includes('/teams/'))
-    .sort((a, b) =>
-      a.node.frontmatter.teamName.localeCompare(b.node.frontmatter.teamName)
-    );
+  // const teams = presenters
+  //   .filter(node => node.node.fields.slug.includes('/teams/'))
+  //   .sort((a, b) =>
+  //     a.node.frontmatter.teamName.localeCompare(b.node.frontmatter.teamName)
+  //   );
+
+  // Temporarily hide teams on this page.
+  const teams = [];
 
   return (
     <section className={containerStyles.container}>
@@ -53,7 +56,6 @@ const SpeakersPage = props => {
                   slug: team.fields.slug,
                   teamName: team.frontmatter.teamName,
                   picture: team.frontmatter.picture.childImageSharp,
-                  intro: team.frontmatter.intro,
                 }}
               />
             ))}
@@ -92,7 +94,6 @@ export const pageQuery = graphql`
             lastname
             title
             teamName
-            intro
             picture {
               childImageSharp {
                 sizes(maxWidth: 260) {
