@@ -13,13 +13,7 @@ import Overdrive from 'react-overdrive';
 import styles from '../Card.module.scss';
 
 const Team = ({ team }) => (
-  <Link
-    className={styles.item}
-    to={{
-      pathname: team.slug,
-      state: { modal: true },
-    }}
-  >
+  <Link className={styles.item} to={{ pathname: team.slug }}>
     {team.picture ? (
       <Overdrive id={`${team.teamName}-pic`}>
         <Img

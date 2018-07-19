@@ -48,13 +48,7 @@ class Row extends React.Component {
         <div className={styles.primary}>
           {event.readMore ? (
             <div>
-              <Link
-                className={styles.title}
-                to={{
-                  pathname: event.slug,
-                  state: { modal: true },
-                }}
-              >
+              <Link className={styles.title} to={{ pathname: event.slug }}>
                 {event.title}
               </Link>
             </div>

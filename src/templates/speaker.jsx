@@ -98,6 +98,7 @@ export const pageQuery = graphql`
       html
       fields {
         events {
+          id
           fields {
             slug
           }

@@ -13,13 +13,7 @@ import Overdrive from 'react-overdrive';
 import styles from '../Card.module.scss';
 
 const Speaker = ({ speaker }) => (
-  <Link
-    className={styles.item}
-    to={{
-      pathname: speaker.slug,
-      state: { modal: true },
-    }}
-  >
+  <Link className={styles.item} to={{ pathname: speaker.slug }}>
     {speaker.picture ? (
       <Overdrive id={`${speaker.firstname}-${speaker.lastname}-pic`}>
         <Img

@@ -1,13 +1,15 @@
 /**
- *
  * Speakers/Page
- *
  */
 
 import React, { Fragment } from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import Overdrive from 'react-overdrive';
+
+// Redux actions
+import { toggleEvent } from '../../../store/modules/schedule';
 
 // Styles
 import styles from '../Page.module.scss';
@@ -18,7 +20,9 @@ import EventRow from '../../Event/Row';
 // Images
 import twitterLogo from '../twitter.png';
 
-const Page = ({ speaker, events, children }) => {
+const Page = props => {
+  const { speaker, events, schedule, onToggleEvent, children } = props;
+
   const sessions =
     events && events.length && events.filter(e => e).length ? (
       <Fragment>
@@ -28,6 +32,8 @@ const Page = ({ speaker, events, children }) => {
         {events.map(event => (
           <EventRow
             key={event.fields.slug}
+            checked={schedule[event.id]}
+            onToggleEvent={onToggleEvent}
             event={{
               id: event.id,
               slug: event.fields.slug,
@@ -91,6 +97,8 @@ const Page = ({ speaker, events, children }) => {
 Page.propTypes = {
   speaker: PropTypes.object,
   events: PropTypes.array,
+  schedule: PropTypes.object,
+  onToggleEvent: PropTypes.func.isRequired,
   children: PropTypes.node,
 };
 
@@ -99,4 +107,21 @@ Page.defaultProps = {
   events: [],
 };
 
-export default Page;
+function mapStateToProps(state) {
+  return {
+    schedule: state.schedule,
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    onToggleEvent: event => {
+      dispatch(toggleEvent(event));
+    },
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Page);
