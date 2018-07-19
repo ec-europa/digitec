@@ -34,6 +34,10 @@
     "react": "16.4.1",
     "react-helmet": "5.2.0",
     "react-overdrive": "0.0.10",
+    "react-redux": "5.0.7",
+    "redux": "4.0.0",
+    "redux-persist": "4.8.0",
+    "redux-thunk": "2.3.0",
     "uuid": "3.3.2"
   },
   "keywords": ["gatsby"],

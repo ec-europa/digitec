@@ -1,6 +1,12 @@
 /* eslint-disable global-require */
 // gatsby-browser.js
 
+import React from 'react';
+import { Router } from 'react-router-dom';
+import { Provider } from 'react-redux';
+
+import createStore from './src/store/index';
+
 exports.onClientEntry = () => {
   // IntersectionObserver polyfill for gatsby-image (Safari, IE)
   if (typeof window.IntersectionObserver === 'undefined') {
@@ -17,4 +23,16 @@ exports.onClientEntry = () => {
     require('object-fit-images')();
     // console.log('👍 Object-fit/Object-position are polyfilled');
   }
+};
+
+exports.replaceRouterComponent = ({ history }) => {
+  const store = createStore();
+
+  const ConnectedRouterWrapper = ({ children }) => (
+    <Provider store={store}>
+      <Router history={history}>{children}</Router>
+    </Provider>
+  );
+
+  return ConnectedRouterWrapper;
 };
