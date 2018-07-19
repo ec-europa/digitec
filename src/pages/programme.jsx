@@ -40,14 +40,18 @@ const ProgrammePage = props => {
           .
         </p>
       </div>
-      <EventsList events={mappedEvents} />
+      <EventsList
+        events={mappedEvents}
+        onToggleEvent={onToggleEvent}
+        schedule={schedule}
+      />
     </section>
   );
 };
 
 ProgrammePage.propTypes = {
   schedule: PropTypes.object,
-  onToggleEvent: PropTypes.func,
+  onToggleEvent: PropTypes.func.isRequired,
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
       edges: PropTypes.array,
@@ -67,6 +71,7 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
+          id
           html
           fields {
             slug

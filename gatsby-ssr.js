@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React from 'react';
 import { Provider } from 'react-redux';
 import { renderToString } from 'react-dom/server';
@@ -12,3 +14,5 @@ export const replaceRenderer = ({ bodyComponent, replaceBodyHTMLString }) => {
   );
   replaceBodyHTMLString(renderToString(<ConnectedBody />));
 };
+
+/* eslint-enable */

@@ -1,5 +1,4 @@
-/* eslint-disable global-require */
-// gatsby-browser.js
+/* eslint-disable */
 
 import React from 'react';
 import { Router } from 'react-router-dom';
@@ -36,3 +35,5 @@ exports.replaceRouterComponent = ({ history }) => {
 
   return ConnectedRouterWrapper;
 };
+
+/* eslint-enable */
