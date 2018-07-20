@@ -1,7 +1,5 @@
 /**
- *
  * Event/List
- *
  */
 
 import React from 'react';
@@ -9,12 +7,7 @@ import PropTypes from 'prop-types';
 import Row from './Row';
 import styles from './List.module.scss';
 
-const List = ({
-  events,
-  // schedule,
-  // onToggle,
-  // location,
-}) => {
+const List = ({ events, schedule, onToggleEvent }) => {
   const eventsDisplay = [];
 
   const eventsByTimeslot = [];
@@ -34,10 +27,9 @@ const List = ({
         <Row
           key={event.slug}
           event={event}
-          // checked={schedule[event.id]}
-          // onToggle={onToggle}
+          checked={schedule[event.id]}
+          onToggleEvent={onToggleEvent}
           displayTime={false}
-          // location={location}
         />
       ));
 
@@ -62,14 +54,13 @@ const List = ({
 
 List.propTypes = {
   events: PropTypes.array,
-  // schedule: PropTypes.object,
-  // onToggle: PropTypes.func,
-  // location: PropTypes.object,
+  schedule: PropTypes.object,
+  onToggleEvent: PropTypes.func,
 };
 
 List.defaultProps = {
   events: [],
-  // schedule: [],
+  schedule: [],
 };
 
 export default List;

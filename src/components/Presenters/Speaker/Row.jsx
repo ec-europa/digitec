@@ -13,13 +13,7 @@ import Overdrive from 'react-overdrive';
 import styles from '../Row.module.scss';
 
 const Row = ({ speaker }) => (
-  <Link
-    className={styles.presenterContainer}
-    to={{
-      pathname: speaker.slug,
-      state: { modal: true },
-    }}
-  >
+  <Link className={styles.presenterContainer} to={{ pathname: speaker.slug }}>
     {speaker.picture ? (
       <Overdrive
         id={`${speaker.firstname}-${speaker.lastname}-pic`}
