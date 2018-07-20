@@ -11,5 +11,6 @@ order: '0'
 speakers:
   - speaker: Al-Saleh
   - speaker: Valero
+  - speaker: Kailli
 ---
 
