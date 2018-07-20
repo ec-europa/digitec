@@ -4,7 +4,8 @@ import { renderToString } from 'react-dom/server';
 
 import createStore from './src/store/index';
 
-const replaceRenderer = ({ bodyComponent, replaceBodyHTMLString }) => {
+/* eslint-disable import/prefer-default-export */
+export const replaceRenderer = ({ bodyComponent, replaceBodyHTMLString }) => {
   const store = createStore();
 
   const ConnectedBody = () => (
@@ -13,5 +14,3 @@ const replaceRenderer = ({ bodyComponent, replaceBodyHTMLString }) => {
   );
   replaceBodyHTMLString(renderToString(<ConnectedBody />));
 };
-
-export default replaceRenderer;
