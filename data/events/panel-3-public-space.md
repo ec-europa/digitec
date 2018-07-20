@@ -10,5 +10,6 @@ readMore: true
 order: '1'
 speakers:
   - speaker: 'Sagar '
+  - speaker: Ehler
 ---
-Christian Ehler, Member of the European Parliament
+
