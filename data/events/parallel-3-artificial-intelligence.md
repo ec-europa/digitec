@@ -8,7 +8,8 @@ color: grey
 register: true
 readMore: true
 order: '1'
-speakers: []
+speakers:
+  - speaker: Buytendijk
 ---
 AI is on everybody's agenda. Its applications range from highly innovative technologies like self-driving cars to mainstream tools such as question answering systems. The possibilities are endless.
 
