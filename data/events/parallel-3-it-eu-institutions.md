@@ -10,5 +10,9 @@ readMore: false
 order: '3'
 speakers: []
 teams:
+  - team: >-
+      IT Obsolescence & Beyond: Fighting the technical debt in a not-so-small
+      organisation: challenges, enabling and vision 
   - team: INNO
 ---
+
