@@ -12,5 +12,6 @@ speakers:
   - speaker: Al-Saleh
   - speaker: Valero
   - speaker: Kailli
+  - speaker: Mahjoubi
 ---
 
