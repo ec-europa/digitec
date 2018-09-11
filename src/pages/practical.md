@@ -4,7 +4,7 @@ title: Practical
 ---
 ## How to get to SQUARE Brussels?
 
-SQUARE - Brussels Meeting Centre
+[SQUARE](https://www.square-brussels.com/en/contact.html) - Brussels Meeting Centre
 
 Rue Mont des Arts
 
