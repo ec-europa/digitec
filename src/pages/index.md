@@ -2,7 +2,7 @@
 templateKey: homepage
 title: 'DIGITEC: Innovation Space'
 image: /img/home-header.jpg
-heading: '20 November, 2018 - Brussels'
+heading: '20 November, 2018 - Square, Brussels'
 hashtag: digitec18
 ---
 
