@@ -10,7 +10,7 @@ Rue Mont des Arts
 
 B-1000 Brussels, Belgium
 
-## Contact
+## Contacts
 
 For general questions about DIGITEC: [DIGITEC CONFERENCE TEAM](mailto:DIGITEC-CONFERENCE@ec.europa.eu)
 
