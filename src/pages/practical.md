@@ -2,7 +2,15 @@
 templateKey: practical-page
 title: Practical
 ---
-## CONTACT
+## How to get to SQUARE Brussels?
+
+[SQUARE](https://www.square-brussels.com/en/contact.html) - Brussels Meeting Centre
+
+Rue Mont des Arts
+
+B-1000 Brussels, Belgium
+
+## Contact
 
 For general questions about DIGITEC: [DIGITEC CONFERENCE TEAM](mailto:DIGITEC-CONFERENCE@ec.europa.eu)
 
