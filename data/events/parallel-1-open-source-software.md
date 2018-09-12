@@ -12,7 +12,7 @@ speakers:
   - speaker: Reda
   - speaker: 'Kempf '
   - speaker: Przybyszewski
-  - speaker: ''
+  - speaker: Arora
 ---
 Join the discussion to learn about:
 
