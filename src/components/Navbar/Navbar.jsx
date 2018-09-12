@@ -171,7 +171,7 @@ class Navbar extends React.PureComponent {
                 <h1>20 November, 2018</h1>
               </div>
               <div className={styles.navigationHeaderTitle}>
-                <h1>Brussels</h1>
+                <h1>Square, Brussels</h1>
               </div>
             </div>
             <ul className={styles.navLinks}>
