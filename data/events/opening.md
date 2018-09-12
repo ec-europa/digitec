@@ -11,4 +11,6 @@ order: '0'
 speakers:
   - speaker: Gebhardt
   - speaker: Gabriel
+  - speaker: Edtstadler
 ---
+
