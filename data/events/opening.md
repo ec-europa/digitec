@@ -10,5 +10,7 @@ readMore: true
 order: '0'
 speakers:
   - speaker: Gebhardt
+  - speaker: Edtstadler
   - speaker: Gabriel
 ---
+
