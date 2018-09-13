@@ -5,7 +5,7 @@ starts: '11:00'
 ends: '12:15'
 venue: 'Parallel session, room to be announced'
 color: grey
-register: true
+register: false
 readMore: true
 order: '3'
 speakers: []
