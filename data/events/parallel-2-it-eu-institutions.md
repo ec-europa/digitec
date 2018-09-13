@@ -9,8 +9,7 @@ register: false
 readMore: true
 order: '3'
 speakers: []
-teams:
-  - team: INNO
+teams: []
 ---
 14:00 - 14:15 e-Participation
 
