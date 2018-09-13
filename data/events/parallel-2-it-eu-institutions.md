@@ -16,6 +16,7 @@ teams:
 
 14:20 - 14:35 Informal Presidency Portal
 
-14:40 - 14:55 Council Information Exchange Platform with Member States	
+14:40 - 14:55 Council Information Exchange Platform with Member States
+	
 
 15:00 - 15:15 Inter-institutional Business Maps
