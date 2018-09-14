@@ -6,7 +6,7 @@ title: Member of the European Parliament
 twitter: '@EvaKaili'
 picture: /img/eva-kaili.jpg
 ---
-Eva Kaili is a Member of the European Parliament, elected in 2014. In her capacity as the Chair of the European Parliament's Science and Technology Options Assessment body (STOA) she has, been working intensively on promoting innovation as a driving force of the establishment of the European Digital Single Market. She has been particularly active in the fields of blockchain technology, m/eHealth, big data, fintech, AI and cybersecurity. 
+Eva Kaili is a Member of the European Parliament, elected in 2014. In her capacity as the Chair of the European Parliament's Science and Technology Options Assessment body (STOA) she has been working intensively on promoting innovation as a driving force of the establishment of the European Digital Single Market. She has been particularly active in the fields of blockchain technology, m/eHealth, big data, fintech, AI and cybersecurity. 
 
 She is the Head of the Greek SD Delegation (Pasok/Elia) in the European Parliament and Chair of the Delegation to the NATO Parliamentary Assembly (D-NAT). She is member of the ITRE and TAX2 Committees, and a substitute in ECON, EMPL,SEDE, D-RU, D-US.
 
