@@ -14,6 +14,6 @@ speakers: []
 
 11:20 - 11:35 Trilogue Table Editor
 
-11:40 - 11:55 Mobile security 
+11:40 - 11:55 Decide / LEOS Tool
 
 12:00 - 12:15 The Agile Delivery Model
