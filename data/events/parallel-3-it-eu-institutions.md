@@ -17,5 +17,3 @@ teams: []
 16:05 - 16:20 Web innovation
 
 16:25 - 16:40 Business continuity and disaster recovery
-
-16:45 - 17:00 DECIDE/LEOS tool
