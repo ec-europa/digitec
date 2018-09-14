@@ -13,7 +13,7 @@ teams: []
 ---
 14:00 - 14:15 e-Participation
 
-14:20 - 14:35 Informal Presidency Portal
+14:20 - 14:35 Trilogue Table Editor
 
 14:40 - 14:55 Council Information Exchange Platform with Member States
 	
