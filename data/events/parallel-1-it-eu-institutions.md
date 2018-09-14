@@ -12,8 +12,8 @@ speakers: []
 ---
 11:00 - 11:15 Inter-institutional Register of Delegated Acts
 
-11:20 - 11:35 Trilogue Table Editor
+11:20 - 11:35 Informal Presidency Portal
 
-11:40 - 11:55 The Agile Delivery Model
+11:40 - 11:55 Decide / LEOS Tool
 
-12:00 - 12:15 Decide / LEOS Tool
+12:00 - 12:15 The Agile Delivery Model
