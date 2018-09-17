@@ -18,14 +18,11 @@ const SpeakersPage = props => {
       a.node.frontmatter.lastname.localeCompare(b.node.frontmatter.lastname)
     );
 
-  // const teams = presenters
-  //   .filter(node => node.node.fields.slug.indexOf('/teams/') !== -1)
-  //   .sort((a, b) =>
-  //     a.node.frontmatter.teamName.localeCompare(b.node.frontmatter.teamName)
-  //   );
-
-  // Temporarily hide teams on this page.
-  const teams = [];
+  const teams = presenters
+    .filter(node => node.node.fields.slug.indexOf('/teams/') !== -1)
+    .sort((a, b) =>
+      a.node.frontmatter.teamName.localeCompare(b.node.frontmatter.teamName)
+    );
 
   return (
     <section className={containerStyles.container}>
