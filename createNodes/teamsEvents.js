@@ -17,11 +17,13 @@ module.exports = ({ getNode, getNodes, createNodeField }) => {
     getNodes().forEach(node => {
       if (
         node.internal.type === `MarkdownRemark` &&
-        node.frontmatter.teamName === team.team
+        node.frontmatter.teamName &&
+        node.frontmatter.teamName.trim() === team.team.trim()
       ) {
         teamNode = node;
       }
     });
+
     return teamNode;
   };
 
