@@ -47,7 +47,7 @@ const SpeakersPage = props => {
       </div>
       {teams.length ? (
         <Fragment>
-          <h2>Presenting teams</h2>
+          <h2>Space for Innovation: IT in the EU institutions</h2>
           <div className={containerStyles.cardsContainer}>
             {teams.map(({ node: team }) => (
               <TeamCard
