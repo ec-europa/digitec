@@ -9,7 +9,8 @@ register: false
 readMore: true
 order: '3'
 speakers: []
-teams: []
+teams:
+  - team: e-Participation
 ---
 14:00 - 14:15 e-Participation
 
