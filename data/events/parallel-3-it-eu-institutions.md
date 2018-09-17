@@ -9,7 +9,10 @@ register: false
 readMore: true
 order: '3'
 speakers: []
-teams: []
+teams:
+  - team: >-
+      IT Obsolescence & Beyond: Fighting the technical debt in a not-so-small
+      organisation: challenges, enabling and vision
 ---
 15:45 - 16:00 IT Obsolescence & Beyond
 : Fighting the technical debt in a not-so-small organisation - challenges, enabling and vision
