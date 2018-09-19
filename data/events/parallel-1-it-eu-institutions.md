@@ -12,7 +12,7 @@ speakers: []
 ---
 11:00 - 11:15 Inter-institutional Register of Delegated Acts
 
-11:20 - 11:35 Informal Presidency Portal
+11:20 - 11:35 Presidency Portal for Informal Events
 
 11:40 - 11:55 Decide / LEOS Tool
 
