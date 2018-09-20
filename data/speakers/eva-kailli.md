@@ -1,7 +1,7 @@
 ---
 templateKey: speaker
 firstname: Eva
-lastname: Kailli
+lastname: Kaili
 title: Member of the European Parliament
 twitter: '@EvaKaili'
 picture: /img/eva-kaili.jpg
