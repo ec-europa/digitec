@@ -1,6 +1,6 @@
 ---
 templateKey: team
-teamName: 'Building Corporate Solutions according to DIGIT New Delivery Model '
+teamName: 'Building Corporate Solutions according to DIGIT''s New Delivery Model '
 teamMembers: Polivios Klimathianakis
 picture: /img/klimathianakis.jpg
 ---
