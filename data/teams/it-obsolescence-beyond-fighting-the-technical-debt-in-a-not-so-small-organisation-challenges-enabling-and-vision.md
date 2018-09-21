@@ -4,7 +4,7 @@ teamName: >-
   IT Obsolescence & Beyond: Fighting the technical debt in a not-so-small
   organisation: challenges, enabling and vision 
 teamMembers: Todor Todorov
-picture: /img/43650806051_5f3d881fb4_o-bw.jpg
+picture: /img/todorov.jpg
 ---
 Todor is an experienced IT professional with strong engineering academic background in the area of informational and analytical logistics. Author of science articles about design of tracking systems in the supply chains and analytical methods in the Operations Research. Working since 2003 exclusively in multicultural environment, in 2013 Todor joins DG ITEC of the European Parliament where he exercises service and project management activities. He is certified in ITIL, PRINCE2 and PMP.
 
