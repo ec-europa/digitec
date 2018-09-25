@@ -13,6 +13,6 @@ pipeline:
   build-release:
     image: node:carbon
     commands:
-      - npm install --global gatsby-cli
+      - npm install --global gatsby-cli@1.1.58
       - rm -rf .cache public
       - gatsby build --prefix-paths
