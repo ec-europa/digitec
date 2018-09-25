@@ -9,3 +9,10 @@ pipeline:
     group: test
     commands:
       - yarn test:lint
+
+  build-release:
+    image: node:carbon
+    commands:
+      - npm install --global gatsby-cli
+      - rm -rf .cache public
+      - gatsby build --prefix-paths
