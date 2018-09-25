@@ -17,7 +17,8 @@ pipeline:
       - npm install --global gatsby-cli@1.1.58
       - rm -rf .cache public
       - gatsby build --prefix-paths
-    event: [tag]
+    when:
+      event: [tag]
 
   # Package release build
   package-full:
@@ -44,13 +45,13 @@ pipeline:
       
   # Trigger deploy event on Github
   create-deploy-production:
-      image: fpfis/drone-plugin-github-deploy
-      state: create
-      deploy_environment: production
-      secrets: [ github_api_token ]
-      automerge: false
-      when:
-        event: [tag]
+    image: fpfis/drone-plugin-github-deploy
+    state: create
+    deploy_environment: production
+    secrets: [ github_api_token ]
+    automerge: false
+    when:
+      event: [tag]
         
   # Deploy release on production   
   # - Download tar.gz
