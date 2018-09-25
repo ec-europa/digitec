@@ -1,15 +1,25 @@
 pipeline:
+
+# =======================================
+# Setup  ================================
+# =======================================
   install:
     image: node:carbon
     commands:
       - yarn install --frozen-lockfile
 
+# =======================================
+# Tests =================================
+# =======================================
   test-lint:
     image: node:carbon
     group: test
     commands:
       - yarn test:lint
 
+# =======================================
+# Tags Creation =========================
+# =======================================
   # Build release
   build-release:
     image: node:carbon
@@ -21,7 +31,7 @@ pipeline:
       event: [tag]
 
   # Package release build
-  package-full:
+  package-release:
     group: packaging
     image: fpfis/php56-dev
     commands:
@@ -30,7 +40,7 @@ pipeline:
       event: [tag]
       
   # Push release to Github
-  github_release:
+  push-github-release:
     image: plugins/github-release
     files:
       - full-${DRONE_REPO_NAME}-${DRONE_TAG}.tar.gz
@@ -52,8 +62,36 @@ pipeline:
     automerge: false
     when:
       event: [tag]
-        
-  # Deploy release on production   
-  # - Download tar.gz
-  # - rsync to mgmt
-  # - gacp (git add, commit, push)
+    
+# =======================================
+# Deployment ============================
+# =======================================
+
+  # Download release from github and extract into build folder
+  download-github-release:
+    image: instrumentisto/rsync-ssh
+    commands:
+      - wget https://github.com/ec-europa/digitec/releases/download/${DRONE_TAG}/full-${DRONE_REPO_NAME}-${DRONE_TAG}.tar.gz
+      - wget https://github.com/ec-europa/digitec/releases/download/${DRONE_TAG}/sha1sum.txt
+      - sha1sum -c sha1sum.txt
+      - mkdir build
+      - tar zxvf full-${DRONE_REPO_NAME}-${DRONE_TAG}.tar.gz build
+      - echo $(date +%s) > build/.timestamp
+      - echo "${DRONE_COMMIT_SHA}" > build/.commit
+    when:
+      event: deployment
+
+  # Deploy build folder into production
+  deploy-to-production:
+    image: instrumentisto/rsync-ssh
+    secrets: [ MGMT_IP, MGMT_KEY, MGMT_DIGITECT_PATH ]
+    commands:
+      - echo "$SALT_MASTER_KEY" > /deploy.key
+      - chmod 600 /deploy.key
+      #- rsync -avz --delete-after -e "ssh -i /deploy.key" --progress build $MGMT_IP:$MGMT_DIGITECT_PATH
+      #- ssh -o StrictHostKeyChecking=no -i /deploy.key fpfis@$MGMT_IP git -C "$MGMT_DIGITECT_PATH" add -A .
+      #- ssh -o StrictHostKeyChecking=no -i /deploy.key fpfis@$MGMT_IP git -C "$MGMT_DIGITECT_PATH" commit -m"Deployed ${DRONE_REPO_ORG}/${DRONE_REPO_NAME}@${DRONE_TAG} from drone build ${DRONE_BUILD_NUMBER}."
+      #- ssh -o StrictHostKeyChecking=no -i /deploy.key fpfis@$MGMT_IP git -C "$MGMT_DIGITECT_PATH" git  push 'nas-reference' 'master'
+    when:
+      event: deployment
+  
