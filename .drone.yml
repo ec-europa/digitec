@@ -7,6 +7,8 @@ pipeline:
     image: node:carbon
     commands:
       - yarn install --frozen-lockfile
+    when:
+      event: [pull_request]
 
 # =======================================
 # Tests =================================
@@ -16,6 +18,8 @@ pipeline:
     group: test
     commands:
       - yarn test:lint
+    when:
+      event: [pull_request]
 
 # =======================================
 # Tags Creation =========================
@@ -84,14 +88,14 @@ pipeline:
   # Deploy build folder into production
   deploy-to-production:
     image: instrumentisto/rsync-ssh
-    secrets: [ MGMT_IP, MGMT_KEY, MGMT_DIGITECT_PATH ]
+    secrets: [ MGMT_IP, MGMT_KEY, MGMT_DIGITEC_PATH ]
     commands:
-      - echo "$SALT_MASTER_KEY" > /deploy.key
+      - echo "$MGMT_KEY" > /deploy.key
       - chmod 600 /deploy.key
-      #- rsync -avz --delete-after -e "ssh -i /deploy.key" --progress build $MGMT_IP:$MGMT_DIGITECT_PATH
-      #- ssh -o StrictHostKeyChecking=no -i /deploy.key fpfis@$MGMT_IP git -C "$MGMT_DIGITECT_PATH" add -A .
-      #- ssh -o StrictHostKeyChecking=no -i /deploy.key fpfis@$MGMT_IP git -C "$MGMT_DIGITECT_PATH" commit -m"Deployed ${DRONE_REPO_ORG}/${DRONE_REPO_NAME}@${DRONE_TAG} from drone build ${DRONE_BUILD_NUMBER}."
-      #- ssh -o StrictHostKeyChecking=no -i /deploy.key fpfis@$MGMT_IP git -C "$MGMT_DIGITECT_PATH" git  push 'nas-reference' 'master'
+      - rsync -avz --delete-after --progress -e "ssh -i /deploy.key" build $MGMT_IP:$MGMT_DIGITEC_PATH
+      #- ssh -o StrictHostKeyChecking=no -i /deploy.key fpfis@$MGMT_IP git -C "$MGMT_DIGITEC_PATH" add -A .
+      #- ssh -o StrictHostKeyChecking=no -i /deploy.key fpfis@$MGMT_IP git -C "$MGMT_DIGITEC_PATH" commit -m"Deployed ${DRONE_REPO_ORG}/${DRONE_REPO_NAME}@${DRONE_TAG} from drone build ${DRONE_BUILD_NUMBER}."
+      #- ssh -o StrictHostKeyChecking=no -i /deploy.key fpfis@$MGMT_IP git -C "$MGMT_DIGITEC_PATH" git  push 'nas-reference' 'master'
     when:
       event: deployment
   
