@@ -1,8 +1,3 @@
-clone:
-  git:
-    image: plugins/git
-    tags: true
-
 pipeline:
 
 # =======================================
@@ -13,7 +8,7 @@ pipeline:
     commands:
       - yarn install --frozen-lockfile
     when:
-      event: [pull_request]
+      event: [ pull_request , tag ]
 
 # =======================================
 # Tests =================================
@@ -24,7 +19,7 @@ pipeline:
     commands:
       - yarn test:lint
     when:
-      event: [pull_request]
+      event: [ pull_request , tag ]
 
 # =======================================
 # Tags Creation =========================
