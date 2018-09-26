@@ -79,7 +79,7 @@ pipeline:
       - wget https://github.com/ec-europa/digitec/releases/download/${DRONE_TAG}/sha1sum.txt
       - sha1sum -c sha1sum.txt
       - mkdir build
-      - tar zxvf full-${DRONE_REPO_NAME}-${DRONE_TAG}.tar.gz build
+      - tar zxvf full-${DRONE_REPO_NAME}-${DRONE_TAG}.tar.gz -C build
       - echo $(date +%s) > build/.timestamp
       - echo "${DRONE_COMMIT_SHA}" > build/.commit
     when:
