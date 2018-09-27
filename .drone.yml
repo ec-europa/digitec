@@ -90,7 +90,7 @@ pipeline:
     image: drillster/drone-rsync
     secrets: [ MGMT_IP, MGMT_KEY, MGMT_DIGITEC_PATH ]
     hosts: [ $MGMT_IP ]
-    user : user
+    user : fpfis
     key: $MGMT_KEY
     source: ./build/
     target: $MGMT_DIGITEC_PATH
