@@ -94,6 +94,11 @@ pipeline:
       - chmod 600 /deploy.key
       - rsync -avz --delete-after -e "ssh -i /deploy.key -o StrictHostKeyChecking=no" build/ fpfis@$MGMT_IP:$MGMT_DIGITEC_PATH
       - ssh -o StrictHostKeyChecking=no -i /deploy.key fpfis@$MGMT_IP git -C "$MGMT_DIGITEC_PATH" add -A .
+      - echo "${DRONE_REPO_OWNER}"
+      - echo "${DRONE_REPO_NAME}"
+      - echo "${DRONE_REPO_OWNER}/${DRONE_REPO_NAME}"
+      - echo "${DRONE_REPO_OWNER}/${DRONE_REPO_NAME}@${DRONE_TAG}"
+      - echo "Deployed ${DRONE_REPO_OWNER}/${DRONE_REPO_NAME}@${DRONE_TAG} from drone build ${DRONE_BUILD_NUMBER}."
       - ssh -o StrictHostKeyChecking=no -i /deploy.key fpfis@$MGMT_IP git -C "$MGMT_DIGITEC_PATH" commit -m'Deployed ${DRONE_REPO_OWNER}/${DRONE_REPO_NAME}@${DRONE_TAG} from drone build ${DRONE_BUILD_NUMBER}.' .
       - ssh -o StrictHostKeyChecking=no -i /deploy.key fpfis@$MGMT_IP git -C "$MGMT_DIGITEC_PATH" git  push 'nas-reference' 'master'
     when:
