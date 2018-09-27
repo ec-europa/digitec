@@ -89,13 +89,13 @@ pipeline:
   deploy-to-production:
     image: drillster/drone-rsync
     secrets: [ MGMT_IP, MGMT_KEY, MGMT_DIGITEC_PATH ]
-    hosts: [ $MGMT_IP ]
+    hosts: [ 158.167.212.4 ]
     user : fpfis
     key: $MGMT_KEY
     source: ./build/
-    target: $MGMT_DIGITEC_PATH
+    target: /ec/local/home/fpfis/reference/php-clusters/multisite/production/cluster00/sources/static/digitec
     script:
-        - cd "$MGMT_DIGITEC_PATH"
+        - cd "/ec/local/home/fpfis/reference/php-clusters/multisite/production/cluster00/sources/static/digitec"
         - git add -A .
         - git commit -m"Deployed ${DRONE_REPO_OWNER}/${DRONE_REPO_NAME}@${DRONE_TAG} from drone build ${DRONE_BUILD_NUMBER}." .
         #- git push 'nas-reference' 'master'
