@@ -31,6 +31,8 @@ pipeline:
       - npm install --global gatsby-cli@1.1.58
       - rm -rf .cache public
       - gatsby build --prefix-paths
+      - echo $(date +%s) > public/.timestamp
+      - echo "${DRONE_COMMIT_SHA}" > public/.commit
     when:
       event: [tag]
 
@@ -80,8 +82,6 @@ pipeline:
       - sha1sum -c sha1sum.txt
       - mkdir build
       - tar zxvf ${DRONE_REPO_NAME}-${DRONE_TAG}.tar.gz -C build
-      - echo $(date +%s) > build/.timestamp
-      - echo "${DRONE_COMMIT_SHA}" > build/.commit
     when:
       event: deployment
 
@@ -94,8 +94,8 @@ pipeline:
       - chmod 600 /deploy.key
       - rsync -avz --delete-after -e "ssh -i /deploy.key -o StrictHostKeyChecking=no" build/ fpfis@$MGMT_IP:$MGMT_DIGITEC_PATH
       - ssh -o StrictHostKeyChecking=no -i /deploy.key fpfis@$MGMT_IP git -C "$MGMT_DIGITEC_PATH" add -A .
-      - ssh -o StrictHostKeyChecking=no -i /deploy.key fpfis@$MGMT_IP git -C "$MGMT_DIGITEC_PATH" commit -m"Deployed ${DRONE_REPO_ORG}/${DRONE_REPO_NAME}@${DRONE_TAG} from drone build #${DRONE_BUILD_NUMBER}." .
-      #- ssh -o StrictHostKeyChecking=no -i /deploy.key fpfis@$MGMT_IP git -C "$MGMT_DIGITEC_PATH" git  push 'nas-reference' 'master'
+      - ssh -o StrictHostKeyChecking=no -i /deploy.key fpfis@$MGMT_IP git -C "$MGMT_DIGITEC_PATH" commit -m"Deployed ${DRONE_REPO_ORG}/${DRONE_REPO_NAME}@${DRONE_TAG} from drone build ${DRONE_BUILD_NUMBER}." .
+      - ssh -o StrictHostKeyChecking=no -i /deploy.key fpfis@$MGMT_IP git -C "$MGMT_DIGITEC_PATH" git  push 'nas-reference' 'master'
     when:
       event: deployment
   
