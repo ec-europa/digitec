@@ -39,7 +39,7 @@ pipeline:
     group: packaging
     image: fpfis/php56-dev
     commands:
-      - tar -czC public -f full-${DRONE_REPO_NAME}-${DRONE_TAG}.tar.gz .
+      - tar -czC public -f ${DRONE_REPO_NAME}-${DRONE_TAG}.tar.gz .
     when:
       event: [tag]
       
@@ -47,7 +47,7 @@ pipeline:
   push-github-release:
     image: plugins/github-release
     files:
-      - full-${DRONE_REPO_NAME}-${DRONE_TAG}.tar.gz
+      - ${DRONE_REPO_NAME}-${DRONE_TAG}.tar.gz
     checksum:
       - md5
       - sha1
@@ -75,11 +75,11 @@ pipeline:
   download-github-release:
     image: instrumentisto/rsync-ssh
     commands:
-      - wget https://github.com/ec-europa/digitec/releases/download/${DRONE_TAG}/full-${DRONE_REPO_NAME}-${DRONE_TAG}.tar.gz
+      - wget https://github.com/ec-europa/digitec/releases/download/${DRONE_TAG}/${DRONE_REPO_NAME}-${DRONE_TAG}.tar.gz
       - wget https://github.com/ec-europa/digitec/releases/download/${DRONE_TAG}/sha1sum.txt
       - sha1sum -c sha1sum.txt
       - mkdir build
-      - tar zxvf full-${DRONE_REPO_NAME}-${DRONE_TAG}.tar.gz -C build
+      - tar zxvf ${DRONE_REPO_NAME}-${DRONE_TAG}.tar.gz -C build
       - echo $(date +%s) > build/.timestamp
       - echo "${DRONE_COMMIT_SHA}" > build/.commit
     when:
@@ -94,7 +94,7 @@ pipeline:
       - chmod 600 /deploy.key
       - rsync -avz --delete-after -e "ssh -i /deploy.key -o StrictHostKeyChecking=no" build/ fpfis@$MGMT_IP:$MGMT_DIGITEC_PATH
       - ssh -o StrictHostKeyChecking=no -i /deploy.key fpfis@$MGMT_IP git -C "$MGMT_DIGITEC_PATH" add -A .
-      #- ssh -o StrictHostKeyChecking=no -i /deploy.key fpfis@$MGMT_IP git -C "$MGMT_DIGITEC_PATH" commit -m"Deployed ${DRONE_REPO_ORG}/${DRONE_REPO_NAME}@${DRONE_TAG} from drone build ${DRONE_BUILD_NUMBER}."
+      - ssh -o StrictHostKeyChecking=no -i /deploy.key fpfis@$MGMT_IP git -C "$MGMT_DIGITEC_PATH" commit -m"Deployed ${DRONE_REPO_ORG}/${DRONE_REPO_NAME}@${DRONE_TAG} from drone build #${DRONE_BUILD_NUMBER}." .
       #- ssh -o StrictHostKeyChecking=no -i /deploy.key fpfis@$MGMT_IP git -C "$MGMT_DIGITEC_PATH" git  push 'nas-reference' 'master'
     when:
       event: deployment
