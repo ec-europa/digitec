@@ -31,7 +31,6 @@ pipeline:
       - npm install --global gatsby-cli@1.1.58
       - rm -rf .cache public
       - gatsby build --prefix-paths
-      - echo $(date +%s) > public/.timestamp
       - echo "${DRONE_COMMIT_SHA}" > public/.commit
     when:
       event: [tag]
@@ -82,6 +81,7 @@ pipeline:
       - sha1sum -c sha1sum.txt
       - mkdir build
       - tar zxvf ${DRONE_REPO_NAME}-${DRONE_TAG}.tar.gz -C build
+      - echo $(date +%s) > build/.timestamp
     when:
       event: deployment
 
