@@ -88,11 +88,11 @@ pipeline:
   # Deploy build folder into production
   deploy-to-production:
     image: drillster/drone-rsync
-    secrets: [ rsync_key , MGMT_IP ]
+    secrets: [ rsync_key , MGMT_IP , MGMT_DIGITEC_PATH ]
     hosts: [ $MGMT_IP ]
     user : fpfis
     source: ./build/
-    target: /ec/local/home/fpfis/reference/php-clusters/multisite/production/cluster00/sources/static/digitec
+    target: $MGMT_DIGITEC_PATH
     script:
         - export GIT_FPFIS_AUTHOR="Drone ec.deploy.fpfis.eu"
         - cd "/ec/local/home/fpfis/reference/php-clusters/multisite/production/cluster00/sources/static/digitec"
