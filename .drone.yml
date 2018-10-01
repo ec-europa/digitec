@@ -98,6 +98,6 @@ pipeline:
         - cd "/ec/local/home/fpfis/reference/php-clusters/multisite/production/cluster00/sources/static/digitec"
         - git add -A .
         - git commit -m"Deployed ${DRONE_REPO_OWNER}/${DRONE_REPO_NAME}@${DRONE_TAG} from drone build ${DRONE_BUILD_NUMBER}." .
-        #- git push 'nas-reference' 'master'
+        - git push 'nas-reference' 'master'
     when:
       event: deployment
