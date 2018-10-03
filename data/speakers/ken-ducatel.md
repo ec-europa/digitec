@@ -4,7 +4,7 @@ firstname: 'Ken '
 lastname: Ducatel
 title: Director for IT Security at DG Informatics and acting Head of CERT-EU
 twitter: '@kenducatel'
-picture: /img/adel-al-saleh2.jpg
+picture: /img/ken-ducatel.jpg
 ---
 Ken Ducatel, British, aged 61, holds a PhD in economic geography from Bristol University and an MSc in transport policy from Cranfield University in the UK. He has worked on information society policy for thirty years. He was a member of the Faculty of  University of Manchester for 14 years.	
 
