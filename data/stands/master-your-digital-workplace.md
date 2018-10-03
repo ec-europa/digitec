@@ -20,6 +20,4 @@ This stand is dedicated to the training services of European Commission, Europea
 **The learn.IT team** in the Learning & Development Unit organises IT, project management, and business analysis courses for the staff of the European Parliament. We offer courses in different formats, including classroom courses, tailor-made courses, off-the-shelf e-learning modules, and courses organised by external providers.
 
 **
-**
-
-**Staff Development Unit** offers a wide range of  courses to develop the digital skills of the Staff at the General Secretariat of the Council. We offer courses in core digital skills in various formats, including flexible learning shots, individual coaching sessions and online learning, Project Management courses and courses for IT specialists either tailor-made or organized by external providers. We also sponsor professional certifications and memberships as well participation in the leading tech-focused conferences.
+Staff Development Unit** offers a wide range of  courses to develop the digital skills of the Staff at the General Secretariat of the Council. We offer courses in core digital skills in various formats, including flexible learning shots, individual coaching sessions and online learning, Project Management courses and courses for IT specialists either tailor-made or organized by external providers. We also sponsor professional certifications and memberships as well participation in the leading tech-focused conferences.
