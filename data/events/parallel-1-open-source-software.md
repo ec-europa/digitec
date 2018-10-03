@@ -13,6 +13,7 @@ speakers:
   - speaker: 'Kempf '
   - speaker: Przybyszewski
   - speaker: Arora
+  - speaker: Campolargo
 ---
 Join the discussion to learn about:
 
