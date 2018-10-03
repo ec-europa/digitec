@@ -4,7 +4,7 @@ firstname: 'Chaals '
 lastname: Nevile
 title: Accessibility specialist at Consensys.net
 twitter: '@chaals '
-picture: /img/adel-al-saleh2.jpg
+picture: /img/chaals-neville.jpg
 ---
 Chaals' first IT accessibility job was in the 1980s. From 1998 to 2003 he was a member of staff at the W3C's Web Accessibility Initiative, and for more than 20 years accessibility has been something he has made a part of his job because it is one of the aspects of development that professionals expect to be done right. (It's also true that otherwise, his friends would nag him about it).
 
