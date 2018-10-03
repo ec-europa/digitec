@@ -8,6 +8,7 @@ color: grey
 register: true
 readMore: true
 order: '2'
-speakers: []
+speakers:
+  - speaker: Nevile
 ---
 
