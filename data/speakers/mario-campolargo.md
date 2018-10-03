@@ -2,7 +2,7 @@
 templateKey: speaker
 firstname: Mario
 lastname: Campolargo
-title: Deputy Director-General at DG Informatics at the European Commission
+title: Deputy Director-General of DG Informatics at the European Commission
 twitter: ' @mariocampolargo '
 picture: /img/adel-al-saleh2.jpg
 ---
