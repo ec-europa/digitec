@@ -4,7 +4,7 @@ firstname: Mario
 lastname: Campolargo
 title: Deputy Director-General of DG Informatics at the European Commission
 twitter: ' @mariocampolargo '
-picture: /img/adel-al-saleh2.jpg
+picture: /img/mario-campolargo.jpg
 ---
 Mario Campolargo is the Deputy Director-General at DG DIGIT (Informatics) in the European Commission with responsibility for development of Digital Services, Digital Workplace and Cloud Infrastructures. He holds responsibility for coordinating ICT based Synergies and Efficiencies delivery.
 
