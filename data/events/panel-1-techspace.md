@@ -1,8 +1,8 @@
 ---
 templateKey: event
 title: 'Panel 1: Techspace - what new technologies for the public sector?'
-starts: '11:00'
-ends: '12:15'
+starts: '11:30'
+ends: '12:45'
 venue: Gold Hall
 color: blue
 register: true
