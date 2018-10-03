@@ -3,7 +3,7 @@ templateKey: stand
 title: Master your Digital workplace
 subtitle: Preparing the EU Institutions for the digital workplace
 number: '9'
-picture: /img/1-op.jpg
+picture: /img/training.jpg
 ---
 This stand is dedicated to the training services of European Commission, European Parliament and the General Secretariat of the Council. Here you will learn more about how these institutions are preparing their users for a digital workplace.
 
