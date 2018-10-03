@@ -1,8 +1,8 @@
 ---
 templateKey: event
 title: 'Panel 3: Public space - how to provide better digital services?'
-starts: '15:45'
-ends: '17:00'
+starts: '16:00'
+ends: '17:15'
 venue: Gold Hall
 color: blue
 register: true
