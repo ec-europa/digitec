@@ -12,10 +12,10 @@ speakers: []
 teams:
   - team: 'Building Corporate Solutions according to DIGIT''s New Delivery Model '
 ---
-11:00 - 11:15 Inter-institutional Register of Delegated Acts
+11:30 - 11:45 Inter-institutional Register of Delegated Acts
 
-11:20 - 11:35 Presidency Portal for Informal Events
+11:50 - 12:05 Presidency Portal for Informal Events
 
-11:40 - 11:55 Decide / LEOS Tool
+12:10 - 12:25 Decide / LEOS Tool
 
-12:00 - 12:15 Building Corporate Solutions according to DIGIT's New Delivery Model
+12:30 - 12:45 Building Corporate Solutions according to DIGIT's New Delivery Model
