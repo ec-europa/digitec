@@ -2,7 +2,7 @@
 templateKey: speaker
 firstname: 'Ken '
 lastname: Ducatel
-title: 'Director for IT Security at DG Informatics '
+title: Director for IT Security at DG Informatics and acting Head of CERT-EU
 twitter: '@kenducatel'
 picture: /img/adel-al-saleh2.jpg
 ---
