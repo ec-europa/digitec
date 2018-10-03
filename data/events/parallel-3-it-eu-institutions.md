@@ -1,8 +1,8 @@
 ---
 templateKey: event
 title: Space for Innovation - IT in the EU institutions
-starts: '15:45'
-ends: '17:00'
+starts: '16:00'
+ends: '17:15'
 venue: 'Parallel session, room to be announced'
 color: grey
 register: false
@@ -14,9 +14,9 @@ teams:
       IT Obsolescence & Beyond: Fighting the technical debt in a not-so-small
       organisation: challenges, enabling and vision
 ---
-15:45 - 16:00 IT Obsolescence & Beyond
+16:00 - 16:15 IT Obsolescence & Beyond
 : Fighting the technical debt in a not-so-small organisation - challenges, enabling and vision
 
-16:05 - 16:20 Web innovation
+16:20 - 16:35 Web innovation
 
-16:25 - 16:40 Business continuity and disaster recovery
+16:40 - 16:55 Business continuity and disaster recovery
