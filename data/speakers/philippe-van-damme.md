@@ -3,7 +3,7 @@ templateKey: speaker
 firstname: Philippe
 lastname: Van Damme
 title: Director for Digital Workplace & Infrastructure at DG Informatics
-picture: /img/adel-al-saleh2.jpg
+picture: /img/philippe-van-damme.jpg
 ---
 Philippe Van Damme is director "Digital Workplace & Infrastructure " in charge of the European Commission's corporate ICT infrastructure services such as data centres, cloud, network and telecommunications facilities. As from March 2016, he is also in charge of the engineering and support of the European Commission's digital workplace.
 
