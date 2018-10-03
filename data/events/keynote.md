@@ -1,8 +1,8 @@
 ---
 templateKey: event
 title: 'Keynote: Peter Hinssen, ''''The Day After Tomorrow'''''
-starts: '10:00'
-ends: '10:30'
+starts: '10:30'
+ends: '11:00'
 venue: Gold Hall
 color: blue
 register: true
@@ -11,3 +11,4 @@ order: '0'
 speakers:
   - speaker: Hinssen
 ---
+
