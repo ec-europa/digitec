@@ -2,7 +2,9 @@
 templateKey: speaker
 firstname: Gertrud
 lastname: Ingestad
-title: Director-General of the Directorate General for Informatics
+title: >-
+  Director-General of the Directorate General for Informatics at the European
+  Commission
 twitter: '@GIngestad'
 picture: /img/gertrud-ingestad.jpg
 ---
