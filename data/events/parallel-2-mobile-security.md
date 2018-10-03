@@ -1,8 +1,8 @@
 ---
 templateKey: event
 title: Mobile Security
-starts: '14:00'
-ends: '15:15'
+starts: '14:15'
+ends: '15:30'
 venue: 'Parallel session, room to be announced'
 color: grey
 register: true
