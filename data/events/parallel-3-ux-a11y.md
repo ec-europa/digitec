@@ -1,8 +1,8 @@
 ---
 templateKey: event
 title: User experience and accessibility
-starts: '15:45'
-ends: '17:00'
+starts: '16:00'
+ends: '17:15'
 venue: 'Parallel session, room to be announced'
 color: grey
 register: true
