@@ -2,7 +2,7 @@
 templateKey: speaker
 firstname: 'Ken '
 lastname: Ducatel
-title: Director for IT Security at DG Informatics at the European Commission
+title: 'Director for IT Security at DG Informatics '
 twitter: '@kenducatel'
 picture: /img/adel-al-saleh2.jpg
 ---
