@@ -11,12 +11,13 @@ order: '3'
 speakers: []
 teams:
   - team: e-Participation
+  - team: Council of the EU's Information Exchange Platform with Member States
 ---
 14:15 - 14:30 e-Participation
 
 14:35 - 14:50 Trilogue Table Editor
 
-14:55 - 15:10 Council Information Exchange Platform with Member States
+14:55 - 15:10 Council of the EU's Information Exchange Platform with Member States
 	
 
 15:15 - 15:30 Inter-institutional Business Maps
