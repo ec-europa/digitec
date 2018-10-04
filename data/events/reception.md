@@ -2,7 +2,7 @@
 templateKey: event
 title: Reception
 starts: '17:45'
-ends: '18:30'
+ends: ''
 venue: ''
 color: none
 register: false
