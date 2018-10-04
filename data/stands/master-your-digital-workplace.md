@@ -1,6 +1,6 @@
 ---
 templateKey: stand
-title: Master your Digital workplace
+title: Master Your Digital Workplace
 subtitle: Preparing the EU Institutions for the digital workplace
 number: '9'
 picture: /img/training.jpg
