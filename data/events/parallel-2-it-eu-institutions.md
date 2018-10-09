@@ -12,6 +12,7 @@ speakers: []
 teams:
   - team: e-Participation
   - team: Council of the EU's Information Exchange Platform with Member States
+  - team: 'Inter-institutional business maps: Delivering fast in the EU Institutions '
 ---
 14:15 - 14:30 e-Participation
 
