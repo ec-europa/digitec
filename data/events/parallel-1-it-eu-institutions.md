@@ -12,7 +12,6 @@ speakers: []
 teams:
   - team: 'Building Corporate Solutions according to DIGIT''s New Delivery Model '
   - team: Presidency Portal for Informal Events
-  - team: 'Inter-institutional business maps: Delivering fast in the EU Institutions '
 ---
 11:30 - 11:45 Inter-institutional Register of Delegated Acts
 
