@@ -3,7 +3,7 @@ templateKey: event
 title: Mobile Security
 starts: '14:15'
 ends: '15:30'
-venue: 'Parallel session, room to be announced'
+venue: Hall 300
 color: grey
 register: true
 readMore: true
