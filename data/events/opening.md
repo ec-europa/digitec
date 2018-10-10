@@ -3,7 +3,7 @@ templateKey: event
 title: Opening
 starts: '10:00'
 ends: '10:30'
-venue: Gold Hall
+venue: Gold hall
 color: grey
 register: true
 readMore: true
