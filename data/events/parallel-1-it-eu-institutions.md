@@ -3,7 +3,7 @@ templateKey: event
 title: 'Space for Innovation: IT in the EU institutions'
 starts: '11:30'
 ends: '12:45'
-venue: 'Parallel session, room to be announced'
+venue: The Arc
 color: grey
 register: false
 readMore: true
