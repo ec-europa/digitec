@@ -3,7 +3,7 @@ templateKey: event
 title: Open source software and the EU institutions - from policies to practice
 starts: '11:30'
 ends: '12:45'
-venue: 'Parallel session, room to be announced'
+venue: Silver hall
 color: grey
 register: true
 readMore: true
