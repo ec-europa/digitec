@@ -3,7 +3,7 @@ templateKey: event
 title: 'AI or not AI: Get started with Artificial Intelligence'
 starts: '16:00'
 ends: '17:15'
-venue: 'Parallel session, room to be announced'
+venue: Silver hall
 color: grey
 register: true
 readMore: true
