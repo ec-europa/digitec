@@ -3,7 +3,7 @@ templateKey: event
 title: User experience and accessibility
 starts: '16:00'
 ends: '17:15'
-venue: 'Parallel session, room to be announced'
+venue: Hall 300
 color: grey
 register: true
 readMore: true
