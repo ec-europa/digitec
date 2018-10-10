@@ -3,7 +3,7 @@ templateKey: event
 title: Digital Public Sector
 starts: '11:30'
 ends: '12:45'
-venue: 'Parallel session, room to be announced'
+venue: Hall 300
 color: grey
 register: true
 readMore: true
