@@ -3,7 +3,7 @@ templateKey: event
 title: Cloud - Innovative Technologies in Public Sector
 starts: '14:15'
 ends: '15:30'
-venue: 'Parallel session, room to be announced'
+venue: Silver hall
 color: grey
 register: true
 readMore: true
