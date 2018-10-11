@@ -17,6 +17,6 @@ teams:
 
 11:50 - 12:05 Presidency Portal for Informal Events
 
-12:10 - 12:25 Decide / LEOS Tool
+12:10 - 12:25 LEOS Tool
 
 12:30 - 12:45 Building Corporate Solutions according to DIGIT's New Delivery Model
