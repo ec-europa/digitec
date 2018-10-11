@@ -11,5 +11,6 @@ order: '2'
 speakers:
   - speaker: Makaay
   - speaker: Baldacci
+  - speaker: Kelly
 ---
 
