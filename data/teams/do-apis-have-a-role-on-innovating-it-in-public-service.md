@@ -2,7 +2,7 @@
 templateKey: team
 teamName: 'Do APIs have a role on innovating IT in public service? '
 teamMembers: 'Mónica Posada '
-picture: /img/1-op.jpg
+picture: /img/monica-posada.jpg
 ---
 In January 2018, European Commission's DG CONNECT and DG JRC launched the '[APIs4DGov](https://ec.europa.eu/digital-single-market/en/news/new-study-digital-government-apis-apis4dgov-project): APIs for Digital Government' - a two year study to gain further understanding of the current use of APIs in digital government and their added value for public services. This study reflects the European Commission's interest to look carefully at innovative ways to improve inter-connectivity of public services and re-usability of public sector data, including dynamic data in real-time, while safeguarding data protection and privacy needs. In particular, the study:
 
