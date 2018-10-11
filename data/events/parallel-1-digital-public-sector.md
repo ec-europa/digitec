@@ -10,5 +10,6 @@ readMore: true
 order: '2'
 speakers:
   - speaker: Makaay
+  - speaker: Baldacci
 ---
 
