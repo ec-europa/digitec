@@ -3,7 +3,7 @@ templateKey: speaker
 firstname: Steve
 lastname: Deighton
 title: Head of Digitalisation & Development at European Maritime Safety Agency
-picture: /img/gianluigi-alari.jpg
+picture: /img/steve-deighton1.jpg
 ---
 Steve Deighton started his role as Head of the ICT Unit at EMSA in September 2008. Since 1st September, 2017, he is Head of Digitalisation & Development at EMSA.
 
