@@ -12,7 +12,8 @@ speakers: []
 teams:
   - team: >-
       IT Obsolescence & Beyond: Fighting the technical debt in a not-so-small
-      organisation: challenges, enabling and vision
+      organisation: challenges, enabling and vision 
+  - team: 'Do APIs have a role on innovating IT in public service? '
 ---
 16:00 - 16:15 IT Obsolescence & Beyond
 : Fighting the technical debt in a not-so-small organisation - challenges, enabling and vision
@@ -20,3 +21,5 @@ teams:
 16:20 - 16:35 Web innovation
 
 16:40 - 16:55 Business continuity and disaster recovery
+
+17:00 - 17:15 Do APIs have a role on innovating IT in public service?
