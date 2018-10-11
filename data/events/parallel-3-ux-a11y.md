@@ -1,6 +1,8 @@
 ---
 templateKey: event
-title: Workshop on "Accessibility - like professionals do"
+title: >-
+  Accessibility - like professionals do: workshop on digital accessibility and
+  user experience
 starts: '16:00'
 ends: '17:15'
 venue: Hall 300
