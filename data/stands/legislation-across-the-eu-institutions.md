@@ -3,7 +3,7 @@ templateKey: stand
 title: Legislation across the EU Institutions
 subtitle: Shared services for a more transparent and efficient legislation process
 number: '10'
-picture: /img/1-op.jpg
+picture: /img/10.eu-legislation.jpg
 ---
 While undergoing a digital transformation, European Institutions have kept the following guiding principles: effectiveness, efficiency and transparency. As a result, a set of common services are being delivered, taking full advantage of the existing technological advance.
 
