@@ -4,7 +4,7 @@ firstname: 'Seán '
 lastname: Kelly
 title: Member of the European Parliament
 twitter: '@SeanKellyMEP'
-picture: /img/adel-al-saleh2.jpg
+picture: /img/seán-kelly.jpg
 ---
 Seán Kelly was first elected to the European Parliament in June 2009 for Ireland South and re-elected for a second term in May 2014. He is a member of the EPP Group and leader of the Fine Gael party in the European Parliament since August 2014.
 
