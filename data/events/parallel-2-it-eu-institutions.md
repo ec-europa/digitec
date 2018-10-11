@@ -13,6 +13,7 @@ teams:
   - team: e-Participation
   - team: Council of the EU's Information Exchange Platform with Member States
   - team: 'Inter-institutional business maps: Delivering fast in the EU Institutions '
+  - team: Trilogue Table Editor
 ---
 14:15 - 14:30 e-Participation
 
@@ -21,4 +22,4 @@ teams:
 14:55 - 15:10 Council of the EU's Information Exchange Platform with Member States
 	
 
-15:15 - 15:30 Inter-institutional Business Maps
+15:15 - 15:30 Inter-institutional Business Maps: Delivering fast in the EU Institutions
