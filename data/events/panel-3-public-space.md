@@ -10,6 +10,6 @@ readMore: true
 order: '1'
 speakers:
   - speaker: 'Sagar '
-  - speaker: Ehler
+  - speaker: Kelly
 ---
 
