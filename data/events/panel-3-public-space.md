@@ -11,5 +11,6 @@ order: '1'
 speakers:
   - speaker: 'Sagar '
   - speaker: Kelly
+  - speaker: Gazzola
 ---
 
