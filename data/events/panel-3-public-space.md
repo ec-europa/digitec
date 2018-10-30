@@ -12,5 +12,6 @@ speakers:
   - speaker: 'Sagar '
   - speaker: Kelly
   - speaker: Gazzola
+  - speaker: Buytaert
 ---
 
