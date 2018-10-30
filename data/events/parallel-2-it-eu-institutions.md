@@ -11,9 +11,9 @@ order: '3'
 speakers: []
 teams:
   - team: e-Participation
+  - team: Trilogue Table Editor
   - team: Council of the EU's Information Exchange Platform with Member States
   - team: 'Inter-institutional business maps: Delivering fast in the EU Institutions '
-  - team: Trilogue Table Editor
 ---
 14:15 - 14:30 e-Participation
 
