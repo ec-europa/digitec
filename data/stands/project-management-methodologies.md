@@ -3,7 +3,7 @@ templateKey: stand
 title: Project Management methodologies
 subtitle: Enhanced project effectiveness
 number: '11'
-picture: /img/1-op.jpg
+picture: /img/pm2.jpg
 ---
 The European Parliament, the Council of the European Union and the European Commission join forces to tell you more about how Project Management methodologies help Project Managers deliver solutions and benefits to their organisations through the effective management of project work, ensuring enhanced project effectiveness, improved stakeholders communication and collaboration, better monitoring and control of projects’ quality, risks, time, and resources.
 
