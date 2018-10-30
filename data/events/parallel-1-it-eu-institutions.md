@@ -11,8 +11,8 @@ order: '3'
 speakers: []
 teams:
   - team: Presidency Portal for Informal Events
-  - team: 'Building Corporate Solutions according to DIGIT''s New Delivery Model '
   - team: Making legislative drafting more efficient - EdiT
+  - team: 'Building Corporate Solutions according to DIGIT''s New Delivery Model '
 ---
 11:30 - 11:45 Inter-institutional Register of Delegated Acts
 
