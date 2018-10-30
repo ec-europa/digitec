@@ -2,7 +2,7 @@
 templateKey: team
 teamName: Making legislative drafting more efficient - EdiT
 teamMembers: 'Sandro D''ORAZIO, European Commission'
-picture: /img/1-op.jpg
+picture: /img/edit_team-ok.jpg
 ---
 The digitalisation of the European Institutions aims to simplify and streamline processes, improve collaboration and re-use existing open source solution and best practices.
 
