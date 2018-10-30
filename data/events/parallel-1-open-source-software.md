@@ -15,7 +15,6 @@ speakers:
   - speaker: Arora
   - speaker: Campolargo
   - speaker: Buytaert
-  - {}
 ---
 Join the discussion to learn about:
 
