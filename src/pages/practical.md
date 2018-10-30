@@ -6,7 +6,7 @@ title: Practical
 
 [SQUARE](https://www.square-brussels.com/en/contact.html) - Brussels Meeting Centre
 
-Rue Mont des Arts
+Mont des Arts 22/ Kunstberg 22
 
 B-1000 Brussels, Belgium
 
