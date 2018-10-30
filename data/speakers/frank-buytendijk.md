@@ -2,7 +2,7 @@
 templateKey: speaker
 firstname: 'Frank '
 lastname: Buytendijk
-title: VP & Gartner Fellow
+title: 'Distinguished VP and Gartner Fellow, Gartner Research and Advisory'
 twitter: '@FrankBuytendijk'
 picture: /img/frank-buytendijk.jpg
 ---
