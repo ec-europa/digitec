@@ -1,7 +1,9 @@
 ---
 templateKey: team
 teamName: Presidency Portal for Informal Events
-teamMembers: 'Anastasios Tsimpas and Sandra Zivkovic '
+teamMembers: >-
+  Anastasios Tsimpas, Council of the EU and Sandra Zivkovic, Austrian Presidency
+  of the Council of the EU 
 picture: /img/tsimpas.jpg
 ---
 Every 6 months a different member (MS) state holds the Rotating Presidency of the Council of the European Union. The MS holding the Presidency generally hosts local 'informal' events in their capital or other locations. The number of informal events organised during one Presidency period of 6 months varies between 200-350.
