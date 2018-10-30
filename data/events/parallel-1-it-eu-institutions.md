@@ -10,6 +10,9 @@ readMore: true
 order: '3'
 speakers: []
 teams:
+  - team: >-
+      Inter-institutional collaboration – Register of Delegated Acts (RegDel), a
+      success story
   - team: Presidency Portal for Informal Events
   - team: Making legislative drafting more efficient - EdiT
   - team: 'Building Corporate Solutions according to DIGIT''s New Delivery Model '
