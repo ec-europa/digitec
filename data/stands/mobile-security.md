@@ -3,7 +3,7 @@ templateKey: stand
 title: 'Mobile Security  '
 subtitle: Take control of your device
 number: '12'
-picture: /img/1-op.jpg
+picture: /img/cybersec-mobile.jpg
 ---
 The IT security track of DIGITEC 2018 focuses on mobile security. Our joint inter-institutional team (European Parliament, Council of the EU and European Commission) will offer hands-on demos on a series of topics:
 
