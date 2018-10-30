@@ -11,6 +11,6 @@ order: '1'
 speakers:
   - speaker: Buytendijk
 ---
-AI is on everybody's agenda. Its applications range from highly innovative technologies like self-driving cars to mainstream tools such as question answering systems. The possibilities are endless.
+Artificial Intelligence is having a fundamental impact on our society. How we live and how we work. As a consequence, it is on everybody’s agenda, both in business and in public sector. The possibilities seem endless. But so are the challenges. AI is both incredibly cool, and unbelievably creepy. 
 
-Do we really know what to do with it? Can it solve our business problem and where do we start from? In this session we want to get you inspired by key trends, to talk to you about real cases and how to get started in the EU context.
+What lessons are emerging on how to put control around AI in practice? How are we dealing with the unintended consequences so far? In his characteristic fast-paced and provocative style, Gartner Fellow Frank Buytendijk takes you through the emerging world of Artificial Intelligence and into the #DigitalSociety.
