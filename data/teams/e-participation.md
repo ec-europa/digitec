@@ -1,7 +1,7 @@
 ---
 templateKey: team
 teamName: e-Participation
-teamMembers: Enrico Francesconi
+teamMembers: 'Enrico Francesconi, Publications Office of the EU'
 twitter: '@francesconi_e'
 picture: /img/enrico-francesconi.jpg
 ---
