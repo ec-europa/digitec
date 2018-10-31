@@ -7,7 +7,7 @@ picture: /img/training.jpg
 ---
 This stand is dedicated to the training services of European Commission, European Parliament and the General Secretariat of the Council. Here you will learn more about how these institutions are preparing their users for a digital workplace.
 
-DG HR.DDG.B.3 Learning and Development\*\* \*\*empowers staff of the European Commission to achieve a digital transformation:
+DG HR.DDG.B.3 Learning and Development empowers staff of the European Commission to achieve a digital transformation:
 
 \- Its Digital Skills team offers and organizes end-user and IT specialist training for staff members of the European Commission, other institutions and agencies, offering different learning formats to suit different learning styles;
 
