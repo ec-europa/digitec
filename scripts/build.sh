@@ -10,6 +10,7 @@ set -x
 echo 'Getting news website project ...'
 rm -rf static/digitec-news/
 git clone git@github.com:ec-europa/digitec-news.git static/digitec-news
+git checkout feat/integrate-events-sites
 
 # Go and build it
 cd static/digitec-news
