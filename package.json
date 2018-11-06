@@ -46,7 +46,7 @@
   "main": "n/a",
   "scripts": {
     "start": "npm run develop",
-    "build": "./scripts/build.sh",
+    "build": "gatsby build",
     "develop": "gatsby develop",
     "lint:js": "eslint .",
     "serve": "gatsby serve",
