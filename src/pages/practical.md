@@ -12,8 +12,6 @@ B-1000 Brussels, Belgium
 
 ## Disabled access
 
-DIGITEC is accessible to everyone.
-
 Visitors with mobility issues should use the entrance located in the **SQUARE terrace**, as indicated in [venue's website](https://www.square-brussels.com/en/about-us/access.html#walk). 
 
 ## Contacts
