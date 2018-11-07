@@ -9,13 +9,20 @@ The ISA² Programme of the European Commission supports the development of digit
 
 ISA² offers more than 25 interoperability solutions that can be reused free of charge, and runs 53 actions in areas such as:
 
-* Key and generic interoperability enablers
-* Semantic interoperability
-* Access to data / data sharing / open data
-* Geospatial solutions
-* eProcurement / eInvoicing
-* Decision-making and legislation
-* EU policies
-* Supporting instruments for public administrations
+\- Key and generic interoperability enablers
+
+\- Semantic interoperability
+
+\- Access to data / data sharing / open data
+
+\- Geospatial solutions
+
+\- eProcurement / eInvoicing
+
+\- Decision-making and legislation
+
+\- EU policies
+
+\- Supporting instruments for public administrations
 
 Activities under the programme contribute to the implementation of the European Interoperability Framework. The document gives public administrations 47 concrete recommendations on how to set up interoperable digital public services.

@@ -10,7 +10,7 @@ readMore: true
 order: '0'
 speakers:
   - speaker: Ingestad
-  - speaker: Galloway
   - speaker: Petrucci
+  - speaker: Galloway
 ---
 
