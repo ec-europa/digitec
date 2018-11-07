@@ -9,9 +9,9 @@ register: true
 readMore: true
 order: '0'
 speakers:
-  - speaker: Bauer
   - speaker: Fischer
   - speaker: Van den Bergh
+  - speaker: Riedel
 ---
 Digital transformation is changing the way we work. The EU institutions are no different. But technology alone won’t do the job. What are the smart ways of working and how are staff members adapting? What is the role of change makers in the organisation? What will our workspace look like in the near future?
 
