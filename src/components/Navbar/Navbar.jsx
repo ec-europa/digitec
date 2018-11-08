@@ -197,7 +197,7 @@ class Navbar extends React.PureComponent {
               <NavbarItem to="/practical" onClick={this.closeDrawer}>
                 Practical
               </NavbarItem>
-              <NavbarItem to="/news/" external>
+              <NavbarItem to="/digitec/news/" external>
                 News
               </NavbarItem>
               <NavbarSeparator />
