@@ -1,8 +1,8 @@
 ---
 templateKey: event
 title: Reception
-starts: '17:45'
-ends: ''
+starts: '18:00'
+ends: '19:00'
 venue: ''
 color: none
 register: false
