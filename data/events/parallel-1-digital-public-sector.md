@@ -11,5 +11,7 @@ order: '2'
 speakers:
   - speaker: Makaay
   - speaker: Baldacci
+  - speaker: Dusa
+  - speaker: Liljemo
 ---
 
