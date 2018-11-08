@@ -4,7 +4,7 @@ firstname: Andreas
 lastname: Refsgaard
 title: Interaction Designer
 twitter: '@AndreasRef'
-picture: /img/1-op.jpg
+picture: /img/andreas_refsgaard.png.jpg
 ---
 Andreas Refsgaard is an interaction designer, artist and teacher from Denmark. He graduated from CIID in 2015 and started creative coding studio Støj with Lasse Korsgaard in 2017.
 
