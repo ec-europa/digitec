@@ -1,6 +1,6 @@
 ---
 templateKey: event
-title: 'Closing keynote '
+title: 'Closing keynote: Andreas Refsgaard'
 starts: '17:30'
 ends: '18:00'
 color: grey
