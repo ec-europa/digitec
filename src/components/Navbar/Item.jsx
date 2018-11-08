@@ -14,7 +14,7 @@ import styles from './Item.module.scss';
 
 class Item extends React.Component {
   render() {
-    const { to, children, mobileOnly, primary, ...rest } = this.props;
+    const { to, children, mobileOnly, primary, external, ...rest } = this.props;
 
     // Remove router's properties from "rest"
     delete rest.match;
@@ -26,7 +26,7 @@ class Item extends React.Component {
       <li
         className={classnames(styles.item, { [styles.mobileOnly]: mobileOnly })}
       >
-        {to.indexOf('http') === 0 || to.indexOf('https') === 0 ? (
+        {to.indexOf('http') === 0 || to.indexOf('https') === 0 || external ? (
           <a
             className={classnames(styles.link, { [styles.primary]: primary })}
             href={to}
@@ -58,6 +58,7 @@ Item.propTypes = {
   to: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
   mobileOnly: PropTypes.bool,
   primary: PropTypes.bool,
+  external: PropTypes.bool,
 };
 
 Item.defaultProps = {
@@ -67,6 +68,7 @@ Item.defaultProps = {
   },
   mobileOnly: false,
   primary: false,
+  external: false,
 };
 
 export default Item;

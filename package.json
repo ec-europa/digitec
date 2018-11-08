@@ -47,6 +47,7 @@
   "scripts": {
     "start": "npm run develop",
     "build": "gatsby build",
+    "build:prefixed": "gatsby build --prefix-paths",
     "develop": "gatsby develop",
     "lint:js": "eslint .",
     "serve": "gatsby serve",

@@ -2,17 +2,18 @@
 templateKey: practical-page
 title: Practical
 ---
+
 ## How to get to SQUARE Brussels?
 
 [SQUARE](https://www.square-brussels.com/en/contact.html) - Brussels Meeting Centre
 
-Mont des Arts / Kunstberg 
+Mont des Arts / Kunstberg
 
 B-1000 Brussels, Belgium
 
 ## Disabled access
 
-Visitors with mobility issues should use the entrance located in the **SQUARE terrace**, as indicated in [venue's website](https://www.square-brussels.com/en/about-us/access.html#walk). 
+Visitors with mobility issues should use the entrance located in the **SQUARE terrace**, as indicated in [venue's website](https://www.square-brussels.com/en/about-us/access.html#walk).
 
 ## Contacts
 
