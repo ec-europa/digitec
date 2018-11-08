@@ -3,7 +3,7 @@ templateKey: stand
 title: 'VR simulation platform: The Room#42-VR edition'
 subtitle: Cyberattacks and cyberleaks are a reality… How to prepare?
 number: '14'
-picture: /img/1-op.jpg
+picture: /img/panic-room.jpg
 ---
 [Securitymadein.lu](https://securitymadein.lu/) proposes a real-time solution through a VR simulation platform: The Room#42-VR edition
 
