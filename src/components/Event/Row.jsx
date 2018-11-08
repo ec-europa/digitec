@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import styles from './Row.module.scss';
 
-// import Checkbox from './Checkbox';
+import Checkbox from './Checkbox';
 
 // FlipMove needs Row to be a class (not a stateless function)
 // eslint-disable-next-line react/prefer-stateless-function
@@ -20,7 +20,7 @@ class Row extends React.Component {
   }
 
   render() {
-    const { event, displayTime } = this.props;
+    const { event, checked, displayTime, onToggleEvent } = this.props;
 
     let startsAt = null;
     let endsAt = null;
@@ -48,13 +48,7 @@ class Row extends React.Component {
         <div className={styles.primary}>
           {event.readMore ? (
             <div>
-              <Link
-                className={styles.title}
-                to={{
-                  pathname: event.slug,
-                  state: { modal: true },
-                }}
-              >
+              <Link className={styles.title} to={{ pathname: event.slug }}>
                 {event.title}
               </Link>
             </div>
@@ -72,9 +66,14 @@ class Row extends React.Component {
             ) : null}
           </span>
         </div>
-        {event.register && (
-          <span className={styles.secondary}>checkbox here</span>
-        )}
+        <span className={styles.secondary}>
+          <Checkbox
+            event={event}
+            checked={checked}
+            onToggleEvent={onToggleEvent}
+            transparent
+          />
+        </span>
       </li>
     );
   }
@@ -83,7 +82,7 @@ class Row extends React.Component {
 Row.propTypes = {
   event: PropTypes.object,
   checked: PropTypes.bool,
-  onToggle: PropTypes.func,
+  onToggleEvent: PropTypes.func,
   displayTime: PropTypes.bool,
 };
 

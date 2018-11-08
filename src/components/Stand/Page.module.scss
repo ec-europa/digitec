@@ -4,7 +4,7 @@
 .container {
   max-width: $max-width;
   margin: auto;
-  padding: 1rem;
+  padding: 3rem 1rem;
 }
 
 .header {
@@ -12,23 +12,59 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: 1em;
+  flex-direction: column;
+
+  @include mappy-bp(medium) {
+    flex-wrap: nowrap;
+    flex-direction: row;
+    margin-bottom: 2rem;
+  }
 }
 
 .headerPicture {
   width: 100%;
   max-width: 260px;
   flex-basis: 260px;
+  flex-shrink: 0;
+  flex-direction: column;
 
   @include mappy-bp(medium) {
-    margin: 0 3em;
+    margin: 0 2rem 0 0;
   }
 }
 
 .headerTitles {
   flex-grow: 1;
-  flex-shrink: 0;
   text-align: center;
+  max-width: 100%;
+
+  @include mappy-bp(medium) {
+    text-align: left;
+  }
+
+  h3 {
+    font-size: $type-scale-7;
+    max-width: 24em;
+    margin: 1.5rem auto;
+    line-height: $line-height-5;
+
+    @include mappy-bp(medium) {
+      font-size: $type-scale-8;
+      margin: 1.5rem 0;
+    }
+  }
+
+  h4 {
+    font-size: $type-scale-4;
+    max-width: 24em;
+    margin: 1.5rem auto;
+    line-height: $line-height-5;
+
+    @include mappy-bp(medium) {
+      font-size: $type-scale-5;
+      margin: 1.5rem 0;
+    }
+  }
 }
 
 .title {

@@ -1,17 +1,39 @@
 ---
 templateKey: event
 title: 'Panel 1: Techspace - what new technologies for the public sector?'
-starts: '11:00'
-ends: '12:15'
-venue: Gold Hall
+starts: '11:30'
+ends: '12:45'
+venue: Gold hall
 color: blue
 register: true
 readMore: true
+order: '0'
 speakers:
   - speaker: Al-Saleh
+  - speaker: Valero
+  - speaker: Mahjoubi
+  - speaker: Kaili
 ---
-Mounir Mahjoubi, Secretary of State for Digital, France
+In the last decades, public organisations, just like the private sector, have lived through major technological evolutions. As new technologies continue to emerge at an ever growing speed, how will the public sector cope? How is the public sector using the solutions already available, from the cloud and blockchain services to big data and artificial intelligence? How will cybersecurity be assured? 
 
-Eva Kaili, Member of the European Parliament
 
-Pastora Valero, Vice President Government Affairs for Europe, Middle East, Africa and Russia, Cisco
+
+
+
+Take part in the discussion covering topics like:
+
+
+
+\- harnessing emerging technologies in the public sector
+
+
+
+\- data as the new oil
+
+
+
+\- blockchain technology in the public sector 
+
+
+
+\- cybersecurity - how to improve prevention and ensure security by design

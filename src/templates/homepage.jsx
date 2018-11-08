@@ -28,7 +28,7 @@ export const HomePageTemplate = ({
           <Img
             sizes={bigLogo.sizes}
             style={{
-              margin: '4rem auto',
+              margin: '4rem auto 1rem',
               width: '100%',
               maxWidth: '600px',
             }}
@@ -68,7 +68,6 @@ const HomePage = ({ data }) => {
       title={frontmatter.title}
       heading={frontmatter.heading}
       hashtag={frontmatter.hashtag}
-      intro={frontmatter.intro}
     />
   );
 };

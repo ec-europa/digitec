@@ -1,7 +1,5 @@
 /**
- *
  * Event/List
- *
  */
 
 import React from 'react';
@@ -9,12 +7,7 @@ import PropTypes from 'prop-types';
 import Row from './Row';
 import styles from './List.module.scss';
 
-const List = ({
-  events,
-  // schedule,
-  // onToggle,
-  // location,
-}) => {
+const List = ({ events, schedule, onToggleEvent }) => {
   const eventsDisplay = [];
 
   const eventsByTimeslot = [];
@@ -28,16 +21,17 @@ const List = ({
   Object.keys(eventsByTimeslot).forEach(start => {
     const eventsList = eventsByTimeslot[start];
 
-    const eventsRows = eventsList.map(event => (
-      <Row
-        key={event.slug}
-        event={event}
-        // checked={schedule[event.id]}
-        // onToggle={onToggle}
-        displayTime={false}
-        // location={location}
-      />
-    ));
+    const eventsRows = eventsList
+      .sort((standA, standB) => standA.order - standB.order)
+      .map(event => (
+        <Row
+          key={event.slug}
+          event={event}
+          checked={schedule[event.id]}
+          onToggleEvent={onToggleEvent}
+          displayTime={false}
+        />
+      ));
 
     const eventsEnds = eventsList[0].ends ? (
       <time>{eventsList[0].ends}</time>
@@ -60,14 +54,13 @@ const List = ({
 
 List.propTypes = {
   events: PropTypes.array,
-  // schedule: PropTypes.object,
-  // onToggle: PropTypes.func,
-  // location: PropTypes.object,
+  schedule: PropTypes.object,
+  onToggleEvent: PropTypes.func,
 };
 
 List.defaultProps = {
   events: [],
-  // schedule: [],
+  schedule: [],
 };
 
 export default List;

@@ -1,6 +1,7 @@
 const config = require('./config.json');
 
 module.exports = {
+  pathPrefix: '/2018',
   siteMetadata: {
     title: config.siteTitle,
     description: config.siteDescription,
@@ -14,7 +15,7 @@ module.exports = {
       options: {
         name: 'DIGITEC 2018',
         short_name: 'DIGITEC',
-        start_url: '/',
+        start_url: '/2018',
         background_color: '#fcfdfd',
         theme_color: '#009ee2',
         display: 'minimal-ui',
@@ -91,6 +92,7 @@ module.exports = {
   ],
   mapping: {
     'MarkdownRemark.fields.speakers': `MarkdownRemark`,
+    'MarkdownRemark.fields.teams': `MarkdownRemark`,
     'MarkdownRemark.fields.events': `MarkdownRemark`,
   },
 };

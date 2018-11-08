@@ -1,15 +1,28 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
-import SpeakerCard from '../components/Speaker/Card';
+import SpeakerCard from '../components/Presenters/Speaker/Card';
+import TeamCard from '../components/Presenters/Team/Card';
 
 import containerStyles from '../utils/_container.module.scss';
 import contentStyles from '../utils/_content.module.scss';
 
 const SpeakersPage = props => {
   const { data } = props;
-  const { edges: speakers } = data.allMarkdownRemark;
+  const { edges: presenters } = data.allMarkdownRemark;
+
+  const speakers = presenters
+    .filter(node => node.node.fields.slug.indexOf('/speakers/') !== -1)
+    .sort((a, b) =>
+      a.node.frontmatter.lastname.localeCompare(b.node.frontmatter.lastname)
+    );
+
+  const teams = presenters
+    .filter(node => node.node.fields.slug.indexOf('/teams/') !== -1)
+    .sort((a, b) =>
+      a.node.frontmatter.teamName.localeCompare(b.node.frontmatter.teamName)
+    );
 
   return (
     <section className={containerStyles.container}>
@@ -29,6 +42,25 @@ const SpeakersPage = props => {
           />
         ))}
       </div>
+      {teams.length ? (
+        <Fragment>
+          <h2>Space for Innovation: IT in the EU institutions</h2>
+          <div className={containerStyles.cardsContainer}>
+            {teams.map(({ node: team }) => (
+              <TeamCard
+                key={team.fields.slug}
+                team={{
+                  slug: team.fields.slug,
+                  teamName: team.frontmatter.teamName,
+                  picture: team.frontmatter.picture.childImageSharp,
+                }}
+              />
+            ))}
+          </div>
+        </Fragment>
+      ) : (
+        ''
+      )}
     </section>
   );
 };
@@ -46,8 +78,7 @@ export default SpeakersPage;
 export const pageQuery = graphql`
   query SpeakersQuery {
     allMarkdownRemark(
-      sort: { fields: [frontmatter___lastname], order: ASC }
-      filter: { fileAbsolutePath: { regex: "/speakers/" } }
+      filter: { fileAbsolutePath: { regex: "/speakers|teams/" } }
     ) {
       edges {
         node {
@@ -58,6 +89,8 @@ export const pageQuery = graphql`
           frontmatter {
             firstname
             lastname
+            title
+            teamName
             picture {
               childImageSharp {
                 sizes(maxWidth: 260) {
@@ -65,7 +98,6 @@ export const pageQuery = graphql`
                 }
               }
             }
-            title
           }
         }
       }

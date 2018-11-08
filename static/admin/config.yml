@@ -30,6 +30,21 @@ collections:
       - {label: "Picture", name: "picture", widget: image}
       - {label: "Body", name: "body", widget: "markdown"}
 
+  - name: "teams"
+    label: "Teams"
+    label_singular: "Team"
+    folder: "data/teams"
+    extension: md
+    create: true
+    slug: "{{teamName}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "team"}
+      - {label: "Team name", name: "teamName", widget: "string"}
+      - {label: "Team members names", name: "teamMembers", widget: "string"}
+      - {label: "Twitter handle", name: "twitter", widget: "string", required: false}
+      - {label: "Picture", name: "picture", widget: image}
+      - {label: "Body", name: "body", widget: "markdown"}
+
   - name: "events"
     label: "Events"
     label_singular: "Event"
@@ -46,6 +61,7 @@ collections:
       - {label: "Color", name: "color", widget: "select", default: "grey", options: ["none", "grey", "blue", "purple", "yellow"]}
       - {label: "Register", name: "register", widget: "boolean", default: false}
       - {label: "Read more", name: "readMore", widget: "boolean", default: false}
+      - {label: "Order (for a given time slot)", name: "order", widget: "string", default: "0"}
       - label: "Speakers"
         name: "speakers"
         widget: "list"
@@ -53,6 +69,13 @@ collections:
         required: false
         fields:
           - {label: "Speaker", name: "speaker", widget: "relation", collection: "speakers", searchFields: ["firstname", "lastname"], displayFields: ["firstname", "lastname"],valueField: "lastname"}
+      - label: "Teams"
+        name: "teams"
+        widget: "list"
+        default: []
+        required: false
+        fields:
+          - {label: "Team", name: "team", widget: "relation", collection: "teams", searchFields: ["teamName"], displayFields: ["teamName"],valueField: "teamName"}
       - {label: "Body", name: "body", widget: "markdown", required: false}
 
   - name: "stands"

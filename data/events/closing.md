@@ -1,11 +1,16 @@
 ---
 templateKey: event
 title: Closing
-starts: '17:00'
-ends: '17:30'
-venue: Gold Hall
+starts: '17:15'
+ends: '17:45'
+venue: Gold hall
 color: grey
 register: true
 readMore: true
-speakers: []
+order: '0'
+speakers:
+  - speaker: Ingestad
+  - speaker: Petrucci
+  - speaker: Galloway
 ---
+

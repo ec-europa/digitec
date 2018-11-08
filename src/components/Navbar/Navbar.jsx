@@ -184,14 +184,21 @@ class Navbar extends React.PureComponent {
               <NavbarItem to="/programme" onClick={this.closeDrawer}>
                 Programme
               </NavbarItem>
+              <NavbarItem
+                to="/my-digitec"
+                onClick={this.closeDrawer}
+                mobileOnly
+              >
+                My DIGITEC
+              </NavbarItem>
               <NavbarItem to="/expo" onClick={this.closeDrawer}>
                 Expo
               </NavbarItem>
               <NavbarItem to="/practical" onClick={this.closeDrawer}>
                 Practical
               </NavbarItem>
-              <NavbarItem to="https://europa.eu/digitec/newsletters">
-                Newsletter
+              <NavbarItem to="/news/" external>
+                News
               </NavbarItem>
               <NavbarSeparator />
               <NavbarItem

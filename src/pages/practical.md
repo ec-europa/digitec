@@ -1,20 +1,29 @@
 ---
-templateKey: 'practical-page'
-path: /practical
-title: 'Practical'
+templateKey: practical-page
+title: Practical
 ---
 
 ## How to get to SQUARE Brussels?
 
-SQUARE - Brussels Meeting Centre<br/>
-Rue Mont des Arts<br/>
+[SQUARE](https://www.square-brussels.com/en/contact.html) - Brussels Meeting Centre
+
+Mont des Arts / Kunstberg
+
 B-1000 Brussels, Belgium
 
-[Directions (PDF)](http://www.squarebrussels.com/sfSympalBossSiteModel1Plugin/pdf/SQUARE_how_to_get_there.pdf)
+## Disabled access
+
+Visitors with mobility issues should use the entrance located in the **SQUARE terrace**, as indicated in [venue's website](https://www.square-brussels.com/en/about-us/access.html#walk).
+
+## Contacts
+
+For general questions about DIGITEC: [DIGITEC CONFERENCE TEAM](mailto:DIGITEC-CONFERENCE@ec.europa.eu)
+
+For registration questions: [SCIC CONFERENCE REGISTRATION](mailto:SCIC-CONF-REGISTRATION@ec.europa.eu)
 
 ## DIGITEC live
 
-Follow DIGITEC on Twitter ([#digitec18](https://twitter.com/hashtag/digitec16)) or via the webstream on 20th of November.
+Follow DIGITEC on Twitter ([\#digitec18](https://twitter.com/hashtag/digitec16)) or via the webstream on 20th of November.
 
 ## DIGITEC on your mobile
 
@@ -22,7 +31,17 @@ On iOS or with Chrome for Android, you can add DIGITEC to your home screen.
 
 ### Android
 
-With Chrome for Android, go to the website, open Chrome's menu and click on the "Add to home screen" link. You will be asked to give a name to the app and then, a new icon will be created on your home screen.
+With Chrome for Android, go to the website and open Chrome's menu.
+
+![Chrome's menu](./android1.jpg)
+
+Then, click on the "Add to Home screen" link.
+
+![Add to home screen](./android2.jpg)
+
+You will be asked to give a name to the app and then, a new icon will be created on your home screen.
+
+![Home screen](./android3.jpg)
 
 ### iOS
 

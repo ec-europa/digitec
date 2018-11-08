@@ -1,4 +1,5 @@
 @import 'variables';
+@import '~mappy-breakpoints/mappy-breakpoints';
 
 .content {
   p {
@@ -30,6 +31,26 @@
 .contentBig {
   a {
     color: $ict-blue-text;
+  }
+}
+
+.intro {
+  color: $ict-grey-text;
+
+  a {
+    color: $ict-blue;
+    text-decoration: none;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: $ict-blue;
+      text-decoration: underline;
+    }
+  }
+
+  @include mappy-bp(medium) {
+    display: none;
   }
 }
 

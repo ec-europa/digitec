@@ -22,3 +22,17 @@ yarn serve
 ```
 
 Open the admin panel: http://localhost:9000/admin/
+
+### Build a release
+
+Delete the cache and previous build:
+
+```
+rm -rf .cache public
+```
+
+Build the website with the prefixes:
+
+```
+gatsby build --prefix-paths
+```
