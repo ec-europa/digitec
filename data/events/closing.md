@@ -2,7 +2,7 @@
 templateKey: event
 title: Closing
 starts: '17:15'
-ends: '17:45'
+ends: '17:30'
 venue: Gold hall
 color: grey
 register: true
