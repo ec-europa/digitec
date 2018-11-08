@@ -92,10 +92,10 @@ pipeline:
     hosts: [ $MGMT_IP ]
     user : fpfis
     source: ./build/
-    target: $MGMT_DIGITEC_PATH
+    target: $MGMT_DIGITEC_PATH/2018
     script:
         - export GIT_FPFIS_AUTHOR="Drone ec.deploy.fpfis.eu"
-        - cd "/ec/local/home/fpfis/reference/php-clusters/multisite/production/cluster00/sources/static/digitec/2018"
+        - cd $MGMT_DIGITEC_PATH/2018
         - git add -A .
         - git commit -m"Deployed ${DRONE_REPO_OWNER}/${DRONE_REPO_NAME}@${DRONE_TAG} from drone build ${DRONE_BUILD_NUMBER}." .
         - git push 'nas-reference' 'master'
