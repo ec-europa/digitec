@@ -1,7 +1,7 @@
 ---
 templateKey: speaker
 firstname: Koen
-lastname: Higres
+lastname: Maris
 title: Chief Technology Officer - Cyber Security at Atos Benelux and The Nordics
 picture: /img/koen-higres.jpg
 ---
