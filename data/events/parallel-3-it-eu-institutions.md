@@ -13,12 +13,16 @@ teams:
   - team: >-
       IT Obsolescence & Beyond: Fighting the technical debt in a not-so-small
       organisation: challenges, enabling and vision 
+  - team: >-
+      Europa Component Library - a design system for the European Commission and
+      the European Union
+  - team: Business continuity and disaster recovery
   - team: 'Do APIs have a role on innovating IT in public service? '
 ---
 16:00 - 16:15 IT Obsolescence & Beyond
 : Fighting the technical debt in a not-so-small organisation - challenges, enabling and vision
 
-16:20 - 16:35 Web innovation
+16:20 - 16:35 Europa Component Library - a design system for the European Commission and the European Union
 
 16:40 - 16:55 Business continuity and disaster recovery
 
