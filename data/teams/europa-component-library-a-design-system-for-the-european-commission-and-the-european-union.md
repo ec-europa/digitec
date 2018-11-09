@@ -5,7 +5,7 @@ teamName: >-
   European Union
 teamMembers: 'Wesley Deglise, European Commission'
 twitter: '@WesleyDeglise'
-picture: /img/1-op.jpg
+picture: /img/inno-team.png
 ---
 The Europa Component Library (ECL) is a comprehensive style guide containing the design elements and visual standards that make up all Europa websites and applications.
 
