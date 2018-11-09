@@ -11,6 +11,7 @@ order: '2'
 speakers:
   - speaker: Vishik
   - speaker: Maris
+  - speaker: Radu
   - speaker: Braendle
   - speaker: Ducatel
 ---
