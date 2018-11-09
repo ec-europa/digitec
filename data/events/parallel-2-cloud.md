@@ -18,3 +18,7 @@ The Cloud has opened doors towards a brand new set of innovative technologies li
 The session will present the state of the art application of Cloud in the Public Sector that helped providing better and more cost effective services in public administration. 
 
 It will surprise you.
+
+
+
+**Moderator: Philippe Van Damme**
