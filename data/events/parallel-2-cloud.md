@@ -12,6 +12,7 @@ speakers:
   - speaker: Van Damme
   - speaker: Deighton
   - speaker: Veispak
+  - speaker: Foti
 ---
 The Cloud has opened doors towards a brand new set of innovative technologies like rarely before: Artificial Intelligence, Big Data Analytics, Blockchain, Internet of Things are now part of our daily lives. But are we benefiting from these technologies in the public sector? 
 
