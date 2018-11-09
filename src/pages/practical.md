@@ -26,7 +26,7 @@ Follow DIGITEC on Twitter ([\#digitec18](https://twitter.com/hashtag/digitec16))
 
 ## DIGITEC on your mobile
 
-Choose and save your favorite sessions to [My DIGITEC](https://europa.eu/digitec/my-digitec)
+Choose and save your favorite sessions to [My DIGITEC](https://europa.eu/digitec/my-digitec).
 
 On iOS or with Chrome for Android, you can add DIGITEC to your home screen.
 
