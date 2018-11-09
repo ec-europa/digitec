@@ -22,4 +22,8 @@ Join the discussion to learn about:
 
 \- European Commission's approach to open source software 
 
-\- Addressing security of open source software at the EU institutions: [EU-FOSSA 2 ](https://joinup.ec.europa.eu/collection/eu-fossa-2)
+\- Addressing security of open source software at the EU institutions: [EU-FOSSA 2](https://joinup.ec.europa.eu/collection/eu-fossa-2)
+
+
+
+**Moderator: Mario Campolargo**
