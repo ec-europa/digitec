@@ -5,7 +5,7 @@ lastname: Radu
 title: >-
   Director of EMEA Cyber Lead Strategy Transformation & Assessments at Deloitte,
   Belgium
-picture: /img/1-op.jpg
+picture: /img/andrea-radu.jpg
 ---
 Andrea is a Director at Deloitte in the Cyber Risk practice, leading the EMEA Cyber Strategy, Transformation & Assessments capability . She has studied Computer Science and started her career as a Java Developer. Her affinity with cyber security stemmed from her technical background combined with developing a risk aware sense. 
 
