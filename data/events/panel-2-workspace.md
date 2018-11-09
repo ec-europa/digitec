@@ -26,3 +26,5 @@ Take part in the discussion covering topics like:
 \- innovation culture and mind set
 
 \- entrepreneurship in large organisations
+
+**Moderator: Jennifer Baker**
