@@ -2,7 +2,7 @@
 templateKey: team
 teamName: Business continuity and disaster recovery
 teamMembers: 'Rafael Ruiz de la Torre and Sandro Mameli, European Parliament'
-picture: /img/1-op.jpg
+picture: /img/business-continuity.jpg
 ---
 Business continuity ensures that organisations can overcome any incidents and disasters and resume their normal operations as soon as possible.
 
