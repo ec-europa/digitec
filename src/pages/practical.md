@@ -2,7 +2,6 @@
 templateKey: practical-page
 title: Practical
 ---
-
 ## How to get to SQUARE Brussels?
 
 [SQUARE](https://www.square-brussels.com/en/contact.html) - Brussels Meeting Centre
@@ -26,6 +25,8 @@ For registration questions: [SCIC CONFERENCE REGISTRATION](mailto:SCIC-CONF-REGI
 Follow DIGITEC on Twitter ([\#digitec18](https://twitter.com/hashtag/digitec16)) or via the webstream on 20th of November.
 
 ## DIGITEC on your mobile
+
+Choose and save your favorite sessions to [My DIGITEC](https://europa.eu/digitec/my-digitec)
 
 On iOS or with Chrome for Android, you can add DIGITEC to your home screen.
 
