@@ -3,7 +3,7 @@ templateKey: stand
 title: Blockchain @ TAXUD
 subtitle: Bringing innovation forward
 number: '13'
-picture: /img/1-op.jpg
+picture: /img/taxud.jpg
 ---
 Blockchain is a relatively recent and promising technology. It comes with a key set of transformational elements: It provides trust, data integrity and data synchronisation without the need for a trusted intermediary.
 
