@@ -25,3 +25,5 @@ Take part in the discussion covering topics like:
 \- emerging technology for sustainable development
 
 \- public sector innovation
+
+**Moderator: Jennifer Baker**
