@@ -198,7 +198,7 @@ class Navbar extends React.PureComponent {
                 Practical
               </NavbarItem>
               <NavbarItem to="/digitec/news/" external>
-                News
+                Newsletter
               </NavbarItem>
               <NavbarSeparator />
               <NavbarItem
