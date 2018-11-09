@@ -26,6 +26,4 @@ Take part in the discussion covering topics like:
 
 \- cybersecurity - how to improve prevention and ensure security by design
 
-
-
-Moderator: Jennifer Baker
+**Moderator**: **Jennifer Baker**
