@@ -11,10 +11,10 @@ order: '1'
 speakers:
   - speaker: Reda
   - speaker: 'Kempf '
-  - speaker: Campolargo
   - speaker: Buytaert
-  - speaker: Arora
   - speaker: Przybyszewski
+  - speaker: Arora
+  - speaker: Campolargo
 ---
 Join the discussion to learn about:
 
