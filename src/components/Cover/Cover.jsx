@@ -57,6 +57,7 @@ const Cover = ({ image, title, heading, hashtag }) => (
             #{hashtag}
           </a>
         </h2>
+        {/*
         <div className={styles.registerBlock}>
           <a
             href="https://scic.ec.europa.eu/ew/register/dgscic/DIGITEC_2018_11_20/e/lk/k/"
@@ -71,6 +72,7 @@ const Cover = ({ image, title, heading, hashtag }) => (
             />
           </a>
         </div>
+        */}
       </div>
     </div>
   </div>
