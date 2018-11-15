@@ -200,6 +200,9 @@ class Navbar extends React.PureComponent {
               <NavbarItem to="/digitec/news/" external>
                 Newsletter
               </NavbarItem>
+              <NavbarItem to="/digitec/news/past-events" external>
+                Past Events
+              </NavbarItem>
               <NavbarSeparator />
               <NavbarItem
                 to="https://twitter.com/hashtag/digitec18"
