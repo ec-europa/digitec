@@ -9,7 +9,7 @@ register: true
 readMore: true
 order: '1'
 speakers:
-  - speaker: Reda
+  - speaker: ' Raible'
   - speaker: 'Kempf '
   - speaker: Buytaert
   - speaker: Przybyszewski
