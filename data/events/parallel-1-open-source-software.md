@@ -12,8 +12,7 @@ speakers:
   - speaker: ' Raible'
   - speaker: 'Kempf '
   - speaker: Buytaert
-  - speaker: Przybyszewski
-  - speaker: Arora
+  - speaker: Gageik
   - speaker: Campolargo
 ---
 Join the discussion to learn about:
