@@ -13,8 +13,8 @@ Web streaming will be available on the 20th of November.
 
 ### Gold Hall
 
-<iframe frameborder="0" overflow-y: hidden; width="560" height="315" src="https://squarestream.tv/gold/iframe.html" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+[![SquareTV Gold Hall](/img/SquareTV_Gold_Hall.png)](http://squarestream.tv/gold/iframe.html)
 
 ### Silver Hall
 
-<iframe frameborder="0" overflow-y: hidden; width="560" height="315" src="https://squarestream.tv/silver/iframe.html" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+[![SquareTV Silver Hall](/img/SquareTV_Silver_Hall.png)](http://squarestream.tv/silver/iframe.html)
