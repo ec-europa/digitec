@@ -1,7 +1,7 @@
 ---
 templateKey: speaker
 firstname: Sebastian
-lastname: ' Raible'
+lastname: Raible
 title: Policy Advisor to Julia Reda (MEP)
 picture: /img/sebastian-raible.jpg.png
 ---
