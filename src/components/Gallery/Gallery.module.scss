@@ -1,0 +1,23 @@
+@import '../../utils/breakpoints';
+@import '../../utils/variables';
+
+.container {
+  padding: $header-height 1em 2em;
+}
+
+.header {
+  max-width: $max-width;
+  margin: auto;
+
+  @include mappy-bp(max medium) {
+    display: none;
+  }
+
+  h1 {
+    color: $ict-grey-text;
+  }
+}
+
+.clearfix {
+  clear: both;
+}
