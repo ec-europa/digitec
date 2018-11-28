@@ -1,11 +1,10 @@
 /**
- *
  * Event/Page
- *
  */
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import ResponsiveEmbed from 'react-responsive-embed';
 
 // Components
 import SpeakerRow from '../Presenters/Speaker/Row';
@@ -14,16 +13,7 @@ import TeamRow from '../Presenters/Team/Row';
 // Styles
 import styles from './Page.module.scss';
 
-const Page = ({
-  event,
-  speakers,
-  teams,
-  // eventModerators,
-  // speakers,
-  // eventGuests,
-  // location,
-  children,
-}) => {
+const Page = ({ event, speakers, teams, children, videos }) => {
   const startsAt = <time>{event.starts}</time>;
   const endsAt = event.ends ? <time>{event.ends}</time> : null;
 
@@ -32,20 +22,16 @@ const Page = ({
     venue = `, ${event.venue}`;
   }
 
-  /*
-  const moderatorBlock = eventModerators.length
-    ? <div>
-        <h2>Moderator</h2>
-        {eventModerators.map(speaker => (
-          <SpeakerRow
-            key={speaker.id}
-            speaker={speaker}
-            location={location}
-          />
+  const videosBlock =
+    videos && videos.length ? (
+      <div>
+        <h2>Video{videos.length > 1 ? 's' : ''}</h2>
+        {videos.map((videoNode, key) => (
+          <ResponsiveEmbed key={key} src={videoNode.video} allowFullScreen />
         ))}
       </div>
-    : null;
-    */
+    ) : null;
+
   const speakersBlock =
     speakers && speakers.length ? (
       <div>
@@ -82,20 +68,6 @@ const Page = ({
         ))}
       </div>
     ) : null;
-  /*
-  const guestsBlock = eventGuests.length
-    ? <div>
-        <h2>Guest{eventGuests.length > 1 ? 's' : ''}</h2>
-        {eventGuests.map(speaker => (
-          <SpeakerRow
-            key={speaker.id}
-            speaker={speaker}
-            location={location}
-          />
-        ))}
-      </div>
-    : null;
-  */
 
   return (
     <section className={styles.pageContainer}>
@@ -116,6 +88,7 @@ const Page = ({
         )}
         {children}
       </div>
+      {videosBlock}
       {teamsBlock}
       {speakersBlock}
     </section>
@@ -124,14 +97,14 @@ const Page = ({
 
 Page.propTypes = {
   event: PropTypes.object,
-  // eventModerators: PropTypes.array,
-  // speakers: PropTypes.array,
-  // eventGuests: PropTypes.array,
-  // location: PropTypes.object,
+  speakers: PropTypes.object,
+  videos: PropTypes.array,
 };
 
 Page.defaultProps = {
   event: {},
+  videos: [],
+  speakers: [],
 };
 
 export default Page;

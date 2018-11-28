@@ -8,6 +8,7 @@ color: grey
 register: true
 readMore: true
 order: '1'
+videos: []
 speakers:
   - speaker: 'Raible'
   - speaker: 'Kempf '

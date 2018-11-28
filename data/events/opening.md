@@ -8,9 +8,10 @@ color: grey
 register: true
 readMore: true
 order: '0'
+videos:
+  - video: https://www.youtube.com/embed/W3kKBv9fOTw
 speakers:
   - speaker: Gebhardt
   - speaker: Gabriel
   - speaker: Edtstadler
 ---
-

@@ -8,13 +8,15 @@ color: blue
 register: true
 readMore: true
 order: '0'
+videos: []
 speakers:
   - speaker: Al-Saleh
   - speaker: Valero
   - speaker: Mahjoubi
   - speaker: Kaili
 ---
-In the last decades, public organisations, just like the private sector, have lived through major technological evolutions. As new technologies continue to emerge at an ever growing speed, how will the public sector cope? How is the public sector using the solutions already available, from the cloud and blockchain services to big data and artificial intelligence? How will cybersecurity be assured? 
+
+In the last decades, public organisations, just like the private sector, have lived through major technological evolutions. As new technologies continue to emerge at an ever growing speed, how will the public sector cope? How is the public sector using the solutions already available, from the cloud and blockchain services to big data and artificial intelligence? How will cybersecurity be assured?
 
 Take part in the discussion covering topics like:
 
@@ -22,7 +24,7 @@ Take part in the discussion covering topics like:
 
 \- data as the new oil
 
-\- blockchain technology in the public sector 
+\- blockchain technology in the public sector
 
 \- cybersecurity - how to improve prevention and ensure security by design
 

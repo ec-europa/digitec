@@ -7,8 +7,8 @@ color: blue
 register: false
 readMore: true
 order: '0'
+videos: []
 speakers:
   - speaker: Refsgaard
 teams: []
 ---
-

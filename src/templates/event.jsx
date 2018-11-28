@@ -15,6 +15,7 @@ export const EventTemplate = ({
   venue,
   speakers,
   teams,
+  videos,
   helmet,
 }) => {
   const PostContent = contentComponent || Content;
@@ -31,6 +32,7 @@ export const EventTemplate = ({
         }}
         speakers={speakers}
         teams={teams}
+        videos={videos}
       >
         <PostContent className={contentStyles.content} content={content} />
       </EventPage>
@@ -46,6 +48,7 @@ EventTemplate.propTypes = {
   title: PropTypes.string,
   venue: PropTypes.string,
   speakers: PropTypes.array,
+  videos: PropTypes.array,
   teams: PropTypes.array,
   helmet: PropTypes.object,
 };
@@ -58,6 +61,7 @@ EventTemplate.defaultProps = {
   venue: '',
   speakers: [],
   teams: [],
+  videos: [],
   helmet: null,
 };
 
@@ -71,6 +75,7 @@ const Event = ({ data }) => {
       starts={post.frontmatter.starts}
       ends={post.frontmatter.ends}
       venue={post.frontmatter.venue}
+      videos={post.frontmatter.videos}
       speakers={post.fields.speakers}
       teams={post.fields.teams}
       helmet={<Helmet title={post.frontmatter.title} />}
@@ -131,6 +136,9 @@ export const pageQuery = graphql`
         starts
         ends
         venue
+        videos {
+          video
+        }
       }
     }
   }

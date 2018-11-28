@@ -8,6 +8,7 @@ color: grey
 register: false
 readMore: true
 order: '3'
+videos: []
 speakers: []
 teams:
   - team: >-
@@ -19,6 +20,7 @@ teams:
   - team: Business continuity and disaster recovery
   - team: 'Do APIs have a role on innovating IT in public service? '
 ---
+
 16:00 - 16:15 IT Obsolescence & Beyond
 : Fighting the technical debt in a not-so-small organisation - challenges, enabling and vision
 
