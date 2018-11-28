@@ -1,56 +1,58 @@
-[
-  {
-    "src": "./img/gallery-1.jpg",
-    "width": 600,
-    "height": 400,
-    "aspectRatio": 1.5,
-    "lightboxImage": {
-      "src": "./img/gallery-1.jpg"
+{
+  "Images": [
+    {
+      "image": {
+        "src": "/img/gallery-1.jpg",
+        "alt": "Alt text.",
+        "width": "600",
+        "height": "400",
+        "ratio": "1.5"
+      }
+    },
+    {
+      "image": {
+        "src": "/img/gallery-2.jpg",
+        "alt": "Alt text.",
+        "width": "600",
+        "height": "400",
+        "ratio": "1.5"
+      }
+    },
+    {
+      "image": {
+        "src": "/img/gallery-3.jpg",
+        "alt": "Alt text",
+        "width": "600",
+        "height": "400",
+        "ratio": "1.5"
+      }
+    },
+    {
+      "image": {
+        "src": "/img/gallery-4.jpg",
+        "alt": "Alt text",
+        "width": "600",
+        "height": "400",
+        "ratio": "1.5"
+      }
+    },
+    {
+      "image": {
+        "src": "/img/gallery-5.jpg",
+        "alt": "Alt text",
+        "width": "600",
+        "height": "400",
+        "ratio": "1.5"
+      }
+    },
+    {
+      "image": {
+        "src": "/img/gallery-6.jpg",
+        "alt": "Alt text",
+        "width": "600",
+        "height": "400",
+        "ratio": "1.5"
+      }
     }
-  },
-  {
-    "src": "./img/gallery-2.jpg",
-    "width": 600,
-    "height": 400,
-    "aspectRatio": 1.5,
-    "lightboxImage": {
-      "src": "./img/gallery-2.jpg"
-    }
-  },
-  {
-    "src": "./img/gallery-3.jpg",
-    "width": 600,
-    "height": 400,
-    "aspectRatio": 1.5,
-    "lightboxImage": {
-      "src": "./img/gallery-3.jpg"
-    }
-  },
-  {
-    "src": "./img/gallery-4.jpg",
-    "width": 600,
-    "height": 400,
-    "aspectRatio": 1.5,
-    "lightboxImage": {
-      "src": "./img/gallery-4.jpg"
-    }
-  },
-  {
-    "src": "./img/gallery-5.jpg",
-    "width": 600,
-    "height": 400,
-    "aspectRatio": 1.5,
-    "lightboxImage": {
-      "src": "./img/gallery-5.jpg"
-    }
-  },
-  {
-    "src": "./img/gallery-6.jpg",
-    "width": 600,
-    "height": 400,
-    "aspectRatio": 1.5,
-    "lightboxImage": {
-      "src": "./img/gallery-6.jpg"
-    }
-  }
-]
+  ]
+}
