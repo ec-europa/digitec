@@ -7,20 +7,7 @@ import Measure from 'react-measure';
 // Load styles
 import styles from './Gallery.module.scss';
 
-const photosPerPage = 6;
-
-const refactorPhotos = photos =>
-  photos.map(photo => ({
-    alt: photo.image.alt,
-    caption: photo.image.caption,
-    src: photo.image.src,
-    width: photo.image.width,
-    height: photo.image.height,
-    srcset: [
-      `${photo.image.src} ${photo.image.width * 2}w`,
-      `${photo.image.src} ${photo.image.width}w`,
-    ],
-  }));
+const photosPerPage = 8;
 
 class GalleryComponent extends React.Component {
   constructor(props) {
@@ -69,11 +56,9 @@ class GalleryComponent extends React.Component {
 
     const { photos } = this.props;
 
-    const newPhotos = refactorPhotos(
-      photos.slice(
-        this.state.pageNum * photosPerPage,
-        (this.state.pageNum + 1) * photosPerPage
-      )
+    const newPhotos = photos.slice(
+      this.state.pageNum * photosPerPage,
+      (this.state.pageNum + 1) * photosPerPage
     );
 
     this.setState({

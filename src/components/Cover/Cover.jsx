@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 import { Img } from '../Image';
 
 import styles from './Cover.module.scss';
-import registerLogo from '../../img/register.svg';
+// import registerLogo from '../../img/register.svg';
 
 const Cover = ({ image, title, heading, hashtag }) => (
   <div className={styles.coverContainer}>
