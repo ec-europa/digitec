@@ -194,9 +194,11 @@ class Navbar extends React.PureComponent {
               <NavbarItem to="/expo" onClick={this.closeDrawer}>
                 Expo
               </NavbarItem>
+              {/*
               <NavbarItem to="/gallery" onClick={this.closeDrawer}>
                 Gallery
               </NavbarItem>
+              */}
               <NavbarItem to="/practical" onClick={this.closeDrawer}>
                 Practical
               </NavbarItem>
