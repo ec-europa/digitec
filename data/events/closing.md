@@ -8,8 +8,7 @@ color: grey
 register: true
 readMore: true
 order: '0'
-videos:
-  - video: 'https://www.youtube.com/embed/M_BapteaKhE'
+videos: []
 speakers:
   - speaker: Ingestad
   - speaker: Petrucci
