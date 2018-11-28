@@ -8,9 +8,11 @@ color: grey
 register: true
 readMore: true
 order: '0'
-videos: []
+videos:
+  - video: 'https://www.youtube.com/embed/M_BapteaKhE'
 speakers:
   - speaker: Ingestad
   - speaker: Petrucci
   - speaker: Galloway
 ---
+
