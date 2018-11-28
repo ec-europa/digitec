@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Helmet from 'react-helmet';
 
 import Gallery from '../../components/Gallery/Gallery';
@@ -14,23 +14,25 @@ const GalleryPage = () => {
   const gallery = require('./gallery.json'); // eslint-disable-line global-require
 
   return (
-    <section className={containerStyles.container}>
-      <Helmet title="Gallery" />
-      <h1 className={contentStyles.fs10}>Gallery</h1>
-      <div className={containerStyles.cardsContainer}>
-        <p>
-          You can see more pictures from the even from{' '}
-          <a
-            href="https://twitter.com/i/moments/1067008611396841472"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            this moment
-          </a>.
-        </p>
-        <Gallery photos={gallery.Images} />
-      </div>
-    </section>
+    <Fragment>
+      <section className={containerStyles.container}>
+        <Helmet title="Gallery" />
+        <h1 className={contentStyles.fs10}>Gallery</h1>
+        <div className={containerStyles.cardsContainer}>
+          <p>
+            You can see more pictures from the even from{' '}
+            <a
+              href="https://twitter.com/i/moments/1067008611396841472"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              this moment
+            </a>.
+          </p>
+        </div>
+      </section>
+      <Gallery photos={gallery.Images} />
+    </Fragment>
   );
 };
 
