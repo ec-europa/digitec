@@ -106,7 +106,7 @@ collections:
           - {label: Heading, name: heading, widget: string}
           - {label: Hashtag, name: hashtag, widget: string}
           - {label: Body, name: "body", widget: "markdown"}
-      - file: "src/pages/gallery_dev.json"
+      - file: "src/pages/gallery/gallery_dev.json"
         label: "Gallery Page"
         name: "gallery"
         widget: "list"
@@ -124,7 +124,7 @@ collections:
                 - {label: Alt, name: alt, widget: string}
                 - {label: Width, name: width, widget: number, default: 600}
                 - {label: Height, name: height, widget: number, default: 400}
-                - {label: "Aspect ratio", name: height, widget: string, default: "1.5"}
+                - {label: "Aspect ratio", name: ratio, widget: string, default: "1.5"}
       - file: "src/pages/practical.md"
         label: "Practical"
         name: "practical"
