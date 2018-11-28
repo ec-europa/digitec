@@ -9,7 +9,7 @@ register: true
 readMore: true
 order: '0'
 videos:
-  - video: https://www.youtube.com/embed/W3kKBv9fOTw
+  - video: https://www.youtube.com/embed/M_BapteaKhE
 speakers:
   - speaker: Gebhardt
   - speaker: Gabriel
