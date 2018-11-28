@@ -11,12 +11,14 @@ const photosPerPage = 6;
 
 const refactorPhotos = photos =>
   photos.map(photo => ({
-    src: photo.src,
-    width: photo.width,
-    height: photo.height,
+    alt: photo.image.alt,
+    caption: photo.image.caption,
+    src: photo.image.src,
+    width: photo.image.width,
+    height: photo.image.height,
     srcset: [
-      `${photo.lightboxImage.src} ${photo.width * 2}w`,
-      `${photo.src} ${photo.width}w`,
+      `${photo.image.src} ${photo.image.width * 2}w`,
+      `${photo.image.src} ${photo.image.width}w`,
     ],
   }));
 
@@ -66,6 +68,7 @@ class GalleryComponent extends React.Component {
     }
 
     const { photos } = this.props;
+
     const newPhotos = refactorPhotos(
       photos.slice(
         this.state.pageNum * photosPerPage,

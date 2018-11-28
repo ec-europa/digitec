@@ -120,7 +120,8 @@ collections:
               widget: object
               fields:
                 - {label: Picture, name: src, widget: image}
-                - {label: Alt, name: alt, widget: string}
+                - {label: Alt, name: alt, widget: string, default: ""}
+                - {label: Caption, name: caption, widget: string, default: ""}
                 - {label: Width, name: width, widget: number, default: "600"}
                 - {label: Height, name: height, widget: number, default: "400"}
       - file: "src/pages/practical.md"

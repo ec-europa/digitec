@@ -11,7 +11,7 @@ const GalleryPage = () => {
   // by using gatsby-source-filesystem and
   // querying the json from GraphQL page query.
   // No benefits to make rounds to GraphQL for this usecase.
-  const photos = require('./gallery.json'); // eslint-disable-line global-require
+  const gallery = require('./gallery.json'); // eslint-disable-line global-require
 
   return (
     <section className={containerStyles.container}>
@@ -28,7 +28,7 @@ const GalleryPage = () => {
             this moment
           </a>.
         </p>
-        <Gallery photos={photos} />
+        <Gallery photos={gallery.Images} />
       </div>
     </section>
   );

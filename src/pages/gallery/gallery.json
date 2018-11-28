@@ -4,54 +4,54 @@
       "image": {
         "src": "/img/gallery-1.jpg",
         "alt": "Alt text.",
+        "caption": "Sample caption.",
         "width": "600",
-        "height": "400",
-        "ratio": "1.5"
+        "height": "400"
       }
     },
     {
       "image": {
         "src": "/img/gallery-2.jpg",
         "alt": "Alt text.",
+        "caption": "",
         "width": "600",
-        "height": "400",
-        "ratio": "1.5"
+        "height": "400"
       }
     },
     {
       "image": {
         "src": "/img/gallery-3.jpg",
         "alt": "Alt text",
+        "caption": "",
         "width": "600",
-        "height": "400",
-        "ratio": "1.5"
+        "height": "400"
       }
     },
     {
       "image": {
         "src": "/img/gallery-4.jpg",
         "alt": "Alt text",
+        "caption": "",
         "width": "600",
-        "height": "400",
-        "ratio": "1.5"
+        "height": "400"
       }
     },
     {
       "image": {
         "src": "/img/gallery-5.jpg",
         "alt": "Alt text",
+        "caption": "",
         "width": "600",
-        "height": "400",
-        "ratio": "1.5"
+        "height": "400"
       }
     },
     {
       "image": {
         "src": "/img/gallery-6.jpg",
         "alt": "Alt text",
+        "caption": "",
         "width": "600",
-        "height": "400",
-        "ratio": "1.5"
+        "height": "400"
       }
     }
   ]
