@@ -33,13 +33,13 @@ const GalleryPage = ({ data }) => {
         <h1 className={contentStyles.fs10}>Gallery</h1>
         <div className={containerStyles.cardsContainer}>
           <p>
-            You can see more pictures from the even from{' '}
+            You can see more photos from the event in #digitec18{' '}
             <a
               href="https://twitter.com/i/moments/1067008611396841472"
               target="_blank"
               rel="noopener noreferrer"
             >
-              this moment
+              Twitter moment
             </a>.
           </p>
         </div>
