@@ -27,16 +27,16 @@
     },
     {
       "image": {
+        "src": "/img/45934460372_5ecf23522a_o.jpg"
+      }
+    },
+    {
+      "image": {
         "src": "/img/gallery-6.jpg",
         "alt": "Alt text",
         "caption": "",
         "width": "600",
         "height": "400"
-      }
-    },
-    {
-      "image": {
-        "src": "/img/45934460372_5ecf23522a_o.jpg"
       }
     }
   ]
