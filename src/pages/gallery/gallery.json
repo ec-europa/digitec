@@ -2,11 +2,22 @@
   "Images": [
     {
       "image": {
+        "src": "/img/_dsf0009.jpg",
+        "caption": "Mariya Gabriel, European Commissioner for Digital Economy and Society"
+      }
+    },
+    {
+      "image": {
         "src": "/img/gallery-5.jpg",
         "alt": "Alt text",
         "caption": "",
         "width": "600",
         "height": "400"
+      }
+    },
+    {
+      "image": {
+        "src": "/img/45071928615_0a203a3e1f_o.jpg"
       }
     },
     {
@@ -20,23 +31,12 @@
     },
     {
       "image": {
-        "src": "/img/_dsf0009.jpg",
-        "caption": "Mariya Gabriel, European Commissioner for Digital Economy and Society"
-      }
-    },
-    {
-      "image": {
         "src": "/img/32112707248_5de2e390eb_o.jpg"
       }
     },
     {
       "image": {
         "src": "/img/45934460372_5ecf23522a_o.jpg"
-      }
-    },
-    {
-      "image": {
-        "src": "/img/45071928615_0a203a3e1f_o.jpg"
       }
     }
   ]
