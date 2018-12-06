@@ -9,7 +9,7 @@ register: true
 readMore: true
 order: '0'
 videos:
-  - video: 'https://youtu.be/K8wn6tGP00k'
+  - video: 'https://youtu.be/embed/K8wn6tGP00k'
 speakers:
   - speaker: Hinssen
 ---
