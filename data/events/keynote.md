@@ -8,7 +8,8 @@ color: blue
 register: true
 readMore: true
 order: '0'
-videos: []
+videos:
+  - video: 'https://youtu.be/K8wn6tGP00k'
 speakers:
   - speaker: Hinssen
 ---
