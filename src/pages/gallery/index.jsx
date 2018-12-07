@@ -20,8 +20,10 @@ const GalleryPage = ({ data }) => {
       node.node.id.includes(image.src)
     );
     return {
-      srcset: optimizedImage.node.sizes.srcSet,
+      srcSet: optimizedImage.node.sizes.srcSet,
       sizes: optimizedImage.node.sizes.sizes,
+      width: 600,
+      height: 400,
       ...item.image,
     };
   });
@@ -54,7 +56,7 @@ export default GalleryPage;
 GalleryPage.propTypes = {
   data: PropTypes.shape({
     allImageSharp: PropTypes.shape({
-      edges: PropTypes.object,
+      edges: PropTypes.array,
     }),
   }).isRequired,
 };
