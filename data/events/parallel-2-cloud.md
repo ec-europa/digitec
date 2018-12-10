@@ -8,7 +8,8 @@ color: grey
 register: true
 readMore: true
 order: '1'
-videos: []
+videos:
+  - video: 'https://www.youtube.com/embed/LPJMOIq-Mwc'
 speakers:
   - speaker: Van Damme
   - speaker: Deighton
