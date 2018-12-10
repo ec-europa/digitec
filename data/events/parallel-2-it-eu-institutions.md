@@ -8,7 +8,11 @@ color: grey
 register: false
 readMore: true
 order: '3'
-videos: []
+videos:
+  - video: 'https://www.youtube.com/embed/-4kzYOlbd8A'
+  - video: 'https://www.youtube.com/embed/LZ7m19wdjdo'
+  - video: 'https://www.youtube.com/embed/8dp1rJJik1Y'
+  - video: 'https://www.youtube.com/embed/C9RwejBlSE0'
 speakers: []
 teams:
   - team: e-Participation
