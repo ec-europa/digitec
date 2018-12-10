@@ -8,7 +8,8 @@ color: blue
 register: true
 readMore: true
 order: '0'
-videos: []
+videos:
+  - video: 'https://www.youtube.com/embed/C8ShvPbRdkM'
 speakers:
   - speaker: Fischer
   - speaker: Van den Bergh
