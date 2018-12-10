@@ -8,7 +8,8 @@ color: grey
 register: true
 readMore: true
 order: '1'
-videos: []
+videos:
+  - video: 'https://www.youtube.com/embed/9xNgSA99cPI'
 speakers:
   - speaker: Buytendijk
 ---
