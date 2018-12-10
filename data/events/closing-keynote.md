@@ -7,8 +7,10 @@ color: blue
 register: false
 readMore: true
 order: '0'
-videos: []
+videos:
+  - video: 'https://www.youtube.com/embed/mpo20ktg_F0'
 speakers:
   - speaker: Refsgaard
 teams: []
 ---
+
