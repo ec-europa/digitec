@@ -8,7 +8,8 @@ color: blue
 register: true
 readMore: true
 order: '1'
-videos: []
+videos:
+  - video: 'https://www.youtube.com/embed/k8wV5xSX2sI'
 speakers:
   - speaker: 'Sagar '
   - speaker: Kelly
