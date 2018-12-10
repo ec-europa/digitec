@@ -9,8 +9,7 @@ register: true
 readMore: true
 order: '0'
 videos:
-  - video: >-
-      https://www.youtube.com/embed/watch?v=K8wn6tGP00k&list=PLfbIcBC6AXhtsc3X4SpMUuwTzX5McNloz&index=15
+  - video: 'https://www.youtube.com/embed/K8wn6tGP00k'
 speakers:
   - speaker: Hinssen
 ---
