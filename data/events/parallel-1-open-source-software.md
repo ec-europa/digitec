@@ -8,9 +8,10 @@ color: grey
 register: true
 readMore: true
 order: '1'
-videos: []
+videos:
+  - video: 'https://www.youtube.com/embed/6CiYCd86y7I'
 speakers:
-  - speaker: 'Raible'
+  - speaker: Raible
   - speaker: 'Kempf '
   - speaker: Buytaert
   - speaker: Gageik
