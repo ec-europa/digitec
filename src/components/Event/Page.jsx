@@ -27,7 +27,12 @@ const Page = ({ event, speakers, teams, children, videos }) => {
       <div>
         <h2>Video{videos.length > 1 ? 's' : ''}</h2>
         {videos.map((videoNode, key) => (
-          <ResponsiveEmbed key={key} src={videoNode.video} allowFullScreen />
+          <ResponsiveEmbed
+            className={styles.video}
+            key={key}
+            src={videoNode.video}
+            allowFullScreen
+          />
         ))}
       </div>
     ) : null;
