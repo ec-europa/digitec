@@ -9,9 +9,10 @@ register: true
 readMore: true
 order: '0'
 videos:
-  - video: https://www.youtube.com/embed/M_BapteaKhE
+  - video: 'https://www.youtube.com/embed/lCmHN-V4EhU'
 speakers:
   - speaker: Gebhardt
   - speaker: Gabriel
   - speaker: Edtstadler
 ---
+
