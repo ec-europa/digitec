@@ -8,7 +8,9 @@ color: grey
 register: false
 readMore: true
 order: '3'
-videos: []
+videos:
+  - video: 'https://www.youtube.com/embed/gtELt8tNkMM'
+  - video: 'https://www.youtube.com/embed/gtELt8tNkMM'
 speakers: []
 teams:
   - team: >-
