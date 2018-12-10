@@ -9,7 +9,7 @@ register: true
 readMore: true
 order: '0'
 videos:
-  - video: 'https://youtu.be/embed/mpo20ktg_F0'
+  - video: 'https://www.youtube.com/embed/w4EVvz1oL5c'
 speakers:
   - speaker: Ingestad
   - speaker: Petrucci
