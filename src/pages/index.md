@@ -5,15 +5,6 @@ image: /img/home-header.jpg
 heading: '20 November, 2018 - Square, Brussels'
 hashtag: digitec18
 ---
-
 The European Parliament's Directorate-General for Innovation and Technological Support (DG ITEC), the Council of the EU's Communication and Information Services Directorate (SMART), and the European Commission's Directorate-General for Informatics (DIGIT) have joined forces to co-organise the largest EU institutions IT forum to date. DIGITEC 2018 will bring together the IT communities of the European institutions to share best practices around new technologies in public administration and to discuss how the digital future will shape the way large organisations work.
 
-Watch here the recorded sessions in Gold Hall and Silver Hall.
-
-### Gold Hall
-
-[![SquareTV Gold Hall](img/webstream_goldhall.jpg)](http://squarestream.tv/gold/iframe.html)
-
-### Silver Hall
-
-[![SquareTV Silver Hall](img/webstream_silverhall.jpg)](http://squarestream.tv/silver/iframe.html)
+Click on the sessions in the programme to watch the recordings.
