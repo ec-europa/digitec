@@ -10,7 +10,7 @@ readMore: true
 order: '3'
 videos:
   - video: 'https://www.youtube.com/embed/gtELt8tNkMM'
-  - video: 'https://www.youtube.com/embed/gtELt8tNkMM'
+  - video: 'https://www.youtube.com/embed/Jm5LEZ0EVWE'
   - video: 'https://www.youtube.com/embed/CscS6XchWng'
   - video: 'https://www.youtube.com/embed/vxL9wTu2klY'
 speakers: []
