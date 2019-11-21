@@ -32,6 +32,11 @@ module.exports = class HTML extends React.Component {
           />
           {this.props.headComponents}
           {css}
+          <script
+            src="https://ec.europa.eu/wel/cookie-consent/consent.js"
+            type="text/javascript"
+            defer
+          />
         </head>
         <body {...this.props.bodyAttributes}>
           {this.props.preBodyComponents}
