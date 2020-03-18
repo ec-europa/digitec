@@ -31,22 +31,24 @@ module.exports = ({ getNode, getNodes, createNodeField }) => {
             : [getSpeakerNodeByName(node.frontmatter.speakers)]; // get single node and create 1 element array
 
         // filtered not defined nodes and iterate through defined authors nodes to add data to indexes
-        speakersNodes.filter(speakerNode => speakerNode).map(speakerNode => {
-          // if it's first time for this author init empty array for his books
-          if (!(speakerNode.id in eventSpeakers)) {
-            eventSpeakers[speakerNode.id] = [];
-          }
-          // add book to this author
-          eventSpeakers[speakerNode.id].push(node.id);
+        speakersNodes
+          .filter(speakerNode => speakerNode)
+          .map(speakerNode => {
+            // if it's first time for this author init empty array for his books
+            if (!(speakerNode.id in eventSpeakers)) {
+              eventSpeakers[speakerNode.id] = [];
+            }
+            // add book to this author
+            eventSpeakers[speakerNode.id].push(node.id);
 
-          // if it's first time for this book init empty array for its authors
-          if (!(node.id in speakerEvents)) {
-            speakerEvents[node.id] = [];
-          }
+            // if it's first time for this book init empty array for its authors
+            if (!(node.id in speakerEvents)) {
+              speakerEvents[node.id] = [];
+            }
 
-          // add author to this book
-          return speakerEvents[node.id].push(speakerNode.id);
-        });
+            // add author to this book
+            return speakerEvents[node.id].push(speakerNode.id);
+          });
       }
     });
 

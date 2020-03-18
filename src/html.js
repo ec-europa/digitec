@@ -13,7 +13,16 @@ if (process.env.NODE_ENV === `production`) {
 module.exports = class HTML extends React.Component {
   render() {
     let css;
-    if (process.env.NODE_ENV === `production`) {
+    const {
+      htmlAttributes,
+      headComponents,
+      bodyAttributes,
+      preBodyComponents,
+      postBodyComponents,
+      body,
+    } = this.props;
+
+    if (process.env.NODE_ENV === 'production') {
       css = (
         <style
           id="gatsby-inlined-css"
@@ -21,8 +30,9 @@ module.exports = class HTML extends React.Component {
         />
       );
     }
+
     return (
-      <html {...this.props.htmlAttributes}>
+      <html {...htmlAttributes}>
         <head>
           <meta charSet="utf-8" />
           <meta httpEquiv="x-ua-compatible" content="ie=edge" />
@@ -30,7 +40,7 @@ module.exports = class HTML extends React.Component {
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
-          {this.props.headComponents}
+          {headComponents}
           {css}
           <script
             src="https://ec.europa.eu/wel/cookie-consent/consent.js"
@@ -38,14 +48,14 @@ module.exports = class HTML extends React.Component {
             defer
           />
         </head>
-        <body {...this.props.bodyAttributes}>
-          {this.props.preBodyComponents}
+        <body {...bodyAttributes}>
+          {preBodyComponents}
           <div
             key="body"
             id="___gatsby"
-            dangerouslySetInnerHTML={{ __html: this.props.body }}
+            dangerouslySetInnerHTML={{ __html: body }}
           />
-          {this.props.postBodyComponents}
+          {postBodyComponents}
           <script
             defer
             src="//europa.eu/webtools/load.js"

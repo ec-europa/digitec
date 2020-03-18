@@ -33,19 +33,21 @@ module.exports = ({ getNode, getNodes, createNodeField }) => {
       if (node.frontmatter.teams) {
         const teamsNodes = node.frontmatter.teams.map(getTeamNodeByName);
 
-        teamsNodes.filter(teamNode => teamNode).map(teamNode => {
-          if (!(teamNode.id in eventTeams)) {
-            eventTeams[teamNode.id] = [];
-          }
+        teamsNodes
+          .filter(teamNode => teamNode)
+          .map(teamNode => {
+            if (!(teamNode.id in eventTeams)) {
+              eventTeams[teamNode.id] = [];
+            }
 
-          eventTeams[teamNode.id].push(node.id);
+            eventTeams[teamNode.id].push(node.id);
 
-          if (!(node.id in teamEvents)) {
-            teamEvents[node.id] = [];
-          }
+            if (!(node.id in teamEvents)) {
+              teamEvents[node.id] = [];
+            }
 
-          return teamEvents[node.id].push(teamNode.id);
-        });
+            return teamEvents[node.id].push(teamNode.id);
+          });
       }
     });
 

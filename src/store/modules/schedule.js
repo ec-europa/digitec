@@ -15,14 +15,10 @@ const initialState = {};
 export default function reducer(state = initialState, action) {
   switch (action.type) {
     case ADD_TO_MY_SCHEDULE: {
-      return Object.assign({}, state, {
-        [action.event.id]: true,
-      });
+      return { ...state, [action.event.id]: true };
     }
     case REMOVE_FROM_MY_SCHEDULE: {
-      return Object.assign({}, state, {
-        [action.event.id]: false,
-      });
+      return { ...state, [action.event.id]: false };
     }
     default: {
       return state;
