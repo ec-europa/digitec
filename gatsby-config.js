@@ -9,8 +9,9 @@ module.exports = {
     pathPrefix: config.pathPrefix,
   },
   plugins: [
+    'gatsby-plugin-layout',
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'DIGITEC 2018',
         short_name: 'DIGITEC',
@@ -23,7 +24,7 @@ module.exports = {
     },
     'gatsby-plugin-offline',
     {
-      resolve: `gatsby-plugin-nprogress`,
+      resolve: 'gatsby-plugin-nprogress',
       options: {
         color: '#009ee2',
         showSpinner: true,
@@ -67,7 +68,7 @@ module.exports = {
       options: {
         plugins: [
           {
-            resolve: `gatsby-remark-images`,
+            resolve: 'gatsby-remark-images',
             options: {
               // It's important to specify the maxWidth (in pixels) of
               // the content container as this plugin uses this as the
@@ -79,7 +80,7 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-sitemap`,
+      resolve: 'gatsby-plugin-sitemap',
     },
     {
       resolve: 'gatsby-plugin-netlify-cms',
@@ -90,8 +91,8 @@ module.exports = {
     'gatsby-plugin-netlify', // make sure to keep it last in the array
   ],
   mapping: {
-    'MarkdownRemark.fields.speakers': `MarkdownRemark`,
-    'MarkdownRemark.fields.teams': `MarkdownRemark`,
-    'MarkdownRemark.fields.events': `MarkdownRemark`,
+    'MarkdownRemark.fields.speakers': 'MarkdownRemark',
+    'MarkdownRemark.fields.teams': 'MarkdownRemark',
+    'MarkdownRemark.fields.events': 'MarkdownRemark',
   },
 };
