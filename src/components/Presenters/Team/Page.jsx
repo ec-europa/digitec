@@ -21,7 +21,7 @@ import twitterLogo from '../twitter.png';
 const Page = ({ team, events, children }) => {
   const sessions =
     events && events.length && events.filter(e => e).length ? (
-      <Fragment>
+      <>
         <h3 className={styles.sessionsTitle}>
           Session{events.length > 1 ? 's' : ''}
         </h3>
@@ -40,7 +40,7 @@ const Page = ({ team, events, children }) => {
             }}
           />
         ))}
-      </Fragment>
+      </>
     ) : (
       ''
     );

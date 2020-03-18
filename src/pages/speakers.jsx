@@ -1,6 +1,7 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import { graphql } from 'gatsby';
 
 import SpeakerCard from '../components/Presenters/Speaker/Card';
 import TeamCard from '../components/Presenters/Team/Card';
@@ -43,7 +44,7 @@ const SpeakersPage = props => {
         ))}
       </div>
       {teams.length ? (
-        <Fragment>
+        <>
           <h2>Space for Innovation: IT in the EU institutions</h2>
           <div className={containerStyles.cardsContainer}>
             {teams.map(({ node: team }) => (
@@ -57,7 +58,7 @@ const SpeakersPage = props => {
               />
             ))}
           </div>
-        </Fragment>
+        </>
       ) : (
         ''
       )}

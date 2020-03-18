@@ -1,6 +1,8 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import { graphql } from 'gatsby';
+
 import Content, { HTMLContent } from '../components/Content';
 
 import EventPage from '../components/Event/Page';
@@ -21,7 +23,7 @@ export const EventTemplate = ({
   const PostContent = contentComponent || Content;
 
   return (
-    <Fragment>
+    <>
       {helmet || ''}
       <EventPage
         event={{
@@ -36,7 +38,7 @@ export const EventTemplate = ({
       >
         <PostContent className={contentStyles.content} content={content} />
       </EventPage>
-    </Fragment>
+    </>
   );
 };
 

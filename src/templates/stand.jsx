@@ -1,7 +1,8 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import Img from 'gatsby-image';
+import { graphql } from 'gatsby';
 
 import Content, { HTMLContent } from '../components/Content';
 
@@ -20,7 +21,7 @@ export const StandTemplate = ({
   const PostContent = contentComponent || Content;
 
   return (
-    <Fragment>
+    <>
       {helmet || ''}
       <StandPage
         stand={{
@@ -32,7 +33,7 @@ export const StandTemplate = ({
       >
         <PostContent className={contentStyles.content} content={content} />
       </StandPage>
-    </Fragment>
+    </>
   );
 };
 

@@ -1,4 +1,4 @@
-import CMS from 'netlify-cms';
+import CMS from 'netlify-cms-app';
 
 import HomePagePreview from './preview-templates/HomePagePreview';
 import PracticalPagePreview from './preview-templates/PracticalPagePreview';
@@ -14,3 +14,5 @@ CMS.registerPreviewTemplate('speakers', SpeakerPreview);
 CMS.registerPreviewTemplate('teams', TeamPreview);
 CMS.registerPreviewTemplate('events', EventPreview);
 CMS.registerPreviewTemplate('stands', StandPreview);
+
+CMS.init();

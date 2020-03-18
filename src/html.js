@@ -1,5 +1,5 @@
 /* eslint-disable global-require,react/prefer-stateless-function, react/jsx-filename-extension, jsx-a11y/html-has-lang,react/prop-types,no-useless-escape */
-import React from 'react';
+const React = require('react');
 
 let stylesStr;
 if (process.env.NODE_ENV === `production`) {

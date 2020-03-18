@@ -1,6 +1,7 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import { graphql } from 'gatsby';
 
 import Gallery from '../../components/Gallery/Gallery';
 
@@ -29,7 +30,7 @@ const GalleryPage = ({ data }) => {
   });
 
   return (
-    <Fragment>
+    <>
       <section className={containerStyles.container}>
         <Helmet title="Gallery" />
         <h1 className={contentStyles.fs10}>Gallery</h1>
@@ -42,12 +43,13 @@ const GalleryPage = ({ data }) => {
               rel="noopener noreferrer"
             >
               Twitter moment
-            </a>.
+            </a>
+            .
           </p>
         </div>
       </section>
       <Gallery photos={photos} />
-    </Fragment>
+    </>
   );
 };
 

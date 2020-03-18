@@ -1,6 +1,8 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
+import { graphql } from 'gatsby';
+
 import Content, { HTMLContent } from '../components/Content';
 
 import Cover from '../components/Cover/Cover';
@@ -18,7 +20,7 @@ export const HomePageTemplate = ({
   const PostContent = contentComponent || Content;
 
   return (
-    <Fragment>
+    <>
       <Cover image={image} title={title} heading={heading} hashtag={hashtag} />
       <div
         style={{ maxWidth: '56rem', margin: '4rem auto', padding: '0 1rem' }}
@@ -35,7 +37,7 @@ export const HomePageTemplate = ({
           />
         )}
       </div>
-    </Fragment>
+    </>
   );
 };
 

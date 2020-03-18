@@ -1,7 +1,9 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import Img from 'gatsby-image';
+import { graphql } from 'gatsby';
+
 import Content, { HTMLContent } from '../components/Content';
 
 import SpeakerPage from '../components/Presenters/Speaker/Page';
@@ -21,7 +23,7 @@ export const SpeakerTemplate = ({
   const PostContent = contentComponent || Content;
 
   return (
-    <Fragment>
+    <>
       {helmet || ''}
       <SpeakerPage
         speaker={{
@@ -35,7 +37,7 @@ export const SpeakerTemplate = ({
       >
         <PostContent className={contentStyles.content} content={content} />
       </SpeakerPage>
-    </Fragment>
+    </>
   );
 };
 

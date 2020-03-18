@@ -2,13 +2,18 @@
  * Create the store
  */
 
-import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
+import {
+  createStore as createReduxStore,
+  applyMiddleware,
+  compose,
+  combineReducers,
+} from 'redux';
 import thunk from 'redux-thunk';
 import { persistStore, autoRehydrate } from 'redux-persist';
 
 import schedule from './modules/schedule';
 
-export default function configureStore() {
+const createStore = () => {
   const reducer = combineReducers({ schedule });
 
   const enhancers = [applyMiddleware(thunk), autoRehydrate()];
@@ -18,11 +23,13 @@ export default function configureStore() {
     enhancers.push(devtools());
   }
 
-  const store = createStore(reducer, {}, compose(...enhancers));
+  const store = createReduxStore(reducer, {}, compose(...enhancers));
 
   persistStore(store, {
     whitelist: ['schedule'],
   });
 
   return store;
-}
+};
+
+export default createStore;

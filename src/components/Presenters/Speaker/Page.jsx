@@ -25,7 +25,7 @@ const Page = props => {
 
   const sessions =
     events && events.length && events.filter(e => e).length ? (
-      <Fragment>
+      <>
         <h3 className={styles.sessionsTitle}>
           Session{events.length > 1 ? 's' : ''}
         </h3>
@@ -46,7 +46,7 @@ const Page = props => {
             }}
           />
         ))}
-      </Fragment>
+      </>
     ) : (
       ''
     );
@@ -121,7 +121,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Page);
+export default connect(mapStateToProps, mapDispatchToProps)(Page);

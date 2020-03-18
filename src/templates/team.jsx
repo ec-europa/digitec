@@ -1,7 +1,9 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import Img from 'gatsby-image';
+import { graphql } from 'gatsby';
+
 import Content, { HTMLContent } from '../components/Content';
 
 import TeamPage from '../components/Presenters/Team/Page';
@@ -20,7 +22,7 @@ export const TeamTemplate = ({
   const PostContent = contentComponent || Content;
 
   return (
-    <Fragment>
+    <>
       {helmet || ''}
       <TeamPage
         team={{
@@ -33,7 +35,7 @@ export const TeamTemplate = ({
       >
         <PostContent className={contentStyles.content} content={content} />
       </TeamPage>
-    </Fragment>
+    </>
   );
 };
 
