@@ -1,9 +1,3 @@
-/**
- *
- * Event/Row
- *
- */
-
 import React from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
@@ -48,7 +42,7 @@ class Row extends React.Component {
         <div className={styles.primary}>
           {event.readMore ? (
             <div>
-              <Link className={styles.title} to={{ pathname: event.slug }}>
+              <Link className={styles.title} to={event.slug}>
                 {event.title}
               </Link>
             </div>

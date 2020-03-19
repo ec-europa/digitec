@@ -1,9 +1,3 @@
-/**
- *
- * Team/Row
- *
- */
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
@@ -13,8 +7,8 @@ import Overdrive from 'react-overdrive';
 import styles from '../Row.module.scss';
 
 const Row = ({ team }) => (
-  <Link className={styles.presenterContainer} to={{ pathname: team.slug }}>
-    {team.picture ? (
+  <Link className={styles.presenterContainer} to={team.slug}>
+    {team.picture && (
       <Overdrive
         id={`${team.teamName}-pic`}
         className={styles.presenterPicture}
@@ -24,8 +18,6 @@ const Row = ({ team }) => (
           alt={`${team.teamName}`}
         />
       </Overdrive>
-    ) : (
-      ''
     )}
     <div className={styles.presenterInfo}>
       <h3>{team.teamName}</h3>
