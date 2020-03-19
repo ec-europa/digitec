@@ -28,7 +28,7 @@ export const HomePageTemplate = ({
         <PostContent className={contentStyles.contentBig} content={content} />
         {bigLogo && (
           <Img
-            sizes={bigLogo.sizes}
+            fluid={bigLogo.fluid}
             style={{
               margin: '4rem auto 1rem',
               width: '100%',
@@ -92,8 +92,8 @@ export const productPageQuery = graphql`
         title
         image {
           childImageSharp {
-            sizes(maxWidth: 1920, quality: 80) {
-              ...GatsbyImageSharpSizes_withWebp
+            fluid(maxWidth: 1920, quality: 80) {
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
@@ -102,8 +102,8 @@ export const productPageQuery = graphql`
       }
     }
     bigLogo: imageSharp(id: { regex: "/DIGITEC-2018_3-institutions.png/" }) {
-      sizes(maxWidth: 600, quality: 80) {
-        ...GatsbyImageSharpSizes_withWebp_noBase64
+      fluid(maxWidth: 600, quality: 80) {
+        ...GatsbyImageSharpFluid_withWebp_noBase64
       }
     }
   }

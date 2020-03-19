@@ -69,7 +69,7 @@ const Team = ({ data }) => {
       contentComponent={HTMLContent}
       teamName={node.frontmatter.teamName}
       teamMembers={node.frontmatter.teamMembers}
-      picture={<Img sizes={node.frontmatter.picture.childImageSharp.sizes} />}
+      picture={<Img fluid={node.frontmatter.picture.childImageSharp.fluid} />}
       twitter={node.frontmatter.twitter}
       events={node.fields.events}
       helmet={<Helmet title={`${node.frontmatter.teamName}`} />}
@@ -110,8 +110,8 @@ export const pageQuery = graphql`
         twitter
         picture {
           childImageSharp {
-            sizes(maxWidth: 260) {
-              ...GatsbyImageSharpSizes_withWebp
+            fluid(maxWidth: 260) {
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }

@@ -73,7 +73,7 @@ const Speaker = ({ data }) => {
       contentComponent={HTMLContent}
       firstname={post.frontmatter.firstname}
       lastname={post.frontmatter.lastname}
-      picture={<Img sizes={post.frontmatter.picture.childImageSharp.sizes} />}
+      picture={<Img fluid={post.frontmatter.picture.childImageSharp.fluid} />}
       twitter={post.frontmatter.twitter}
       events={post.fields.events}
       helmet={
@@ -121,8 +121,8 @@ export const pageQuery = graphql`
         twitter
         picture {
           childImageSharp {
-            sizes(maxWidth: 260) {
-              ...GatsbyImageSharpSizes_withWebp
+            fluid(maxWidth: 260) {
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }

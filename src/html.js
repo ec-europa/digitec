@@ -1,15 +1,6 @@
 /* eslint-disable global-require,react/prefer-stateless-function, react/jsx-filename-extension, jsx-a11y/html-has-lang,react/prop-types,no-useless-escape */
 const React = require('react');
 
-let stylesStr;
-if (process.env.NODE_ENV === `production`) {
-  try {
-    stylesStr = require(`!raw-loader!../public/styles.css`);
-  } catch (e) {
-    console.log(e);
-  }
-}
-
 module.exports = class HTML extends React.Component {
   render() {
     let css;
@@ -21,15 +12,6 @@ module.exports = class HTML extends React.Component {
       postBodyComponents,
       body,
     } = this.props;
-
-    if (process.env.NODE_ENV === 'production') {
-      css = (
-        <style
-          id="gatsby-inlined-css"
-          dangerouslySetInnerHTML={{ __html: stylesStr }}
-        />
-      );
-    }
 
     return (
       <html {...htmlAttributes}>

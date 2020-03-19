@@ -65,7 +65,7 @@ const Stand = ({ data }) => {
       contentComponent={HTMLContent}
       title={post.frontmatter.title}
       subtitle={post.frontmatter.subtitle}
-      picture={<Img sizes={post.frontmatter.picture.childImageSharp.sizes} />}
+      picture={<Img fluid={post.frontmatter.picture.childImageSharp.fluid} />}
       number={post.frontmatter.number}
       helmet={<Helmet title={post.frontmatter.title} />}
     />
@@ -89,8 +89,8 @@ export const pageQuery = graphql`
         subtitle
         picture {
           childImageSharp {
-            sizes(maxWidth: 260) {
-              ...GatsbyImageSharpSizes_withWebp
+            fluid(maxWidth: 260) {
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }

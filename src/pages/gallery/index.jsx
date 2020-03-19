@@ -20,14 +20,17 @@ const GalleryPage = ({ data }) => {
     const optimizedImage = staticImages.find(node =>
       node.node.id.includes(image.src)
     );
-    return {
-      srcSet: optimizedImage.node.sizes.srcSet,
-      sizes: optimizedImage.node.sizes.sizes,
-      width: 600,
-      height: 400,
-      ...item.image,
-    };
-  });
+
+    if (optimizedImage) {
+      return {
+        srcSet: optimizedImage.node.fluid.srcSet,
+        sizes: optimizedImage.node.fluid.sizes,
+        width: 600,
+        height: 400,
+        ...item.image,
+      };
+    }
+  }).filter(i => i);
 
   return (
     <>
@@ -65,11 +68,11 @@ GalleryPage.propTypes = {
 
 export const pageQuery = graphql`
   query GetStaticSharpImages {
-    allImageSharp(filter: { id: { regex: "/static/img/" } }) {
+    allImageSharp {
       edges {
         node {
           id
-          sizes {
+          fluid {
             sizes
             srcSet
           }

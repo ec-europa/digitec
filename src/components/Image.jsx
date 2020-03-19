@@ -17,8 +17,8 @@ export const Img = props => {
 
   return (
     <Image
-      sizes={props.sizes}
-      resolutions={props.resolutions}
+      fluid={props.fluid}
+      fixed={props.fixed}
       alt={props.alt}
       className={props.className}
       style={props.style}

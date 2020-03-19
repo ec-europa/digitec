@@ -6,7 +6,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import Overdrive from 'react-overdrive';
 
@@ -17,7 +17,7 @@ const Speaker = ({ speaker }) => (
     {speaker.picture ? (
       <Overdrive id={`${speaker.firstname}-${speaker.lastname}-pic`}>
         <Img
-          sizes={speaker.picture.sizes}
+          fluid={speaker.picture.fluid}
           className={styles.picture}
           outerWrapperClassName={styles.pictureFrame}
           alt={`${speaker.firstname} ${speaker.lastname}`}

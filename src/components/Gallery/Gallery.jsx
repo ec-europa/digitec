@@ -142,7 +142,7 @@ class GalleryComponent extends React.Component {
             />
           </div>
         ) : (
-          <p className="u-pt-1rem u-ta-center">Loading...</p>
+          <p style={{ textAlign: 'center' }}>No photos for the moment.</p>
         )}
         <div className={styles.clearfix} />
       </div>

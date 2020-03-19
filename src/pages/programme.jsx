@@ -2,8 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import Link from 'gatsby-link';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 
 // Redux actions
 import { toggleEvent } from '../store/modules/schedule';

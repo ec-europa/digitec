@@ -6,7 +6,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import Overdrive from 'react-overdrive';
 
@@ -20,7 +20,7 @@ const Row = ({ team }) => (
         className={styles.presenterPicture}
       >
         <Img
-          sizes={team.picture.childImageSharp.sizes}
+          fluid={team.picture.childImageSharp.fluid}
           alt={`${team.teamName}`}
         />
       </Overdrive>

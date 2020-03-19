@@ -5,7 +5,7 @@
  */
 
 import React from 'react';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import styles from './Row.module.scss';
