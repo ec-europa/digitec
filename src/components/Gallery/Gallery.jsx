@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Gallery from 'react-photo-gallery';
-import Lightbox from 'react-images';
+import Carousel, { Modal, ModalGateway } from 'react-images';
 import Measure from 'react-measure';
 
 // Load styles
@@ -103,7 +103,7 @@ class GalleryComponent extends React.Component {
     return (
       <div className={styles.container}>
         <div className={styles.header} />
-        {photos ? (
+        {photos && photos.length > 0 ? (
           <div>
             <Measure whitelist={['width']}>
               {({ width }) => {
@@ -130,16 +130,22 @@ class GalleryComponent extends React.Component {
                 </p>
               </div>
             )}
-            <Lightbox
-              images={photos}
-              backdropClosesModal
-              onClose={this.closeLightbox}
-              onClickPrev={this.gotoPrevious}
-              onClickNext={this.gotoNext}
-              currentImage={this.state.currentImage}
-              isOpen={this.state.lightboxIsOpen}
-              showImageCount={false}
-            />
+            <ModalGateway>
+              {this.state.lightboxIsOpen ? (
+                <Modal
+                  onClose={this.toggleModal}
+                  backdropClosesModal
+                  onClose={this.closeLightbox}
+                  onClickPrev={this.gotoPrevious}
+                  onClickNext={this.gotoNext}
+                  currentImage={this.state.currentImage}
+                  isOpen={this.state.lightboxIsOpen}
+                  showImageCount={false}
+                >
+                  <Carousel views={photos} />
+                </Modal>
+              ) : null}
+            </ModalGateway>
           </div>
         ) : (
           <p style={{ textAlign: 'center' }}>No photos for the moment.</p>

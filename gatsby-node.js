@@ -49,7 +49,7 @@ exports.createPages = ({ actions, graphql }) => {
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
 
-  if (node.internal.type === `MarkdownRemark`) {
+  if (node.internal.type === 'MarkdownRemark') {
     // Make paths relative
     ['picture', 'image'].forEach(prop => {
       if (node.frontmatter[prop]) {
@@ -60,8 +60,9 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
     // Add slug field
     const value = createFilePath({ node, getNode });
+
     createNodeField({
-      name: `slug`,
+      name: 'slug',
       node,
       value,
     });

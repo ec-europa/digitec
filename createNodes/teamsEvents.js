@@ -16,7 +16,7 @@ module.exports = ({ getNode, getNodes, createNodeField }) => {
 
     getNodes().forEach(node => {
       if (
-        node.internal.type === `MarkdownRemark` &&
+        node.internal.type === 'MarkdownRemark' &&
         node.frontmatter.teamName &&
         node.frontmatter.teamName.trim() === team.team.trim()
       ) {
@@ -28,7 +28,7 @@ module.exports = ({ getNode, getNodes, createNodeField }) => {
   };
 
   getNodes()
-    .filter(node => node.internal.type === `MarkdownRemark`)
+    .filter(node => node.internal.type === 'MarkdownRemark')
     .forEach(node => {
       if (node.frontmatter.teams) {
         const teamsNodes = node.frontmatter.teams.map(getTeamNodeByName);
@@ -54,7 +54,7 @@ module.exports = ({ getNode, getNodes, createNodeField }) => {
   Object.entries(eventTeams).forEach(([teamNodeId, events]) => {
     createNodeField({
       node: getNode(teamNodeId),
-      name: `events`,
+      name: 'events',
       value: events,
     });
   });
@@ -62,7 +62,7 @@ module.exports = ({ getNode, getNodes, createNodeField }) => {
   Object.entries(teamEvents).forEach(([eventNodeId, teams]) => {
     createNodeField({
       node: getNode(eventNodeId),
-      name: `teams`,
+      name: 'teams',
       value: teams,
     });
   });

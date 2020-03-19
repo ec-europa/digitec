@@ -17,12 +17,12 @@ module.exports = ({ getNode, getNodes, createNodeField }) => {
   const getSpeakerNodeByName = speaker =>
     getNodes().find(
       node2 =>
-        node2.internal.type === `MarkdownRemark` &&
+        node2.internal.type === 'MarkdownRemark' &&
         node2.frontmatter.lastname === speaker.speaker
     );
 
   getNodes()
-    .filter(node => node.internal.type === `MarkdownRemark`)
+    .filter(node => node.internal.type === 'MarkdownRemark')
     .forEach(node => {
       if (node.frontmatter.speakers) {
         const speakersNodes =
@@ -55,7 +55,7 @@ module.exports = ({ getNode, getNodes, createNodeField }) => {
   Object.entries(eventSpeakers).forEach(([speakerNodeId, events]) => {
     createNodeField({
       node: getNode(speakerNodeId),
-      name: `events`,
+      name: 'events',
       value: events,
     });
   });
@@ -63,7 +63,7 @@ module.exports = ({ getNode, getNodes, createNodeField }) => {
   Object.entries(speakerEvents).forEach(([eventNodeId, speakers]) => {
     createNodeField({
       node: getNode(eventNodeId),
-      name: `speakers`,
+      name: 'speakers',
       value: speakers,
     });
   });
