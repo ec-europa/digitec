@@ -31,11 +31,12 @@ const Row = ({ speaker }) => (
 
 Row.propTypes = {
   speaker: PropTypes.shape({
-    id: PropTypes.string,
     firstname: PropTypes.string,
+    id: PropTypes.string,
     lastname: PropTypes.string,
-    title: PropTypes.string,
     picture: PropTypes.string,
+    slug: PropTypes.string,
+    title: PropTypes.string,
   }),
 };
 

@@ -65,7 +65,7 @@ class GalleryComponent extends React.Component {
     this.setState({
       photos: photos ? photos.concat(newPhotos) : newPhotos,
       pageNum: pageNum + 1,
-      loadedAll: pageNum + 1 >= this.state.totalPages,
+      loadedAll: pageNum + 1 >= totalPages,
     });
   }
 
@@ -137,7 +137,6 @@ class GalleryComponent extends React.Component {
             <ModalGateway>
               {lightboxIsOpen ? (
                 <Modal
-                  onClose={this.toggleModal}
                   backdropClosesModal
                   onClose={this.closeLightbox}
                   onClickPrev={this.gotoPrevious}

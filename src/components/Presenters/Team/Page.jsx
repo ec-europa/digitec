@@ -1,21 +1,10 @@
-/**
- *
- * Team/Page
- *
- */
-
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import Overdrive from 'react-overdrive';
 
-// Styles
 import styles from '../Page.module.scss';
-
-// Components
 import EventRow from '../../Event/Row';
-
-// Images
 import twitterLogo from '../twitter.png';
 
 const Page = ({ team, events, children }) => {

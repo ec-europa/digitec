@@ -42,19 +42,21 @@ export const HomePageTemplate = ({
 };
 
 HomePageTemplate.propTypes = {
+  bigLogo: PropTypes.object,
   content: PropTypes.string.isRequired,
   contentComponent: PropTypes.func,
+  hashtag: PropTypes.string,
+  heading: PropTypes.string,
   image: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   title: PropTypes.string,
-  heading: PropTypes.string,
-  hashtag: PropTypes.string,
 };
 
 HomePageTemplate.defaultProps = {
+  bigLogo: {},
+  hashtag: '',
+  heading: '',
   image: '',
   title: '',
-  heading: '',
-  hashtag: '',
 };
 
 const HomePage = ({ data }) => {
@@ -78,13 +80,15 @@ HomePage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
+      html: PropTypes.string,
     }),
+    bigLogo: PropTypes.object,
   }).isRequired,
 };
 
 export default HomePage;
 
-export const productPageQuery = graphql`
+export const query = graphql`
   query HomePage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       html

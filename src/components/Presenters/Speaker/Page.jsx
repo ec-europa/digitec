@@ -1,23 +1,12 @@
-/**
- * Speakers/Page
- */
-
-import React, { Fragment } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import Overdrive from 'react-overdrive';
 
-// Redux actions
 import { toggleEvent } from '../../../store/modules/schedule';
-
-// Styles
 import styles from '../Page.module.scss';
-
-// Components
 import EventRow from '../../Event/Row';
-
-// Images
 import twitterLogo from '../twitter.png';
 
 const Page = props => {
@@ -95,11 +84,11 @@ const Page = props => {
 };
 
 Page.propTypes = {
-  speaker: PropTypes.object,
-  events: PropTypes.array,
-  schedule: PropTypes.object,
-  onToggleEvent: PropTypes.func.isRequired,
   children: PropTypes.node,
+  events: PropTypes.array,
+  onToggleEvent: PropTypes.func.isRequired,
+  schedule: PropTypes.object,
+  speaker: PropTypes.object,
 };
 
 Page.defaultProps = {

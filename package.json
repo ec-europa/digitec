@@ -14,7 +14,7 @@
     "lint:js": "eslint .",
     "serve": "gatsby serve",
     "format": "prettier --write \"{gatsby-*.js,src/**/*.js}\"",
-    "test:lint": "npm run lint:js",
+    "test:js": "npm run lint:js",
     "test": "npm-run-all -p test:* -cn"
   },
   "dependencies": {
@@ -75,6 +75,7 @@
     "eslint-plugin-jsx-a11y": "6.2.3",
     "eslint-plugin-prettier": "3.1.2",
     "eslint-plugin-react": "7.19.0",
+    "eslint-plugin-unicorn": "17.2.0",
     "gatsby-plugin-sass": "2.1.31",
     "husky": "4.2.3",
     "lint-staged": "10.0.8",

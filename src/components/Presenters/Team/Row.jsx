@@ -29,10 +29,11 @@ const Row = ({ team }) => (
 Row.propTypes = {
   team: PropTypes.shape({
     id: PropTypes.string,
-    teamName: PropTypes.string,
-    teamMembers: PropTypes.string,
     intro: PropTypes.string,
     picture: PropTypes.string,
+    slug: PropTypes.string,
+    teamMembers: PropTypes.string,
+    teamName: PropTypes.string,
   }),
 };
 

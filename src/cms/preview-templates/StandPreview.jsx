@@ -8,7 +8,7 @@ const StandPreview = ({ entry, widgetFor }) => (
     title={entry.getIn(['data', 'title'])}
     subtitle={entry.getIn(['data', 'subtitle'])}
     number={entry.getIn(['data', 'number'])}
-    picture={<img src={entry.getIn(['data', 'picture'])} />}
+    picture={<img src={entry.getIn(['data', 'picture'])} alt="" />}
   />
 );
 
