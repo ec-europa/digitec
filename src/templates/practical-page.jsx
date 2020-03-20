@@ -49,7 +49,7 @@ Practical.propTypes = {
 
 export default Practical;
 
-export const productPageQuery = graphql`
+export const query = graphql`
   query Practical($id: String!) {
     markdownRemark(id: { eq: $id }) {
       html
