@@ -2,15 +2,15 @@
 @import '../../utils/breakpoints';
 
 .listItem {
-  display: flex;
-  min-height: 3em;
-  box-sizing: border-box;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  flex-grow: 1;
   align-items: center;
-  padding: 1.2em 0.8em;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  flex-wrap: nowrap;
+  min-height: 3em;
   overflow: hidden;
+  padding: 1.2em 0.8em;
   transition: background-color 300ms ease-in-out;
 
   @include mappy-bp(medium) {
@@ -19,9 +19,9 @@
 }
 
 .greyItem {
-  color: rgba(0, 0, 0, 0.87);
-  border-left: 1em solid #ccc;
   background-color: lighten(#ccc, 15%);
+  border-left: 1em solid #ccc;
+  color: rgba(0, 0, 0, 0.87);
 
   &:hover,
   &:focus {
@@ -30,9 +30,9 @@
 }
 
 .blueItem {
-  color: rgba(0, 0, 0, 0.87);
-  border-left: 1em solid $ict-blue;
   background-color: lighten($ict-blue, 55%);
+  border-left: 1em solid $ict-blue;
+  color: rgba(0, 0, 0, 0.87);
 
   &:hover,
   &:focus {
@@ -41,9 +41,9 @@
 }
 
 .yellowItem {
-  color: rgba(0, 0, 0, 0.87);
-  border-left: 1em solid $ict-yellow;
   background-color: lighten($ict-yellow, 40%);
+  border-left: 1em solid $ict-yellow;
+  color: rgba(0, 0, 0, 0.87);
 
   &:hover,
   &:focus {
@@ -52,9 +52,9 @@
 }
 
 .purpleItem {
-  color: rgba(0, 0, 0, 0.87);
-  border-left: 1em solid $ict-purple;
   background-color: lighten($ict-purple, 52%);
+  border-left: 1em solid $ict-purple;
+  color: rgba(0, 0, 0, 0.87);
 
   &:hover,
   &:focus {
@@ -63,12 +63,12 @@
 }
 
 .primary {
-  display: block;
-  order: 0;
-  flex-grow: 2;
-  text-decoration: none;
-  box-sizing: border-box;
   align-items: center;
+  box-sizing: border-box;
+  display: block;
+  flex-grow: 2;
+  order: 0;
+  text-decoration: none;
 }
 
 .timeAndVenue {
@@ -77,8 +77,8 @@
 
 .secondary {
   align-items: center;
-  padding: 0 0.5em 0 1em;
   line-height: 1;
+  padding: 0 0.5em 0 1em;
 
   @include mappy-bp(medium) {
     display: none;
@@ -88,9 +88,7 @@
 .title {
   color: darken($ict-grey-text, 5%);
   text-decoration: none;
-}
 
-a.title {
   &:hover,
   &:focus {
     text-decoration: underline;
@@ -98,10 +96,10 @@ a.title {
 }
 
 .subtitle {
+  color: lighten($ict-grey-text, 5%);
+  display: block;
   font-size: 0.9em;
   font-weight: 400;
   line-height: 18px;
-  color: lighten($ict-grey-text, 5%);
-  display: block;
   padding: 0;
 }

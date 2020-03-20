@@ -2,15 +2,15 @@
 @import '../../utils/breakpoints';
 
 .coverContainer {
-  position: relative;
-  width: auto;
+  align-items: center;
   background: #f3f3f3 none center 65% no-repeat;
   background-size: cover;
-  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  position: relative;
+  text-align: center;
+  width: auto;
 }
 
 /* .coverImageContainer {
@@ -24,28 +24,14 @@
 } */
 
 .coverTitleContainer {
-  flex-grow: 1;
+  align-items: center;
+  color: #f2f2f2;
   display: flex;
   flex-direction: row;
+  flex-grow: 1;
   flex-wrap: wrap;
-  align-items: center;
   justify-content: center;
-  color: #f2f2f2;
   z-index: 2;
-
-  h1 {
-    font-size: $type-scale-8;
-    font-weight: 500;
-    line-height: 1.5;
-    margin: 0 0 2rem;
-  }
-
-  h2 {
-    font-size: $type-scale-6;
-    font-weight: 500;
-    line-height: 1.3;
-    margin: 1rem;
-  }
 
   @include mappy-bp(medium) {
     margin: 3rem 0 1rem;
@@ -61,20 +47,34 @@
       line-height: 1.15;
     }
   }
+
+  h1 {
+    font-size: $type-scale-8;
+    font-weight: 500;
+    line-height: 1.5;
+    margin: 0 0 2rem;
+  }
+
+  h2 {
+    font-size: $type-scale-6;
+    font-weight: 500;
+    line-height: 1.3;
+    margin: 1rem;
+  }
 }
 
 .coverTitleContainerRow {
   flex-grow: 1;
-  padding: 3rem 1rem;
   max-width: 56rem;
+  padding: 3rem 1rem;
 }
 
 .coverTwitter {
-  color: #fff;
-  text-decoration: none;
   border: 1px solid transparent;
-  padding: 0.25em;
+  color: #fff;
   margin: 0;
+  padding: 0.25em;
+  text-decoration: none;
   transition: border-color 0.2s ease-in-out;
 
   &:hover,

@@ -12,9 +12,11 @@
     "build:prefixed": "gatsby build --prefix-paths",
     "develop": "gatsby develop",
     "lint:js": "eslint .",
+    "lint:scss": "stylelint \"./src/**/*.scss\"",
+    "lint": "run-p lint:*",
     "serve": "gatsby serve",
     "format": "prettier --write \"{gatsby-*.js,src/**/*.js}\"",
-    "test:js": "npm run lint:js",
+    "test:lint": "npm run lint",
     "test": "npm-run-all -p test:* -cn"
   },
   "dependencies": {
@@ -81,6 +83,7 @@
     "lint-staged": "10.0.8",
     "npm-run-all": "4.1.5",
     "prettier": "1.19.1",
+    "stylelint-order": "4.0.0",
     "webpack": "4.42.0"
   },
   "husky": {

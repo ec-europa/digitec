@@ -6,8 +6,8 @@
 }
 
 .header {
-  max-width: $max-width;
   margin: auto;
+  max-width: $max-width;
 
   @include mappy-bp(max medium) {
     display: none;

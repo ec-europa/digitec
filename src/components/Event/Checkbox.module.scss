@@ -1,18 +1,19 @@
 @import '../../utils/breakpoints';
 @import '../../utils/variables';
 
-$labelWidth: 3em;
-$labelHeight: 3em;
+$label-width: 3em;
+$label-height: 3em;
 
+/* stylelint-disable no-descending-specificity */
 .label {
-  position: relative;
+  border-radius: 50%;
   cursor: pointer;
   display: inline-block;
-  user-select: none;
-  border-radius: 50%;
-  width: $labelWidth;
-  height: $labelHeight;
+  height: $label-height;
+  position: relative;
   transition: all 300ms ease-in-out;
+  user-select: none;
+  width: $label-width;
 
   .withBackground & {
     background-color: rgba(255, 255, 255, 0.8);
@@ -42,23 +43,41 @@ $labelHeight: 3em;
     }
   }
 }
+/* stylelint-enable no-descending-specificity */
 
 .checkbox {
-  position: absolute;
   left: -9999px;
   opacity: 0;
+  position: absolute;
 }
 
 .unchecked {
+  $base-width: 1.2em;
+  $base-height: 0.2em;
+
+  height: $label-height;
+  left: 0;
+  opacity: 1;
   position: absolute;
   top: 0;
-  left: 0;
-  width: $labelWidth;
-  height: $labelHeight;
-  transition: all 200ms ease-in-out;
   transform: scale(1) rotate(0);
   transform-origin: center;
-  opacity: 1;
+  transition: all 200ms ease-in-out;
+  width: $label-width;
+
+  &::before {
+    height: $base-height;
+    left: ($label-width - $base-width) / 2;
+    top: ($label-height - $base-height) / 2;
+    width: $base-width;
+  }
+
+  &::after {
+    height: $base-width;
+    left: ($label-height - $base-height) / 2;
+    top: ($label-width - $base-width) / 2;
+    width: $base-height;
+  }
 
   &::before,
   &::after {
@@ -83,51 +102,34 @@ $labelHeight: 3em;
     }
   }
 
-  $baseWidth: 1.2em;
-  $baseHeight: 0.2em;
-
-  &::before {
-    width: $baseWidth;
-    height: $baseHeight;
-    left: ($labelWidth - $baseWidth) / 2;
-    top: ($labelHeight - $baseHeight) / 2;
-  }
-
-  &::after {
-    width: $baseHeight;
-    height: $baseWidth;
-    left: ($labelHeight - $baseHeight) / 2;
-    top: ($labelWidth - $baseWidth) / 2;
-  }
-
   .checkbox:checked + .label & {
-    transform: scale(0) rotate(180);
     opacity: 0;
+    transform: scale(0) rotate(180);
   }
 }
 
 .checked {
+  height: $label-height;
+  left: 0;
+  opacity: 0;
   position: absolute;
   top: 0;
-  left: 0;
-  width: $labelWidth;
-  height: $labelHeight;
   transform: scale(0) rotate(-160deg);
   transform-origin: center;
-  opacity: 0;
   transition: all 300ms ease-in-out;
+  width: $label-width;
 
   &::before {
+    border: 0.3em solid darken(#ccc, 25%);
+    border-left: none;
+    border-top: none;
     content: '';
+    display: block;
+    height: 1.5em;
+    left: 1em;
     position: absolute;
     top: 0.65em;
-    left: 1em;
-    border: 0.3em solid darken(#ccc, 25%);
-    border-top: none;
-    border-left: none;
     width: 0.9em;
-    height: 1.5em;
-    display: block;
 
     .purpleItem & {
       border-color: $ict-purple;
@@ -143,7 +145,7 @@ $labelHeight: 3em;
   }
 
   .checkbox:checked + .label & {
-    transform: scale(1) rotate(40deg);
     opacity: 1;
+    transform: scale(1) rotate(40deg);
   }
 }

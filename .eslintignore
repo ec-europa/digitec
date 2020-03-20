@@ -1,3 +1,6 @@
 .cache
 node_modules
 public
+
+# To be removed in FRONT-963
+src/components/Navbar/Navbar.jsx

@@ -2,30 +2,34 @@
 @import '../../utils/variables';
 
 .item {
-  width: 12em;
-  max-width: 14em;
-  text-align: center;
-  margin: 0.7em;
+  background-color: lighten($background-grey, 2%);
+  border-radius: 2px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+  flex-basis: 12em;
   flex-grow: 1;
   flex-shrink: 0;
-  flex-basis: 12em;
-  text-decoration: none;
-  border-radius: 2px;
-  background-color: lighten($background-grey, 2%);
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+  margin: 0.7em;
+  max-width: 14em;
   position: relative;
+  text-align: center;
+  text-decoration: none;
+  width: 12em;
+
+  @include mappy-bp(medium) {
+    flex-grow: 0;
+  }
 
   &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
     background-color: #fff;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    content: '';
+    height: 100%;
+    left: 0;
     opacity: 0;
+    position: absolute;
+    top: 0;
     transition: opacity 0.3s ease-in-out;
+    width: 100%;
     will-change: opacity;
   }
 
@@ -38,37 +42,33 @@
       opacity: 1;
     }
   }
-
-  @include mappy-bp(medium) {
-    flex-grow: 0;
-  }
 }
 
 .info {
-  position: relative;
   padding: 0 1em 1em;
+  position: relative;
 }
 
 .number {
-  position: absolute;
-  left: 1em;
-  top: -2.5em;
-  height: 2em;
-  width: 2em;
   background-color: #3a3a3a;
   border-radius: 50%;
-  line-height: 2em;
   color: #fff;
+  height: 2em;
+  left: 1em;
+  line-height: 2em;
+  position: absolute;
+  top: -2.5em;
+  width: 2em;
 }
 
 .name {
-  position: relative;
-  display: block;
   color: $ict-grey-text;
-  text-decoration: none;
+  display: block;
   font-size: 1.1em;
   line-height: 1.4;
   margin-top: 1em;
+  position: relative;
+  text-decoration: none;
 
   .item:hover &,
   .item:focus &,
@@ -78,31 +78,31 @@
 }
 
 .title {
-  position: relative;
-  margin-top: 0.8em;
   color: $ict-blue-text;
   font-size: 0.85em;
   line-height: 1.4;
+  margin-top: 0.8em;
+  position: relative;
 }
 
 .pictureFrame {
-  position: relative;
-  line-height: 0;
-  width: 100%;
   display: inline-block;
+  line-height: 0;
   overflow: hidden;
+  position: relative;
+  width: 100%;
 }
 
 .picture {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
   bottom: 0;
-  width: 105%;
   height: 105%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
   transform-origin: center;
   transition: all 250ms ease-in-out;
+  width: 105%;
   will-change: opacity, transform;
 
   .item:hover &,
