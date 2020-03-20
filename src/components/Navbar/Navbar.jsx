@@ -7,6 +7,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
+import Headroom from 'headroom.js';
 
 import styles from './Navbar.module.scss';
 import digitecLogo from '../../img/DIGITEC.svg';
@@ -35,15 +36,10 @@ class Navbar extends React.PureComponent {
   }
 
   componentDidMount() {
-    // eslint-disable-next-line global-require
-    const Headroom = require('headroom.js');
-
     this.headroom = new Headroom(this.header, {
       offset: 6 * 16,
       tolerance: 5,
       classes: {
-        initial: styles.headroom,
-        pinned: styles.headroomPinned,
         unpinned: styles.headroomUnpinned,
         top: styles.headroomTop,
       },
