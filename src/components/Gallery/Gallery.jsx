@@ -45,28 +45,27 @@ class GalleryComponent extends React.Component {
   }
 
   loadMorePhotos(e) {
+    const { totalPages, pageNum, photos } = this.state;
+    const { photos: photosFromProps } = this.props;
+
     if (e) {
       e.preventDefault();
     }
 
-    if (this.state.pageNum >= this.state.totalPages) {
+    if (pageNum >= totalPages) {
       this.setState({ loadedAll: true });
       return;
     }
 
-    const { photos } = this.props;
-
-    const newPhotos = photos.slice(
-      this.state.pageNum * photosPerPage,
-      (this.state.pageNum + 1) * photosPerPage
+    const newPhotos = photosFromProps.slice(
+      pageNum * photosPerPage,
+      (pageNum + 1) * photosPerPage
     );
 
     this.setState({
-      photos: this.state.photos
-        ? this.state.photos.concat(newPhotos)
-        : newPhotos,
-      pageNum: this.state.pageNum + 1,
-      loadedAll: this.state.pageNum + 1 >= this.state.totalPages,
+      photos: photos ? photos.concat(newPhotos) : newPhotos,
+      pageNum: pageNum + 1,
+      loadedAll: pageNum + 1 >= this.state.totalPages,
     });
   }
 
@@ -87,19 +86,24 @@ class GalleryComponent extends React.Component {
   }
 
   gotoPrevious() {
+    const { currentImage } = this.state;
+
     this.setState({
-      currentImage: this.state.currentImage - 1,
+      currentImage: currentImage - 1,
     });
   }
 
   gotoNext() {
+    const { currentImage } = this.state;
+
     this.setState({
-      currentImage: this.state.currentImage + 1,
+      currentImage: currentImage + 1,
     });
   }
 
   render() {
-    const { photos, loadedAll } = this.state;
+    const { photos, loadedAll, lightboxIsOpen, currentImage } = this.state;
+
     return (
       <div className={styles.container}>
         <div className={styles.header} />
@@ -131,15 +135,15 @@ class GalleryComponent extends React.Component {
               </div>
             )}
             <ModalGateway>
-              {this.state.lightboxIsOpen ? (
+              {lightboxIsOpen ? (
                 <Modal
                   onClose={this.toggleModal}
                   backdropClosesModal
                   onClose={this.closeLightbox}
                   onClickPrev={this.gotoPrevious}
                   onClickNext={this.gotoNext}
-                  currentImage={this.state.currentImage}
-                  isOpen={this.state.lightboxIsOpen}
+                  currentImage={currentImage}
+                  isOpen={lightboxIsOpen}
                   showImageCount={false}
                 >
                   <Carousel views={photos} />

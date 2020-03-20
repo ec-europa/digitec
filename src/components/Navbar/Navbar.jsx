@@ -57,40 +57,45 @@ class Navbar extends React.PureComponent {
   }
 
   handleFocusChange(event) {
+    const { drawerOpen } = this.state;
+
     if (this.header.contains(document.activeElement)) {
       // Make sure to pin the header when a child is focused
       this.headroom.pin();
 
       // Toggle the drawer if it's closed
-      if (
-        !this.state.drawerOpen &&
-        this.navigation.contains(document.activeElement)
-      ) {
-        this.setState({ drawerOpen: !this.state.drawerOpen });
+      if (!drawerOpen && this.navigation.contains(document.activeElement)) {
+        this.setState({ drawerOpen: !drawerOpen });
         event.preventDefault();
       }
-    } else if (this.state.drawerOpen) {
-      this.setState({ drawerOpen: !this.state.drawerOpen });
+    } else if (drawerOpen) {
+      this.setState({ drawerOpen: !drawerOpen });
       event.preventDefault();
     }
   }
 
   handleKeyDown(event) {
+    const { drawerOpen } = this.state;
+
     // Close drawer on ESC
-    if (this.state.drawerOpen && event.keyCode === 27) {
+    if (drawerOpen && event.keyCode === 27) {
       event.preventDefault();
-      this.setState({ drawerOpen: !this.state.drawerOpen });
+      this.setState({ drawerOpen: !drawerOpen });
     }
   }
 
   handleRequestToggleDrawer(event) {
+    const { drawerOpen } = this.state;
+
     event.preventDefault();
-    this.setState({ drawerOpen: !this.state.drawerOpen });
+    this.setState({ drawerOpen: !drawerOpen });
   }
 
   closeDrawer() {
-    if (this.state.drawerOpen) {
-      this.setState({ drawerOpen: !this.state.drawerOpen });
+    const { drawerOpen } = this.state;
+
+    if (drawerOpen) {
+      this.setState({ drawerOpen: !drawerOpen });
     }
   }
 

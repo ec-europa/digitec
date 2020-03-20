@@ -10,7 +10,9 @@ import Checkbox from './Checkbox';
 // eslint-disable-next-line react/prefer-stateless-function
 class Row extends React.Component {
   shouldComponentUpdate(nextProps) {
-    return nextProps.checked !== this.props.checked;
+    const { checked } = this.props;
+
+    return nextProps.checked !== checked;
   }
 
   render() {
