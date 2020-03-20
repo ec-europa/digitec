@@ -8,11 +8,18 @@ module.exports = {
     node: true,
   },
   rules: {
-    'jsx-a11y/anchor-is-valid': 0,
-    'react/forbid-prop-types': 0,
-    'react/require-default-props': 0,
+    // Turn on
+    'compat/compat': 'error',
+
+    // Turn off
+    'jsx-a11y/anchor-is-valid': 'off',
+    'react/forbid-prop-types': 'off',
+    'react/require-default-props': 'off',
+    'react/jsx-props-no-spreading': 'off',
+
+    // Tweak
     'jsx-a11y/label-has-associated-control': [
-      2,
+      'error',
       {
         labelComponents: ['CustomInputLabel'],
         labelAttributes: ['label'],
@@ -20,11 +27,9 @@ module.exports = {
         depth: 3,
       },
     ],
-    'compat/compat': 2,
-    'prettier/prettier': [2, { trailingComma: 'es5', singleQuote: true }],
-    'react/jsx-props-no-spreading': [2, { html: 'ignore' }],
+    'prettier/prettier': ['error', { trailingComma: 'es5', singleQuote: true }],
   },
   settings: {
-    polyfills: ['Object.entries'],
+    polyfills: ['Object.entries', 'window.scrollY'],
   },
 };
