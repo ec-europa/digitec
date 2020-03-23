@@ -5,6 +5,9 @@
   "author": "European Commission",
   "license": "EUPL-1.1",
   "main": "n/a",
+  "engines": {
+    "node": ">=12.0.0"
+  },
   "scripts": {
     "clean": "gatsby clean",
     "start": "npm run develop",
@@ -17,7 +20,7 @@
     "serve": "gatsby serve",
     "format": "prettier --write \"{gatsby-*.js,src/**/*.js}\"",
     "test:lint": "npm run lint",
-    "test": "npm-run-all -p test:* -cn"
+    "test": "run-p test:* -cn"
   },
   "dependencies": {
     "classnames": "2.2.6",

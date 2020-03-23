@@ -3,10 +3,10 @@ const { createFilePath } = require('gatsby-source-filesystem');
 const createSpeakersEvents = require('./createNodes/speakersEvents');
 const createTeamsEvents = require('./createNodes/teamsEvents');
 
-exports.createPages = ({ actions, graphql }) => {
+exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions;
 
-  return graphql(`
+  const result = await graphql(`
     {
       allMarkdownRemark(limit: 1000) {
         edges {
@@ -22,26 +22,19 @@ exports.createPages = ({ actions, graphql }) => {
         }
       }
     }
-  `).then(result => {
-    if (result.errors) {
-      result.errors.forEach(e => console.error(e.toString()));
-      return Promise.reject(result.errors); // eslint-disable-line
-    }
+  `);
 
-    const posts = result.data.allMarkdownRemark.edges;
+  const posts = result.data.allMarkdownRemark.edges;
 
-    return posts.forEach(edge => {
-      const { id } = edge.node;
-      createPage({
-        path: edge.node.fields.slug,
-        component: path.resolve(
-          `src/templates/${String(edge.node.frontmatter.templateKey)}.jsx`
-        ),
-        // additional data can be passed via context
-        context: {
-          id,
-        },
-      });
+  return posts.forEach(edge => {
+    const { id } = edge.node;
+
+    createPage({
+      context: { id },
+      path: edge.node.fields.slug,
+      component: path.resolve(
+        `src/templates/${String(edge.node.frontmatter.templateKey)}.jsx`
+      ),
     });
   });
 };
@@ -58,19 +51,14 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       }
     });
 
-    // Add slug field
-    const value = createFilePath({ node, getNode });
-
     createNodeField({
       name: 'slug',
+      value: createFilePath({ node, getNode }),
       node,
-      value,
     });
   }
 };
 
-// Map Speakers and Teams to Events
-// As discussed here: https://github.com/gatsbyjs/gatsby/issues/3129#issuecomment-365308599
 exports.sourceNodes = ({ actions, getNodes, getNode }) => {
   const { createNodeField } = actions;
 
