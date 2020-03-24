@@ -26,8 +26,6 @@ class GalleryComponent extends React.Component {
     this.loadMorePhotos = this.loadMorePhotos.bind(this);
     this.closeLightbox = this.closeLightbox.bind(this);
     this.openLightbox = this.openLightbox.bind(this);
-    this.gotoNext = this.gotoNext.bind(this);
-    this.gotoPrevious = this.gotoPrevious.bind(this);
   }
 
   componentDidMount() {
@@ -82,22 +80,6 @@ class GalleryComponent extends React.Component {
     this.setState({
       currentIndex: 0,
       lightboxIsOpen: false,
-    });
-  }
-
-  gotoPrevious() {
-    const { currentIndex } = this.state;
-
-    this.setState({
-      currentIndex: currentIndex - 1,
-    });
-  }
-
-  gotoNext() {
-    const { currentIndex } = this.state;
-
-    this.setState({
-      currentIndex: currentIndex + 1,
     });
   }
 
