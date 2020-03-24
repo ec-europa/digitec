@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: master
+  branch: develop
   squash_merges: true
   commit_messages:
     create: 'feat({{collection}}): create {{collection}} “{{slug}}”'
@@ -9,130 +9,211 @@ backend:
     uploadMedia: 'feat(media): upload “{{path}}”'
     deleteMedia: 'feat(media): delete “{{path}}”'
 
-publish_mode: editorial_workflow
 media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: "speakers"
-    label: "Speakers"
-    label_singular: "Speaker"
-    folder: "data/speakers"
+  - name: 'speakers'
+    label: 'Speakers'
+    label_singular: 'Speaker'
+    folder: 'data/speakers'
     extension: md
     create: true
-    slug: "{{firstname}}-{{lastname}}"
+    slug: '{{firstname}}-{{lastname}}'
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "speaker"}
-      - {label: "Firstname", name: "firstname", widget: "string"}
-      - {label: "Lastname", name: "lastname", widget: "string"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Twitter handle", name: "twitter", widget: "string", required: false}
-      - {label: "Picture", name: "picture", widget: image}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - {
+          label: 'Template Key',
+          name: 'templateKey',
+          widget: 'hidden',
+          default: 'speaker',
+        }
+      - { label: 'Firstname', name: 'firstname', widget: 'string' }
+      - { label: 'Lastname', name: 'lastname', widget: 'string' }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - {
+          label: 'Twitter handle',
+          name: 'twitter',
+          widget: 'string',
+          required: false,
+        }
+      - { label: 'Picture', name: 'picture', widget: image }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
 
-  - name: "teams"
-    label: "Teams"
-    label_singular: "Team"
-    folder: "data/teams"
+  - name: 'teams'
+    label: 'Teams'
+    label_singular: 'Team'
+    folder: 'data/teams'
     extension: md
     create: true
-    slug: "{{teamName}}"
+    slug: '{{teamName}}'
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "team"}
-      - {label: "Team name", name: "teamName", widget: "string"}
-      - {label: "Team members names", name: "teamMembers", widget: "string"}
-      - {label: "Twitter handle", name: "twitter", widget: "string", required: false}
-      - {label: "Picture", name: "picture", widget: image}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - {
+          label: 'Template Key',
+          name: 'templateKey',
+          widget: 'hidden',
+          default: 'team',
+        }
+      - { label: 'Team name', name: 'teamName', widget: 'string' }
+      - { label: 'Team members names', name: 'teamMembers', widget: 'string' }
+      - {
+          label: 'Twitter handle',
+          name: 'twitter',
+          widget: 'string',
+          required: false,
+        }
+      - { label: 'Picture', name: 'picture', widget: image }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
 
-  - name: "events"
-    label: "Events"
-    label_singular: "Event"
-    folder: "data/events"
+  - name: 'events'
+    label: 'Events'
+    label_singular: 'Event'
+    folder: 'data/events'
     extension: md
     create: true
-    slug: "{{slug}}"
+    slug: '{{slug}}'
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "event"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Start", name: "starts", widget: "datetime", format: "HH:mm"}
-      - {label: "Ends", name: "ends", widget: "datetime", format: "HH:mm"}
-      - {label: "Venue", name: "venue", widget: "string", required: false}
-      - {label: "Color", name: "color", widget: "select", default: "grey", options: ["none", "grey", "blue", "purple", "yellow"]}
-      - {label: "Register", name: "register", widget: "boolean", default: false}
-      - {label: "Read more", name: "readMore", widget: "boolean", default: false}
-      - {label: "Order (for a given time slot)", name: "order", widget: "string", default: "0"}
-      - label: "Videos"
-        name: "videos"
-        widget: "list"
+      - {
+          label: 'Template Key',
+          name: 'templateKey',
+          widget: 'hidden',
+          default: 'event',
+        }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Start', name: 'starts', widget: 'datetime', format: 'HH:mm' }
+      - { label: 'Ends', name: 'ends', widget: 'datetime', format: 'HH:mm' }
+      - { label: 'Venue', name: 'venue', widget: 'string', required: false }
+      - {
+          label: 'Color',
+          name: 'color',
+          widget: 'select',
+          default: 'grey',
+          options: ['none', 'grey', 'blue', 'purple', 'yellow'],
+        }
+      - {
+          label: 'Register',
+          name: 'register',
+          widget: 'boolean',
+          default: false,
+        }
+      - {
+          label: 'Read more',
+          name: 'readMore',
+          widget: 'boolean',
+          default: false,
+        }
+      - {
+          label: 'Order (for a given time slot)',
+          name: 'order',
+          widget: 'string',
+          default: '0',
+        }
+      - label: 'Videos'
+        name: 'videos'
+        widget: 'list'
         default: []
         required: false
         fields:
-          - {label: "Video", name: "video", widget: "string"}
-      - label: "Speakers"
-        name: "speakers"
-        widget: "list"
+          - { label: 'Video', name: 'video', widget: 'string' }
+      - label: 'Speakers'
+        name: 'speakers'
+        widget: 'list'
         default: []
         required: false
         fields:
-          - {label: "Speaker", name: "speaker", widget: "relation", collection: "speakers", searchFields: ["firstname", "lastname"], displayFields: ["firstname", "lastname"],valueField: "lastname"}
-      - label: "Teams"
-        name: "teams"
-        widget: "list"
+          - {
+              label: 'Speaker',
+              name: 'speaker',
+              widget: 'relation',
+              collection: 'speakers',
+              searchFields: ['firstname', 'lastname'],
+              displayFields: ['firstname', 'lastname'],
+              valueField: 'lastname',
+            }
+      - label: 'Teams'
+        name: 'teams'
+        widget: 'list'
         default: []
         required: false
         fields:
-          - {label: "Team", name: "team", widget: "relation", collection: "teams", searchFields: ["teamName"], displayFields: ["teamName"],valueField: "teamName"}
-      - {label: "Body", name: "body", widget: "markdown", required: false}
+          - {
+              label: 'Team',
+              name: 'team',
+              widget: 'relation',
+              collection: 'teams',
+              searchFields: ['teamName'],
+              displayFields: ['teamName'],
+              valueField: 'teamName',
+            }
+      - { label: 'Body', name: 'body', widget: 'markdown', required: false }
 
-  - name: "stands"
-    label: "Stands"
-    label_singular: "Stand"
-    folder: "data/stands"
+  - name: 'stands'
+    label: 'Stands'
+    label_singular: 'Stand'
+    folder: 'data/stands'
     extension: md
     create: true
-    slug: "{{slug}}"
+    slug: '{{slug}}'
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "stand"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Subtitle", name: "subtitle", widget: "string"}
-      - {label: "Number", name: "number", widget: "string"}
-      - {label: "Picture", name: "picture", widget: image}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - {
+          label: 'Template Key',
+          name: 'templateKey',
+          widget: 'hidden',
+          default: 'stand',
+        }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Subtitle', name: 'subtitle', widget: 'string' }
+      - { label: 'Number', name: 'number', widget: 'string' }
+      - { label: 'Picture', name: 'picture', widget: image }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
 
-  - name: "pages"
-    label: "Pages"
+  - name: 'pages'
+    label: 'Pages'
     files:
-      - file: "src/pages/index.md"
-        label: "Home Page"
-        name: "homepage"
+      - file: 'src/pages/index.md'
+        label: 'Home Page'
+        name: 'homepage'
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "homepage"}
-          - {label: Title, name: title, widget: string}
-          - {label: Image, name: image, widget: image}
-          - {label: Heading, name: heading, widget: string}
-          - {label: Hashtag, name: hashtag, widget: string}
-          - {label: Body, name: "body", widget: "markdown"}
-      - file: "src/pages/gallery/gallery.json"
-        label: "Gallery"
-        name: "gallery"
-        widget: "list"
+          - {
+              label: 'Template Key',
+              name: 'templateKey',
+              widget: 'hidden',
+              default: 'homepage',
+            }
+          - { label: Title, name: title, widget: string }
+          - { label: Image, name: image, widget: image }
+          - { label: Heading, name: heading, widget: string }
+          - { label: Hashtag, name: hashtag, widget: string }
+          - { label: Body, name: 'body', widget: 'markdown' }
+      - file: 'src/pages/gallery/gallery.json'
+        label: 'Gallery'
+        name: 'gallery'
+        widget: 'list'
         fields:
-        - label: "Images"
-          name: "Images"
-          widget: "list"
-          fields:
-            - label: Image
-              name: image
-              widget: object
-              fields:
-                - {label: Picture, name: src, widget: image}
-                - {label: Alt, name: alt, widget: string, default: ""}
-                - {label: Caption, name: caption, widget: string, default: ""}
-      - file: "src/pages/practical.md"
-        label: "Practical"
-        name: "practical"
+          - label: 'Images'
+            name: 'Images'
+            widget: 'list'
+            fields:
+              - label: Image
+                name: image
+                widget: object
+                fields:
+                  - { label: Picture, name: src, widget: image }
+                  - { label: Alt, name: alt, widget: string, default: '' }
+                  - {
+                      label: Caption,
+                      name: caption,
+                      widget: string,
+                      default: '',
+                    }
+      - file: 'src/pages/practical.md'
+        label: 'Practical'
+        name: 'practical'
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "practical-page"}
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Body", name: "body", widget: "markdown"}
+          - {
+              label: 'Template Key',
+              name: 'templateKey',
+              widget: 'hidden',
+              default: 'practical-page',
+            }
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Body', name: 'body', widget: 'markdown' }
