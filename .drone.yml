@@ -1,32 +1,50 @@
-pipeline:
+clone:
+  git:
+    image: plugins/git
+    commands:
+      - if  [ "${DRONE_BUILD_EVENT}" == "deployment" ] ; then
+          echo "Skipping git init/clone :)";
+        else
+          git init;
+          git remote add origin "${DRONE_REMOTE_URL}";
+          git fetch --no-tags --depth 1 origin "${DRONE_COMMIT_REF}";
+          if [ "${DRONE_BUILD_EVENT}" == "pull_request" ] || [ "${DRONE_BUILD_EVENT}" == "tag" ] ; then
+            git checkout -qf FETCH_HEAD;
+          else
+            git reset --hard -q "${DRONE_COMMIT_SHA}";
+          fi
+        fi
 
-# =======================================
-# Setup  ================================
-# =======================================
+pipeline:
   install:
-    image: node:carbon
+    image: node:erbium
     commands:
       - yarn install --frozen-lockfile
     when:
-      event: [ pull_request , tag ]
+      event: [ push, pull_request, tag ]
 
-# =======================================
-# Tests =================================
-# =======================================
-  test-lint:
-    image: node:carbon
-    group: test
+  test:
+    image: node:erbium
+    group: tests
     commands:
-      - yarn test:lint
+      - yarn test
     when:
-      event: [ pull_request , tag ]
+      event: [ push, pull_request, tag ]
 
-# =======================================
-# Tags Creation =========================
-# =======================================
+  deploy-netlify:
+    image: node:erbium
+    secrets: [netlify_auth_token, netlify_site_id]
+    commands:
+      - yarn clean
+      - yarn build
+      - 'yarn netlify deploy --prod --site $${NETLIFY_SITE_ID} --message "Drone build: ${DRONE_BUILD_NUMBER}"'
+    when:
+      event: [push, pull_request]
+      status: [success, failure]   
+
   # Build release
   build-release:
-    image: node:carbon
+    image: node:erbium
     commands:
       - npm install --global gatsby-cli@1.1.58
       - rm -rf .cache public
@@ -68,10 +86,6 @@ pipeline:
     when:
       event: [tag]
     
-# =======================================
-# Deployment ============================
-# =======================================
-
   # Download release from github and extract into build folder
   download-github-release:
     image: instrumentisto/rsync-ssh
