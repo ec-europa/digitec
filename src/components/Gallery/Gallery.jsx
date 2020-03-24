@@ -18,7 +18,7 @@ class GalleryComponent extends React.Component {
       pageNum: 0,
       totalPages: props.photos.length / photosPerPage,
       loadedAll: false,
-      currentImage: 0,
+      currentIndex: 0,
       lightboxIsOpen: false,
     };
 
@@ -73,36 +73,36 @@ class GalleryComponent extends React.Component {
     event.preventDefault();
 
     this.setState({
-      currentImage: obj.index,
+      currentIndex: obj.index,
       lightboxIsOpen: true,
     });
   }
 
   closeLightbox() {
     this.setState({
-      currentImage: 0,
+      currentIndex: 0,
       lightboxIsOpen: false,
     });
   }
 
   gotoPrevious() {
-    const { currentImage } = this.state;
+    const { currentIndex } = this.state;
 
     this.setState({
-      currentImage: currentImage - 1,
+      currentIndex: currentIndex - 1,
     });
   }
 
   gotoNext() {
-    const { currentImage } = this.state;
+    const { currentIndex } = this.state;
 
     this.setState({
-      currentImage: currentImage + 1,
+      currentIndex: currentIndex + 1,
     });
   }
 
   render() {
-    const { photos, loadedAll, lightboxIsOpen, currentImage } = this.state;
+    const { photos, loadedAll, lightboxIsOpen, currentIndex } = this.state;
 
     return (
       <div className={styles.container}>
@@ -136,16 +136,8 @@ class GalleryComponent extends React.Component {
             )}
             <ModalGateway>
               {lightboxIsOpen ? (
-                <Modal
-                  backdropClosesModal
-                  onClose={this.closeLightbox}
-                  onClickPrev={this.gotoPrevious}
-                  onClickNext={this.gotoNext}
-                  currentImage={currentImage}
-                  isOpen={lightboxIsOpen}
-                  showImageCount={false}
-                >
-                  <Carousel views={photos} />
+                <Modal closeOnBackdropClick onClose={this.closeLightbox}>
+                  <Carousel views={photos} currentIndex={currentIndex} />
                 </Modal>
               ) : null}
             </ModalGateway>
