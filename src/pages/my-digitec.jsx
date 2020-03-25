@@ -11,7 +11,7 @@ import EventsList from '../components/Event/List';
 import containerStyles from '../utils/_container.module.scss';
 import contentStyles from '../utils/_content.module.scss';
 
-const MyDigitecPage = props => {
+const MyDigitecPage = (props) => {
   const { data, schedule, onToggleEvent } = props;
   const { edges } = data.allMarkdownRemark;
 
@@ -27,7 +27,7 @@ const MyDigitecPage = props => {
       order: event.frontmatter.order,
       readMore: event.frontmatter.readMore,
     }))
-    .filter(event => schedule[event.id] || event.register === false);
+    .filter((event) => schedule[event.id] || event.register === false);
 
   return (
     <section className={containerStyles.container}>
@@ -77,7 +77,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    onToggleEvent: event => {
+    onToggleEvent: (event) => {
       dispatch(toggleEvent(event));
     },
   };

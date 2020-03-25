@@ -9,18 +9,18 @@ import TeamCard from '../components/Presenters/Team/Card';
 import containerStyles from '../utils/_container.module.scss';
 import contentStyles from '../utils/_content.module.scss';
 
-const SpeakersPage = props => {
+const SpeakersPage = (props) => {
   const { data } = props;
   const { edges: presenters } = data.allMarkdownRemark;
 
   const speakers = presenters
-    .filter(node => node.node.fields.slug.indexOf('/speakers/') !== -1)
+    .filter((node) => node.node.fields.slug.indexOf('/speakers/') !== -1)
     .sort((a, b) =>
       a.node.frontmatter.lastname.localeCompare(b.node.frontmatter.lastname)
     );
 
   const teams = presenters
-    .filter(node => node.node.fields.slug.indexOf('/teams/') !== -1)
+    .filter((node) => node.node.fields.slug.indexOf('/teams/') !== -1)
     .sort((a, b) =>
       a.node.frontmatter.teamName.localeCompare(b.node.frontmatter.teamName)
     );

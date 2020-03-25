@@ -9,16 +9,16 @@ import styles from '../Page.module.scss';
 import EventRow from '../../Event/Row';
 import twitterLogo from '../twitter.png';
 
-const Page = props => {
+const Page = (props) => {
   const { speaker, events, schedule, onToggleEvent, children } = props;
 
   const sessions =
-    events && events.length && events.filter(e => e).length ? (
+    events && events.length && events.filter((e) => e).length ? (
       <>
         <h3 className={styles.sessionsTitle}>
           Session{events.length > 1 ? 's' : ''}
         </h3>
-        {events.map(event => (
+        {events.map((event) => (
           <EventRow
             key={event.fields.slug}
             checked={schedule[event.id]}
@@ -104,7 +104,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    onToggleEvent: event => {
+    onToggleEvent: (event) => {
       dispatch(toggleEvent(event));
     },
   };

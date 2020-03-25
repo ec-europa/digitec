@@ -8,7 +8,7 @@ import StandCard from '../components/Stand/Card';
 import containerStyles from '../utils/_container.module.scss';
 import contentStyles from '../utils/_content.module.scss';
 
-const StandsPage = props => {
+const StandsPage = (props) => {
   const { data } = props;
   const { edges: stands } = data.allMarkdownRemark;
 

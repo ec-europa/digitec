@@ -106,7 +106,7 @@ class Navbar extends React.PureComponent {
     return (
       <nav
         className={styles.container}
-        ref={c => {
+        ref={(c) => {
           this.header = c;
         }}
       >
@@ -143,7 +143,7 @@ class Navbar extends React.PureComponent {
         />
         <div
           className={styles.navigation}
-          ref={c => {
+          ref={(c) => {
             this.navigation = c;
           }}
         >

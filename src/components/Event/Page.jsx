@@ -20,7 +20,7 @@ const Page = ({ event, speakers, teams, children, videos }) => {
     videos && videos.length ? (
       <>
         <h2>Video{videos.length > 1 ? 's' : ''}</h2>
-        {videos.map(videoNode => (
+        {videos.map((videoNode) => (
           <ResponsiveEmbed
             className={styles.video}
             key={videoNode.video}
@@ -35,7 +35,7 @@ const Page = ({ event, speakers, teams, children, videos }) => {
     speakers && speakers.length ? (
       <div>
         <h2>Speaker{speakers.length > 1 ? 's' : ''}</h2>
-        {speakers.map(speaker => (
+        {speakers.map((speaker) => (
           <SpeakerRow
             key={speaker.fields.slug}
             speaker={{
@@ -54,7 +54,7 @@ const Page = ({ event, speakers, teams, children, videos }) => {
     teams && teams.length ? (
       <div>
         <h2>Team{teams.length > 1 ? 's' : ''}</h2>
-        {teams.map(team => (
+        {teams.map((team) => (
           <TeamRow
             key={team.fields.slug}
             team={{

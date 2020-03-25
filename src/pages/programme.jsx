@@ -11,7 +11,7 @@ import EventsList from '../components/Event/List';
 import containerStyles from '../utils/_container.module.scss';
 import contentStyles from '../utils/_content.module.scss';
 
-const ProgrammePage = props => {
+const ProgrammePage = (props) => {
   const { data, schedule, onToggleEvent } = props;
   const { edges: events } = data.allMarkdownRemark;
 
@@ -98,7 +98,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    onToggleEvent: event => {
+    onToggleEvent: (event) => {
       dispatch(toggleEvent(event));
     },
   };

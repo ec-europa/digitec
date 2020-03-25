@@ -1,52 +1,67 @@
-pipeline:
+clone:
+  git:
+    image: plugins/git
+    commands:
+      - if  [ "${DRONE_BUILD_EVENT}" == "deployment" ] ; then
+          echo "Skipping git init/clone :)";
+        else
+          git init;
+          git remote add origin "${DRONE_REMOTE_URL}";
+          git fetch --no-tags --depth 1 origin "${DRONE_COMMIT_REF}";
+          if [ "${DRONE_BUILD_EVENT}" == "pull_request" ] || [ "${DRONE_BUILD_EVENT}" == "tag" ] ; then
+            git checkout -qf FETCH_HEAD;
+          else
+            git reset --hard -q "${DRONE_COMMIT_SHA}";
+          fi
+        fi
 
-# =======================================
-# Setup  ================================
-# =======================================
+pipeline:
   install:
-    image: node:carbon
+    image: node:erbium
     commands:
       - yarn install --frozen-lockfile
     when:
-      event: [ pull_request , tag ]
+      event: [ push, pull_request, tag ]
 
-# =======================================
-# Tests =================================
-# =======================================
-  test-lint:
-    image: node:carbon
-    group: test
+  test:
+    image: node:erbium
+    group: tests
     commands:
-      - yarn test:lint
+      - yarn test
     when:
-      event: [ pull_request , tag ]
+      event: [ push, pull_request ]
 
-# =======================================
-# Tags Creation =========================
-# =======================================
-  # Build release
-  build-release:
-    image: node:carbon
+  deploy-netlify:
+    image: node:erbium
+    secrets: [netlify_auth_token, netlify_site_id]
     commands:
-      - npm install --global gatsby-cli@1.1.58
-      - rm -rf .cache public
-      - gatsby build --prefix-paths
+      - yarn clean
+      - yarn build
+      - 'yarn netlify deploy --prod --site $${NETLIFY_SITE_ID} --message "Drone build: ${DRONE_BUILD_NUMBER}"'
+    when:
+      event: [push, pull_request]
+      status: [success, failure]   
+
+  build-release:
+    image: node:erbium
+    commands:
+      - yarn clean
+      - yarn build:prefixed
       - echo "${DRONE_COMMIT_SHA}" > public/.commit
     when:
       event: [tag]
 
-  # Package release build
   package-release:
     group: packaging
-    image: fpfis/php56-dev
+    image: alpine:latest
     commands:
       - tar -czC public -f ${DRONE_REPO_NAME}-${DRONE_TAG}.tar.gz .
     when:
       event: [tag]
       
-  # Push release to Github
-  push-github-release:
+  push-release:
     image: plugins/github-release
+    secrets: [ github_release_api_key ]
     files:
       - ${DRONE_REPO_NAME}-${DRONE_TAG}.tar.gz
     checksum:
@@ -54,26 +69,19 @@ pipeline:
       - sha1
       - sha256
       - sha512
-    secrets: [ GITHUB_RELEASE_API_KEY ]
     when:
       event: [tag]
       
-  # Trigger deploy event on Github
-  create-deploy-production:
+  create-deployment-event:
     image: fpfis/drone-plugin-github-deploy
+    secrets: [ github_api_token ]
     state: create
     deploy_environment: production
-    secrets: [ github_api_token ]
     automerge: false
     when:
       event: [tag]
     
-# =======================================
-# Deployment ============================
-# =======================================
-
-  # Download release from github and extract into build folder
-  download-github-release:
+  download-release:
     image: instrumentisto/rsync-ssh
     commands:
       - wget https://github.com/ec-europa/digitec/releases/download/${DRONE_TAG}/${DRONE_REPO_NAME}-${DRONE_TAG}.tar.gz
@@ -85,8 +93,7 @@ pipeline:
     when:
       event: deployment
 
-  # Deploy build folder into production
-  deploy-to-production:
+  deploy-release:
     image: drillster/drone-rsync
     secrets: [ rsync_key , MGMT_IP ]
     hosts: [ $MGMT_IP ]

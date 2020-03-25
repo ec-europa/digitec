@@ -19,7 +19,7 @@ const createStore = () => {
   const enhancers = [applyMiddleware(thunk), autoRehydrate()];
 
   if (process.env.NODE_ENV !== 'production') {
-    const devtools = window.devToolsExtension || (() => noop => noop);
+    const devtools = window.devToolsExtension || (() => (noop) => noop);
     enhancers.push(devtools());
   }
 

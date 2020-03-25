@@ -11,10 +11,10 @@ module.exports = ({ getNode, getNodes, createNodeField }) => {
   const eventTeams = {};
   const teamEvents = {}; // reverse index
 
-  const getTeamNodeByName = team => {
+  const getTeamNodeByName = (team) => {
     let teamNode = null;
 
-    getNodes().forEach(node => {
+    getNodes().forEach((node) => {
       if (
         node.internal.type === 'MarkdownRemark' &&
         node.frontmatter.teamName &&
@@ -28,14 +28,14 @@ module.exports = ({ getNode, getNodes, createNodeField }) => {
   };
 
   getNodes()
-    .filter(node => node.internal.type === 'MarkdownRemark')
-    .forEach(node => {
+    .filter((node) => node.internal.type === 'MarkdownRemark')
+    .forEach((node) => {
       if (node.frontmatter.teams) {
         const teamsNodes = node.frontmatter.teams.map(getTeamNodeByName);
 
         teamsNodes
-          .filter(teamNode => teamNode)
-          .map(teamNode => {
+          .filter((teamNode) => teamNode)
+          .map((teamNode) => {
             if (!(teamNode.id in eventTeams)) {
               eventTeams[teamNode.id] = [];
             }

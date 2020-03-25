@@ -11,19 +11,19 @@ const List = ({ events, schedule, onToggleEvent }) => {
   const eventsDisplay = [];
 
   const eventsByTimeslot = [];
-  events.forEach(event => {
+  events.forEach((event) => {
     if (!eventsByTimeslot[event.starts]) {
       eventsByTimeslot[event.starts] = [];
     }
     eventsByTimeslot[event.starts].push(event);
   });
 
-  Object.keys(eventsByTimeslot).forEach(start => {
+  Object.keys(eventsByTimeslot).forEach((start) => {
     const eventsList = eventsByTimeslot[start];
 
     const eventsRows = eventsList
       .sort((standA, standB) => standA.order - standB.order)
-      .map(event => (
+      .map((event) => (
         <Row
           key={event.slug}
           event={event}

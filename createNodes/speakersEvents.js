@@ -14,16 +14,16 @@ module.exports = ({ getNode, getNodes, createNodeField }) => {
   // as we can have multiple authors in book we should handle both cases
   // both when author is specified as single item and when there is list of authors
   // abstracting it to helper function help prevent code duplication
-  const getSpeakerNodeByName = speaker =>
+  const getSpeakerNodeByName = (speaker) =>
     getNodes().find(
-      node2 =>
+      (node2) =>
         node2.internal.type === 'MarkdownRemark' &&
         node2.frontmatter.lastname === speaker.speaker
     );
 
   getNodes()
-    .filter(node => node.internal.type === 'MarkdownRemark')
-    .forEach(node => {
+    .filter((node) => node.internal.type === 'MarkdownRemark')
+    .forEach((node) => {
       if (node.frontmatter.speakers) {
         const speakersNodes =
           node.frontmatter.speakers instanceof Array
@@ -32,8 +32,8 @@ module.exports = ({ getNode, getNodes, createNodeField }) => {
 
         // filtered not defined nodes and iterate through defined authors nodes to add data to indexes
         speakersNodes
-          .filter(speakerNode => speakerNode)
-          .map(speakerNode => {
+          .filter((speakerNode) => speakerNode)
+          .map((speakerNode) => {
             // if it's first time for this author init empty array for his books
             if (!(speakerNode.id in eventSpeakers)) {
               eventSpeakers[speakerNode.id] = [];

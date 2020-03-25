@@ -9,12 +9,12 @@ import twitterLogo from '../twitter.png';
 
 const Page = ({ team, events, children }) => {
   const sessions =
-    events && events.length && events.filter(e => e).length ? (
+    events && events.length && events.filter((e) => e).length ? (
       <>
         <h3 className={styles.sessionsTitle}>
           Session{events.length > 1 ? 's' : ''}
         </h3>
-        {events.map(event => (
+        {events.map((event) => (
           <EventRow
             key={event.fields.slug}
             event={{

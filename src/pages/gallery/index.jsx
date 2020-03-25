@@ -13,7 +13,7 @@ const GalleryPage = ({ data }) => {
   // Maps will provide improved O(1) time complexity compared to O(N^2) of nested Array.find on staticImages on each userSelected item.
   // Basically, we gain from iterating through staticImages only once.
   const staticImagesMap = new Map();
-  staticImages.forEach(i => {
+  staticImages.forEach((i) => {
     staticImagesMap.set(i.node.fluid.originalName, i.node);
   });
 
@@ -24,7 +24,7 @@ const GalleryPage = ({ data }) => {
    */
   const userSelected = require('./gallery.json'); // eslint-disable-line global-require
 
-  const photos = userSelected.Images.map(item => {
+  const photos = userSelected.Images.map((item) => {
     const { image } = item;
 
     const originalName = image.src.split('/img/')[1];
@@ -39,7 +39,7 @@ const GalleryPage = ({ data }) => {
       height: 400,
       ...image,
     };
-  }).filter(i => i);
+  }).filter((i) => i);
 
   return (
     <>
