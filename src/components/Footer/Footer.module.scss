@@ -3,20 +3,20 @@
 
 .container {
   align-self: flex-end;
-  width: 100%;
   background-color: #fff;
   border-top: 1px solid #f4f4f4;
   padding: 3em 0 4em;
+  width: 100%;
 }
 
 .innerContainer {
-  width: 100%;
-  max-width: $max-width;
-  margin: auto;
-  display: flex;
   align-items: center;
+  display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin: auto;
+  max-width: $max-width;
+  width: 100%;
 
   @include mappy-bp(medium) {
     justify-content: space-between;
@@ -24,10 +24,10 @@
 }
 
 .section {
-  display: flex;
-  flex-wrap: wrap;
   align-items: stretch;
+  display: flex;
   flex-grow: 1;
+  flex-wrap: wrap;
   padding: 0 14px;
 }
 
@@ -49,8 +49,8 @@
 }
 
 .link {
-  padding: 0.5em;
   color: rgb(88, 88, 88);
+  padding: 0.5em;
   text-decoration: none;
 
   &:hover,

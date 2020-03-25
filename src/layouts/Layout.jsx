@@ -19,7 +19,7 @@ import favicon144 from '../img/favicon-144.png';
 import favicon152 from '../img/favicon-152.png';
 import favicon196 from '../img/favicon-196.png';
 
-const TemplateWrapper = ({ location, children }) => (
+const Layout = ({ location, children }) => (
   <div className={styles.container}>
     <Helmet
       defaultTitle="DIGITEC 2018"
@@ -56,20 +56,15 @@ const TemplateWrapper = ({ location, children }) => (
     </Helmet>
     <Navbar location={location} />
     <main className={styles.main}>
-      <div>{children()}</div>
+      <div>{children}</div>
     </main>
     <Footer />
   </div>
 );
 
-TemplateWrapper.propTypes = {
-  children: PropTypes.func,
-  // eslint-disable-next-line
+Layout.propTypes = {
+  children: PropTypes.node,
   location: PropTypes.object.isRequired,
 };
 
-TemplateWrapper.defaultProps = {
-  children: () => {},
-};
-
-export default TemplateWrapper;
+export default Layout;

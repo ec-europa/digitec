@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import { graphql } from 'gatsby';
 
 import StandCard from '../components/Stand/Card';
 
@@ -62,8 +63,8 @@ export const pageQuery = graphql`
             subtitle
             picture {
               childImageSharp {
-                sizes(maxWidth: 260) {
-                  ...GatsbyImageSharpSizes_withWebp
+                fluid(maxWidth: 260) {
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }

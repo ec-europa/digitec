@@ -5,7 +5,7 @@
  */
 
 import React from 'react';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import Overdrive from 'react-overdrive';
@@ -13,11 +13,11 @@ import Overdrive from 'react-overdrive';
 import styles from './Card.module.scss';
 
 const Stand = ({ stand }) => (
-  <Link className={styles.item} to={{ pathname: stand.slug }}>
+  <Link className={styles.item} to={stand.slug}>
     {stand.picture ? (
       <Overdrive id={`${stand.title}-pic`}>
         <Img
-          sizes={stand.picture.sizes}
+          fluid={stand.picture.fluid}
           className={styles.picture}
           outerWrapperClassName={styles.pictureFrame}
           alt={stand.title}

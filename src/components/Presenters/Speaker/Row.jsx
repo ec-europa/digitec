@@ -1,31 +1,23 @@
-/**
- *
- * Speaker/Row
- *
- */
-
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import Overdrive from 'react-overdrive';
 
 import styles from '../Row.module.scss';
 
 const Row = ({ speaker }) => (
-  <Link className={styles.presenterContainer} to={{ pathname: speaker.slug }}>
-    {speaker.picture ? (
+  <Link className={styles.presenterContainer} to={speaker.slug}>
+    {speaker.picture && (
       <Overdrive
         id={`${speaker.firstname}-${speaker.lastname}-pic`}
         className={styles.presenterPicture}
       >
         <Img
-          sizes={speaker.picture.childImageSharp.sizes}
+          fluid={speaker.picture.childImageSharp.fluid}
           alt={`${speaker.firstname} ${speaker.lastname}`}
         />
       </Overdrive>
-    ) : (
-      ''
     )}
     <div className={styles.presenterInfo}>
       <h3>
@@ -39,11 +31,12 @@ const Row = ({ speaker }) => (
 
 Row.propTypes = {
   speaker: PropTypes.shape({
-    id: PropTypes.string,
     firstname: PropTypes.string,
+    id: PropTypes.string,
     lastname: PropTypes.string,
-    title: PropTypes.string,
     picture: PropTypes.string,
+    slug: PropTypes.string,
+    title: PropTypes.string,
   }),
 };
 

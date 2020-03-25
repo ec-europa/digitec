@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import Link from 'gatsby-link';
+import { graphql, Link } from 'gatsby';
 
 // Redux actions
 import { toggleEvent } from '../store/modules/schedule';
@@ -39,8 +39,7 @@ const MyDigitecPage = props => {
         <p>
           &quot;My DIGITEC&quot; helps you personalise your experience. Select
           your favourite sessions from{' '}
-          <Link to="/programme">DIGITEC programme</Link>
-          .
+          <Link to="/programme">DIGITEC programme</Link>.
         </p>
       </div>
       {events.length > 0 ? (
@@ -84,10 +83,7 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(MyDigitecPage);
+export default connect(mapStateToProps, mapDispatchToProps)(MyDigitecPage);
 
 export const pageQuery = graphql`
   query MyDigitecQuery {

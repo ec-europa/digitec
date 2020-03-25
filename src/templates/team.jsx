@@ -1,7 +1,9 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import Img from 'gatsby-image';
+import { graphql } from 'gatsby';
+
 import Content, { HTMLContent } from '../components/Content';
 
 import TeamPage from '../components/Presenters/Team/Page';
@@ -20,7 +22,7 @@ export const TeamTemplate = ({
   const PostContent = contentComponent || Content;
 
   return (
-    <Fragment>
+    <>
       {helmet || ''}
       <TeamPage
         team={{
@@ -33,7 +35,7 @@ export const TeamTemplate = ({
       >
         <PostContent className={contentStyles.content} content={content} />
       </TeamPage>
-    </Fragment>
+    </>
   );
 };
 
@@ -67,7 +69,7 @@ const Team = ({ data }) => {
       contentComponent={HTMLContent}
       teamName={node.frontmatter.teamName}
       teamMembers={node.frontmatter.teamMembers}
-      picture={<Img sizes={node.frontmatter.picture.childImageSharp.sizes} />}
+      picture={<Img fluid={node.frontmatter.picture.childImageSharp.fluid} />}
       twitter={node.frontmatter.twitter}
       events={node.fields.events}
       helmet={<Helmet title={`${node.frontmatter.teamName}`} />}
@@ -108,8 +110,8 @@ export const pageQuery = graphql`
         twitter
         picture {
           childImageSharp {
-            sizes(maxWidth: 260) {
-              ...GatsbyImageSharpSizes_withWebp
+            fluid(maxWidth: 260) {
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }

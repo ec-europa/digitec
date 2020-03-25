@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { HomePageTemplate } from '../../templates/homepage';
 
-const ProductPagePreview = ({ entry, widgetFor }) => {
+const HomePagePreview = ({ entry, widgetFor }) => {
   return (
     <HomePageTemplate
       image={entry.getIn(['data', 'image'])}
@@ -13,11 +13,11 @@ const ProductPagePreview = ({ entry, widgetFor }) => {
   );
 };
 
-ProductPagePreview.propTypes = {
+HomePagePreview.propTypes = {
+  widgetFor: PropTypes.func,
   entry: PropTypes.shape({
     getIn: PropTypes.func,
   }),
-  getAsset: PropTypes.func,
 };
 
-export default ProductPagePreview;
+export default HomePagePreview;

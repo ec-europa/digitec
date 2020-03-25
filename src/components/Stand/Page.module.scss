@@ -2,31 +2,31 @@
 @import '../../utils/breakpoints';
 
 .container {
-  max-width: $max-width;
   margin: auto;
+  max-width: $max-width;
   padding: 3rem 1rem;
 }
 
 .header {
+  align-items: center;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  flex-direction: column;
 
   @include mappy-bp(medium) {
-    flex-wrap: nowrap;
     flex-direction: row;
+    flex-wrap: nowrap;
     margin-bottom: 2rem;
   }
 }
 
 .headerPicture {
-  width: 100%;
-  max-width: 260px;
   flex-basis: 260px;
-  flex-shrink: 0;
   flex-direction: column;
+  flex-shrink: 0;
+  max-width: 260px;
+  width: 100%;
 
   @include mappy-bp(medium) {
     margin: 0 2rem 0 0;
@@ -35,8 +35,8 @@
 
 .headerTitles {
   flex-grow: 1;
-  text-align: center;
   max-width: 100%;
+  text-align: center;
 
   @include mappy-bp(medium) {
     text-align: left;
@@ -44,9 +44,9 @@
 
   h3 {
     font-size: $type-scale-7;
-    max-width: 24em;
-    margin: 1.5rem auto;
     line-height: $line-height-5;
+    margin: 1.5rem auto;
+    max-width: 24em;
 
     @include mappy-bp(medium) {
       font-size: $type-scale-8;
@@ -56,9 +56,9 @@
 
   h4 {
     font-size: $type-scale-4;
-    max-width: 24em;
-    margin: 1.5rem auto;
     line-height: $line-height-5;
+    margin: 1.5rem auto;
+    max-width: 24em;
 
     @include mappy-bp(medium) {
       font-size: $type-scale-5;
@@ -72,14 +72,14 @@
 }
 
 .number {
-  display: inline-block;
-  text-align: center;
-  font-size: 0.7em;
-  height: 3em;
-  width: 3em;
   background-color: #3a3a3a;
   border-radius: 50%;
-  line-height: 3em;
   color: #fff;
+  display: inline-block;
+  font-size: 0.7em;
+  height: 3em;
+  line-height: 3em;
   margin-right: 1em;
+  text-align: center;
+  width: 3em;
 }

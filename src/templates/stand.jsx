@@ -1,7 +1,8 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import Img from 'gatsby-image';
+import { graphql } from 'gatsby';
 
 import Content, { HTMLContent } from '../components/Content';
 
@@ -20,7 +21,7 @@ export const StandTemplate = ({
   const PostContent = contentComponent || Content;
 
   return (
-    <Fragment>
+    <>
       {helmet || ''}
       <StandPage
         stand={{
@@ -32,7 +33,7 @@ export const StandTemplate = ({
       >
         <PostContent className={contentStyles.content} content={content} />
       </StandPage>
-    </Fragment>
+    </>
   );
 };
 
@@ -64,7 +65,7 @@ const Stand = ({ data }) => {
       contentComponent={HTMLContent}
       title={post.frontmatter.title}
       subtitle={post.frontmatter.subtitle}
-      picture={<Img sizes={post.frontmatter.picture.childImageSharp.sizes} />}
+      picture={<Img fluid={post.frontmatter.picture.childImageSharp.fluid} />}
       number={post.frontmatter.number}
       helmet={<Helmet title={post.frontmatter.title} />}
     />
@@ -88,8 +89,8 @@ export const pageQuery = graphql`
         subtitle
         picture {
           childImageSharp {
-            sizes(maxWidth: 260) {
-              ...GatsbyImageSharpSizes_withWebp
+            fluid(maxWidth: 260) {
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }

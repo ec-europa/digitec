@@ -1,16 +1,10 @@
-/**
- * Event/Page
- */
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import ResponsiveEmbed from 'react-responsive-embed';
 
-// Components
 import SpeakerRow from '../Presenters/Speaker/Row';
 import TeamRow from '../Presenters/Team/Row';
 
-// Styles
 import styles from './Page.module.scss';
 
 const Page = ({ event, speakers, teams, children, videos }) => {
@@ -24,17 +18,17 @@ const Page = ({ event, speakers, teams, children, videos }) => {
 
   const videosBlock =
     videos && videos.length ? (
-      <div>
+      <>
         <h2>Video{videos.length > 1 ? 's' : ''}</h2>
-        {videos.map((videoNode, key) => (
+        {videos.map(videoNode => (
           <ResponsiveEmbed
             className={styles.video}
-            key={key}
+            key={videoNode.video}
             src={videoNode.video}
             allowFullScreen
           />
         ))}
-      </div>
+      </>
     ) : null;
 
   const speakersBlock =
@@ -101,8 +95,13 @@ const Page = ({ event, speakers, teams, children, videos }) => {
 };
 
 Page.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]),
   event: PropTypes.object,
-  speakers: PropTypes.object,
+  speakers: PropTypes.array,
+  teams: PropTypes.array,
   videos: PropTypes.array,
 };
 
@@ -110,6 +109,7 @@ Page.defaultProps = {
   event: {},
   videos: [],
   speakers: [],
+  teams: [],
 };
 
 export default Page;
