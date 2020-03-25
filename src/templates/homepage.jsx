@@ -1,6 +1,8 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
+import { graphql } from 'gatsby';
+
 import Content, { HTMLContent } from '../components/Content';
 
 import Cover from '../components/Cover/Cover';
@@ -18,7 +20,7 @@ export const HomePageTemplate = ({
   const PostContent = contentComponent || Content;
 
   return (
-    <Fragment>
+    <>
       <Cover image={image} title={title} heading={heading} hashtag={hashtag} />
       <div
         style={{ maxWidth: '56rem', margin: '4rem auto', padding: '0 1rem' }}
@@ -26,7 +28,7 @@ export const HomePageTemplate = ({
         <PostContent className={contentStyles.contentBig} content={content} />
         {bigLogo && (
           <Img
-            sizes={bigLogo.sizes}
+            fluid={bigLogo.fluid}
             style={{
               margin: '4rem auto 1rem',
               width: '100%',
@@ -35,24 +37,26 @@ export const HomePageTemplate = ({
           />
         )}
       </div>
-    </Fragment>
+    </>
   );
 };
 
 HomePageTemplate.propTypes = {
+  bigLogo: PropTypes.object,
   content: PropTypes.string.isRequired,
   contentComponent: PropTypes.func,
+  hashtag: PropTypes.string,
+  heading: PropTypes.string,
   image: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   title: PropTypes.string,
-  heading: PropTypes.string,
-  hashtag: PropTypes.string,
 };
 
 HomePageTemplate.defaultProps = {
+  bigLogo: {},
+  hashtag: '',
+  heading: '',
   image: '',
   title: '',
-  heading: '',
-  hashtag: '',
 };
 
 const HomePage = ({ data }) => {
@@ -76,13 +80,15 @@ HomePage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
+      html: PropTypes.string,
     }),
+    bigLogo: PropTypes.object,
   }).isRequired,
 };
 
 export default HomePage;
 
-export const productPageQuery = graphql`
+export const query = graphql`
   query HomePage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       html
@@ -90,8 +96,8 @@ export const productPageQuery = graphql`
         title
         image {
           childImageSharp {
-            sizes(maxWidth: 1920, quality: 80) {
-              ...GatsbyImageSharpSizes_withWebp
+            fluid(maxWidth: 1920, quality: 80) {
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
@@ -100,8 +106,8 @@ export const productPageQuery = graphql`
       }
     }
     bigLogo: imageSharp(id: { regex: "/DIGITEC-2018_3-institutions.png/" }) {
-      sizes(maxWidth: 600, quality: 80) {
-        ...GatsbyImageSharpSizes_withWebp_noBase64
+      fluid(maxWidth: 600, quality: 80) {
+        ...GatsbyImageSharpFluid_withWebp_noBase64
       }
     }
   }

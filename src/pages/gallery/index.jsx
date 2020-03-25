@@ -1,6 +1,7 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import { graphql } from 'gatsby';
 
 import Gallery from '../../components/Gallery/Gallery';
 
@@ -9,27 +10,39 @@ import contentStyles from '../../utils/_content.module.scss';
 
 const GalleryPage = ({ data }) => {
   const staticImages = data.allImageSharp.edges;
-  // File type collection managed by the user in NetlifyCMS.
-  // The /static/admin/config.yml file contains settings for the shape of the image.
-  const userSelected = require('./gallery.json'); // eslint-disable-line global-require
-
-  const photos = userSelected.Images.map(item => {
-    const { image } = item;
-    // ImageSharp node for the same image as the user-selected one.
-    const optimizedImage = staticImages.find(node =>
-      node.node.id.includes(image.src)
-    );
-    return {
-      srcSet: optimizedImage.node.sizes.srcSet,
-      sizes: optimizedImage.node.sizes.sizes,
-      width: 600,
-      height: 400,
-      ...item.image,
-    };
+  // Maps will provide improved O(1) time complexity compared to O(N^2) of nested Array.find on staticImages on each userSelected item.
+  // Basically, we gain from iterating through staticImages only once.
+  const staticImagesMap = new Map();
+  staticImages.forEach((i) => {
+    staticImagesMap.set(i.node.fluid.originalName, i.node);
   });
 
+  /**
+   * File type collection managed by the user in NetlifyCMS.
+   * The /static/admin/config.yml file contains settings for the shape of the image.
+   * Unfortunately, ImageSharp nodes are no longer containing file names on sourcing, so there's no way to preprocess fields and query filter in page query below.
+   */
+  const userSelected = require('./gallery.json'); // eslint-disable-line global-require
+
+  const photos = userSelected.Images.map((item) => {
+    const { image } = item;
+
+    const originalName = image.src.split('/img/')[1];
+
+    // ImageSharp node for the same image as the user-selected one.
+    const optimizedImage = staticImagesMap.get(originalName);
+
+    return {
+      srcSet: optimizedImage.fluid.srcSet,
+      sizes: optimizedImage.fluid.sizes,
+      width: 600,
+      height: 400,
+      ...image,
+    };
+  }).filter((i) => i);
+
   return (
-    <Fragment>
+    <>
       <section className={containerStyles.container}>
         <Helmet title="Gallery" />
         <h1 className={contentStyles.fs10}>Gallery</h1>
@@ -42,12 +55,13 @@ const GalleryPage = ({ data }) => {
               rel="noopener noreferrer"
             >
               Twitter moment
-            </a>.
+            </a>
+            .
           </p>
         </div>
       </section>
       <Gallery photos={photos} />
-    </Fragment>
+    </>
   );
 };
 
@@ -63,13 +77,14 @@ GalleryPage.propTypes = {
 
 export const pageQuery = graphql`
   query GetStaticSharpImages {
-    allImageSharp(filter: { id: { regex: "/static/img/" } }) {
+    allImageSharp {
       edges {
         node {
           id
-          sizes {
+          fluid {
             sizes
             srcSet
+            originalName
           }
         }
       }

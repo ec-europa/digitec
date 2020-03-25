@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import Link from 'gatsby-link';
+import { graphql, Link } from 'gatsby';
 
 // Redux actions
 import { toggleEvent } from '../store/modules/schedule';
@@ -11,7 +11,7 @@ import EventsList from '../components/Event/List';
 import containerStyles from '../utils/_container.module.scss';
 import contentStyles from '../utils/_content.module.scss';
 
-const ProgrammePage = props => {
+const ProgrammePage = (props) => {
   const { data, schedule, onToggleEvent } = props;
   const { edges: events } = data.allMarkdownRemark;
 
@@ -36,8 +36,7 @@ const ProgrammePage = props => {
       <div className={contentStyles.intro}>
         <p>
           Choose and save your favourite sessions to{' '}
-          <Link to="/my-digitec">My DIGITEC</Link>
-          .
+          <Link to="/my-digitec">My DIGITEC</Link>.
         </p>
       </div>
       <EventsList
@@ -99,13 +98,10 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    onToggleEvent: event => {
+    onToggleEvent: (event) => {
       dispatch(toggleEvent(event));
     },
   };
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(ProgrammePage);
+export default connect(mapStateToProps, mapDispatchToProps)(ProgrammePage);

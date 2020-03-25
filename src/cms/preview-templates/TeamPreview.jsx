@@ -7,7 +7,7 @@ const TeamPreview = ({ entry, widgetFor }) => (
     content={widgetFor('body')}
     teamName={entry.getIn(['data', 'teamName'])}
     teamMembers={entry.getIn(['data', 'teamMembers'])}
-    picture={<img src={entry.getIn(['data', 'picture'])} />}
+    picture={<img src={entry.getIn(['data', 'picture'])} alt="" />}
   />
 );
 

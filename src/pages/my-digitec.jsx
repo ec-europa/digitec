@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import Link from 'gatsby-link';
+import { graphql, Link } from 'gatsby';
 
 // Redux actions
 import { toggleEvent } from '../store/modules/schedule';
@@ -11,7 +11,7 @@ import EventsList from '../components/Event/List';
 import containerStyles from '../utils/_container.module.scss';
 import contentStyles from '../utils/_content.module.scss';
 
-const MyDigitecPage = props => {
+const MyDigitecPage = (props) => {
   const { data, schedule, onToggleEvent } = props;
   const { edges } = data.allMarkdownRemark;
 
@@ -27,7 +27,7 @@ const MyDigitecPage = props => {
       order: event.frontmatter.order,
       readMore: event.frontmatter.readMore,
     }))
-    .filter(event => schedule[event.id] || event.register === false);
+    .filter((event) => schedule[event.id] || event.register === false);
 
   return (
     <section className={containerStyles.container}>
@@ -39,8 +39,7 @@ const MyDigitecPage = props => {
         <p>
           &quot;My DIGITEC&quot; helps you personalise your experience. Select
           your favourite sessions from{' '}
-          <Link to="/programme">DIGITEC programme</Link>
-          .
+          <Link to="/programme">DIGITEC programme</Link>.
         </p>
       </div>
       {events.length > 0 ? (
@@ -78,16 +77,13 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    onToggleEvent: event => {
+    onToggleEvent: (event) => {
       dispatch(toggleEvent(event));
     },
   };
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(MyDigitecPage);
+export default connect(mapStateToProps, mapDispatchToProps)(MyDigitecPage);
 
 export const pageQuery = graphql`
   query MyDigitecQuery {

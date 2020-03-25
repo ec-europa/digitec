@@ -2,10 +2,10 @@
 @import '../../utils/breakpoints';
 
 .container {
-  position: fixed;
-  top: 0;
   left: 0;
+  position: fixed;
   right: 0;
+  top: 0;
   z-index: 800;
 }
 
@@ -13,8 +13,8 @@
  * Toggle drawer (checkbox)
  */
 .toggleDrawer {
-  position: absolute;
   left: -9999px;
+  position: absolute;
   top: -9999px;
 
   // Hide on desktop (prevent from focusing)
@@ -28,17 +28,17 @@
  */
 
 .mobileBar {
+  align-items: stretch;
   background-color: #fff;
   border-bottom: 1px solid #e3e3e3;
-  width: 100%;
-  height: $header-height;
-  align-items: stretch;
-  display: flex;
-  margin: auto;
   direction: row;
-  will-change: transform;
-  transition: transform 300ms ease-in-out;
+  display: flex;
+  height: $header-height;
+  margin: auto;
   transform: translate3d(0, 0, 0);
+  transition: transform 300ms ease-in-out;
+  width: 100%;
+  will-change: transform;
 
   @include mappy-bp(medium) {
     display: none;
@@ -50,9 +50,9 @@
 }
 
 .navToggle {
-  position: relative;
   display: block;
   height: $header-height;
+  position: relative;
   width: $header-height;
 
   @include mappy-bp(medium) {
@@ -107,9 +107,9 @@
  */
 
 .navigation {
+  background-color: #fff;
   position: fixed;
   top: 0;
-  background-color: #fff;
 
   @include mappy-bp(medium) {
     background-color: rgba(255, 255, 255, 0.96);
@@ -117,11 +117,11 @@
 
   // As a drawer (small screens)
   @include mappy-bp(max medium) {
-    left: -20em;
-    width: 20em;
-    max-width: 80%;
     height: 100%;
+    left: -20em;
+    max-width: 80%;
     transform: translate3d(0, 0, 0);
+    width: 20em;
     // transition: transform 300ms ease-in-out;
     // will-change: transform;
 
@@ -132,14 +132,14 @@
 
   // Or as a nav bar
   @include mappy-bp(medium) {
-    left: 0;
-    border-bottom: 1px solid #e8e8e8;
-    width: 100%;
-    height: $header-height;
     align-items: stretch;
+    border-bottom: 1px solid #e8e8e8;
     display: flex;
+    height: $header-height;
+    left: 0;
     margin: auto;
     transform: translate3d(0, 0, 0);
+    width: 100%;
     // transition: all 300ms ease-in-out;
     // will-change: transform;
 
@@ -163,12 +163,12 @@
     align-items: stretch;
     display: flex;
     flex: 1;
+    flex-basis: $max-width;
     justify-content: flex-end;
-    padding: 0 1rem;
+    margin: auto;
     // text-transform: uppercase;
     max-width: $max-width;
-    flex-basis: $max-width;
-    margin: auto;
+    padding: 0 1rem;
   }
 }
 
@@ -179,16 +179,16 @@
 }
 
 .navigationHeader {
-  display: flex;
   align-items: center;
-  justify-content: center;
+  display: flex;
   flex-direction: column;
+  justify-content: center;
 
   @include mappy-bp(max medium) {
-    width: 100%;
     background-color: #f5f5f5;
     overflow: auto;
     padding: 1em 0;
+    width: 100%;
   }
 
   @include mappy-bp(medium) {
@@ -205,19 +205,19 @@
     display: flex;
     flex: 1;
     justify-content: flex-end;
+    line-height: 2;
     padding-left: 1rem;
     padding-right: 1rem;
-    line-height: 2;
     // font-size: 0.92em;
   }
 }
 
 // Logos
 .logos {
-  display: flex;
   align-items: center;
-  justify-content: center;
+  display: flex;
   flex-shrink: 0;
+  justify-content: center;
 
   @include mappy-bp(medium) {
     justify-content: flex-start;
@@ -227,19 +227,19 @@
 }
 
 .logoLink {
+  height: 54px;
   margin: 0 1rem;
   width: 144px;
-  height: 54px;
 }
 
 .logoEuropa {
-  width: 60px;
   height: 43px;
+  width: 60px;
 }
 
 .logo {
-  max-width: 100%;
   max-height: 100%;
+  max-width: 100%;
 }
 
 // Title
@@ -252,34 +252,34 @@
 }
 
 .navigationHeaderTitle h1 {
+  color: rgb(66, 66, 66);
+  font-size: 1.25em;
   margin-top: 20px;
   text-align: center;
-  font-size: 1.25em;
-  color: rgb(66, 66, 66);
 }
 
 /**
  * Drawer's overlay
  */
 .overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+  background-color: #000;
   height: 100%;
+  left: 0;
   opacity: 0;
   overflow: hidden;
-  background-color: #000;
+  position: fixed;
+  top: 0;
   transform: translate3d(-100%, 0, 0);
   transition: opacity 300ms ease-in-out, transform 0ms linear 300ms;
+  width: 100%;
 
   @include mappy-bp(medium) {
     display: none;
   }
 
   .toggleDrawer:checked ~ & {
-    transform: translate3d(0, 0, 0);
     opacity: 0.5;
+    transform: translate3d(0, 0, 0);
     transition: opacity 300ms ease-in-out, transform 0ms linear 0ms;
   }
 }

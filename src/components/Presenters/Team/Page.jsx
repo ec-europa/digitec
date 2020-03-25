@@ -1,31 +1,20 @@
-/**
- *
- * Team/Page
- *
- */
-
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import Overdrive from 'react-overdrive';
 
-// Styles
 import styles from '../Page.module.scss';
-
-// Components
 import EventRow from '../../Event/Row';
-
-// Images
 import twitterLogo from '../twitter.png';
 
 const Page = ({ team, events, children }) => {
   const sessions =
-    events && events.length && events.filter(e => e).length ? (
-      <Fragment>
+    events && events.length && events.filter((e) => e).length ? (
+      <>
         <h3 className={styles.sessionsTitle}>
           Session{events.length > 1 ? 's' : ''}
         </h3>
-        {events.map(event => (
+        {events.map((event) => (
           <EventRow
             key={event.fields.slug}
             event={{
@@ -40,7 +29,7 @@ const Page = ({ team, events, children }) => {
             }}
           />
         ))}
-      </Fragment>
+      </>
     ) : (
       ''
     );

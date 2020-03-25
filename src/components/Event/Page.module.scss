@@ -2,8 +2,8 @@
 @import '../../utils/breakpoints';
 
 .pageContainer {
-  max-width: $max-width;
   margin: auto;
+  max-width: $max-width;
   padding: 1rem;
 
   h1 {
@@ -16,8 +16,8 @@
 }
 
 .picture {
-  margin: auto;
   display: block;
+  margin: auto;
   max-width: 100%;
 }
 

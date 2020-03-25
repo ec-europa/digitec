@@ -14,7 +14,9 @@ class Checkbox extends React.Component {
   }
 
   shouldComponentUpdate(nextProps) {
-    return nextProps.checked !== this.props.checked;
+    const { checked } = this.props;
+
+    return nextProps.checked !== checked;
   }
 
   toggle() {

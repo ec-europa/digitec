@@ -1,30 +1,22 @@
-/**
- *
- * Speakers/Speaker
- *
- */
-
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import Overdrive from 'react-overdrive';
 
 import styles from '../Card.module.scss';
 
 const Speaker = ({ speaker }) => (
-  <Link className={styles.item} to={{ pathname: speaker.slug }}>
-    {speaker.picture ? (
+  <Link className={styles.item} to={speaker.slug}>
+    {speaker.picture && (
       <Overdrive id={`${speaker.firstname}-${speaker.lastname}-pic`}>
         <Img
-          sizes={speaker.picture.sizes}
+          fluid={speaker.picture.fluid}
           className={styles.picture}
           outerWrapperClassName={styles.pictureFrame}
           alt={`${speaker.firstname} ${speaker.lastname}`}
         />
       </Overdrive>
-    ) : (
-      ''
     )}
     <div className={styles.info}>
       <div className={styles.name}>

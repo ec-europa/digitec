@@ -1,30 +1,22 @@
-/**
- *
- * Team/Card
- *
- */
-
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import Overdrive from 'react-overdrive';
 
 import styles from '../Card.module.scss';
 
 const Team = ({ team }) => (
-  <Link className={styles.item} to={{ pathname: team.slug }}>
-    {team.picture ? (
+  <Link className={styles.item} to={team.slug}>
+    {team.picture && (
       <Overdrive id={`${team.teamName}-pic`}>
         <Img
-          sizes={team.picture.sizes}
+          fluid={team.picture.fluid}
           className={styles.picture}
           outerWrapperClassName={styles.pictureFrame}
           alt={`${team.teamName}`}
         />
       </Overdrive>
-    ) : (
-      ''
     )}
     <div className={styles.info}>
       <div className={styles.name}>{team.teamName}</div>

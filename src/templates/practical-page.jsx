@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import { graphql } from 'gatsby';
+
 import Content, { HTMLContent } from '../components/Content';
 
 import containerStyles from '../utils/_container.module.scss';
@@ -47,7 +49,7 @@ Practical.propTypes = {
 
 export default Practical;
 
-export const productPageQuery = graphql`
+export const query = graphql`
   query Practical($id: String!) {
     markdownRemark(id: { eq: $id }) {
       html

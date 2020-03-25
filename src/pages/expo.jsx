@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import { graphql } from 'gatsby';
 
 import StandCard from '../components/Stand/Card';
 
 import containerStyles from '../utils/_container.module.scss';
 import contentStyles from '../utils/_content.module.scss';
 
-const StandsPage = props => {
+const StandsPage = (props) => {
   const { data } = props;
   const { edges: stands } = data.allMarkdownRemark;
 
@@ -62,8 +63,8 @@ export const pageQuery = graphql`
             subtitle
             picture {
               childImageSharp {
-                sizes(maxWidth: 260) {
-                  ...GatsbyImageSharpSizes_withWebp
+                fluid(maxWidth: 260) {
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }

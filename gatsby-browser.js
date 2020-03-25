@@ -1,10 +1,9 @@
 import React from 'react';
-import { Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 import createStore from './src/store/index';
 
-exports.onClientEntry = () => {
+const onClientEntry = () => {
   // IntersectionObserver polyfill for gatsby-image (Safari, IE)
   if (typeof window.IntersectionObserver === 'undefined') {
     /* eslint-disable global-require */
@@ -24,16 +23,13 @@ exports.onClientEntry = () => {
   }
 };
 
-exports.replaceRouterComponent = ({ history }) => {
+const wrapRootElement = ({ element }) => {
   const store = createStore();
 
-  /* eslint-disable react/prop-types */
-  const ConnectedRouterWrapper = ({ children }) => (
-    /* eslint-disable react/jsx-filename-extension */
-    <Provider store={store}>
-      <Router history={history}>{children}</Router>
-    </Provider>
-  );
+  /* eslint-disable react/jsx-filename-extension */
+  const ConnectedRootElement = <Provider store={store}>{element}</Provider>;
 
-  return ConnectedRouterWrapper;
+  return ConnectedRootElement;
 };
+
+export { onClientEntry, wrapRootElement };

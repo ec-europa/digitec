@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Gallery from 'react-photo-gallery';
-import Lightbox from 'react-images';
+import Carousel, { Modal, ModalGateway } from 'react-images';
 import Measure from 'react-measure';
 
 // Load styles
@@ -18,7 +18,7 @@ class GalleryComponent extends React.Component {
       pageNum: 0,
       totalPages: props.photos.length / photosPerPage,
       loadedAll: false,
-      currentImage: 0,
+      currentIndex: 0,
       lightboxIsOpen: false,
     };
 
@@ -26,8 +26,6 @@ class GalleryComponent extends React.Component {
     this.loadMorePhotos = this.loadMorePhotos.bind(this);
     this.closeLightbox = this.closeLightbox.bind(this);
     this.openLightbox = this.openLightbox.bind(this);
-    this.gotoNext = this.gotoNext.bind(this);
-    this.gotoPrevious = this.gotoPrevious.bind(this);
   }
 
   componentDidMount() {
@@ -45,28 +43,27 @@ class GalleryComponent extends React.Component {
   }
 
   loadMorePhotos(e) {
+    const { totalPages, pageNum, photos } = this.state;
+    const { photos: photosFromProps } = this.props;
+
     if (e) {
       e.preventDefault();
     }
 
-    if (this.state.pageNum >= this.state.totalPages) {
+    if (pageNum >= totalPages) {
       this.setState({ loadedAll: true });
       return;
     }
 
-    const { photos } = this.props;
-
-    const newPhotos = photos.slice(
-      this.state.pageNum * photosPerPage,
-      (this.state.pageNum + 1) * photosPerPage
+    const newPhotos = photosFromProps.slice(
+      pageNum * photosPerPage,
+      (pageNum + 1) * photosPerPage
     );
 
     this.setState({
-      photos: this.state.photos
-        ? this.state.photos.concat(newPhotos)
-        : newPhotos,
-      pageNum: this.state.pageNum + 1,
-      loadedAll: this.state.pageNum + 1 >= this.state.totalPages,
+      photos: photos ? photos.concat(newPhotos) : newPhotos,
+      pageNum: pageNum + 1,
+      loadedAll: pageNum + 1 >= totalPages,
     });
   }
 
@@ -74,36 +71,25 @@ class GalleryComponent extends React.Component {
     event.preventDefault();
 
     this.setState({
-      currentImage: obj.index,
+      currentIndex: obj.index,
       lightboxIsOpen: true,
     });
   }
 
   closeLightbox() {
     this.setState({
-      currentImage: 0,
+      currentIndex: 0,
       lightboxIsOpen: false,
     });
   }
 
-  gotoPrevious() {
-    this.setState({
-      currentImage: this.state.currentImage - 1,
-    });
-  }
-
-  gotoNext() {
-    this.setState({
-      currentImage: this.state.currentImage + 1,
-    });
-  }
-
   render() {
-    const { photos, loadedAll } = this.state;
+    const { photos, loadedAll, lightboxIsOpen, currentIndex } = this.state;
+
     return (
       <div className={styles.container}>
         <div className={styles.header} />
-        {photos ? (
+        {photos && photos.length > 0 ? (
           <div>
             <Measure whitelist={['width']}>
               {({ width }) => {
@@ -130,19 +116,16 @@ class GalleryComponent extends React.Component {
                 </p>
               </div>
             )}
-            <Lightbox
-              images={photos}
-              backdropClosesModal
-              onClose={this.closeLightbox}
-              onClickPrev={this.gotoPrevious}
-              onClickNext={this.gotoNext}
-              currentImage={this.state.currentImage}
-              isOpen={this.state.lightboxIsOpen}
-              showImageCount={false}
-            />
+            <ModalGateway>
+              {lightboxIsOpen ? (
+                <Modal closeOnBackdropClick onClose={this.closeLightbox}>
+                  <Carousel views={photos} currentIndex={currentIndex} />
+                </Modal>
+              ) : null}
+            </ModalGateway>
           </div>
         ) : (
-          <p className="u-pt-1rem u-ta-center">Loading...</p>
+          <p style={{ textAlign: 'center' }}>No photos for the moment.</p>
         )}
         <div className={styles.clearfix} />
       </div>

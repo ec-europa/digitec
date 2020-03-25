@@ -1,11 +1,5 @@
-/**
- *
- * Event/Row
- *
- */
-
 import React from 'react';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import styles from './Row.module.scss';
@@ -16,7 +10,9 @@ import Checkbox from './Checkbox';
 // eslint-disable-next-line react/prefer-stateless-function
 class Row extends React.Component {
   shouldComponentUpdate(nextProps) {
-    return nextProps.checked !== this.props.checked;
+    const { checked } = this.props;
+
+    return nextProps.checked !== checked;
   }
 
   render() {
@@ -48,7 +44,7 @@ class Row extends React.Component {
         <div className={styles.primary}>
           {event.readMore ? (
             <div>
-              <Link className={styles.title} to={{ pathname: event.slug }}>
+              <Link className={styles.title} to={event.slug}>
                 {event.title}
               </Link>
             </div>

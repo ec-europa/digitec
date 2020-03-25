@@ -37,6 +37,10 @@
 .intro {
   color: $ict-grey-text;
 
+  @include mappy-bp(medium) {
+    display: none;
+  }
+
   a {
     color: $ict-blue;
     text-decoration: none;
@@ -47,10 +51,6 @@
       color: $ict-blue;
       text-decoration: underline;
     }
-  }
-
-  @include mappy-bp(medium) {
-    display: none;
   }
 }
 
