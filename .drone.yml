@@ -34,7 +34,7 @@ pipeline:
   # Deploy a preview
   deploy-preview:
     image: node:erbium
-    secrets: [netlify_auth_token, netlify_site_id]
+    secrets: [netlify_auth_token, netlify_site_id, gh_token]
     commands:
       - yarn clean
       - yarn build
