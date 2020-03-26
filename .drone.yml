@@ -21,7 +21,7 @@ pipeline:
     commands:
       - yarn install --frozen-lockfile
     when:
-      event: [ push, pull_request, tag ]
+      event: [push, pull_request, tag]
 
   test:
     image: node:erbium
@@ -29,7 +29,7 @@ pipeline:
     commands:
       - yarn test
     when:
-      event: [ push, pull_request ]
+      event: [push, pull_request]
 
   # Deploy a preview
   deploy-preview:
@@ -41,7 +41,7 @@ pipeline:
       - 'yarn netlify deploy --site $${NETLIFY_SITE_ID} --message "Drone build: ${DRONE_BUILD_NUMBER}"'
       - node scripts/set-pr-status.js
     when:
-      event: [ push, pull_request ]      
+      event: [push, pull_request]      
       branch:
         exclude: [develop, master]
       status: [success, failure]
@@ -78,7 +78,7 @@ pipeline:
       
   push-release:
     image: plugins/github-release
-    secrets: [ github_release_api_key ]
+    secrets: [github_release_api_key]
     files:
       - ${DRONE_REPO_NAME}-${DRONE_TAG}.tar.gz
     checksum:
@@ -91,7 +91,7 @@ pipeline:
       
   create-deployment-event:
     image: fpfis/drone-plugin-github-deploy
-    secrets: [ github_api_token ]
+    secrets: [github_api_token]
     state: create
     deploy_environment: production
     automerge: false
@@ -112,8 +112,8 @@ pipeline:
 
   deploy-release:
     image: drillster/drone-rsync
-    secrets: [ rsync_key , MGMT_IP ]
-    hosts: [ $MGMT_IP ]
+    secrets: [rsync_key, MGMT_IP]
+    hosts: [$MGMT_IP]
     user : fpfis
     source: ./build/
     target: /ec/local/home/fpfis/reference/php-clusters/multisite/production/cluster00/sources/static/digitec/2018
