@@ -6,7 +6,7 @@ title: Interaction Designer
 twitter: '@AndreasRef'
 picture: /img/andreas_refsgaard.png.jpg
 ---
-Andreas Refsgaard is an interaction designer, artist and teacher from Denmark. He graduated from CIID in 2015 and started creative coding studio Støj with Lasse Korsgaard in 2017..
+Andreas Refsgaard is an interaction designer, artist and teacher from Denmark. He graduated from CIID in 2015 and started creative coding studio Støj with Lasse Korsgaard in 2017.
 
 Andreas is the creator of Eye Conductor, which helps people express themselves through music using only their eyes and facial gestures.
 
