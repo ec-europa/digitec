@@ -38,6 +38,7 @@ pipeline:
     commands:
       - yarn clean
       - yarn build
+      - echo 'dummy test'
       - 'yarn netlify deploy --site $${NETLIFY_SITE_ID} --message "Drone build: ${DRONE_BUILD_NUMBER}"'
       - node scripts/set-pr-status.js
     when:
