@@ -4,6 +4,10 @@ Deploys for digitec: https://app.netlify.com/sites/digitec/deploys
 
 ## Getting Started (Recommended)
 
+```
+nvm install
+```
+
 ### Access Locally
 
 ```
