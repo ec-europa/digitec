@@ -38,7 +38,7 @@ pipeline:
     commands:
       - yarn clean
       - yarn build
-      - 'yarn netlify deploy --site $${NETLIFY_SITE_ID} --message "Drone build: ${DRONE_BUILD_NUMBER}"'
+      - yarn netlify deploy --site b68ede30-c5c4-4572-a606-f37d0e6b7ebb --message "Drone build: ${DRONE_BUILD_NUMBER}"
       - node scripts/set-pr-status.js
     when:
       event: [push, pull_request]      
@@ -53,7 +53,7 @@ pipeline:
     commands:
       - yarn clean
       - yarn build
-      - 'yarn netlify deploy --site $${NETLIFY_SITE_ID} --message "Drone build: ${DRONE_BUILD_NUMBER}" --prod'
+      - yarn netlify deploy --prod --site b68ede30-c5c4-4572-a606-f37d0e6b7ebb --message "Drone build: ${DRONE_BUILD_NUMBER}"
     when:
       branch: develop
       event: push      
