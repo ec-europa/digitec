@@ -41,12 +41,12 @@ pipeline:
       - 'yarn netlify deploy --site $${NETLIFY_SITE_ID} --message "Drone build: ${DRONE_BUILD_NUMBER}"'
       - node scripts/set-pr-status.js
     when:
-      event: [push, pull_request]      
+      event: [push]
       branch:
         exclude: [develop, master]
       status: [success, failure]
 
-  # Deploy latest develop to digitec.netlify.com
+  # Deploy latest develop to digitec.netlify.app
   deploy-staging:
     image: node:erbium
     secrets: [gh_token, netlify_auth_token, netlify_site_id]
@@ -56,7 +56,7 @@ pipeline:
       - 'yarn netlify deploy --prod --site $${NETLIFY_SITE_ID} --message "Drone build: ${DRONE_BUILD_NUMBER}"'
     when:
       branch: develop
-      event: push      
+      event: [push]      
       status: [success, failure]
 
   build-release:
