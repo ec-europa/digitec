@@ -34,7 +34,7 @@ pipeline:
   # Deploy a preview
   deploy-preview:
     image: node:erbium
-    secrets: [netlify_auth_token, netlify_site_id, gh_token]
+    secrets: [gh_token, netlify_auth_token, netlify_site_id] 
     commands:
       - yarn clean
       - yarn build
@@ -49,11 +49,11 @@ pipeline:
   # Deploy latest develop to digitec.netlify.com
   deploy-staging:
     image: node:erbium
-    secrets: [netlify_auth_token, netlify_site_id]
+    secrets: [gh_token, netlify_auth_token, netlify_site_id]
     commands:
       - yarn clean
       - yarn build
-      - 'yarn netlify deploy --prod --site $${NETLIFY_SITE_ID} --message "Drone build: ${DRONE_BUILD_NUMBER}"'
+      - 'yarn netlify deploy --site $${NETLIFY_SITE_ID} --message "Drone build: ${DRONE_BUILD_NUMBER}" --prod'
     when:
       branch: develop
       event: push      
