@@ -34,7 +34,7 @@ pipeline:
   # Deploy a preview
   deploy-preview:
     image: node:erbium
-    secrets: [gh_token, netlify_auth_token, netlify_site_id] 
+    secrets: [gh_token, netlify_auth_token] 
     commands:
       - yarn clean
       - yarn build
@@ -49,7 +49,7 @@ pipeline:
   # Deploy latest develop to digitec.netlify.com
   deploy-staging:
     image: node:erbium
-    secrets: [gh_token, netlify_auth_token, netlify_site_id]
+    secrets: [gh_token, netlify_auth_token]
     commands:
       - yarn clean
       - yarn build
