@@ -1,9 +1,4 @@
-/**
- *
- * Navbar
- *
- */
-
+/* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */
 import React from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
@@ -86,8 +81,8 @@ class Navbar extends React.PureComponent {
 
   handleRequestToggleDrawer(event) {
     const { drawerOpen } = this.state;
-
     event.preventDefault();
+
     this.setState({ drawerOpen: !drawerOpen });
   }
 
@@ -111,35 +106,38 @@ class Navbar extends React.PureComponent {
         }}
       >
         <input
+          tabIndex="0"
           type="checkbox"
           id="toggleDrawer"
           className={styles.toggleDrawer}
           checked={drawerOpen}
           aria-label="Toggle the drawer"
+          onClick={this.handleRequestToggleDrawer}
+          onKeyPress={this.handleRequestToggleDrawer}
         />
         <div className={styles.mobileBar}>
-          <label
-            htmlFor="toggleDrawer"
-            className={styles.navToggle}
-            onClick={this.handleRequestToggleDrawer}
-            id="toggle-drawer"
-            role="button"
+          <button
             aria-label="Toggle the drawer"
+            className={styles.navToggle}
+            id="toggle-drawer"
+            onClick={this.handleRequestToggleDrawer}
+            onKeyPress={this.handleRequestToggleDrawer}
+            tabIndex="0"
+            type="button"
           >
             <span />
             <span />
             <span />
-          </label>
+          </button>
           <div className={styles.titleContainer}>
             <h1 className={styles.title}>{title}</h1>
           </div>
         </div>
         <label
-          htmlFor="toggleDrawer"
-          className={styles.overlay}
-          onClick={this.handleRequestToggleDrawer}
-          role="button"
           aria-label="Toggle the drawer"
+          className={styles.overlay}
+          htmlFor="toggleDrawer"
+          onClick={this.closeDrawer}
         />
         <div
           className={styles.navigation}
